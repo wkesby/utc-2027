@@ -26,7 +26,8 @@ def comp_order(sport, feed_id, overrides):
 ALIAS = {"Man Utd": "Manchester United", "Man City": "Manchester City", "Newcastle Utd": "Newcastle United",
          "Gladbach": "Borussia Mönchengladbach", "LA Rams": "Los Angeles Rams", "LA Chargers": "Los Angeles Chargers",
          "LA Lakers": "Los Angeles Lakers", "LA Clippers": "LA Clippers", "LA Dodgers": "Los Angeles Dodgers",
-         "NZ Warriors": "Warriors", "North Qld Cowboys": "North Queensland Cowboys", "Bordeaux Bègles": "Bordeaux-Bègles"}
+         "NZ Warriors": "Warriors", "North Qld Cowboys": "North Queensland Cowboys", "Bordeaux Bègles": "Bordeaux-Bègles",
+         "Inter Milan": "Internazionale", "PSG": "Paris Saint-Germain", "GWS Giants": "Greater Western Sydney"}
 
 def match(team, table):
     """Loose name match between draft names and feed names."""

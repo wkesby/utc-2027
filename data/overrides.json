@@ -1,22 +1,6 @@
 {
  "_help": "Manual control. positions: sport -> {team: rank} used when no feed exists or a feed breaks. confirmed: sport -> {team: final_rank} entered by the commissioner when a competition finishes. bonus: sport -> [winners] (a team/player listed once per competition/major/slam won).",
- "positions": {
-  "epl": {
-   "Arsenal": 1,
-   "Hull City": 2,
-   "Man Utd": 19,
-   "Liverpool": 3,
-   "Chelsea": 3,
-   "Bournemouth": 3,
-   "Brighton": 3,
-   "Brentford": 3,
-   "Aston Villa": 3,
-   "Man City": 3,
-   "Tottenham": 3,
-   "Newcastle Utd": 3
-  }
- },
+ "positions": {},
  "confirmed": {},
- "bonus": {},
- "_note_epl": "Temporary: opening-weekend snapshot entered by hand on 22 Aug 2026. Delete this block once the ESPN feed is confirmed working."
+ "bonus": {}
 }
