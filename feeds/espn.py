@@ -45,9 +45,20 @@ def _record_winpct(entry):
     return None
 
 def standings(path):
-    """path like 'soccer/eng.1' or 'football/nfl'."""
-    data = _get(f"https://site.web.api.espn.com/apis/v2/sports/{path}/standings")
-    rows = []
+    """path like 'soccer/eng.1' or 'football/nfl@2026' — @year pins the comp's season.
+    Without the pin ESPN serves whatever it calls current, which off-season means last
+    season's table (NBA/NHL/UCL) or the wrong championship entirely (F1). Returns {} until
+    the pinned season exists and someone has actually played, so the page shows 'awaiting'
+    instead of an alphabetical placeholder ladder."""
+    path, _, season = path.partition("@")
+    url = f"https://site.web.api.espn.com/apis/v2/sports/{path}/standings"
+    if season:
+        url += f"?season={season}"
+    data = _get(url)
+    year = data.get("season", {}).get("year")
+    if season and year and str(year) != season:
+        return {}
+    rows, started = [], False
     for e in _entries(data, []):
         name = e.get("team", {}).get("displayName") or e.get("athlete", {}).get("displayName")
         if not name:
@@ -58,7 +69,11 @@ def standings(path):
             winpct = _record_winpct(e)
         seed = _stat(e, "playoffSeed")
         pts = _stat(e, "championshipPts")
+        played = _stat(e, "gamesPlayed") or (_stat(e, "wins") or 0) + (_stat(e, "losses") or 0)
+        started = started or bool(played) or bool(pts)
         rows.append((name, rank, winpct, seed, pts))
+    if not started:
+        return {}
     if rows and all(r[1] is not None for r in rows):
         return {n: int(r) for n, r, *_ in rows}
     if any(r[2] is not None for r in rows):

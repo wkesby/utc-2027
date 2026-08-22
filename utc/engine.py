@@ -19,7 +19,8 @@ def comp_order(sport, feed_id, overrides):
         return {}, winners, "awaiting feed"
     try:
         mod = importlib.import_module(f"feeds.{kind}")
-        return mod.standings(arg) if arg else mod.standings(), winners, f"feed:{kind}"
+        table = mod.standings(arg) if arg else mod.standings()
+        return table, winners, f"feed:{kind}" if table else "awaiting feed"
     except Exception as e:
         return {}, winners, f"feed error: {type(e).__name__}: {e}"
 

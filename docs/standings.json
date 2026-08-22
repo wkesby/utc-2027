@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-22T23:44+00:00",
+ "generated": "2026-08-22T23:56+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -189,83 +189,83 @@
    "name": "Bundesliga",
    "window": "Aug 2026 \u2013 May 2027",
    "note": "final table",
-   "source": "feed:espn",
+   "source": "awaiting feed",
    "rows": [
     {
-     "drafter": "Wayne",
-     "pick": "Bayer Leverkusen",
-     "rank": 2,
-     "points": 11,
+     "drafter": "Will",
+     "pick": "VfB Stuttgart",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Cav",
      "pick": "Bayern Munich",
-     "rank": 3,
-     "points": 10,
-     "bonus": 0
-    },
-    {
-     "drafter": "Yestin",
-     "pick": "Borussia Dortmund",
-     "rank": 4,
-     "points": 9,
-     "bonus": 0
-    },
-    {
-     "drafter": "DT",
-     "pick": "Eintracht Frankfurt",
-     "rank": 6,
-     "points": 8,
-     "bonus": 0
-    },
-    {
-     "drafter": "Max",
-     "pick": "SV Elversberg",
-     "rank": 7,
-     "points": 7,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Dan",
      "pick": "SC Freiburg",
-     "rank": 9,
-     "points": 6,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Mike",
      "pick": "Hoffenheim",
-     "rank": 11,
-     "points": 5,
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Wayne",
+     "pick": "Bayer Leverkusen",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Paps",
      "pick": "RB Leipzig",
-     "rank": 14,
-     "points": 4,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
-     "drafter": "Sam",
-     "pick": "Schalke 04",
-     "rank": 15,
-     "points": 3,
+     "drafter": "Yestin",
+     "pick": "Borussia Dortmund",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
-     "drafter": "Will",
-     "pick": "VfB Stuttgart",
-     "rank": 16,
-     "points": 2,
+     "drafter": "DT",
+     "pick": "Eintracht Frankfurt",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Max",
+     "pick": "SV Elversberg",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Callow",
      "pick": "Werder Bremen",
-     "rank": 18,
-     "points": 1,
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Sam",
+     "pick": "Schalke 04",
+     "rank": null,
+     "points": null,
      "bonus": 0
     }
    ]
@@ -274,81 +274,81 @@
    "name": "UEFA Champions League",
    "window": "Sep 2026 \u2013 Jun 2027",
    "note": "knockout depth > league-phase position",
-   "source": "feed:espn",
+   "source": "awaiting feed",
    "rows": [
     {
      "drafter": "Will",
      "pick": "Arsenal",
-     "rank": 1,
-     "points": 11,
-     "bonus": 0
-    },
-    {
-     "drafter": "Yestin",
-     "pick": "Bayern Munich",
-     "rank": 2,
-     "points": 10,
-     "bonus": 0
-    },
-    {
-     "drafter": "Paps",
-     "pick": "Liverpool",
-     "rank": 3,
-     "points": 9,
-     "bonus": 0
-    },
-    {
-     "drafter": "Mike",
-     "pick": "Barcelona",
-     "rank": 5,
-     "points": 8,
-     "bonus": 0
-    },
-    {
-     "drafter": "Wayne",
-     "pick": "Man City",
-     "rank": 8,
-     "points": 7,
-     "bonus": 0
-    },
-    {
-     "drafter": "Dan",
-     "pick": "Atletico Madrid",
-     "rank": 9,
-     "points": 6,
-     "bonus": 0
-    },
-    {
-     "drafter": "Sam",
-     "pick": "Real Madrid",
-     "rank": 9,
-     "points": 6,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Cav",
      "pick": "Inter Milan",
-     "rank": 10,
-     "points": 4,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
-     "drafter": "Max",
-     "pick": "PSG",
-     "rank": 11,
-     "points": 3,
+     "drafter": "Dan",
+     "pick": "Atletico Madrid",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "Man Utd",
-     "rank": 12,
-     "points": 2,
+     "drafter": "Mike",
+     "pick": "Barcelona",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Wayne",
+     "pick": "Man City",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Paps",
+     "pick": "Liverpool",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Yestin",
+     "pick": "Bayern Munich",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "DT",
      "pick": "Aston Villa",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Max",
+     "pick": "PSG",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "Man Utd",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Sam",
+     "pick": "Real Madrid",
      "rank": null,
      "points": null,
      "bonus": 0
@@ -359,83 +359,83 @@
    "name": "NBA",
    "window": "Oct 2026 \u2013 Jun 2027",
    "note": "playoff depth > conference seed > record",
-   "source": "feed:espn",
+   "source": "awaiting feed",
    "rows": [
-    {
-     "drafter": "Dan",
-     "pick": "Oklahoma City Thunder",
-     "rank": 1,
-     "points": 11,
-     "bonus": 0
-    },
-    {
-     "drafter": "Mike",
-     "pick": "San Antonio Spurs",
-     "rank": 2,
-     "points": 10,
-     "bonus": 0
-    },
     {
      "drafter": "Will",
      "pick": "Detroit Pistons",
-     "rank": 3,
-     "points": 9,
-     "bonus": 0
-    },
-    {
-     "drafter": "DT",
-     "pick": "Boston Celtics",
-     "rank": 4,
-     "points": 8,
-     "bonus": 0
-    },
-    {
-     "drafter": "Wayne",
-     "pick": "Denver Nuggets",
-     "rank": 5,
-     "points": 7,
-     "bonus": 0
-    },
-    {
-     "drafter": "Max",
-     "pick": "New York Knicks",
-     "rank": 6,
-     "points": 6,
-     "bonus": 0
-    },
-    {
-     "drafter": "Paps",
-     "pick": "Cleveland Cavaliers",
-     "rank": 8,
-     "points": 5,
-     "bonus": 0
-    },
-    {
-     "drafter": "Sam",
-     "pick": "Houston Rockets",
-     "rank": 9,
-     "points": 4,
-     "bonus": 0
-    },
-    {
-     "drafter": "Ben Callow",
-     "pick": "Minnesota Timberwolves",
-     "rank": 10,
-     "points": 3,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Cav",
      "pick": "Toronto Raptors",
-     "rank": 11,
-     "points": 2,
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Dan",
+     "pick": "Oklahoma City Thunder",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Mike",
+     "pick": "San Antonio Spurs",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Wayne",
+     "pick": "Denver Nuggets",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Paps",
+     "pick": "Cleveland Cavaliers",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Yestin",
      "pick": "Philadelphia 76ers",
-     "rank": 13,
-     "points": 1,
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "DT",
+     "pick": "Boston Celtics",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Max",
+     "pick": "New York Knicks",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "Minnesota Timberwolves",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Sam",
+     "pick": "Houston Rockets",
+     "rank": null,
+     "points": null,
      "bonus": 0
     }
    ]
@@ -444,83 +444,83 @@
    "name": "NHL",
    "window": "Oct 2026 \u2013 Jun 2027",
    "note": "playoff depth > seed > points",
-   "source": "feed:espn",
+   "source": "awaiting feed",
    "rows": [
     {
      "drafter": "Will",
      "pick": "Buffalo Sabres",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Cav",
      "pick": "Carolina Hurricanes",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Dan",
      "pick": "Florida Panthers",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Mike",
      "pick": "Edmonton Oilers",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Wayne",
      "pick": "Minnesota Wild",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Paps",
      "pick": "Ottawa Senators",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Yestin",
      "pick": "Tampa Bay Lightning",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "DT",
      "pick": "Dallas Stars",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Max",
      "pick": "Vegas Golden Knights",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Callow",
      "pick": "Washington Capitals",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Sam",
      "pick": "Colorado Avalanche",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     }
    ]
@@ -529,83 +529,83 @@
    "name": "AFL",
    "window": "Mar \u2013 Sep 2027",
    "note": "finals depth > ladder",
-   "source": "feed:squiggle",
+   "source": "awaiting feed",
    "rows": [
-    {
-     "drafter": "Wayne",
-     "pick": "Fremantle",
-     "rank": 1,
-     "points": 11,
-     "bonus": 0
-    },
     {
      "drafter": "Will",
      "pick": "Sydney",
-     "rank": 2,
-     "points": 10,
-     "bonus": 0
-    },
-    {
-     "drafter": "Max",
-     "pick": "Brisbane",
-     "rank": 3,
-     "points": 9,
-     "bonus": 0
-    },
-    {
-     "drafter": "Sam",
-     "pick": "Geelong",
-     "rank": 4,
-     "points": 8,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Cav",
      "pick": "Adelaide",
-     "rank": 5,
-     "points": 7,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Dan",
      "pick": "Hawthorn",
-     "rank": 6,
-     "points": 6,
-     "bonus": 0
-    },
-    {
-     "drafter": "Yestin",
-     "pick": "Melbourne",
-     "rank": 7,
-     "points": 5,
-     "bonus": 0
-    },
-    {
-     "drafter": "Ben Callow",
-     "pick": "Western Bulldogs",
-     "rank": 8,
-     "points": 4,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Mike",
      "pick": "Carlton",
-     "rank": 10,
-     "points": 3,
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Wayne",
+     "pick": "Fremantle",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Paps",
      "pick": "GWS Giants",
-     "rank": 12,
-     "points": 2,
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Yestin",
+     "pick": "Melbourne",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "DT",
      "pick": "Essendon",
-     "rank": 18,
-     "points": 1,
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Max",
+     "pick": "Brisbane",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "Western Bulldogs",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Sam",
+     "pick": "Geelong",
+     "rank": null,
+     "points": null,
      "bonus": 0
     }
    ]
@@ -699,83 +699,83 @@
    "name": "MLB",
    "window": "Apr \u2013 Nov 2027",
    "note": "playoff depth > league seed > record",
-   "source": "feed:espn",
+   "source": "awaiting feed",
    "rows": [
     {
-     "drafter": "Dan",
-     "pick": "Milwaukee Brewers",
-     "rank": 1,
-     "points": 11,
+     "drafter": "Will",
+     "pick": "Chicago Cubs",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Cav",
      "pick": "LA Dodgers",
-     "rank": 2,
-     "points": 10,
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Dan",
+     "pick": "Milwaukee Brewers",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Mike",
      "pick": "Tampa Bay Rays",
-     "rank": 3,
-     "points": 9,
-     "bonus": 0
-    },
-    {
-     "drafter": "Ben Callow",
-     "pick": "Atlanta Braves",
-     "rank": 4,
-     "points": 8,
-     "bonus": 0
-    },
-    {
-     "drafter": "Will",
-     "pick": "Chicago Cubs",
-     "rank": 5,
-     "points": 7,
-     "bonus": 0
-    },
-    {
-     "drafter": "Max",
-     "pick": "New York Yankees",
-     "rank": 6,
-     "points": 6,
-     "bonus": 0
-    },
-    {
-     "drafter": "Sam",
-     "pick": "Philadelphia Phillies",
-     "rank": 7,
-     "points": 5,
-     "bonus": 0
-    },
-    {
-     "drafter": "Yestin",
-     "pick": "Houston Astros",
-     "rank": 14,
-     "points": 4,
-     "bonus": 0
-    },
-    {
-     "drafter": "DT",
-     "pick": "Toronto Blue Jays",
-     "rank": 16,
-     "points": 3,
-     "bonus": 0
-    },
-    {
-     "drafter": "Paps",
-     "pick": "Baltimore Orioles",
-     "rank": 20,
-     "points": 2,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Wayne",
      "pick": "Seattle Mariners",
-     "rank": 23,
-     "points": 1,
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Paps",
+     "pick": "Baltimore Orioles",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Yestin",
+     "pick": "Houston Astros",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "DT",
+     "pick": "Toronto Blue Jays",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Max",
+     "pick": "New York Yankees",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "Atlanta Braves",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Sam",
+     "pick": "Philadelphia Phillies",
+     "rank": null,
+     "points": null,
      "bonus": 0
     }
    ]
@@ -869,83 +869,83 @@
    "name": "Formula 1",
    "window": "Mar \u2013 Nov 2027",
    "note": "drivers' championship points",
-   "source": "feed:espn",
+   "source": "awaiting feed",
    "rows": [
     {
-     "drafter": "DT",
-     "pick": "Kimi Antonelli",
-     "rank": 1,
-     "points": 11,
-     "bonus": 0
-    },
-    {
-     "drafter": "Max",
-     "pick": "Lewis Hamilton",
-     "rank": 2,
-     "points": 10,
-     "bonus": 0
-    },
-    {
-     "drafter": "Wayne",
-     "pick": "George Russell",
-     "rank": 3,
-     "points": 9,
-     "bonus": 0
-    },
-    {
-     "drafter": "Ben Callow",
-     "pick": "Charles Leclerc",
-     "rank": 4,
-     "points": 8,
-     "bonus": 0
-    },
-    {
-     "drafter": "Yestin",
-     "pick": "Lando Norris",
-     "rank": 5,
-     "points": 7,
-     "bonus": 0
-    },
-    {
-     "drafter": "Paps",
-     "pick": "Max Verstappen",
-     "rank": 6,
-     "points": 6,
-     "bonus": 0
-    },
-    {
-     "drafter": "Dan",
-     "pick": "Oscar Piastri",
-     "rank": 7,
-     "points": 5,
+     "drafter": "Will",
+     "pick": "Carlos Sainz",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Cav",
      "pick": "Isack Hadjar",
-     "rank": 8,
-     "points": 4,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
-     "drafter": "Sam",
-     "pick": "Pierre Gasly",
-     "rank": 9,
-     "points": 3,
+     "drafter": "Dan",
+     "pick": "Oscar Piastri",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Mike",
      "pick": "Liam Lawson",
-     "rank": 10,
-     "points": 2,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
-     "drafter": "Will",
-     "pick": "Carlos Sainz",
-     "rank": 15,
-     "points": 1,
+     "drafter": "Wayne",
+     "pick": "George Russell",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Paps",
+     "pick": "Max Verstappen",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Yestin",
+     "pick": "Lando Norris",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "DT",
+     "pick": "Kimi Antonelli",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Max",
+     "pick": "Lewis Hamilton",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "Charles Leclerc",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Sam",
+     "pick": "Pierre Gasly",
+     "rank": null,
+     "points": null,
      "bonus": 0
     }
    ]
@@ -1464,83 +1464,83 @@
    "name": "NASCAR",
    "window": "Feb \u2013 Nov 2027",
    "note": "final standings",
-   "source": "feed:espn",
+   "source": "awaiting feed",
    "rows": [
     {
      "drafter": "Will",
      "pick": "Denny Hamlin",
-     "rank": 1,
-     "points": 11,
-     "bonus": 0
-    },
-    {
-     "drafter": "DT",
-     "pick": "Ryan Blaney",
-     "rank": 2,
-     "points": 10,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Cav",
      "pick": "Ty Gibbs",
-     "rank": 3,
-     "points": 9,
-     "bonus": 0
-    },
-    {
-     "drafter": "Mike",
-     "pick": "Tyler Reddick",
-     "rank": 4,
-     "points": 8,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Dan",
      "pick": "Chase Briscoe",
-     "rank": 5,
-     "points": 7,
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Mike",
+     "pick": "Tyler Reddick",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Wayne",
      "pick": "Chase Elliott",
-     "rank": 6,
-     "points": 6,
-     "bonus": 0
-    },
-    {
-     "drafter": "Yestin",
-     "pick": "Christopher Bell",
-     "rank": 7,
-     "points": 5,
-     "bonus": 0
-    },
-    {
-     "drafter": "Max",
-     "pick": "Kyle Larson",
-     "rank": 8,
-     "points": 4,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Paps",
      "pick": "Joey Logano",
-     "rank": 9,
-     "points": 3,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
-     "drafter": "Sam",
-     "pick": "Bubba Wallace",
-     "rank": 14,
-     "points": 2,
+     "drafter": "Yestin",
+     "pick": "Christopher Bell",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "DT",
+     "pick": "Ryan Blaney",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Max",
+     "pick": "Kyle Larson",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Callow",
      "pick": "Shane van Gisbergen",
-     "rank": 16,
-     "points": 1,
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Sam",
+     "pick": "Bubba Wallace",
+     "rank": null,
+     "points": null,
      "bonus": 0
     }
    ]
@@ -1549,83 +1549,83 @@
    "name": "NCAA Football",
    "window": "Aug 2026 \u2013 Jan 2027",
    "note": "playoff depth > seed > final AP poll",
-   "source": "feed:espn",
+   "source": "awaiting feed",
    "rows": [
     {
      "drafter": "Will",
      "pick": "Miami",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Cav",
      "pick": "Indiana",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Dan",
      "pick": "Texas",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Mike",
      "pick": "Notre Dame",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Paps",
      "pick": "LSU",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Yestin",
      "pick": "Georgia",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "DT",
      "pick": "Oklahoma",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Max",
      "pick": "Alabama",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Callow",
      "pick": "Ohio State",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Sam",
      "pick": "Oregon",
-     "rank": 1,
-     "points": 11,
+     "rank": null,
+     "points": null,
      "bonus": 0
     }
    ]
@@ -1720,101 +1720,101 @@
   {
    "pos": 1,
    "drafter": "Dan",
-   "inplay": 95,
+   "inplay": 21,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 11,
-   "total": 95
+   "scored": 2,
+   "total": 21
   },
   {
    "pos": 2,
-   "drafter": "Wayne",
-   "inplay": 85,
+   "drafter": "Mike",
+   "inplay": 15,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 11,
-   "total": 85
+   "scored": 2,
+   "total": 15
   },
   {
    "pos": 3,
-   "drafter": "Will",
-   "inplay": 84,
+   "drafter": "Yestin",
+   "inplay": 15,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 11,
-   "total": 84
+   "scored": 2,
+   "total": 15
   },
   {
    "pos": 4,
-   "drafter": "Mike",
-   "inplay": 82,
+   "drafter": "Ben Callow",
+   "inplay": 15,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 11,
-   "total": 82
+   "scored": 2,
+   "total": 15
   },
   {
    "pos": 5,
    "drafter": "Max",
-   "inplay": 81,
+   "inplay": 14,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 11,
-   "total": 81
+   "scored": 2,
+   "total": 14
   },
   {
    "pos": 6,
-   "drafter": "Ben Cav",
-   "inplay": 79,
+   "drafter": "Will",
+   "inplay": 11,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 11,
-   "total": 79
+   "scored": 2,
+   "total": 11
   },
   {
    "pos": 7,
-   "drafter": "Yestin",
-   "inplay": 78,
+   "drafter": "Ben Cav",
+   "inplay": 11,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 11,
-   "total": 78
+   "scored": 2,
+   "total": 11
   },
   {
    "pos": 8,
-   "drafter": "DT",
-   "inplay": 71,
+   "drafter": "Wayne",
+   "inplay": 11,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 10,
-   "total": 71
+   "scored": 2,
+   "total": 11
   },
   {
    "pos": 9,
    "drafter": "Paps",
-   "inplay": 64,
+   "inplay": 11,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 11,
-   "total": 64
+   "scored": 2,
+   "total": 11
   },
   {
    "pos": 10,
-   "drafter": "Ben Callow",
-   "inplay": 64,
+   "drafter": "DT",
+   "inplay": 8,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 11,
-   "total": 64
+   "scored": 2,
+   "total": 8
   },
   {
    "pos": 11,
    "drafter": "Sam",
-   "inplay": 55,
+   "inplay": 2,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 11,
-   "total": 55
+   "scored": 2,
+   "total": 2
   }
  ]
 }
