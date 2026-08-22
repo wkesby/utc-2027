@@ -1,16 +1,16 @@
 *UTC 2027 — Monday update, 22 Aug*
 
-1. Mike — 11
-2. Will — 10
-3. Ben Cav — 10
-4. Dan — 10
-5. Wayne — 10
-6. Paps — 10
-7. Yestin — 10
-8. Max — 10
-9. Ben Callow — 10
-10. Sam — 10
-11. DT — 1
+1. Dan — 95
+2. Wayne — 85
+3. Will — 84
+4. Mike — 82
+5. Max — 81
+6. Ben Cav — 79
+7. Yestin — 78
+8. DT — 71
+9. Paps — 64
+10. Ben Callow — 64
+11. Sam — 55
 
 Scoring now: NFL, EPL, Bundesliga, UEFA Champions League, NBA, NHL, AFL, MLB, Formula 1, NASCAR, NCAA Football
-Full table: https://<you>.github.io/utc-2027
+Full table: https://wkesby.github.io/utc-2027/
