@@ -1,0 +1,36 @@
+name: UTC standings
+on:
+  schedule:
+    - cron: "0 18 * * *"     # daily 04:00 AEST — refresh the live table
+    - cron: "0 22 * * 0"     # Monday 08:00 AEST — weekly report + email
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pillow
+      - name: Build standings
+        run: python -m utc.engine
+      - name: Weekly report (Mondays AEST or manual run)
+        if: github.event.schedule == '0 22 * * 0' || github.event_name == 'workflow_dispatch'
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: python -m utc.report
+      - name: Email the report with a WhatsApp share link
+        if: github.event.schedule == '0 22 * * 0' || github.event_name == 'workflow_dispatch'
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          REPORT_TO: ${{ secrets.REPORT_TO }}
+        run: python -m utc.send || echo "email not configured yet — report is still committed below"
+      - name: Commit results
+        run: |
+          git config user.name "utc-bot" && git config user.email "utc-bot@users.noreply.github.com"
+          git add docs && git commit -m "standings $(date -u +%F)" || echo "no change"
+          git push
