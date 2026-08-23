@@ -1,17 +1,17 @@
 *UTC 2027 — Monday update, 23 Aug*
 
-1. Dan — 21 (-74)
-2. Mike — 15 (-67)
-3. Yestin — 15 (-63)
-4. Ben Callow — 15 (-49)
-5. Max — 14 (-67)
-6. Will — 11 (-73)
-7. Ben Cav — 11 (-68)
-8. Wayne — 11 (-74)
-9. Paps — 11 (-53)
-10. DT — 8 (-63)
-11. Sam — 2 (-53)
-Slider of the week: Dan (-74)
+1. Dan — 21 (+0)
+2. Mike — 15 (+0)
+3. Yestin — 15 (+0)
+4. Ben Callow — 15 (+0)
+5. Max — 14 (+0)
+6. Will — 11 (+0)
+7. Ben Cav — 11 (+0)
+8. Wayne — 11 (+0)
+9. Paps — 11 (+0)
+10. DT — 8 (+0)
+11. Sam — 2 (+0)
 
 Scoring now: NFL, EPL
+Ladder: https://wkesby.github.io/utc-2027/reports/2026-08-23.png
 Full table: https://wkesby.github.io/utc-2027/
