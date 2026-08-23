@@ -51,9 +51,14 @@ def standings(path):
     the pinned season exists and someone has actually played, so the page shows 'awaiting'
     instead of an alphabetical placeholder ladder."""
     path, _, season = path.partition("@")
-    url = f"https://site.web.api.espn.com/apis/v2/sports/{path}/standings"
+    params = []
     if season:
-        url += f"?season={season}"
+        params.append(f"season={season}")
+    if path.split("/")[0] in ("football", "basketball", "hockey", "baseball"):
+        params.append("seasontype=2")   # regular season only — preseason results don't count
+    url = f"https://site.web.api.espn.com/apis/v2/sports/{path}/standings"
+    if params:
+        url += "?" + "&".join(params)
     data = _get(url)
     year = data.get("season", {}).get("year")
     if season and year and str(year) != season:

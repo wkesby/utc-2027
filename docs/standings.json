@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-23T00:07+00:00",
+ "generated": "2026-08-23T00:11+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -19,83 +19,83 @@
    "name": "NFL",
    "window": "Sep 2026 \u2013 Feb 2027",
    "note": "playoff depth > seed > record",
-   "source": "feed:espn",
+   "source": "awaiting feed",
    "rows": [
     {
-     "drafter": "Dan",
-     "pick": "Buffalo Bills",
-     "rank": 1,
-     "points": 11,
-     "bonus": 0
-    },
-    {
-     "drafter": "Ben Callow",
-     "pick": "LA Rams",
-     "rank": 1,
-     "points": 11,
-     "bonus": 0
-    },
-    {
-     "drafter": "Yestin",
-     "pick": "Baltimore Ravens",
-     "rank": 3,
-     "points": 9,
-     "bonus": 0
-    },
-    {
-     "drafter": "Paps",
-     "pick": "LA Chargers",
-     "rank": 10,
-     "points": 8,
-     "bonus": 0
-    },
-    {
-     "drafter": "Max",
-     "pick": "Detroit Lions",
-     "rank": 13,
-     "points": 7,
-     "bonus": 0
-    },
-    {
-     "drafter": "Wayne",
-     "pick": "San Francisco 49ers",
-     "rank": 15,
-     "points": 6,
-     "bonus": 0
-    },
-    {
-     "drafter": "DT",
-     "pick": "Denver Broncos",
-     "rank": 15,
-     "points": 6,
-     "bonus": 0
-    },
-    {
-     "drafter": "Mike",
-     "pick": "New England Patriots",
-     "rank": 21,
-     "points": 4,
+     "drafter": "Will",
+     "pick": "Seattle Seahawks",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Ben Cav",
      "pick": "Kansas City Chiefs",
-     "rank": 26,
-     "points": 3,
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
-     "drafter": "Will",
-     "pick": "Seattle Seahawks",
-     "rank": 27,
-     "points": 2,
+     "drafter": "Dan",
+     "pick": "Buffalo Bills",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Mike",
+     "pick": "New England Patriots",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Wayne",
+     "pick": "San Francisco 49ers",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Paps",
+     "pick": "LA Chargers",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Yestin",
+     "pick": "Baltimore Ravens",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "DT",
+     "pick": "Denver Broncos",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Max",
+     "pick": "Detroit Lions",
+     "rank": null,
+     "points": null,
+     "bonus": 0
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "LA Rams",
+     "rank": null,
+     "points": null,
      "bonus": 0
     },
     {
      "drafter": "Sam",
      "pick": "Philadelphia Eagles",
-     "rank": 29,
-     "points": 1,
+     "rank": null,
+     "points": null,
      "bonus": 0
     }
    ]
@@ -1719,102 +1719,102 @@
  "ladder": [
   {
    "pos": 1,
-   "drafter": "Dan",
-   "inplay": 21,
+   "drafter": "Mike",
+   "inplay": 11,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 2,
-   "total": 21
+   "scored": 1,
+   "total": 11
   },
   {
    "pos": 2,
-   "drafter": "Mike",
-   "inplay": 15,
+   "drafter": "Dan",
+   "inplay": 10,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 2,
-   "total": 15
+   "scored": 1,
+   "total": 10
   },
   {
    "pos": 3,
-   "drafter": "Yestin",
-   "inplay": 15,
+   "drafter": "Will",
+   "inplay": 9,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 2,
-   "total": 15
+   "scored": 1,
+   "total": 9
   },
   {
    "pos": 4,
-   "drafter": "Ben Callow",
-   "inplay": 15,
+   "drafter": "Ben Cav",
+   "inplay": 8,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 2,
-   "total": 15
+   "scored": 1,
+   "total": 8
   },
   {
    "pos": 5,
    "drafter": "Max",
-   "inplay": 14,
+   "inplay": 7,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 2,
-   "total": 14
+   "scored": 1,
+   "total": 7
   },
   {
    "pos": 6,
-   "drafter": "Will",
-   "inplay": 11,
+   "drafter": "Yestin",
+   "inplay": 6,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 2,
-   "total": 11
+   "scored": 1,
+   "total": 6
   },
   {
    "pos": 7,
-   "drafter": "Ben Cav",
-   "inplay": 11,
+   "drafter": "Wayne",
+   "inplay": 5,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 2,
-   "total": 11
+   "scored": 1,
+   "total": 5
   },
   {
    "pos": 8,
-   "drafter": "Wayne",
-   "inplay": 11,
+   "drafter": "Ben Callow",
+   "inplay": 4,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 2,
-   "total": 11
+   "scored": 1,
+   "total": 4
   },
   {
    "pos": 9,
    "drafter": "Paps",
-   "inplay": 11,
+   "inplay": 3,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 2,
-   "total": 11
+   "scored": 1,
+   "total": 3
   },
   {
    "pos": 10,
    "drafter": "DT",
-   "inplay": 8,
+   "inplay": 2,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 2,
-   "total": 8
+   "scored": 1,
+   "total": 2
   },
   {
    "pos": 11,
    "drafter": "Sam",
-   "inplay": 2,
+   "inplay": 1,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 2,
-   "total": 2
+   "scored": 1,
+   "total": 1
   }
  ]
 }
