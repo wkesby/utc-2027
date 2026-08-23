@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-23T07:36+00:00",
+ "generated": "2026-08-23T18:10+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -107,78 +107,78 @@
    "source": "feed:espn",
    "rows": [
     {
-     "drafter": "Mike",
-     "pick": "Arsenal",
+     "drafter": "Max",
+     "pick": "Brighton",
      "rank": 1,
      "points": 11,
      "bonus": 0
     },
     {
-     "drafter": "Dan",
-     "pick": "Brentford",
+     "drafter": "Mike",
+     "pick": "Arsenal",
      "rank": 2,
      "points": 10,
      "bonus": 0
     },
     {
-     "drafter": "Will",
-     "pick": "Aston Villa",
-     "rank": 7,
+     "drafter": "Dan",
+     "pick": "Brentford",
+     "rank": 3,
      "points": 9,
-     "bonus": 0
-    },
-    {
-     "drafter": "Ben Cav",
-     "pick": "Bournemouth",
-     "rank": 8,
-     "points": 8,
-     "bonus": 0
-    },
-    {
-     "drafter": "Max",
-     "pick": "Brighton",
-     "rank": 9,
-     "points": 7,
-     "bonus": 0
-    },
-    {
-     "drafter": "Yestin",
-     "pick": "Chelsea",
-     "rank": 10,
-     "points": 6,
-     "bonus": 0
-    },
-    {
-     "drafter": "Wayne",
-     "pick": "Liverpool",
-     "rank": 12,
-     "points": 5,
      "bonus": 0
     },
     {
      "drafter": "Ben Callow",
      "pick": "Man City",
-     "rank": 13,
-     "points": 4,
+     "rank": 7,
+     "points": 8,
+     "bonus": 0
+    },
+    {
+     "drafter": "Wayne",
+     "pick": "Liverpool",
+     "rank": 9,
+     "points": 7,
      "bonus": 0
     },
     {
      "drafter": "Paps",
      "pick": "Newcastle Utd",
-     "rank": 14,
-     "points": 3,
+     "rank": 10,
+     "points": 6,
+     "bonus": 0
+    },
+    {
+     "drafter": "Yestin",
+     "pick": "Chelsea",
+     "rank": 11,
+     "points": 5,
+     "bonus": 0
+    },
+    {
+     "drafter": "Ben Cav",
+     "pick": "Bournemouth",
+     "rank": 13,
+     "points": 4,
      "bonus": 0
     },
     {
      "drafter": "DT",
      "pick": "Man Utd",
-     "rank": 18,
-     "points": 2,
+     "rank": 17,
+     "points": 3,
      "bonus": 0
     },
     {
      "drafter": "Sam",
      "pick": "Tottenham",
+     "rank": 19,
+     "points": 2,
+     "bonus": 0
+    },
+    {
+     "drafter": "Will",
+     "pick": "Aston Villa",
      "rank": 20,
      "points": 1,
      "bonus": 0
@@ -1719,7 +1719,7 @@
  "ladder": [
   {
    "pos": 1,
-   "drafter": "Mike",
+   "drafter": "Max",
    "inplay": 11,
    "confirmed": 0,
    "bonus": 0,
@@ -1728,7 +1728,7 @@
   },
   {
    "pos": 2,
-   "drafter": "Dan",
+   "drafter": "Mike",
    "inplay": 10,
    "confirmed": 0,
    "bonus": 0,
@@ -1737,7 +1737,7 @@
   },
   {
    "pos": 3,
-   "drafter": "Will",
+   "drafter": "Dan",
    "inplay": 9,
    "confirmed": 0,
    "bonus": 0,
@@ -1746,7 +1746,7 @@
   },
   {
    "pos": 4,
-   "drafter": "Ben Cav",
+   "drafter": "Ben Callow",
    "inplay": 8,
    "confirmed": 0,
    "bonus": 0,
@@ -1755,7 +1755,7 @@
   },
   {
    "pos": 5,
-   "drafter": "Max",
+   "drafter": "Wayne",
    "inplay": 7,
    "confirmed": 0,
    "bonus": 0,
@@ -1764,7 +1764,7 @@
   },
   {
    "pos": 6,
-   "drafter": "Yestin",
+   "drafter": "Paps",
    "inplay": 6,
    "confirmed": 0,
    "bonus": 0,
@@ -1773,7 +1773,7 @@
   },
   {
    "pos": 7,
-   "drafter": "Wayne",
+   "drafter": "Yestin",
    "inplay": 5,
    "confirmed": 0,
    "bonus": 0,
@@ -1782,7 +1782,7 @@
   },
   {
    "pos": 8,
-   "drafter": "Ben Callow",
+   "drafter": "Ben Cav",
    "inplay": 4,
    "confirmed": 0,
    "bonus": 0,
@@ -1791,7 +1791,7 @@
   },
   {
    "pos": 9,
-   "drafter": "Paps",
+   "drafter": "DT",
    "inplay": 3,
    "confirmed": 0,
    "bonus": 0,
@@ -1800,7 +1800,7 @@
   },
   {
    "pos": 10,
-   "drafter": "DT",
+   "drafter": "Sam",
    "inplay": 2,
    "confirmed": 0,
    "bonus": 0,
@@ -1809,7 +1809,7 @@
   },
   {
    "pos": 11,
-   "drafter": "Sam",
+   "drafter": "Will",
    "inplay": 1,
    "confirmed": 0,
    "bonus": 0,
