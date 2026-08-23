@@ -30,6 +30,31 @@ def ladder_png(S, prev, path):
     d.text((40, H - 42), f"{sum(1 for s in S['sports'].values() if not s['source'].startswith(('awaiting', 'feed error')))}/20 competitions scoring · in-play points move weekly; confirmed points are final", font=_font(16), fill="#8A94A8")
     im.save(path)
 
+def share_page(S, site, stamp, path):
+    """OG wrapper for the ladder PNG — WhatsApp only builds preview cards from HTML pages
+    with Open Graph tags, never from a raw image URL. Unique URL per report dodges
+    WhatsApp's per-URL preview cache."""
+    base = site.rstrip("/")
+    title = f"UTC 2027 — Monday update, {datetime.date.today():%d %b}"
+    lead = S["ladder"][0]
+    desc = f"{lead['drafter']} leads on {lead['total']} · tap for the full ladder"
+    height = 150 + 54 * len(S["ladder"]) + 60
+    open(path, "w").write(f"""<!doctype html><html><head><meta charset="utf-8">
+<title>{title}</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{base}/reports/{stamp}.html">
+<meta property="og:image" content="{base}/reports/{stamp}.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="{height}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+</head><body style="margin:0;background:#0B1220;text-align:center">
+<a href="{base}/"><img src="{stamp}.png" alt="{title}" style="max-width:100%"></a>
+</body></html>""")
+
 def summary(S, prev):
     prevtot = {r["drafter"]: r for r in (prev or {}).get("ladder", [])}
     lines = [f"*UTC 2027 — Monday update, {datetime.date.today():%d %b}*", ""]
@@ -46,8 +71,8 @@ def summary(S, prev):
     lines += ["", f"Scoring now: {', '.join(live) if live else 'nothing yet'}"]
     site = os.environ.get("SITE_URL", "")
     if site:
-        # first URL in the message wins the WhatsApp preview — ladder PNG before the site link
-        lines.append(f"Ladder: {site.rstrip('/')}/reports/{datetime.date.today().isoformat()}.png")
+        # first URL in the message wins the WhatsApp preview — OG share page before the site link
+        lines.append(f"Ladder: {site.rstrip('/')}/reports/{datetime.date.today().isoformat()}.html")
     lines.append("Full table: " + (site or "(site link)"))
     return "\n".join(lines)
 
@@ -57,6 +82,8 @@ if __name__ == "__main__":
     os.makedirs("docs/reports", exist_ok=True)
     stamp = datetime.date.today().isoformat()
     ladder_png(S, prev, f"docs/reports/{stamp}.png")
+    if os.environ.get("SITE_URL"):
+        share_page(S, os.environ["SITE_URL"], stamp, f"docs/reports/{stamp}.html")
     text = summary(S, prev)
     open(f"docs/reports/{stamp}.txt", "w").write(text)
     json.dump(S, open("docs/last_week.json", "w"))
