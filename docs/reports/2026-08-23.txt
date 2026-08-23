@@ -1,18 +1,17 @@
 *UTC 2027 — Monday update, 23 Aug*
 
-1. Mike — 11 (-4)
-2. Dan — 10 (-11)
-3. Will — 9 (-2)
-4. Ben Cav — 8 (-3)
-5. Max — 7 (-7)
-6. Yestin — 6 (-9)
-7. Wayne — 5 (-6)
-8. Ben Callow — 4 (-11)
-9. Paps — 3 (-8)
-10. DT — 2 (-6)
-11. Sam — 1 (-1)
-Slider of the week: Ben Callow (-11)
+1. Mike — 11 (+0)
+2. Dan — 10 (+0)
+3. Will — 9 (+0)
+4. Ben Cav — 8 (+0)
+5. Max — 7 (+0)
+6. Yestin — 6 (+0)
+7. Wayne — 5 (+0)
+8. Ben Callow — 4 (+0)
+9. Paps — 3 (+0)
+10. DT — 2 (+0)
+11. Sam — 1 (+0)
 
 Scoring now: EPL
-Ladder: https://wkesby.github.io/utc-2027/reports/2026-08-23.png
+Ladder: https://wkesby.github.io/utc-2027/reports/2026-08-23.html
 Full table: https://wkesby.github.io/utc-2027/
