@@ -1,21 +1,24 @@
 *UTC 2027 — Monday update, 23 Aug*
 
-1. Mike — 11 (+0)
-2. Dan — 10 (+0)
-3. Will — 9 (+0)
-4. Ben Cav — 8 (+0)
-5. Max — 7 (+0)
-6. Yestin — 6 (+0)
-7. Wayne — 5 (+0)
-8. Ben Callow — 4 (+0)
-9. Paps — 3 (+0)
-10. DT — 2 (+0)
-11. Sam — 1 (+0)
+1. Max — 11 (+4)
+2. Mike — 10 (-1)
+3. Dan — 9 (-1)
+4. Ben Callow — 8 (+4)
+5. Wayne — 7 (+2)
+6. Paps — 6 (+3)
+7. Yestin — 5 (-1)
+8. Ben Cav — 4 (-4)
+9. DT — 3 (+1)
+10. Sam — 2 (+1)
+11. Will — 1 (-8)
+
+Mover of the week: Max (+4)
+Slider of the week: Will (-8)
 
 *From the commentary box:*
-Not a single spot changed all week, so Mike keeps the throne on 11 without breaking a sweat.
-Arsenal have Mike sitting pretty at the top of the EPL, while Sam's Spurs are propping up the whole thing — bottom of the comp and bottom of the ladder, a tidy bit of symmetry.
-DT on 2 and Paps on 3 are basically Sam's support crew down there, all three going nowhere fast.
+Max has rocketed four spots to the top on 11, with Brighton leading the EPL charge — Mike and Dan both slid one and now get to admire the view from behind.
+Ben Callow leapt four into fourth while Ben Cav went the other way, dropping four to eighth — one Ben clearly forgot to share the recipe.
+Will's had the week from another planet, down eight to last on a lonely point, with Aston Villa propping up his EPL hopes.
 
 Scoring now: EPL
 Ladder: https://wkesby.github.io/utc-2027/reports/2026-08-23.html
