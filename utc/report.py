@@ -1,6 +1,7 @@
 """Monday update: text summary + PNG ladder, diffed against last week's standings."""
 import json, os, datetime
 from PIL import Image, ImageDraw, ImageFont
+from .banter import commentary
 
 def _font(size, bold=False):
     for p in ["/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
@@ -67,6 +68,9 @@ def summary(S, prev):
         lines += ["", f"Mover of the week: {movers[0][1]} (+{movers[0][0]})"]
     if movers and movers[-1][0] < 0:
         lines.append(f"Slider of the week: {movers[-1][1]} ({movers[-1][0]:+d})")
+    quips = commentary(S, prev)
+    if quips:
+        lines += ["", "*From the commentary box:*"] + quips
     live = [s["name"] for s in S["sports"].values() if s["source"].startswith(("feed", "override", "confirmed"))]
     lines += ["", f"Scoring now: {', '.join(live) if live else 'nothing yet'}"]
     site = os.environ.get("SITE_URL", "")
