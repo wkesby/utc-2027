@@ -43,7 +43,12 @@ def summary(S, prev):
     if movers and movers[-1][0] < 0:
         lines.append(f"Slider of the week: {movers[-1][1]} ({movers[-1][0]:+d})")
     live = [s["name"] for s in S["sports"].values() if s["source"].startswith(("feed", "override", "confirmed"))]
-    lines += ["", f"Scoring now: {', '.join(live) if live else 'nothing yet'}", "Full table: " + os.environ.get("SITE_URL", "(site link)")]
+    lines += ["", f"Scoring now: {', '.join(live) if live else 'nothing yet'}"]
+    site = os.environ.get("SITE_URL", "")
+    if site:
+        # first URL in the message wins the WhatsApp preview — ladder PNG before the site link
+        lines.append(f"Ladder: {site.rstrip('/')}/reports/{datetime.date.today().isoformat()}.png")
+    lines.append("Full table: " + (site or "(site link)"))
     return "\n".join(lines)
 
 if __name__ == "__main__":
