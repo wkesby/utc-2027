@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-24T18:19+00:00",
+ "generated": "2026-08-24T23:15+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -26,77 +26,88 @@
      "pick": "Seattle Seahawks",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Ben Cav",
      "pick": "Kansas City Chiefs",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Dan",
      "pick": "Buffalo Bills",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Mike",
      "pick": "New England Patriots",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Wayne",
      "pick": "San Francisco 49ers",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Paps",
      "pick": "LA Chargers",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Yestin",
      "pick": "Baltimore Ravens",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "DT",
      "pick": "Denver Broncos",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Max",
      "pick": "Detroit Lions",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Ben Callow",
      "pick": "LA Rams",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Sam",
      "pick": "Philadelphia Eagles",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     }
    ]
   },
@@ -111,77 +122,88 @@
      "pick": "Brighton",
      "rank": 1,
      "points": 11,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Mike",
      "pick": "Arsenal",
      "rank": 2,
      "points": 10,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Dan",
      "pick": "Brentford",
      "rank": 3,
      "points": 9,
-     "bonus": 0
-    },
-    {
-     "drafter": "Ben Callow",
-     "pick": "Man City",
-     "rank": 7,
-     "points": 8,
-     "bonus": 0
-    },
-    {
-     "drafter": "Wayne",
-     "pick": "Liverpool",
-     "rank": 9,
-     "points": 7,
-     "bonus": 0
-    },
-    {
-     "drafter": "Paps",
-     "pick": "Newcastle Utd",
-     "rank": 10,
-     "points": 6,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Yestin",
      "pick": "Chelsea",
+     "rank": 6,
+     "points": 8,
+     "bonus": 0,
+     "drafted": 3
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "Man City",
+     "rank": 8,
+     "points": 7,
+     "bonus": 0,
+     "drafted": 2
+    },
+    {
+     "drafter": "Wayne",
+     "pick": "Liverpool",
+     "rank": 10,
+     "points": 6,
+     "bonus": 0,
+     "drafted": 4
+    },
+    {
+     "drafter": "Paps",
+     "pick": "Newcastle Utd",
      "rank": 11,
      "points": 5,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Ben Cav",
      "pick": "Bournemouth",
      "rank": 13,
      "points": 4,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "DT",
      "pick": "Man Utd",
      "rank": 17,
      "points": 3,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Sam",
      "pick": "Tottenham",
      "rank": 19,
      "points": 2,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Will",
      "pick": "Aston Villa",
      "rank": 20,
      "points": 1,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     }
    ]
   },
@@ -196,77 +218,88 @@
      "pick": "VfB Stuttgart",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Ben Cav",
      "pick": "Bayern Munich",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Dan",
      "pick": "SC Freiburg",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Mike",
      "pick": "Hoffenheim",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Wayne",
      "pick": "Bayer Leverkusen",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Paps",
      "pick": "RB Leipzig",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Yestin",
      "pick": "Borussia Dortmund",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "DT",
      "pick": "Eintracht Frankfurt",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Max",
      "pick": "SV Elversberg",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Ben Callow",
      "pick": "Werder Bremen",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Sam",
      "pick": "Schalke 04",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     }
    ]
   },
@@ -281,77 +314,88 @@
      "pick": "Arsenal",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Ben Cav",
      "pick": "Inter Milan",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Dan",
      "pick": "Atletico Madrid",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Mike",
      "pick": "Barcelona",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Wayne",
      "pick": "Man City",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Paps",
      "pick": "Liverpool",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Yestin",
      "pick": "Bayern Munich",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "DT",
      "pick": "Aston Villa",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Max",
      "pick": "PSG",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Ben Callow",
      "pick": "Man Utd",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Sam",
      "pick": "Real Madrid",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     }
    ]
   },
@@ -366,77 +410,88 @@
      "pick": "Detroit Pistons",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Ben Cav",
      "pick": "Toronto Raptors",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Dan",
      "pick": "Oklahoma City Thunder",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Mike",
      "pick": "San Antonio Spurs",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Wayne",
      "pick": "Denver Nuggets",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Paps",
      "pick": "Cleveland Cavaliers",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Yestin",
      "pick": "Philadelphia 76ers",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "DT",
      "pick": "Boston Celtics",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Max",
      "pick": "New York Knicks",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Ben Callow",
      "pick": "Minnesota Timberwolves",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Sam",
      "pick": "Houston Rockets",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     }
    ]
   },
@@ -451,77 +506,88 @@
      "pick": "Buffalo Sabres",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Ben Cav",
      "pick": "Carolina Hurricanes",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Dan",
      "pick": "Florida Panthers",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Mike",
      "pick": "Edmonton Oilers",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Wayne",
      "pick": "Minnesota Wild",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Paps",
      "pick": "Ottawa Senators",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Yestin",
      "pick": "Tampa Bay Lightning",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "DT",
      "pick": "Dallas Stars",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Max",
      "pick": "Vegas Golden Knights",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Ben Callow",
      "pick": "Washington Capitals",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Sam",
      "pick": "Colorado Avalanche",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     }
    ]
   },
@@ -536,77 +602,88 @@
      "pick": "Sydney",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Ben Cav",
      "pick": "Adelaide",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Dan",
      "pick": "Hawthorn",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Mike",
      "pick": "Carlton",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Wayne",
      "pick": "Fremantle",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Paps",
      "pick": "GWS Giants",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Yestin",
      "pick": "Melbourne",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "DT",
      "pick": "Essendon",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Max",
      "pick": "Brisbane",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Ben Callow",
      "pick": "Western Bulldogs",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Sam",
      "pick": "Geelong",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     }
    ]
   },
@@ -621,77 +698,88 @@
      "pick": "Penrith Panthers",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Ben Cav",
      "pick": "Sydney Roosters",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Dan",
      "pick": "Canterbury Bulldogs",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Mike",
      "pick": "Dolphins",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Wayne",
      "pick": "Cronulla Sharks",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Paps",
      "pick": "Melbourne Storm",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Yestin",
      "pick": "South Sydney Rabbitohs",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "DT",
      "pick": "Perth Bears",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Max",
      "pick": "Brisbane Broncos",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Ben Callow",
      "pick": "NZ Warriors",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Sam",
      "pick": "Newcastle Knights",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     }
    ]
   },
@@ -706,77 +794,88 @@
      "pick": "Chicago Cubs",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Ben Cav",
      "pick": "LA Dodgers",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Dan",
      "pick": "Milwaukee Brewers",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Mike",
      "pick": "Tampa Bay Rays",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Wayne",
      "pick": "Seattle Mariners",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Paps",
      "pick": "Baltimore Orioles",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Yestin",
      "pick": "Houston Astros",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "DT",
      "pick": "Toronto Blue Jays",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Max",
      "pick": "New York Yankees",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Ben Callow",
      "pick": "Atlanta Braves",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Sam",
      "pick": "Philadelphia Phillies",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     }
    ]
   },
@@ -791,77 +890,88 @@
      "pick": "Team Visma-Lease a Bike",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Ben Cav",
      "pick": "Team Bahrain Victorious",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Dan",
      "pick": "Red Bull-Bora-Hansgrohe",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Mike",
      "pick": "Decathlon CMA CGM",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Wayne",
      "pick": "Soudal Safety Jogger (ex Quick-Step)",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Paps",
      "pick": "Lidl-Trek",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Yestin",
      "pick": "UAE Team Emirates-XRG",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "DT",
      "pick": "Uno-X Mobility",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Max",
      "pick": "Netcompany INEOS",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Ben Callow",
      "pick": "Alpecin-Premier Tech",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Sam",
      "pick": "XDS Astana",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     }
    ]
   },
@@ -876,77 +986,88 @@
      "pick": "Carlos Sainz",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Ben Cav",
      "pick": "Isack Hadjar",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Dan",
      "pick": "Oscar Piastri",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Mike",
      "pick": "Liam Lawson",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Wayne",
      "pick": "George Russell",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Paps",
      "pick": "Max Verstappen",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Yestin",
      "pick": "Lando Norris",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "DT",
      "pick": "Kimi Antonelli",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Max",
      "pick": "Lewis Hamilton",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Ben Callow",
      "pick": "Charles Leclerc",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Sam",
      "pick": "Pierre Gasly",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     }
    ]
   },
@@ -961,77 +1082,88 @@
      "pick": "Raul Fernandez",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Ben Cav",
      "pick": "Fabio Di Giannantonio",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Dan",
      "pick": "Jorge Martin",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Mike",
      "pick": "Marco Bezzecchi",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Wayne",
      "pick": "Marc Marquez",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Paps",
      "pick": "Enea Bastianini",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Yestin",
      "pick": "Francesco Bagnaia",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "DT",
      "pick": "Fabio Quartararo",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Max",
      "pick": "Ai Ogura",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Ben Callow",
      "pick": "Fermin Aldeguer",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Sam",
      "pick": "Pedro Acosta",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     }
    ]
   },
@@ -1046,77 +1178,88 @@
      "pick": "Thomas Randle",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Ben Cav",
      "pick": "Matt Payne",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Dan",
      "pick": "Ryan Wood",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Mike",
      "pick": "Anton De Pasquale",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Wayne",
      "pick": "Brodie Kostecki",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Paps",
      "pick": "Will Brown",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Yestin",
      "pick": "Cam Waters",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "DT",
      "pick": "Jack Le Brocq",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Max",
      "pick": "Broc Feeney",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Ben Callow",
      "pick": "Chaz Mostert",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Sam",
      "pick": "Kai Allen",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     }
    ]
   },
@@ -1131,77 +1274,88 @@
      "pick": "Ben Shelton",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Ben Cav",
      "pick": "Felix Auger-Aliassime",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Dan",
      "pick": "Flavio Cobolli",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Mike",
      "pick": "Rafael Jodar",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Wayne",
      "pick": "Carlos Alcaraz",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Paps",
      "pick": "Daniil Medvedev",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Yestin",
      "pick": "Taylor Fritz",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "DT",
      "pick": "Alexander Zverev",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Max",
      "pick": "Novak Djokovic",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Ben Callow",
      "pick": "Alex de Minaur",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Sam",
      "pick": "Jannik Sinner",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     }
    ]
   },
@@ -1216,77 +1370,88 @@
      "pick": "Karolina Muchova",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Ben Cav",
      "pick": "Linda Noskova",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Dan",
      "pick": "Aryna Sabalenka",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Mike",
      "pick": "Coco Gauff",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Wayne",
      "pick": "Victoria Mboko",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Paps",
      "pick": "Iga Swiatek",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Yestin",
      "pick": "Amanda Anisimova",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "DT",
      "pick": "Jessica Pegula",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Max",
      "pick": "Naomi Osaka",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Ben Callow",
      "pick": "Mirra Andreeva",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Sam",
      "pick": "Elena Rybakina",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     }
    ]
   },
@@ -1301,77 +1466,88 @@
      "pick": "Sam Burns",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Ben Cav",
      "pick": "Cameron Young",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Dan",
      "pick": "Russell Henley",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Mike",
      "pick": "Ludvig Aberg",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Wayne",
      "pick": "Bryson DeChambeau",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Paps",
      "pick": "Jon Rahm",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Yestin",
      "pick": "Xander Schauffele",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "DT",
      "pick": "Tommy Fleetwood",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Max",
      "pick": "Scottie Scheffler",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Ben Callow",
      "pick": "Matt Fitzpatrick",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Sam",
      "pick": "Rory McIlroy",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     }
    ]
   },
@@ -1386,77 +1562,88 @@
      "pick": "Yago Dora",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Ben Cav",
      "pick": "Leo Fioravanti",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Dan",
      "pick": "Miguel Pupo",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Mike",
      "pick": "George Pittar",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Wayne",
      "pick": "Gabriel Medina",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Paps",
      "pick": "Seth Moniz",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Yestin",
      "pick": "Filipe Toledo",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "DT",
      "pick": "Crosby Colapinto",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Max",
      "pick": "Ethan Ewing",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Ben Callow",
      "pick": "Italo Ferreira",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Sam",
      "pick": "Griffin Colapinto",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     }
    ]
   },
@@ -1471,77 +1658,88 @@
      "pick": "Denny Hamlin",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Ben Cav",
      "pick": "Ty Gibbs",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Dan",
      "pick": "Chase Briscoe",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Mike",
      "pick": "Tyler Reddick",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Wayne",
      "pick": "Chase Elliott",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Paps",
      "pick": "Joey Logano",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Yestin",
      "pick": "Christopher Bell",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "DT",
      "pick": "Ryan Blaney",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Max",
      "pick": "Kyle Larson",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Ben Callow",
      "pick": "Shane van Gisbergen",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Sam",
      "pick": "Bubba Wallace",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     }
    ]
   },
@@ -1556,77 +1754,88 @@
      "pick": "Miami",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Ben Cav",
      "pick": "Indiana",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Dan",
      "pick": "Texas",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Mike",
      "pick": "Notre Dame",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Paps",
      "pick": "LSU",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Yestin",
      "pick": "Georgia",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "DT",
      "pick": "Oklahoma",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Max",
      "pick": "Alabama",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Ben Callow",
      "pick": "Ohio State",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Sam",
      "pick": "Oregon",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     }
    ]
   },
@@ -1641,77 +1850,88 @@
      "pick": "Glasgow Warriors",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Ben Cav",
      "pick": "Bordeaux B\u00e8gles",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Dan",
      "pick": "Northampton Saints",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 7
     },
     {
      "drafter": "Mike",
      "pick": "Toulouse",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 2
     },
     {
      "drafter": "Wayne",
      "pick": "Leinster",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Paps",
      "pick": "Bath",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 4
     },
     {
      "drafter": "Yestin",
      "pick": "Stormers",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "DT",
      "pick": "Stade Fran\u00e7ais",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Max",
      "pick": "La Rochelle",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 8
     },
     {
      "drafter": "Ben Callow",
      "pick": "Montpellier",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Sam",
      "pick": "Munster",
      "rank": null,
      "points": null,
-     "bonus": 0
+     "bonus": 0,
+     "drafted": 11
     }
    ]
   }
@@ -1746,7 +1966,7 @@
   },
   {
    "pos": 4,
-   "drafter": "Ben Callow",
+   "drafter": "Yestin",
    "inplay": 8,
    "confirmed": 0,
    "bonus": 0,
@@ -1755,7 +1975,7 @@
   },
   {
    "pos": 5,
-   "drafter": "Wayne",
+   "drafter": "Ben Callow",
    "inplay": 7,
    "confirmed": 0,
    "bonus": 0,
@@ -1764,7 +1984,7 @@
   },
   {
    "pos": 6,
-   "drafter": "Paps",
+   "drafter": "Wayne",
    "inplay": 6,
    "confirmed": 0,
    "bonus": 0,
@@ -1773,7 +1993,7 @@
   },
   {
    "pos": 7,
-   "drafter": "Yestin",
+   "drafter": "Paps",
    "inplay": 5,
    "confirmed": 0,
    "bonus": 0,

@@ -10,6 +10,7 @@ th{font-size:11px;color:var(--mute);text-transform:uppercase}td.n{text-align:rig
 .pos{color:var(--amber);font-weight:700;width:28px}.tabs{display:flex;gap:6px;overflow-x:auto;padding:8px 0}.tabs button{flex:0 0 auto;background:var(--panel);color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px}
 .tabs button.on{background:var(--amber);color:#111;border-color:var(--amber)}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:12px}
 .src{font-size:12px;color:var(--mute)}.src.bad{color:var(--red)}.src.ok{color:var(--green)}.mute{color:var(--mute)}
+td.drafted{width:28px;color:var(--mute);font-variant-numeric:tabular-nums}span.drafted{color:var(--mute)}
 </style></head><body>
 <header><h1>UTC 2027</h1><div class="sub" id="sub">loading…</div></header>
 <main>
@@ -26,6 +27,7 @@ function render(){
   $("tabs").innerHTML=Object.entries(S.sports).map(([k,s])=>`<button class="${k===cur?"on":""}" onclick="cur='${k}';render()">${s.name.split(" (")[0]}</button>`).join("");
   const s=S.sports[cur];const bad=s.source.startsWith("feed error"),wait=s.source.startsWith("awaiting");
   $("sport").innerHTML=`<b>${s.name}</b> <span class="mute">· ${s.window} · ${s.note}</span><div class="src ${bad?"bad":wait?"":"ok"}">${wait?"Not started yet — points appear once the season is under way":bad?"Feed problem, showing nothing rather than rubbish: "+s.source:s.source==="confirmed"?"FINAL — confirmed by the commissioner":"In play · "+s.source.replace("feed:","live feed: ").replace("override","entered by hand")}</div>
-  <table><thead><tr><th>Drafter</th><th>Pick</th><th style="text-align:right">Position</th><th style="text-align:right">Points</th></tr></thead><tbody>${s.rows.map(r=>`<tr><td>${r.drafter}</td><td>${r.pick}</td><td class="n">${r.rank??"—"}</td><td class="n"><b>${r.points??"—"}</b>${r.bonus?` <span style="color:var(--green)">+${r.bonus}</span>`:""}</td></tr>`).join("")}</tbody></table>`;
+  <div class="src mute" style="margin-top:6px">Sorted by points · <span class="drafted">#</span> is the order this competition was drafted in</div>
+  <table><thead><tr><th>#</th><th>Drafter</th><th>Pick</th><th style="text-align:right">Position</th><th style="text-align:right">Points</th></tr></thead><tbody>${s.rows.map(r=>`<tr><td class="drafted">${r.drafted??"—"}</td><td>${r.drafter}</td><td>${r.pick}</td><td class="n">${r.rank??"—"}</td><td class="n"><b>${r.points??"—"}</b>${r.bonus?` <span style="color:var(--green)">+${r.bonus}</span>`:""}</td></tr>`).join("")}</tbody></table>`;
 }
 </script></body></html>
