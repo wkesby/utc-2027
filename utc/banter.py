@@ -3,6 +3,30 @@ ladder. Uses the Claude API (claude-opus-5) when ANTHROPIC_API_KEY is set — fr
 week; otherwise falls back to date-seeded templates. Never allowed to break the report."""
 import json, os, random, urllib.request
 
+def _draft_value(S):
+    """Same maths the page shows: a pick is worth points - (12 - draft slot), so slot #1 is
+    expected to return 11 and slot #11 just 1. Plus the trend across every scored pick."""
+    rows = []
+    for s in S["sports"].values():
+        if not s["source"].startswith(("feed", "override", "confirmed")):
+            continue
+        rows += [{"drafter": r["drafter"], "pick": r["pick"], "comp": s["name"].split(" (")[0],
+                  "drafted": r["drafted"], "points": r["points"], "value": r["points"] - (12 - r["drafted"])}
+                 for r in s["rows"] if r["points"] is not None and r["drafted"] is not None]
+    if not rows:
+        return None
+    n = len(rows)
+    sx = sum(r["drafted"] for r in rows); sy = sum(r["points"] for r in rows)
+    sxy = sum(r["drafted"] * r["points"] for r in rows); sxx = sum(r["drafted"] ** 2 for r in rows)
+    den = n * sxx - sx * sx
+    slope = (n * sxy - sx * sy) / den if den else 0.0
+    verdict = ("early picks are paying off — the board ran roughly to form" if slope < -0.15 else
+               "the late picks are winning; so much for draft-night homework" if slope > 0.15 else
+               "draft position has counted for nothing so far")
+    return {"steal": max(rows, key=lambda r: r["value"]),
+            "bust": min(rows, key=lambda r: r["value"]),
+            "verdict": verdict, "picks_scored": n}
+
 def _facts(S, prev):
     prevtot = {r["drafter"]: r["total"] for r in (prev or {}).get("ladder", [])}
     prevpos = {r["drafter"]: r["pos"] for r in (prev or {}).get("ladder", [])}
@@ -20,7 +44,8 @@ def _facts(S, prev):
                      "last": {"drafter": ranked[-1]["drafter"], "pick": ranked[-1]["pick"]} if ranked else None})
         unranked += [{"drafter": r["drafter"], "pick": r["pick"], "comp": s["name"]}
                      for r in s["rows"] if r["rank"] is None]
-    return {"ladder": lad, "live_comps": live, "picks_not_in_their_comp": unranked}
+    return {"ladder": lad, "live_comps": live, "picks_not_in_their_comp": unranked,
+            "draft_value": _draft_value(S)}
 
 def _claude(facts):
     key = os.environ.get("ANTHROPIC_API_KEY")
@@ -32,7 +57,13 @@ def _claude(facts):
                        "where their pick finishes). Reply with 2-3 short lines of friendly banter and "
                        "light sledging about this week's ladder — first names, PG, Aussie tone, plain "
                        "text, one sledge per line, no emojis or hashtags, no preamble. Use only the "
-                       "facts given; never invent results."),
+                       "facts given; never invent results.\n"
+                       "draft_value is the draft-night angle and usually the best material: each pick is "
+                       "scored against its draft slot (slot #1 is expected to return 11 points, #11 just "
+                       "1), so 'steal' is the bargain someone nabbed late and 'bust' is the early pick "
+                       "that flopped — 'value' is how many points above or below par it is. 'verdict' "
+                       "says whether drafting early has helped at all this season. Work at least one of "
+                       "these in when they're present, and name the team, not just the drafter."),
             "messages": [{"role": "user", "content": json.dumps(facts)}]}
     req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=json.dumps(body).encode(),
                                  headers={"x-api-key": key, "anthropic-version": "2023-06-01",
@@ -52,11 +83,29 @@ def _templates(facts, rng):
         f"{top['drafter']} leads. Somewhere a group chat is already calling it a fluke.",
         f"Early crown for {top['drafter']}. History is not kind to August leaders.",
         f"{top['drafter']} first on the ladder and unbearable already."])]
-    if facts["picks_not_in_their_comp"] and rng.random() < 0.7:
+    extras = []
+    dv = facts.get("draft_value")
+    if dv and dv["steal"]["value"] > 0:
+        s = dv["steal"]
+        extras.append(rng.choice([
+            f"{s['drafter']} got {s['pick']} with pick #{s['drafted']} in the {s['comp']} and is {s['value']} points above par — daylight robbery.",
+            f"Steal of the season so far: {s['pick']} at pick #{s['drafted']}. {s['drafter']} will remind you of it until May.",
+            f"Nobody wanted {s['pick']} until pick #{s['drafted']}. {s['drafter']} is +{s['value']} on that alone."]))
+    if dv and dv["bust"]["value"] < 0:
+        b = dv["bust"]
+        extras.append(rng.choice([
+            f"{b['drafter']} spent pick #{b['drafted']} on {b['pick']} and is {b['value']} on the deal. The draft board is a cruel document.",
+            f"{b['pick']} at pick #{b['drafted']} is going about as well as expected, {b['drafter']}.",
+            f"Spare a thought for {b['drafter']}, who used pick #{b['drafted']} on {b['pick']} — currently {abs(b['value'])} below par."]))
+    if dv:
+        extras.append(f"Draft-night verdict: {dv['verdict']}.")
+    if facts["picks_not_in_their_comp"]:
         u = rng.choice(facts["picks_not_in_their_comp"])
-        lines.append(rng.choice([
+        extras.append(rng.choice([
             f"{u['drafter']} drafted {u['pick']} in the {u['comp']} — a competition {u['pick']} didn't qualify for. Bold.",
             f"Reminder that {u['drafter']}'s {u['comp']} pick, {u['pick']}, is not actually in the {u['comp']}."]))
+    rng.shuffle(extras)
+    lines += extras[:2]          # keep the email to a readable few lines
     lines.append(rng.choice([
         f"{bottom['drafter']} props up the table on {bottom['total']}. Someone has to hold the ladder steady.",
         f"Wooden spoon watch: {bottom['drafter']}. It's a marathon, mate, but you're jogging backwards.",
