@@ -1,5 +1,5 @@
 """Email the Tuesday update (text + PNG) with a one-tap WhatsApp share link. Needs SMTP secrets in the workflow."""
-import os, smtplib, ssl, datetime, urllib.parse, glob
+import os, re, smtplib, ssl, datetime, urllib.parse, glob
 from email.message import EmailMessage
 
 def env(name, default=None):
@@ -13,21 +13,27 @@ def env(name, default=None):
         raise SystemExit(f"{name} is empty")
     return v
 
+def recipients(raw):
+    """REPORT_TO may hold several addresses, one per line or comma/semicolon separated.
+    A header value can't contain a newline, so they're joined with commas."""
+    return [a.strip() for a in re.split(r"[\n\r,;]+", raw) if a.strip()]
+
 def main():
     stamp = datetime.date.today().isoformat()
     text = open(f"docs/reports/{stamp}.txt").read()
     site = os.environ.get("SITE_URL", "").strip()
-    user, password, to = env("SMTP_USER"), env("SMTP_PASS"), env("REPORT_TO")
+    user, password = env("SMTP_USER"), env("SMTP_PASS")
+    to = recipients(env("REPORT_TO"))
     wa = "https://wa.me/?text=" + urllib.parse.quote(text)
     msg = EmailMessage()
     msg["Subject"] = f"UTC 2027 — Tuesday update {stamp}"
-    msg["From"] = user; msg["To"] = to
+    msg["From"] = user; msg["To"] = ", ".join(to)
     msg.set_content(f"{text}\n\nShare to WhatsApp (one tap, then pick the group):\n{wa}\n\nLadder image attached. Live table: {site}")
     with open(f"docs/reports/{stamp}.png", "rb") as f:
         msg.add_attachment(f.read(), maintype="image", subtype="png", filename=f"utc-{stamp}.png")
     with smtplib.SMTP_SSL(env("SMTP_HOST", "smtp.gmail.com"), 465, context=ssl.create_default_context()) as s:
         s.login(user, password); s.send_message(msg)
-    print("sent to", to)
+    print(f"sent to {len(to)} recipient(s):", ", ".join(to))
 
 if __name__ == "__main__":
     main()
