@@ -1,4 +1,4 @@
-"""Email the Monday update (text + PNG) with a one-tap WhatsApp share link. Needs SMTP secrets in the workflow."""
+"""Email the Tuesday update (text + PNG) with a one-tap WhatsApp share link. Needs SMTP secrets in the workflow."""
 import os, smtplib, ssl, datetime, urllib.parse, glob
 from email.message import EmailMessage
 
@@ -8,7 +8,7 @@ def main():
     site = os.environ.get("SITE_URL", "")
     wa = "https://wa.me/?text=" + urllib.parse.quote(text)
     msg = EmailMessage()
-    msg["Subject"] = f"UTC 2027 — Monday update {stamp}"
+    msg["Subject"] = f"UTC 2027 — Tuesday update {stamp}"
     msg["From"] = os.environ["SMTP_USER"]; msg["To"] = os.environ["REPORT_TO"]
     msg.set_content(f"{text}\n\nShare to WhatsApp (one tap, then pick the group):\n{wa}\n\nLadder image attached. Live table: {site}")
     with open(f"docs/reports/{stamp}.png", "rb") as f:

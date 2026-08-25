@@ -1,4 +1,4 @@
-"""Commentary for the Monday email: friendly banter and light sledging built from the week's
+"""Commentary for the Tuesday email: friendly banter and light sledging built from the week's
 ladder. Uses the Claude API (claude-opus-5) when ANTHROPIC_API_KEY is set — fresh lines every
 week; otherwise falls back to date-seeded templates. Never allowed to break the report."""
 import json, os, random, urllib.request

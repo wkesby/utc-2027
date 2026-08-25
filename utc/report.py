@@ -1,4 +1,4 @@
-"""Monday update: text summary + PNG ladder, diffed against last week's standings."""
+"""Tuesday update: text summary + PNG ladder, diffed against last week's standings."""
 import json, os, datetime
 from PIL import Image, ImageDraw, ImageFont
 from .banter import commentary
@@ -36,7 +36,7 @@ def share_page(S, site, stamp, path):
     with Open Graph tags, never from a raw image URL. Unique URL per report dodges
     WhatsApp's per-URL preview cache."""
     base = site.rstrip("/")
-    title = f"UTC 2027 — Monday update, {datetime.date.today():%d %b}"
+    title = f"UTC 2027 — Tuesday update, {datetime.date.today():%d %b}"
     lead = S["ladder"][0]
     desc = f"{lead['drafter']} leads on {lead['total']} · tap for the full ladder"
     height = 150 + 54 * len(S["ladder"]) + 60
@@ -58,7 +58,7 @@ def share_page(S, site, stamp, path):
 
 def summary(S, prev):
     prevtot = {r["drafter"]: r for r in (prev or {}).get("ladder", [])}
-    lines = [f"*UTC 2027 — Monday update, {datetime.date.today():%d %b}*", ""]
+    lines = [f"*UTC 2027 — Tuesday update, {datetime.date.today():%d %b}*", ""]
     for r in S["ladder"]:
         p = prevtot.get(r["drafter"])
         delta = f" ({r['total'] - p['total']:+d})" if p else ""
