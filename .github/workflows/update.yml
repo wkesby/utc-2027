@@ -2,7 +2,10 @@ name: UTC standings
 on:
   schedule:
     - cron: "0 18 * * *"     # daily 04:00 AEST — refresh the live table
-    - cron: "0 22 * * 0"     # Monday 08:00 AEST — weekly report + email
+    # Weekly report: Tuesday 14:00 Melbourne. Cron is UTC-only and Melbourne moves with
+    # daylight saving, so both candidate hours run and the step below keeps the right one.
+    - cron: "0 3 * * 2"      # = Tue 14:00 AEDT (Oct–Apr)
+    - cron: "0 4 * * 2"      # = Tue 14:00 AEST (Apr–Oct)
   workflow_dispatch:
 permissions:
   contents: write
@@ -16,14 +19,24 @@ jobs:
       - run: pip install pillow
       - name: Build standings
         run: python -m utc.engine
-      - name: Weekly report (Mondays AEST or manual run)
-        if: github.event.schedule == '0 22 * * 0' || github.event_name == 'workflow_dispatch'
+      - name: Weekly report slot? (Tue 2pm Melbourne, or a manual run)
+        id: slot
+        run: |
+          now=$(TZ=Australia/Melbourne date "+%u%H")   # day-of-week + hour, 214 = Tuesday 2pm
+          if [ "$now" = "214" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "go=false" >> "$GITHUB_OUTPUT"
+            echo "Melbourne $(TZ=Australia/Melbourne date '+%a %H:%M') — not the report slot, standings only."
+          fi
+      - name: Weekly report
+        if: steps.slot.outputs.go == 'true'
         env:
           SITE_URL: ${{ vars.SITE_URL }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python -m utc.report
       - name: Email the report with a WhatsApp share link
-        if: github.event.schedule == '0 22 * * 0' || github.event_name == 'workflow_dispatch'
+        if: steps.slot.outputs.go == 'true'
         env:
           SITE_URL: ${{ vars.SITE_URL }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
