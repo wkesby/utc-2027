@@ -11,10 +11,22 @@ th{font-size:11px;color:var(--mute);text-transform:uppercase}td.n{text-align:rig
 .tabs button.on{background:var(--amber);color:#111;border-color:var(--amber)}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:12px}
 .src{font-size:12px;color:var(--mute)}.src.bad{color:var(--red)}.src.ok{color:var(--green)}.mute{color:var(--mute)}
 td.drafted{width:28px;color:var(--mute);font-variant-numeric:tabular-nums}span.drafted{color:var(--mute)}
+.h{font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+.kv{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.kv:last-of-type{border-bottom:0}
+.bar{display:flex;height:11px;border-radius:6px;overflow:hidden;background:#0d1526;margin-top:4px}
+.bar i{display:block}
+.lbl{font-size:12px;color:var(--mute)}.big2{font-size:18px;font-weight:700;white-space:nowrap}
+svg.chart{display:block;width:100%;max-width:460px;height:auto;margin:0 auto}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--mute);margin-top:10px}
+.legend b{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}
 </style></head><body>
 <header><h1>UTC 2027</h1><div class="sub" id="sub">loading…</div></header>
 <main>
 <table id="ladder"><thead><tr><th></th><th>Drafter</th><th style="text-align:right">Confirmed</th><th style="text-align:right">In play</th><th style="text-align:right">Total</th></tr></thead><tbody></tbody></table>
+<div class="card" id="steal"></div>
+<div class="card" id="grabs"></div>
+<div class="card" id="scatter"></div>
 <div class="tabs" id="tabs"></div><div class="card" id="sport"></div>
 </main>
 <script>
@@ -22,10 +34,69 @@ let S=null,cur=null;const $=i=>document.getElementById(i);
 // competitions run left to right by the month their season starts
 const sportOrder=()=>Object.entries(S.sports).sort((a,b)=>(a[1].start||"").localeCompare(b[1].start||""));
 fetch("standings.json?"+Date.now()).then(r=>r.json()).then(d=>{S=d;cur=sportOrder()[0][0];render()}).catch(()=>{$("sub").textContent="standings.json not found yet — the first scheduled run will create it"});
+// every pick in a competition that is actually scoring
+function scoredRows(){
+  const out=[];
+  for(const s of Object.values(S.sports)){
+    if(s.source.startsWith("awaiting")||s.source.startsWith("feed error"))continue;
+    for(const r of s.rows) if(r.points!=null&&r.drafted!=null)
+      out.push(Object.assign({},r,{comp:s.name.split(" (")[0],value:r.points-(12-r.drafted)}));
+  }
+  return out;
+}
+const esc=t=>String(t).replace(/[<>&"]/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c]));
+
+// biggest bargain and biggest let-down, measured against what each draft slot ought to return
+function renderSteal(){
+  const rows=scoredRows(),el=$("steal");
+  if(!rows.length){el.innerHTML=`<div class="h">Steal &amp; bust of the season</div><div class="lbl">Nothing scored yet — this fills in once a competition is under way.</div>`;return;}
+  const steal=rows.reduce((a,b)=>b.value>a.value?b:a),bust=rows.reduce((a,b)=>b.value<a.value?b:a);
+  const line=(r,c,sign)=>`<div class="kv"><div><b>${esc(r.drafter)}</b> — ${esc(r.pick)}<div class="lbl">${esc(r.comp)} · pick #${r.drafted} · ${r.points} pts</div></div><div class="big2" style="color:${c}">${sign}${r.value}</div></div>`;
+  el.innerHTML=`<div class="h">Steal &amp; bust of the season</div>
+  ${line(steal,"var(--green)",steal.value>0?"+":"")}${line(bust,"var(--red)",bust.value>0?"+":"")}
+  <div class="lbl" style="margin-top:10px">Points scored against what that draft slot should return (#1 → 11 points, #11 → 1).</div>`;
+}
+
+// how much of the season each drafter still has in front of them
+function renderGrabs(){
+  // competitions score for everyone at once, so the headroom is shared — state it once, up top
+  const left=20-Math.max(...S.ladder.map(r=>r.scored)),come=left*11;
+  const max=Math.max(...S.ladder.map(r=>r.total))+come||1,w=v=>(v/max*100).toFixed(1)+"%";
+  $("grabs").innerHTML=`<div class="h">Points up for grabs</div>
+    <div class="lbl" style="margin:-4px 0 10px">${left} of 20 competitions still to come — up to <b style="color:var(--ink)">${come}</b> points each still on the table.</div>`+
+    S.ladder.map(r=>`<div style="margin:10px 0"><div style="display:flex;justify-content:space-between;gap:8px"><b>${esc(r.drafter)}</b><span class="lbl">${r.confirmed} confirmed · ${r.inplay} in play</span></div>
+      <div class="bar"><i style="width:${w(r.confirmed)};background:var(--green)"></i><i style="width:${w(r.inplay)};background:var(--amber)"></i><i style="width:${w(max-r.total)};background:#22304d"></i></div></div>`).join("")+
+    `<div class="legend"><span><b style="background:var(--green)"></b>confirmed</span><span><b style="background:var(--amber)"></b>in play</span><span><b style="background:#22304d"></b>still to come</span></div>`;
+}
+
+// draft slot against points scored, with a trend line
+function renderScatter(){
+  const rows=scoredRows(),el=$("scatter"),head=`<div class="h">Did drafting early help?</div>`;
+  if(rows.length<3){el.innerHTML=head+`<div class="lbl">Needs a few more scored competitions before the pattern means anything.</div>`;return;}
+  const W=320,H=190,L=26,B=22,T=8,R=8;
+  const maxY=Math.max(12,...rows.map(r=>r.points));
+  const x=d=>L+(d-1)/10*(W-L-R),y=p=>H-B-(p/maxY)*(H-B-T);
+  const n=rows.length,sx=rows.reduce((a,r)=>a+r.drafted,0),sy=rows.reduce((a,r)=>a+r.points,0),
+        sxy=rows.reduce((a,r)=>a+r.drafted*r.points,0),sxx=rows.reduce((a,r)=>a+r.drafted*r.drafted,0),
+        den=n*sxx-sx*sx,m=den?(n*sxy-sx*sy)/den:0,c=(sy-m*sx)/n;
+  const clamp=v=>Math.max(0,Math.min(maxY,v));
+  const grid=[0,Math.round(maxY/2),maxY].map(p=>`<line x1="${L}" y1="${y(p).toFixed(1)}" x2="${W-R}" y2="${y(p).toFixed(1)}" stroke="var(--line)" stroke-width=".5"/><text x="${L-5}" y="${(y(p)+3).toFixed(1)}" fill="var(--mute)" font-size="9" text-anchor="end">${p}</text>`).join("");
+  const xt=[1,3,5,7,9,11].map(d=>`<text x="${x(d).toFixed(1)}" y="${H-7}" fill="var(--mute)" font-size="9" text-anchor="middle">${d}</text>`).join("");
+  const dots=rows.map(r=>`<circle cx="${x(r.drafted).toFixed(1)}" cy="${y(r.points).toFixed(1)}" r="3.6" fill="var(--amber)" opacity=".85"><title>${esc(r.drafter)} — ${esc(r.pick)} (${esc(r.comp)}): pick #${r.drafted}, ${r.points} pts</title></circle>`).join("");
+  const trend=`<line x1="${x(1)}" y1="${y(clamp(m+c)).toFixed(1)}" x2="${x(11)}" y2="${y(clamp(m*11+c)).toFixed(1)}" stroke="var(--green)" stroke-width="1.5" stroke-dasharray="4 3"/>`;
+  const verdict=m<-0.15?"Early picks are paying off — the board ran roughly to form.":m>0.15?"The late picks are winning. So much for draft-night homework.":"Draft position has counted for nothing so far.";
+  el.innerHTML=head+`<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Draft slot against points scored">
+    ${grid}${xt}${trend}${dots}
+    <text x="${(L+W)/2}" y="${H-14}" fill="var(--mute)" font-size="9" text-anchor="middle" opacity="0">x</text>
+  </svg>
+  <div class="lbl">Draft slot within a competition (left = picked first) against points scored. ${verdict}</div>`;
+}
+
 function render(){
   const live=Object.values(S.sports).filter(s=>!s.source.startsWith("awaiting")&&!s.source.startsWith("feed error")).length;
   $("sub").textContent=`Updated ${new Date(S.generated).toLocaleString()} · ${live}/20 competitions scoring · 11 points for first, 1 for last, +2 for a win`;
   $("ladder").querySelector("tbody").innerHTML=S.ladder.map(r=>`<tr><td class="pos">${r.pos}</td><td><b>${r.drafter}</b></td><td class="n">${r.confirmed}</td><td class="n">${r.inplay}</td><td class="big">${r.total}</td></tr>`).join("");
+  renderSteal();renderGrabs();renderScatter();
   $("tabs").innerHTML=sportOrder().map(([k,s])=>`<button class="${k===cur?"on":""}" onclick="cur='${k}';render()">${s.name.split(" (")[0]}</button>`).join("");
   const s=S.sports[cur];const bad=s.source.startsWith("feed error"),wait=s.source.startsWith("awaiting");
   $("sport").innerHTML=`<b>${s.name}</b> <span class="mute">· ${s.window} · ${s.note}</span><div class="src ${bad?"bad":wait?"":"ok"}">${wait?"Not started yet — points appear once the season is under way":bad?"Feed problem, showing nothing rather than rubbish: "+s.source:s.source==="confirmed"?"FINAL — confirmed by the commissioner":"In play · "+s.source.replace("feed:","live feed: ").replace("override","entered by hand")}</div>

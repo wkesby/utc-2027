@@ -72,9 +72,28 @@ def build(picks_path="data/picks.json", overrides_path="data/overrides.json"):
     out["ladder"] = [{"pos": i + 1, "drafter": d, **totals[d]} for i, d in enumerate(order)]
     return out
 
+def log_history(res, path="docs/history.json"):
+    """One compact ladder snapshot per day, so charts can show movement over the season.
+    Re-running on the same day replaces that day's entry rather than adding a duplicate."""
+    try:
+        with open(path) as f:
+            hist = json.load(f)
+    except (OSError, ValueError):
+        hist = {"entries": []}
+    day = res["generated"][:10]
+    entry = {"date": day, "ladder": [{"d": r["drafter"], "t": r["total"], "c": r["confirmed"], "p": r["pos"]}
+                                     for r in res["ladder"]]}
+    hist["entries"] = sorted([e for e in hist["entries"] if e.get("date") != day] + [entry],
+                             key=lambda e: e["date"])
+    with open(path, "w") as f:
+        json.dump(hist, f, separators=(",", ":"))
+    return len(hist["entries"])
+
 if __name__ == "__main__":
     res = build()
     json.dump(res, open("docs/standings.json", "w"), indent=1)
+    days = log_history(res)
     for r in res["ladder"]:
         print(f"{r['pos']:>2} {r['drafter']:<11} total {r['total']:>3}  confirmed {r['confirmed']:>3}  in play {r['inplay']:>3}  bonus {r['bonus']}  ({r['scored']}/20 sports scoring)")
     print("sources:", {k: v["source"] for k, v in res["sports"].items() if not v["source"].startswith("awaiting")})
+    print(f"history: {days} day(s) logged")
