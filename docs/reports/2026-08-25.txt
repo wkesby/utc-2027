@@ -3,22 +3,19 @@
 1. Max — 11 (+0)
 2. Mike — 10 (+0)
 3. Dan — 9 (+0)
-4. Yestin — 8 (+3)
-5. Ben Callow — 7 (-1)
-6. Wayne — 6 (-1)
-7. Paps — 5 (-1)
+4. Yestin — 8 (+0)
+5. Ben Callow — 7 (+0)
+6. Wayne — 6 (+0)
+7. Paps — 5 (+0)
 8. Ben Cav — 4 (+0)
 9. DT — 3 (+0)
 10. Sam — 2 (+0)
 11. Will — 1 (+0)
 
-Mover of the week: Yestin (+3)
-Slider of the week: Ben Callow (-1)
-
 *From the commentary box:*
-Max stays parked on top with 11, and his Brighton pick has the EPL lead as well — some blokes get all the luck and still act like it's skill.
-Yestin's leapt three spots into fourth, which means Ben Callow, Wayne and Paps all shuffled back a rung without lifting a finger — poetry.
-Down the bottom, Will's on a lonely one point with Aston Villa propping up the EPL picks, so at least he's consistent.
+Not a single spot changed hands this week, so the ladder's about as lively as Max's mid-table Brighton mates — though he'll happily keep the 11 points warm at the top.
+Mike and Dan are still parked on 10 and 9, close enough to smell first place but doing absolutely nothing about it.
+Down the bottom Will's on 1 with Aston Villa propping up his EPL end too, which is at least a commitment to the theme.
 
 Scoring now: EPL
 Ladder: https://wkesby.github.io/utc-2027/reports/2026-08-25.html
