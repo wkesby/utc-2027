@@ -50,7 +50,7 @@ def build(picks_path="data/picks.json", overrides_path="data/overrides.json"):
            "season": P["season"], "drafters": drafters, "sports": {}}
     totals = {d: {"inplay": 0, "confirmed": 0, "bonus": 0, "scored": 0} for d in drafters}
     draft_order = P.get("draft_order", {})
-    for key, (name, feed_id, window, note) in SPORTS.items():
+    for key, (name, feed_id, window, note, start) in SPORTS.items():
         table, winners, source = comp_order(key, feed_id, O)
         drafter_of = {picks[d][key]: d for d in drafters}
         ranks = {d: (match(picks[d][key], table) if table else None) for d in drafters}
@@ -64,7 +64,7 @@ def build(picks_path="data/picks.json", overrides_path="data/overrides.json"):
             if p is not None:
                 bucket = "confirmed" if source == "confirmed" else "inplay"
                 totals[d][bucket] += p + bon.get(d, 0); totals[d]["bonus"] += bon.get(d, 0); totals[d]["scored"] += 1
-        out["sports"][key] = {"name": name, "window": window, "note": note, "source": source,
+        out["sports"][key] = {"name": name, "window": window, "note": note, "source": source, "start": start,
                               "rows": sorted(rows, key=lambda r: (r["points"] is None, -(r["points"] or 0)))}
     for d in drafters:
         totals[d]["total"] = totals[d]["inplay"] + totals[d]["confirmed"]

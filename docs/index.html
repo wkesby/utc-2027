@@ -19,12 +19,14 @@ td.drafted{width:28px;color:var(--mute);font-variant-numeric:tabular-nums}span.d
 </main>
 <script>
 let S=null,cur=null;const $=i=>document.getElementById(i);
-fetch("standings.json?"+Date.now()).then(r=>r.json()).then(d=>{S=d;cur=Object.keys(S.sports)[0];render()}).catch(()=>{$("sub").textContent="standings.json not found yet — the first scheduled run will create it"});
+// competitions run left to right by the month their season starts
+const sportOrder=()=>Object.entries(S.sports).sort((a,b)=>(a[1].start||"").localeCompare(b[1].start||""));
+fetch("standings.json?"+Date.now()).then(r=>r.json()).then(d=>{S=d;cur=sportOrder()[0][0];render()}).catch(()=>{$("sub").textContent="standings.json not found yet — the first scheduled run will create it"});
 function render(){
   const live=Object.values(S.sports).filter(s=>!s.source.startsWith("awaiting")&&!s.source.startsWith("feed error")).length;
   $("sub").textContent=`Updated ${new Date(S.generated).toLocaleString()} · ${live}/20 competitions scoring · 11 points for first, 1 for last, +2 for a win`;
   $("ladder").querySelector("tbody").innerHTML=S.ladder.map(r=>`<tr><td class="pos">${r.pos}</td><td><b>${r.drafter}</b></td><td class="n">${r.confirmed}</td><td class="n">${r.inplay}</td><td class="big">${r.total}</td></tr>`).join("");
-  $("tabs").innerHTML=Object.entries(S.sports).map(([k,s])=>`<button class="${k===cur?"on":""}" onclick="cur='${k}';render()">${s.name.split(" (")[0]}</button>`).join("");
+  $("tabs").innerHTML=sportOrder().map(([k,s])=>`<button class="${k===cur?"on":""}" onclick="cur='${k}';render()">${s.name.split(" (")[0]}</button>`).join("");
   const s=S.sports[cur];const bad=s.source.startsWith("feed error"),wait=s.source.startsWith("awaiting");
   $("sport").innerHTML=`<b>${s.name}</b> <span class="mute">· ${s.window} · ${s.note}</span><div class="src ${bad?"bad":wait?"":"ok"}">${wait?"Not started yet — points appear once the season is under way":bad?"Feed problem, showing nothing rather than rubbish: "+s.source:s.source==="confirmed"?"FINAL — confirmed by the commissioner":"In play · "+s.source.replace("feed:","live feed: ").replace("override","entered by hand")}</div>
   <div class="src mute" style="margin-top:6px">Sorted by points · <span class="drafted">#</span> is the order this competition was drafted in</div>
