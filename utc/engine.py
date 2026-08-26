@@ -72,6 +72,40 @@ def build(picks_path="data/picks.json", overrides_path="data/overrides.json"):
     out["ladder"] = [{"pos": i + 1, "drafter": d, **totals[d]} for i, d in enumerate(order)]
     return out
 
+def build_fixtures(picks_path="data/picks.json", days=21):
+    """Next games for every drafted team, with the opponent's owner attached so each drafter
+    can see who they are up against. Head-to-head competitions only — racing and the per-event
+    sports have no fixtures to show."""
+    P = load(picks_path)
+    drafters, picks = P["drafters"], P["picks"]
+    out = {"generated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="minutes"),
+           "days": days, "sports": {}}
+    for key, (name, feed_id, window, note, start) in SPORTS.items():
+        kind, _, arg = feed_id.partition(":")
+        if kind != "espn" or arg.startswith("racing"):
+            continue
+        try:
+            games = importlib.import_module("feeds.espn").fixtures(arg, days)
+        except Exception as e:
+            out["sports"][key] = {"name": name, "error": f"{type(e).__name__}: {e}", "games": []}
+            continue
+        rows = []
+        for g in games:
+            side = {g["home"]: "home", g["away"]: "away"}
+            owner = {"home": None, "away": None}
+            for d in drafters:
+                pick = picks[d].get(key)
+                if not pick:
+                    continue
+                where = match(pick, side)
+                if where and owner[where] is None:
+                    owner[where] = d
+            if owner["home"] or owner["away"]:       # only games a drafted team is playing in
+                rows.append({"d": g["date"], "h": g["home"], "a": g["away"],
+                             "hd": owner["home"], "ad": owner["away"]})
+        out["sports"][key] = {"name": name, "games": rows}
+    return out
+
 def log_history(res, path="docs/history.json"):
     """One compact ladder snapshot per day, so charts can show movement over the season.
     Re-running on the same day replaces that day's entry rather than adding a duplicate."""
@@ -93,7 +127,14 @@ if __name__ == "__main__":
     res = build()
     json.dump(res, open("docs/standings.json", "w"), indent=1)
     days = log_history(res)
+    try:
+        fx = build_fixtures()
+        json.dump(fx, open("docs/fixtures.json", "w"), separators=(",", ":"))
+        nfx = sum(len(s["games"]) for s in fx["sports"].values())
+    except Exception as e:
+        nfx = f"failed ({type(e).__name__})"
     for r in res["ladder"]:
         print(f"{r['pos']:>2} {r['drafter']:<11} total {r['total']:>3}  confirmed {r['confirmed']:>3}  in play {r['inplay']:>3}  bonus {r['bonus']}  ({r['scored']}/20 sports scoring)")
     print("sources:", {k: v["source"] for k, v in res["sports"].items() if not v["source"].startswith("awaiting")})
     print(f"history: {days} day(s) logged")
+    print(f"fixtures: {nfx} upcoming games with a drafted team")

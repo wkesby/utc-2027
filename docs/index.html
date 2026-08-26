@@ -123,16 +123,17 @@ input.search::placeholder{color:var(--mute)}
 "use strict";
 const $=i=>document.getElementById(i), V=()=>$("view");
 const esc=t=>String(t==null?"":t).replace(/[<>&"']/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;","'":"&#39;"}[c]));
-let S=null,H=null,offline=false;
+let S=null,H=null,F=null,offline=false;
 
 /* ---------------- data ---------------- */
 async function load(showToast){
   try{
-    const [s,h]=await Promise.all([
+    const [s,h,f]=await Promise.all([
       fetch("standings.json?"+Date.now()).then(r=>r.ok?r.json():Promise.reject(r.status)),
-      fetch("history.json?"+Date.now()).then(r=>r.ok?r.json():{entries:[]}).catch(()=>({entries:[]}))
+      fetch("history.json?"+Date.now()).then(r=>r.ok?r.json():{entries:[]}).catch(()=>({entries:[]})),
+      fetch("fixtures.json?"+Date.now()).then(r=>r.ok?r.json():{sports:{}}).catch(()=>({sports:{}}))
     ]);
-    S=s;H=h;offline=false;
+    S=s;H=h;F=f;offline=false;
     if(showToast)toast("Updated");
   }catch(e){
     if(!S){V().innerHTML=`<div class="card"><b>Standings not published yet.</b><div class="lbl" style="margin-top:6px">The next scheduled run will create them.</div></div>`;return false}
@@ -370,6 +371,7 @@ function renderDrafter(name){
     <div><div class="lbl">Position ${lr.pos} of 11</div><div class="big">${lr.total}</div></div>
     <div class="grow lbl" style="text-align:right">${lr.confirmed} confirmed<br>${lr.inplay} in play${lr.bonus?`<br>${lr.bonus} bonus`:""}</div></div>
     ${sparkline(name)}</div>
+  ${lookAheadCard(name)}
   <div class="card"><div class="h">Form guide</div><div class="tiles">
     <div class="tile"><b>${p.wins}</b><span>comp wins</span></div>
     <div class="tile"><b>${p.podium}</b><span>top 3</span></div>
@@ -389,6 +391,48 @@ function renderDrafter(name){
     <div class="lbl" style="margin:-4px 0 10px">Across the ${p.picks.length} competition${p.picks.length===1?"":"s"} scoring so far.</div>
     ${h2h.map(x=>`<div class="row"><div class="grow nm">${esc(x.d)}</div>
       <div class="tot" style="font-size:15px;color:${x.w>x.l?"var(--green)":x.w<x.l?"var(--red)":"var(--mute)"}">${x.w}–${x.l}</div></div>`).join("")}</div>`:""}`;
+}
+// next game for each of a drafter's picks, with who owns the opponent
+function lookAhead(name){
+  const out=[];
+  if(!F||!F.sports)return out;
+  for(const [k,s] of sportOrder()){
+    const fs=F.sports[k];
+    if(!fs||!fs.games)continue;
+    for(const g of fs.games){
+      const home=g.hd===name,away=g.ad===name;
+      if(!home&&!away)continue;
+      out.push({comp:shortName(s.name),key:k,when:g.d,home,
+                opp:home?g.a:g.h, owner:home?g.ad:g.hd});
+      break;                       // just the next one per competition
+    }
+  }
+  return out.sort((a,b)=>a.when.localeCompare(b.when));
+}
+function whenLabel(iso){
+  const d=new Date(iso),now=new Date();
+  const day=new Date(d.getFullYear(),d.getMonth(),d.getDate());
+  const t0=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const diff=Math.round((day-t0)/864e5);
+  const date=d.toLocaleDateString(undefined,{day:"numeric",month:"short"});
+  const time=d.toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"});
+  if(diff===0)return `today, ${time}`;
+  if(diff===1)return `tomorrow, ${time}`;
+  if(diff<7)return `${d.toLocaleDateString(undefined,{weekday:"long"})}, ${date}`;
+  return date;
+}
+function lookAheadCard(name){
+  const g=lookAhead(name);
+  if(!g.length)return `<div class="card"><div class="h">Next up</div>
+    <div class="lbl">No fixtures in the next three weeks — the competitions with feeds haven't started yet.</div></div>`;
+  return `<div class="card"><div class="h">Next up</div>
+    ${g.map(x=>`<div class="row tap" onclick="go('#comp/${x.key}')"><div class="grow">
+      <div class="nm">${x.home?"vs":"at"} ${esc(x.opp)}
+        <span class="lbl" style="font-weight:400">${x.owner?`— ${esc(x.owner)}`:"— undrafted"}</span></div>
+      <div class="lbl">${esc(x.comp)} · ${whenLabel(x.when)}</div></div>
+      ${x.owner?`<span class="chip" style="color:var(--amber);border-color:rgba(255,194,26,.35)">head to head</span>`:`<span class="chip">free hit</span>`}
+    </div>`).join("")}
+    <div class="lbl" style="margin-top:8px">Your pick's next game in each competition. "Head to head" means another drafter owns the opponent.</div></div>`;
 }
 function sparkline(name){
   const es=(H&&H.entries)||[];

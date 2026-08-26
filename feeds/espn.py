@@ -5,7 +5,7 @@ by win% with playoff seed as the tie-break. College football has no winPercent s
 falls back to the overall W-L record. MLB's 'points' stat is games-back, not table points —
 championship points are only trusted for racing (championshipPts).
 """
-import json, urllib.request
+import json, datetime, urllib.request
 
 def _get(url):
     req = urllib.request.Request(url, headers={"User-Agent": "utc-scoreboard/1.0"})
@@ -93,3 +93,30 @@ def standings(path):
             rank = i + 1; last = v
         out[r[0]] = rank
     return out
+
+
+def fixtures(path, days=10):
+    """Upcoming games for a competition: [{date, home, away}], soonest first.
+    Preseason events are dropped so the look-ahead matches what actually scores."""
+    path, _, season = path.partition("@")
+    today = datetime.date.today()
+    rng = f"{today:%Y%m%d}-{today + datetime.timedelta(days=days):%Y%m%d}"
+    data = _get(f"https://site.web.api.espn.com/apis/site/v2/sports/{path}/scoreboard?dates={rng}")
+    out = []
+    for e in data.get("events", []):
+        s = e.get("season") or {}
+        if s.get("type") == 1:                       # preseason never scores
+            continue
+        if season and s.get("year") and str(s["year"]) != season:
+            continue                                 # a different season to the one this comp scores
+        comp = (e.get("competitions") or [{}])[0]
+        if comp.get("status", {}).get("type", {}).get("completed"):
+            continue
+        home = away = None
+        for c in comp.get("competitors", []):
+            nm = c.get("team", {}).get("displayName")
+            if c.get("homeAway") == "home": home = nm
+            elif c.get("homeAway") == "away": away = nm
+        if home and away and e.get("date"):
+            out.append({"date": e["date"], "home": home, "away": away})
+    return sorted(out, key=lambda g: g["date"])
