@@ -1,5 +1,5 @@
 """Feeds -> competition order -> UTC points, split into in-play and confirmed. Writes docs/standings.json."""
-import json, datetime, importlib
+import json, datetime, importlib, unicodedata
 from .sports import SPORTS
 from .scoring import rank_points, bonus_points
 
@@ -30,6 +30,11 @@ ALIAS = {"Man Utd": "Manchester United", "Man City": "Manchester City", "Newcast
          "NZ Warriors": "Warriors", "North Qld Cowboys": "North Queensland Cowboys", "Bordeaux Bègles": "Bordeaux-Bègles",
          "Inter Milan": "Internazionale", "PSG": "Paris Saint-Germain", "GWS Giants": "Greater Western Sydney"}
 
+def norm(s):
+    """Fold accents and case so 'Atletico Madrid' matches ESPN's 'Atlético Madrid'."""
+    s = unicodedata.normalize("NFKD", str(s or ""))
+    return "".join(c for c in s if not unicodedata.combining(c)).lower().replace(".", "").strip()
+
 def match(team, table):
     """Draft name -> feed entry. Exact first (feeds also key their table by ESPN's location,
     so 'Texas' lands on the Longhorns rather than Texas A&M), then a loose match only when it
@@ -38,8 +43,11 @@ def match(team, table):
     for cand in (team, ALIAS.get(team, team)):
         if cand in table:
             return table[cand]
-    t = ALIAS.get(team, team).lower()
-    hits = {rank for name, rank in table.items() if (n := name.lower()) and (t in n or n in t)}
+    t = norm(ALIAS.get(team, team))
+    for name, rank in table.items():
+        if norm(name) == t:
+            return rank
+    hits = {rank for name, rank in table.items() if (n := norm(name)) and (t in n or n in t)}
     return hits.pop() if len(hits) == 1 else None
 
 def build(picks_path="data/picks.json", overrides_path="data/overrides.json"):
@@ -76,13 +84,12 @@ def resolve_pick(pick, team_list):
     """Draft name -> exactly one ESPN team, or None. Exact display name wins, then ESPN's
     location ('Texas' is the Longhorns; 'Texas A&M' and 'North Texas' are different schools),
     then a loose match only when it is unique across the whole competition."""
-    want = ALIAS.get(pick, pick)
-    lw = want.lower()
+    lw = norm(ALIAS.get(pick, pick))
     for display, loc in team_list:
-        if display.lower() == lw or loc.lower() == lw:
+        if norm(display) == lw or (loc and norm(loc) == lw):
             return display
     loose = [d for d, loc in team_list
-             if lw in d.lower() or lw in loc.lower() or d.lower() in lw or (loc and loc.lower() in lw)]
+             if lw in norm(d) or (loc and lw in norm(loc)) or norm(d) in lw or (loc and norm(loc) in lw)]
     return loose[0] if len(loose) == 1 else None
 
 def match_side(team, side):
