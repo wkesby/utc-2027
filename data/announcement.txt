@@ -1,0 +1,14 @@
+*UTC 2027 — app update*
+
+New in the app:
+- Fixtures tab: every game your picks play over the next three weeks, grouped by day, with the head-to-head clashes flagged. 22 of them coming up — Sam v Paps and Yestin v Max both on Sunday, Will v Mike on Tuesday.
+- Next up on your profile: your team, the opponent, and who owns it. "Liverpool vs Nottingham Forest (undrafted)".
+- Drafter profiles: comp wins, top 3s, average finish, points above par, your best and worst pick, and your head-to-head record against all ten rivals.
+- Every competition now shows the full draft board, so you can see who took what and in what order.
+
+If the app looks out of date:
+Close it completely — swipe it away from the app switcher — then open it again. You may need to do that twice. Or open the link below in your browser and pull down to refresh. After this one, updates arrive on their own.
+
+Not installed yet? {SITE}/app.html
+iPhone: open in Safari, tap Share, then Add to Home Screen.
+Android: open in Chrome, tap the three dots, then Install app.

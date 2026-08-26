@@ -1,11 +1,20 @@
 """One-off announcement email: the app is live, with iPhone/Android install steps and a
 one-tap WhatsApp share link. Run from the 'UTC announcement' workflow, not on a schedule."""
-import os, smtplib, ssl, urllib.parse
+import os, datetime, smtplib, ssl, urllib.parse
 from email.message import EmailMessage
 from .send import env, recipients
 
-def message(site):
+def message(site, path="data/announcement.txt"):
+    """The announcement body lives in data/announcement.txt so a new one is an edit and a
+    workflow run, not a code change. {SITE} is replaced with the live site URL."""
     base = site.rstrip("/")
+    try:
+        with open(path) as f:
+            body = f.read().strip()
+        if body:
+            return body.replace("{SITE}", base)
+    except OSError:
+        pass
     return "\n".join([
         "*UTC 2027 — the ladder is now an app*",
         "",
@@ -29,7 +38,7 @@ def main():
     text = message(site)
     wa = "https://wa.me/?text=" + urllib.parse.quote(text)
     msg = EmailMessage()
-    msg["Subject"] = "UTC 2027 — the app is live (share this with the group)"
+    msg["Subject"] = f"UTC 2027 — app update {datetime.date.today():%d %b} (share this with the group)"
     msg["From"] = user; msg["To"] = ", ".join(to)
     msg.set_content(
         f"{text}\n\n"
