@@ -56,6 +56,41 @@ def share_page(S, site, stamp, path):
 <a href="{base}/"><img src="{stamp}.png" alt="{title}" style="max-width:100%"></a>
 </body></html>""")
 
+def look_ahead(S, days=7, path="docs/fixtures.json"):
+    """Each drafter's next game per competition inside the window, ladder order.
+    Times are shown in Melbourne time — that is where the comp lives."""
+    try:
+        with open(path) as f:
+            fx = json.load(f)
+    except (OSError, ValueError):
+        return []
+    try:
+        from zoneinfo import ZoneInfo
+        tz = ZoneInfo("Australia/Melbourne")
+    except Exception:
+        tz = datetime.timezone.utc
+    now = datetime.datetime.now(datetime.timezone.utc)
+    cut = now + datetime.timedelta(days=days)
+    out = []
+    for r in S["ladder"]:
+        d, rows = r["drafter"], []
+        for key, s in fx.get("sports", {}).items():
+            for g in s.get("games", []):
+                home = g.get("hd") == d
+                if not home and g.get("ad") != d:
+                    continue
+                when = datetime.datetime.fromisoformat(g["d"].replace("Z", "+00:00"))
+                if when > cut:
+                    break                      # games are sorted, so nothing sooner in this comp
+                opp = g["a"] if home else g["h"]
+                owner = g["ad"] if home else g["hd"]
+                rows.append(f"{s['name'].split(' (')[0]} — {'vs' if home else 'at'} {opp} "
+                            f"({owner or 'undrafted'}) on {when.astimezone(tz):%a %-d %b}")
+                break                          # just their next game in this competition
+        if rows:
+            out.append((d, rows))
+    return out
+
 def summary(S, prev):
     prevtot = {r["drafter"]: r for r in (prev or {}).get("ladder", [])}
     lines = [f"*UTC 2027 — Tuesday update, {datetime.date.today():%d %b}*", ""]
@@ -71,6 +106,11 @@ def summary(S, prev):
     quips = commentary(S, prev)
     if quips:
         lines += ["", "*From the commentary box:*"] + quips
+    ahead = look_ahead(S)
+    if ahead:
+        lines += ["", "*Next 7 days*"]
+        for drafter, rows in ahead:
+            lines += ["", f"{drafter}:"] + rows
     live = [s["name"] for s in S["sports"].values() if s["source"].startswith(("feed", "override", "confirmed"))]
     lines += ["", f"Scoring now: {', '.join(live) if live else 'nothing yet'}"]
     site = os.environ.get("SITE_URL", "")
