@@ -475,5 +475,15 @@ setInterval(async()=>{ if(!document.hidden){await load();last=Date.now();render(
 addEventListener("online",async()=>{await load(true);render()});
 addEventListener("offline",()=>{offline=true;render()});
 (async()=>{ if(await load())render(); })();
-if("serviceWorker" in navigator) addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+// reload once when a new service worker takes over, so app updates land without a manual clear
+if("serviceWorker" in navigator){
+  let reloading=false;
+  navigator.serviceWorker.addEventListener("controllerchange",()=>{
+    if(!reloading&&navigator.serviceWorker.controller){reloading=true;location.reload()}
+  });
+  addEventListener("load",()=>navigator.serviceWorker.register("sw.js").then(reg=>{
+    reg.update();
+    setInterval(()=>reg.update(),36e5);
+  }).catch(()=>{}));
+}
 </script></body></html>
