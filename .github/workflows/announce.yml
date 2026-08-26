@@ -1,0 +1,18 @@
+name: UTC announcement
+# Manual only — sends the "app is live" email with the WhatsApp share link.
+on:
+  workflow_dispatch:
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Send the announcement
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          REPORT_TO: ${{ secrets.REPORT_TO }}
+        run: python -m utc.announce
