@@ -114,6 +114,7 @@ input.search::placeholder{color:var(--mute)}
 <nav>
   <button data-go="ladder"><span class="ic">🏆</span>Ladder</button>
   <button data-go="stats"><span class="ic">📊</span>Stats</button>
+  <button data-go="fix"><span class="ic">📅</span>Fixtures</button>
   <button data-go="comps"><span class="ic">🗂</span>Comps</button>
   <button data-go="me"><span class="ic">👤</span>Drafters</button>
 </nav>
@@ -193,7 +194,7 @@ function movement(){ // position change since the previous daily snapshot
 }
 
 /* ---------------- routing ---------------- */
-const routes={ladder:renderLadder,stats:renderStats,comps:renderComps,me:renderDrafters};
+const routes={ladder:renderLadder,stats:renderStats,fix:renderFixtures,comps:renderComps,me:renderDrafters};
 function go(hash){ if(location.hash===hash)render(); else location.hash=hash; }
 function render(){
   if(!S)return;
@@ -342,6 +343,54 @@ function renderComp(key){
       <td class="dr">${r.drafted??"—"}</td><td><b>${esc(r.drafter)}</b></td><td>${esc(r.pick)}</td>
       <td class="n">${r.rank??"—"}</td><td class="n"><b>${r.points??"—"}</b>${r.bonus?` <span class="up">+${r.bonus}</span>`:""}</td></tr>`).join("")}</tbody></table>
     <div class="lbl" style="margin-top:8px">Sorted by points · <b>#</b> is the order this competition was drafted in.</div></div>`;
+}
+
+/* ---------------- fixtures ---------------- */
+let fxFilter="all";
+function dayLabel(iso){
+  const d=new Date(iso),now=new Date();
+  const diff=Math.round((new Date(d.getFullYear(),d.getMonth(),d.getDate())
+    -new Date(now.getFullYear(),now.getMonth(),now.getDate()))/864e5);
+  const date=d.toLocaleDateString(undefined,{weekday:"long",day:"numeric",month:"short"});
+  return diff===0?"Today":diff===1?"Tomorrow":date;
+}
+function allFixtures(){
+  const out=[];
+  if(!F||!F.sports)return out;
+  for(const [k,s] of sportOrder()){
+    for(const g of ((F.sports[k]||{}).games||[])){
+      out.push({key:k,comp:shortName(s.name),when:g.d,h2h:!!(g.hd&&g.ad),
+                home:{team:pickOf(k,g.hd)||g.h,owner:g.hd},
+                away:{team:pickOf(k,g.ad)||g.a,owner:g.ad}});
+    }
+  }
+  return out.sort((a,b)=>a.when.localeCompare(b.when));
+}
+function renderFixtures(){
+  const all=allFixtures();
+  if(!all.length){V().innerHTML=`<div class="card"><div class="h">Fixtures</div>
+    <div class="lbl">Nothing scheduled yet — the competitions with live feeds haven't started.</div></div>`;return}
+  const h2h=all.filter(x=>x.h2h).length;
+  const rows=fxFilter==="h2h"?all.filter(x=>x.h2h):all;
+  const groups=[];
+  for(const r of rows){
+    const key=new Date(r.when).toDateString();
+    let g=groups.find(x=>x.key===key);
+    if(!g){g={key,label:dayLabel(r.when),items:[]};groups.push(g)}
+    g.items.push(r);
+  }
+  const side=s=>s.owner?`<span style="color:var(--amber)">${esc(s.owner)}</span>`:`<span class="lbl">undrafted</span>`;
+  V().innerHTML=`<div class="seg">
+      <button class="${fxFilter==="all"?"on":""}" onclick="fxFilter='all';render()">Everything (${all.length})</button>
+      <button class="${fxFilter==="h2h"?"on":""}" onclick="fxFilter='h2h';render()">Head to head (${h2h})</button>
+    </div>
+    <div class="lbl" style="margin:-2px 0 10px">Every game a drafted team plays in the next ${F.days||21} days.</div>
+    ${groups.map(g=>`<div class="card"><div class="h">${esc(g.label)}</div>
+      ${g.items.map(x=>`<div class="row tap" onclick="go('#comp/${x.key}')"><div class="grow">
+        <div class="nm">${esc(x.home.team)} <span style="color:var(--mute);font-weight:400">v</span> ${esc(x.away.team)}</div>
+        <div class="lbl">${esc(x.comp)} · ${new Date(x.when).toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"})} · ${side(x.home)} v ${side(x.away)}</div>
+      </div>${x.h2h?`<span class="chip" style="color:var(--amber);border-color:rgba(255,194,26,.35)">H2H</span>`:""}</div>`).join("")}
+    </div>`).join("")}`;
 }
 
 /* ---------------- drafters ---------------- */
