@@ -393,6 +393,11 @@ function renderDrafter(name){
       <div class="tot" style="font-size:15px;color:${x.w>x.l?"var(--green)":x.w<x.l?"var(--red)":"var(--mute)"}">${x.w}–${x.l}</div></div>`).join("")}</div>`:""}`;
 }
 // next game for each of a drafter's picks, with who owns the opponent
+const pickOf=(key,drafter)=>{
+  if(!drafter)return null;
+  const r=(S.sports[key]||{rows:[]}).rows.find(x=>x.drafter===drafter);
+  return r?r.pick:null;
+};
 function lookAhead(name){
   const out=[];
   if(!F||!F.sports)return out;
@@ -402,8 +407,11 @@ function lookAhead(name){
     for(const g of fs.games){
       const home=g.hd===name,away=g.ad===name;
       if(!home&&!away)continue;
-      out.push({comp:shortName(s.name),key:k,when:g.d,home,
-                opp:home?g.a:g.h, owner:home?g.ad:g.hd});
+      const owner=home?g.ad:g.hd;
+      // show drafted teams by their draft-board name, so it reads like the rest of the app
+      out.push({comp:shortName(s.name),key:k,when:g.d,home,owner,
+                mine:pickOf(k,name)||(home?g.h:g.a),
+                opp:pickOf(k,owner)||(home?g.a:g.h)});
       break;                       // just the next one per competition
     }
   }
@@ -427,9 +435,8 @@ function lookAheadCard(name){
     <div class="lbl">No fixtures in the next three weeks — the competitions with feeds haven't started yet.</div></div>`;
   return `<div class="card"><div class="h">Next up</div>
     ${g.map(x=>`<div class="row tap" onclick="go('#comp/${x.key}')"><div class="grow">
-      <div class="nm">${x.home?"vs":"at"} ${esc(x.opp)}
-        <span class="lbl" style="font-weight:400">${x.owner?`— ${esc(x.owner)}`:"— undrafted"}</span></div>
-      <div class="lbl">${esc(x.comp)} · ${whenLabel(x.when)}</div></div>
+      <div class="nm">${esc(x.mine)} <span style="color:var(--mute);font-weight:400">${x.home?"vs":"at"}</span> ${esc(x.opp)}</div>
+      <div class="lbl">${esc(x.comp)} · ${whenLabel(x.when)} · ${x.owner?`${esc(x.owner)}'s team`:"undrafted"}</div></div>
       ${x.owner?`<span class="chip" style="color:var(--amber);border-color:rgba(255,194,26,.35)">head to head</span>`:`<span class="chip">free hit</span>`}
     </div>`).join("")}
     <div class="lbl" style="margin-top:8px">Your pick's next game in each competition. "Head to head" means another drafter owns the opponent.</div></div>`;

@@ -71,6 +71,16 @@ def look_ahead(S, days=7, path="docs/fixtures.json"):
         tz = datetime.timezone.utc
     now = datetime.datetime.now(datetime.timezone.utc)
     cut = now + datetime.timedelta(days=days)
+
+    def pick_of(key, drafter):
+        """Draft-board name for a drafter's team, so both sides read like the draft."""
+        if not drafter:
+            return None
+        for row in S["sports"].get(key, {}).get("rows", []):
+            if row["drafter"] == drafter:
+                return row["pick"]
+        return None
+
     out = []
     for r in S["ladder"]:
         d, rows = r["drafter"], []
@@ -82,9 +92,10 @@ def look_ahead(S, days=7, path="docs/fixtures.json"):
                 when = datetime.datetime.fromisoformat(g["d"].replace("Z", "+00:00"))
                 if when > cut:
                     break                      # games are sorted, so nothing sooner in this comp
-                opp = g["a"] if home else g["h"]
                 owner = g["ad"] if home else g["hd"]
-                rows.append(f"{s['name'].split(' (')[0]} — {'vs' if home else 'at'} {opp} "
+                mine = pick_of(key, d) or (g["h"] if home else g["a"])
+                opp = pick_of(key, owner) or (g["a"] if home else g["h"])
+                rows.append(f"{s['name'].split(' (')[0]} — {mine} {'vs' if home else 'at'} {opp} "
                             f"({owner or 'undrafted'}) on {when.astimezone(tz):%a %-d %b}")
                 break                          # just their next game in this competition
         if rows:

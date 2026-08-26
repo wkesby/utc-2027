@@ -72,6 +72,20 @@ def build(picks_path="data/picks.json", overrides_path="data/overrides.json"):
     out["ladder"] = [{"pos": i + 1, "drafter": d, **totals[d]} for i, d in enumerate(order)]
     return out
 
+def match_side(team, side):
+    """Match a draft name to one side of a fixture. Deliberately stricter than match():
+    a fixture only has two teams, so the loose 'same last word' rule in match() would pair
+    Newcastle United with Leeds United. Exact, alias, or one name containing the other."""
+    for cand in (team, ALIAS.get(team, team)):
+        if cand in side:
+            return side[cand]
+    t = ALIAS.get(team, team).lower()
+    for name, where in side.items():
+        n = name.lower()
+        if t == n or t in n or n in t:
+            return where
+    return None
+
 def build_fixtures(picks_path="data/picks.json", days=21):
     """Next games for every drafted team, with the opponent's owner attached so each drafter
     can see who they are up against. Head-to-head competitions only — racing and the per-event
@@ -97,7 +111,7 @@ def build_fixtures(picks_path="data/picks.json", days=21):
                 pick = picks[d].get(key)
                 if not pick:
                     continue
-                where = match(pick, side)
+                where = match_side(pick, side)
                 if where and owner[where] is None:
                     owner[where] = d
             if owner["home"] or owner["away"]:       # only games a drafted team is playing in
