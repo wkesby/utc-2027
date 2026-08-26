@@ -35,6 +35,8 @@ self.addEventListener("fetch", e => {
   } else if (isDoc) {                                       // the app itself: always try the network
     e.respondWith(fresh(e.request, SHELL, bare)
       .catch(() => caches.match(bare).then(r => r || caches.match("./index.html"))));
+  } else if (url.pathname.includes("/photos/")) {            // drafter photos: cache once, keep offline
+    e.respondWith(caches.match(e.request).then(r => r || fresh(e.request, SHELL, e.request.url)));
   } else {                                                  // icons and manifest: cache first
     e.respondWith(caches.match(e.request, {ignoreSearch: true}).then(r => r || fetch(e.request)));
   }

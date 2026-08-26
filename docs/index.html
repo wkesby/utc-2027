@@ -80,6 +80,12 @@ svg.chart{display:block;width:100%;max-width:440px;height:auto;margin:0 auto}
 .seg button{flex:0 0 auto;background:var(--panel);color:var(--mute);border:1px solid var(--line);
   border-radius:999px;padding:7px 13px;font:inherit;font-size:13px;cursor:pointer}
 .seg button.on{background:var(--amber);color:#111;border-color:var(--amber);font-weight:700}
+.av{position:relative;display:inline-grid;place-items:center;flex:0 0 auto;border-radius:50%;
+  background:var(--panel2);border:1px solid var(--line);color:var(--amber);font-weight:800;overflow:hidden}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.av.s{width:36px;height:36px;font-size:13px}
+.av.m{width:46px;height:46px;font-size:15px}
+.av.l{width:84px;height:84px;font-size:27px;border-width:2px}
 .tap{cursor:pointer;transition:background .15s}
 .tap:active{background:var(--panel2)}
 .back{display:inline-flex;align-items:center;gap:6px;color:var(--mute);font-size:13px;margin-bottom:10px;cursor:pointer}
@@ -123,6 +129,11 @@ input.search::placeholder{color:var(--mute)}
 <script>
 "use strict";
 const $=i=>document.getElementById(i), V=()=>$("view");
+const slug=n=>String(n).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const initials=n=>String(n).split(/\s+/).map(w=>w[0]).join("").slice(0,2).toUpperCase();
+// the <img> sits over the initials; if there's no photo for someone it removes itself
+const avatar=(n,size)=>`<span class="av ${size}"><i style="font-style:normal">${esc(initials(n))}</i>`+
+  `<img src="photos/${slug(n)}.jpg" alt="" loading="lazy" onerror="this.remove()"></span>`;
 const esc=t=>String(t==null?"":t).replace(/[<>&"']/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;","'":"&#39;"}[c]));
 let S=null,H=null,F=null,offline=false;
 
@@ -215,13 +226,13 @@ function renderLadder(){
   const top=S.ladder.slice(0,3),medal=["🥇","🥈","🥉"];
   V().innerHTML=`
   <div class="card"><div class="h">The podium</div>
-    <div class="tiles">${top.map((r,i)=>`<div class="tile tap" onclick="go('#d/${encodeURIComponent(r.drafter)}')">
-      <b>${medal[i]} ${r.total}</b><span>${esc(r.drafter)}</span></div>`).join("")}</div>
+    <div class="tiles">${top.map((r,i)=>`<div class="tile tap" style="text-align:center" onclick="go('#d/${encodeURIComponent(r.drafter)}')">
+      ${avatar(r.drafter,"m")}<b style="margin-top:6px">${medal[i]} ${r.total}</b><span>${esc(r.drafter)}</span></div>`).join("")}</div>
   </div>
   <div class="card"><div class="h">Full ladder</div>
     ${S.ladder.map(r=>{const m=mv[r.drafter],ar=m>0?`<span class="up">▲${m}</span>`:m<0?`<span class="down">▼${-m}</span>`:`<span class="flat">–</span>`;
       return `<div class="row tap" onclick="go('#d/${encodeURIComponent(r.drafter)}')">
-        <div class="pos">${r.pos}</div>
+        <div class="pos">${r.pos}</div>${avatar(r.drafter,"s")}
         <div class="grow"><div class="nm">${esc(r.drafter)}</div>
           <div class="lbl">${r.confirmed} confirmed · ${r.inplay} in play${P[r.drafter].wins?` · ${P[r.drafter].wins} comp win${P[r.drafter].wins>1?"s":""}`:""}</div>
           <div class="bar"><i style="width:${(r.confirmed/lead*100).toFixed(1)}%;background:var(--green)"></i><i style="width:${(r.inplay/lead*100).toFixed(1)}%;background:var(--amber)"></i></div>
@@ -399,7 +410,7 @@ function renderDrafters(){
   V().innerHTML=`<div class="card"><div class="h">Pick a drafter</div>
     ${S.ladder.map(r=>{const p=P[r.drafter];
       return `<div class="row tap" onclick="go('#d/${encodeURIComponent(r.drafter)}')">
-      <div class="pos">${r.pos}</div><div class="grow"><div class="nm">${esc(r.drafter)}</div>
+      <div class="pos">${r.pos}</div>${avatar(r.drafter,"s")}<div class="grow"><div class="nm">${esc(r.drafter)}</div>
       <div class="lbl">${p.picks.length} scoring · ${p.wins} win${p.wins===1?"":"s"} · ${p.val>0?"+":""}${p.val} vs par</div></div>
       <div class="tot">${r.total}</div></div>`}).join("")}</div>`;
 }
@@ -416,8 +427,10 @@ function renderDrafter(name){
     return {d,w,l};
   }).sort((a,b)=>(b.w-b.l)-(a.w-a.l));
   V().innerHTML=`<div class="back" onclick="go('#me')">← All drafters</div>
-  <div class="card"><div style="display:flex;align-items:flex-end;gap:12px">
-    <div><div class="lbl">Position ${lr.pos} of 11</div><div class="big">${lr.total}</div></div>
+  <div class="card"><div style="display:flex;align-items:center;gap:14px">
+    ${avatar(name,"l")}
+    <div><div class="nm" style="font-size:19px">${esc(name)}</div>
+      <div class="lbl">Position ${lr.pos} of 11</div><div class="big">${lr.total}</div></div>
     <div class="grow lbl" style="text-align:right">${lr.confirmed} confirmed<br>${lr.inplay} in play${lr.bonus?`<br>${lr.bonus} bonus`:""}</div></div>
     ${sparkline(name)}</div>
   ${lookAheadCard(name)}
