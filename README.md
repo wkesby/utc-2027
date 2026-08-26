@@ -1,6 +1,6 @@
 # UTC 2027 — live standings
 
-Scores the Ultimate Tipping Comp automatically: feeds → competition order → UTC points (11 down to 1, +2 for a win), split into **in play** and **confirmed**. Publishes a phone-friendly page and a weekly report.
+Scores the Ultimate Tipping Comp automatically: feeds → competition order → UTC points (11 down to 1, +2 for a win), split into **in play** and **confirmed**. Publishes an installable phone app (ladder, per-drafter stats, competition browser) and a weekly report.
 
 ## Setup (15 minutes, once)
 1. Create a **public** GitHub repository called `utc-2027` and upload everything in this folder (or push it with git / Claude Code).
@@ -28,4 +28,4 @@ The ESPN adapter was written without live network access — the first Actions r
 Trades: edit `data/picks.json` after each window.
 
 ## Files
-`utc/sports.py` the 20 competitions · `utc/scoring.py` the points rules · `utc/engine.py` builds `docs/standings.json` · `utc/report.py` weekly text + PNG · `utc/send.py` email · `feeds/` adapters · `docs/index.html` the page.
+`utc/sports.py` the 20 competitions · `utc/scoring.py` the points rules · `utc/engine.py` builds `docs/standings.json` · `utc/report.py` weekly text + PNG · `utc/send.py` email · `feeds/` adapters · `docs/index.html` the phone app (installable PWA: Share → Add to Home Screen).
