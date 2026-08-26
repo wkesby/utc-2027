@@ -63,11 +63,15 @@ def standings(path):
     year = data.get("season", {}).get("year")
     if season and year and str(year) != season:
         return {}
-    rows, started = [], False
+    rows, started, locs = [], False, {}
     for e in _entries(data, []):
-        name = e.get("team", {}).get("displayName") or e.get("athlete", {}).get("displayName")
+        team = e.get("team", {})
+        name = team.get("displayName") or e.get("athlete", {}).get("displayName")
         if not name:
             continue
+        loc = team.get("location")
+        if loc and loc != name:
+            locs.setdefault(loc, set()).add(name)
         rank = _stat(e, "rank")
         winpct = _stat(e, "winPercent", "winPercentage")
         if winpct is None:
@@ -79,8 +83,18 @@ def standings(path):
         rows.append((name, rank, winpct, seed, pts))
     if not started:
         return {}
+    def with_locations(table):
+        """'Texas' -> Texas Longhorns, distinct from 'Texas A&M' and 'North Texas'.
+        Only unambiguous locations are added, so a shared one is never guessed at."""
+        for loc, names in locs.items():
+            if len(names) == 1 and loc not in table:
+                only = next(iter(names))
+                if only in table:
+                    table[loc] = table[only]
+        return table
+
     if rows and all(r[1] is not None for r in rows):
-        return {n: int(r) for n, r, *_ in rows}
+        return with_locations({n: int(r) for n, r, *_ in rows})
     if any(r[2] is not None for r in rows):
         key = lambda r: (-(r[2] or 0), r[3] if (r[3] or 0) > 0 else 999)
     else:
@@ -92,7 +106,7 @@ def standings(path):
         if v != last:
             rank = i + 1; last = v
         out[r[0]] = rank
-    return out
+    return with_locations(out)
 
 
 def fixtures(path, days=10):
@@ -113,10 +127,28 @@ def fixtures(path, days=10):
         if comp.get("status", {}).get("type", {}).get("completed"):
             continue
         home = away = None
+        hloc = aloc = None
         for c in comp.get("competitors", []):
-            nm = c.get("team", {}).get("displayName")
-            if c.get("homeAway") == "home": home = nm
-            elif c.get("homeAway") == "away": away = nm
+            team = c.get("team", {})
+            nm, loc = team.get("displayName"), team.get("location")
+            if c.get("homeAway") == "home": home, hloc = nm, loc
+            elif c.get("homeAway") == "away": away, aloc = nm, loc
         if home and away and e.get("date"):
-            out.append({"date": e["date"], "home": home, "away": away})
+            out.append({"date": e["date"], "home": home, "away": away,
+                        "home_loc": hloc, "away_loc": aloc})
     return sorted(out, key=lambda g: g["date"])
+
+
+def teams(path):
+    """Every team in a competition as (display name, location). Used to resolve a draft
+    name to exactly one club before fixtures are matched."""
+    path, _, season = path.partition("@")
+    url = f"https://site.web.api.espn.com/apis/v2/sports/{path}/standings"
+    if season:
+        url += f"?season={season}"
+    out = []
+    for e in _entries(_get(url), []):
+        t = e.get("team", {})
+        if t.get("displayName"):
+            out.append((t["displayName"], t.get("location") or ""))
+    return out
