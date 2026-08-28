@@ -12,7 +12,7 @@ Scores the Ultimate Tipping Comp automatically: feeds → competition order → 
 
 ## How the week works
 - 04:00 AEST daily: standings refresh from live feeds.
-- Every 5 minutes: new banter-wall posts go out as phone notifications (once the section below is set up) — GitHub's scheduler adds a little jitter, so a sledge typically lands within a few minutes.
+- Every 5 minutes: new banter-wall posts go out as phone notifications (once the section below is set up) — GitHub's scheduler adds a little jitter, so a sledge typically lands within a few minutes, or in ~2 seconds with the instant upgrade below.
 - 14:00 Melbourne Tuesday: report built, ladder image rendered, **pushed as a notification to every phone that opted in**, and emailed to you with a **one-tap WhatsApp share link** for anyone still on the old channel — tap, choose the group, send. WhatsApp has no official way for software to post into a group, so that tap stays human; notifications from the app itself don't need it.
 
 ## Switch on banter & notifications (10 minutes, once, free, optional)
@@ -26,6 +26,21 @@ The app's **Banter** tab is a wall where the group comments on each other's perf
 6. **Actions → UTC banter check → Run workflow.** Every line prints PASS or FAIL with the fix. All PASS = the Banter tab is live and each drafter flicks notifications on inside the app — iPhone needs the app installed to the Home Screen (iOS 16.4+); Android works installed or in Chrome. Run it again with the *test notification* box ticked once your phone has opted in, and it should buzz.
 
 Posting names are an honour system, same as the tipping. If the wall ever needs moderating, delete documents in the Firebase console (the app can't).
+
+### Instant sledging (optional upgrade)
+Out of the box a GitHub workflow pushes new banter every 5 minutes. For ~2-second delivery, deploy the included Cloud Function (`functions/`): it fires the moment a message lands and pushes immediately, and it advances the same marker the workflow uses — so the workflow becomes a safety net that only sends what the function missed, and nothing is ever sent twice.
+
+1. Firebase console → ⚙ → **Usage and billing** → upgrade to the **Blaze** plan. A card is required, but this function sits comfortably inside the free quota (and `maxInstances` in `functions/index.js` caps any runaway), so the bill stays $0.
+2. On your Mac, from the repo folder (needs Node.js — `brew install node` if you don't have it):
+   ```
+   npx firebase-tools login
+   npx firebase-tools functions:secrets:set VAPID_PRIVATE_KEY   # paste the same key as the GitHub secret
+   npx firebase-tools deploy --only functions
+   ```
+   The first deploy switches on several Google Cloud APIs and can take a few minutes.
+3. Post on the wall from one phone with another phone opted in — the buzz should arrive within a couple of seconds.
+
+If the deploy complains about the trigger location, the database isn't in `australia-southeast1`: change `region` in `functions/index.js` to the location shown at the top of the Firestore Data page and deploy again. Once instant delivery is confirmed, relax the schedule in `.github/workflows/banter.yml` from every 5 minutes to hourly — that's its safety-net cadence.
 
 ## Feeds
 | Automatic (ESPN / Squiggle) | Manual for now (edit `data/overrides.json`) |
