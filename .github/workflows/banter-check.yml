@@ -1,0 +1,31 @@
+name: UTC banter check
+# Manual: run after the README's banter setup. Prints PASS/FAIL for every piece
+# (config, Firestore, rules, keys); tick the box to also send a test notification
+# to every phone that has switched notifications on.
+on:
+  workflow_dispatch:
+    inputs:
+      test_push:
+        description: "Also send a test notification to opted-in phones"
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pywebpush
+      - name: Check the setup
+        env:
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+        run: python -m utc.check
+      - name: Send a test notification
+        if: inputs.test_push
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+        run: python -m utc.notify test

@@ -1,0 +1,43 @@
+// Paste into Firebase console → Firestore Database → Rules → Publish.
+// The app talks to Firestore straight over REST with no login (the comp is 11 mates
+// and an obscure URL), so these rules are the only guard: anyone can read the wall
+// and post to it, but posts are size-capped, shape-checked and can never be edited
+// or deleted. Push subscriptions are write/delete only in practice — reading them
+// gains nothing without the VAPID private key, which lives in a GitHub secret.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // The banter wall. n = drafter name, x = the message, re = optional target
+    // drafter ("who this sledge is aimed at"), t = client timestamp.
+    match /messages/{id} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['n', 'x', 're', 't'])
+        && request.resource.data.n is string
+        && request.resource.data.n.size() > 0 && request.resource.data.n.size() <= 40
+        && request.resource.data.x is string
+        && request.resource.data.x.size() > 0 && request.resource.data.x.size() <= 400
+        && (!('re' in request.resource.data)
+            || (request.resource.data.re is string && request.resource.data.re.size() <= 40))
+        && request.resource.data.t is timestamp;
+      allow update, delete: if false;
+    }
+
+    // Web-push subscriptions, one per phone that switches notifications on.
+    // Delete is open so a phone can switch itself off and the GitHub workflow
+    // can clean out dead endpoints.
+    match /subs/{id} {
+      allow read, delete: if true;
+      allow create: if request.resource.data.keys().hasOnly(['sub', 'n', 't'])
+        && request.resource.data.sub is string
+        && request.resource.data.sub.size() <= 4000;
+      allow update: if false;
+    }
+
+    // One bookkeeping doc: the timestamp the hourly notifier last ran, so each
+    // message is pushed exactly once.
+    match /meta/{id} {
+      allow read, write: if true;
+    }
+  }
+}

@@ -1,8 +1,9 @@
 // v2 — the shell is network-first so a deploy actually reaches installed phones.
 // v1 served index.html cache-first, which froze installed apps on whatever HTML they
 // cached first; the cache only ever refreshed if this file itself changed.
-const SHELL = "utc-shell-v2";
-const DATA = "utc-data-v2";
+// v3 adds web-push handlers for the banter wall and weekly wrap.
+const SHELL = "utc-shell-v3";
+const DATA = "utc-data-v3";
 const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png"];
 
 self.addEventListener("install", e => {
@@ -16,6 +17,30 @@ self.addEventListener("activate", e => {
   e.waitUntil(caches.keys()
     .then(keys => Promise.all(keys.filter(k => k !== SHELL && k !== DATA).map(k => caches.delete(k))))
     .then(() => self.clients.claim()));
+});
+
+// Web push: the GitHub workflow sends {title, body, url, tag} as JSON.
+self.addEventListener("push", e => {
+  let d = {};
+  try { d = e.data.json(); } catch (_) {}
+  e.waitUntil(self.registration.showNotification(d.title || "UTC 2027", {
+    body: d.body || "", icon: "./icon-192.png", badge: "./icon-192.png",
+    tag: d.tag || "utc", data: { url: d.url || "./" }
+  }));
+});
+
+self.addEventListener("notificationclick", e => {
+  e.notification.close();
+  const url = new URL((e.notification.data && e.notification.data.url) || "./", self.location.href).href;
+  e.waitUntil(clients.matchAll({ type: "window", includeUncontrolled: true }).then(ws => {
+    for (const w of ws) {
+      if (w.url.split("#")[0] === url.split("#")[0] && "focus" in w) {
+        if ("navigate" in w) w.navigate(url).catch(() => {});
+        return w.focus();
+      }
+    }
+    return clients.openWindow(url);
+  }));
 });
 
 const fresh = (req, cacheName, key) => fetch(req).then(r => {
