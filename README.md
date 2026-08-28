@@ -11,7 +11,7 @@ Scores the Ultimate Tipping Comp automatically: feeds → competition order → 
 4. **Actions → UTC standings → Run workflow** once to prove it. The first run creates `docs/standings.json`, a report and the ladder PNG.
 
 ## How the week works
-- 04:00 AEST daily: standings refresh from live feeds.
+- Hourly: standings, fixtures and results refresh from the live feeds, so the ladder follows the games through the day. (The app also overlays live in-game scores itself while you watch the Fixtures tab.)
 - Every 5 minutes: new banter-wall posts go out as phone notifications (once the section below is set up) — GitHub's scheduler adds a little jitter, so a sledge typically lands within a few minutes, or in ~2 seconds with the instant upgrade below.
 - 14:00 Melbourne Tuesday: report built, ladder image rendered, **pushed as a notification to every phone that opted in**, and emailed to you with a **one-tap WhatsApp share link** for anyone still on the old channel — tap, choose the group, send. WhatsApp has no official way for software to post into a group, so that tap stays human; notifications from the app itself don't need it.
 

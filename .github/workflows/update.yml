@@ -1,7 +1,10 @@
 name: UTC standings
 on:
   schedule:
-    - cron: "0 18 * * *"     # daily 04:00 AEST — refresh the live table
+    # Hourly — the ladder and fixture results follow the games through the day instead
+    # of waiting for 4am. Minute 17 dodges GitHub's congested on-the-hour slot and never
+    # coincides with the report crons below.
+    - cron: "17 * * * *"
     # Weekly report: Tuesday 14:00 Melbourne. Cron is UTC-only and Melbourne moves with
     # daylight saving, so both candidate hours run and the step below keeps the right one.
     - cron: "0 3 * * 2"      # = Tue 14:00 AEDT (Oct–Apr)
@@ -9,6 +12,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: utc-standings       # hourly runs queue behind a slow report run, never race its push
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,8 +28,11 @@ jobs:
       - name: Weekly report slot? (Tue 2pm Melbourne, or a manual run)
         id: slot
         run: |
+          # Only the two dedicated report crons (or a manual run) can be the slot — the
+          # hourly cron also passes through Tue 2pm Melbourne and must not re-send the wrap.
           now=$(TZ=Australia/Melbourne date "+%u%H")   # day-of-week + hour, 214 = Tuesday 2pm
-          if [ "$now" = "214" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          sched="${{ github.event.schedule }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || { [ "$now" = "214" ] && [ "$sched" != "17 * * * *" ]; }; then
             echo "go=true" >> "$GITHUB_OUTPUT"
           else
             echo "go=false" >> "$GITHUB_OUTPUT"
@@ -52,5 +61,5 @@ jobs:
       - name: Commit results
         run: |
           git config user.name "utc-bot" && git config user.email "utc-bot@users.noreply.github.com"
-          git add docs && git commit -m "standings $(date -u +%F)" || echo "no change"
+          git add docs && git commit -m "standings $(date -u '+%F %H:%M')" || echo "no change"
           git push
