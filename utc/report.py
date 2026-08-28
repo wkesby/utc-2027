@@ -86,6 +86,8 @@ def look_ahead(S, days=7, path="docs/fixtures.json"):
         d, rows = r["drafter"], []
         for key, s in fx.get("sports", {}).items():
             for g in s.get("games", []):
+                if g.get("st") == "post":          # fixtures now carry results too — not "next"
+                    continue
                 home = g.get("hd") == d
                 if not home and g.get("ad") != d:
                     continue

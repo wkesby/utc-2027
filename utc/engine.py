@@ -106,21 +106,24 @@ def match_side(team, side):
             if (n := name.lower()) == t or t in n.split(" (")[0].split() or n in t}
     return hits.pop() if len(hits) == 1 else None
 
-def build_fixtures(picks_path="data/picks.json", days=21):
-    """Next games for every drafted team, with the opponent's owner attached so each drafter
-    can see who they are up against. Head-to-head competitions only — racing and the per-event
-    sports have no fixtures to show."""
+def build_fixtures(picks_path="data/picks.json", days=21, past=7):
+    """Games for every drafted team — the next `days` ahead plus the last `past` days of
+    results — with the opponent's owner attached so each drafter can see who they are up
+    against. Live and finished games carry their score and status; every game carries ESPN's
+    event id and each sport its ESPN path, so the app can overlay fresher scores straight
+    from the scoreboard between daily runs. Head-to-head competitions only — racing and the
+    per-event sports have no fixtures to show."""
     P = load(picks_path)
     drafters, picks = P["drafters"], P["picks"]
     out = {"generated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="minutes"),
-           "days": days, "sports": {}}
+           "days": days, "past": past, "sports": {}}
     for key, (name, feed_id, window, note, start) in SPORTS.items():
         kind, _, arg = feed_id.partition(":")
         if kind != "espn" or arg.startswith("racing"):
             continue
         espn = importlib.import_module("feeds.espn")
         try:
-            games = espn.fixtures(arg, days)
+            games = espn.fixtures(arg, days, past)
             team_list = espn.teams(arg)
         except Exception as e:
             out["sports"][key] = {"name": name, "error": f"{type(e).__name__}: {e}", "games": []}
@@ -136,9 +139,17 @@ def build_fixtures(picks_path="data/picks.json", days=21):
         for g in games:
             owner = {"home": owner_of.get(g["home"]), "away": owner_of.get(g["away"])}
             if owner["home"] or owner["away"]:       # only games a drafted team is playing in
-                rows.append({"d": g["date"], "h": g["home"], "a": g["away"],
-                             "hd": owner["home"], "ad": owner["away"]})
-        out["sports"][key] = {"name": name, "games": rows}
+                row = {"d": g["date"], "h": g["home"], "a": g["away"],
+                       "hd": owner["home"], "ad": owner["away"]}
+                if g.get("id"):
+                    row["i"] = g["id"]
+                if g.get("state") in ("in", "post"):
+                    row["st"] = g["state"]
+                    row["hs"], row["as"] = g.get("home_score"), g.get("away_score")
+                    if g.get("detail"):
+                        row["t"] = g["detail"]
+                rows.append(row)
+        out["sports"][key] = {"name": name, "path": arg.partition("@")[0], "games": rows}
     return out
 
 def log_history(res, path="docs/history.json"):
@@ -172,4 +183,4 @@ if __name__ == "__main__":
         print(f"{r['pos']:>2} {r['drafter']:<11} total {r['total']:>3}  confirmed {r['confirmed']:>3}  in play {r['inplay']:>3}  bonus {r['bonus']}  ({r['scored']}/20 sports scoring)")
     print("sources:", {k: v["source"] for k, v in res["sports"].items() if not v["source"].startswith("awaiting")})
     print(f"history: {days} day(s) logged")
-    print(f"fixtures: {nfx} upcoming games with a drafted team")
+    print(f"fixtures: {nfx} games with a drafted team (upcoming + recent results)")
