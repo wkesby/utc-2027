@@ -379,7 +379,7 @@ function dayLabel(iso){
   const diff=Math.round((new Date(d.getFullYear(),d.getMonth(),d.getDate())
     -new Date(now.getFullYear(),now.getMonth(),now.getDate()))/864e5);
   const date=d.toLocaleDateString(undefined,{weekday:"long",day:"numeric",month:"short"});
-  return diff===0?"Today":diff===1?"Tomorrow":date;
+  return diff===0?"Today":diff===1?"Tomorrow":diff===-1?"Yesterday":date;
 }
 function allFixtures(){
   const out=[];
@@ -387,8 +387,9 @@ function allFixtures(){
   for(const [k,s] of sportOrder()){
     for(const g of ((F.sports[k]||{}).games||[])){
       out.push({key:k,comp:shortName(s.name),when:g.d,h2h:!!(g.hd&&g.ad),
-                home:{team:pickOf(k,g.hd)||g.h,owner:g.hd},
-                away:{team:pickOf(k,g.ad)||g.a,owner:g.ad}});
+                st:g.st||"pre",hs:g.hs,as:g.as,dt:g.t,
+                home:{team:pickOf(k,g.hd)||g.h,owner:g.hd,score:g.hs},
+                away:{team:pickOf(k,g.ad)||g.a,owner:g.ad,score:g.as}});
     }
   }
   return out.sort((a,b)=>a.when.localeCompare(b.when));
@@ -397,8 +398,11 @@ function renderFixtures(){
   const all=allFixtures();
   if(!all.length){V().innerHTML=`<div class="card"><div class="h">Fixtures</div>
     <div class="lbl">Nothing scheduled yet — the competitions with live feeds haven't started.</div></div>`;return}
-  const h2h=all.filter(x=>x.h2h).length;
-  const rows=fxFilter==="h2h"?all.filter(x=>x.h2h):all;
+  const upcoming=all.filter(x=>x.st!=="post"),results=all.filter(x=>x.st==="post");
+  const h2h=upcoming.filter(x=>x.h2h).length;
+  if(fxFilter==="res"&&!results.length)fxFilter="all";
+  const rows=fxFilter==="res"?results.slice().reverse()       // results read newest first
+    :fxFilter==="h2h"?upcoming.filter(x=>x.h2h):upcoming;
   const groups=[];
   for(const r of rows){
     const key=new Date(r.when).toDateString();
@@ -406,18 +410,81 @@ function renderFixtures(){
     if(!g){g={key,label:dayLabel(r.when),items:[]};groups.push(g)}
     g.items.push(r);
   }
-  const side=s=>s.owner?`<span style="color:var(--amber)">${esc(s.owner)}</span>`:`<span class="lbl">undrafted</span>`;
+  // in a result, colour each owner by how their team went; before and during, just their colour
+  const outcome=(x,mine,theirs)=>x.st!=="post"?null:Number(mine.score)-Number(theirs.score);
+  const side=(s,res)=>s.owner?`<span style="color:${res==null||isNaN(res)?"var(--amber)":res>0?"var(--green)":res<0?"var(--red)":"var(--mute)"}">${esc(s.owner)}</span>`
+    :`<span class="lbl">undrafted</span>`;
+  const title=x=>x.st==="pre"
+    ?`${esc(x.home.team)} <span style="color:var(--mute);font-weight:400">v</span> ${esc(x.away.team)}`
+    :`${esc(x.home.team)} <b>${esc(x.hs??"–")}–${esc(x.as??"–")}</b> ${esc(x.away.team)}`;
+  const chip=x=>x.st==="in"?`<span class="chip live">${esc(x.dt||"live")}</span>`
+    :x.st==="post"?`<span class="chip final">${esc(x.dt||"final")}</span>`
+    :x.h2h?`<span class="chip" style="color:var(--amber);border-color:rgba(255,194,26,.35)">H2H</span>`:"";
   V().innerHTML=`<div class="seg">
-      <button class="${fxFilter==="all"?"on":""}" onclick="fxFilter='all';render()">Everything (${all.length})</button>
+      <button class="${fxFilter==="all"?"on":""}" onclick="fxFilter='all';render()">Upcoming (${upcoming.length})</button>
       <button class="${fxFilter==="h2h"?"on":""}" onclick="fxFilter='h2h';render()">Head to head (${h2h})</button>
+      ${results.length?`<button class="${fxFilter==="res"?"on":""}" onclick="fxFilter='res';render()">Results (${results.length})</button>`:""}
     </div>
-    <div class="lbl" style="margin:-2px 0 10px">Every game a drafted team plays in the next ${F.days||21} days.</div>
+    <div class="lbl" style="margin:-2px 0 10px">${fxFilter==="res"
+      ?`Every result for a drafted team from the last ${F.past||7} days. Green owner won, red lost.`
+      :`Every game a drafted team plays in the next ${F.days||21} days. Live scores update while you watch.`}</div>
     ${groups.map(g=>`<div class="card"><div class="h">${esc(g.label)}</div>
       ${g.items.map(x=>`<div class="row tap" onclick="go('#comp/${x.key}')"><div class="grow">
-        <div class="nm">${esc(x.home.team)} <span style="color:var(--mute);font-weight:400">v</span> ${esc(x.away.team)}</div>
-        <div class="lbl">${esc(x.comp)} · ${new Date(x.when).toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"})} · ${side(x.home)} v ${side(x.away)}</div>
-      </div>${x.h2h?`<span class="chip" style="color:var(--amber);border-color:rgba(255,194,26,.35)">H2H</span>`:""}</div>`).join("")}
+        <div class="nm">${title(x)}</div>
+        <div class="lbl">${esc(x.comp)} · ${new Date(x.when).toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"})} · ${side(x.home,outcome(x,x.home,x.away))} v ${side(x.away,outcome(x,x.away,x.home))}</div>
+      </div>${chip(x)}</div>`).join("")}
     </div>`).join("")}`;
+  refreshLive();
+}
+/* live scores: while fixtures or a drafter page is open, overlay ESPN's own scoreboard
+   onto the games in fixtures.json, so scores move between the daily rebuilds. Games are
+   matched by the event id the daily run bakes in; until a fixtures file has ids, the same
+   two teams at the same kick-off is the match, and the scoreboard paths below stand in
+   (they mirror utc/sports.py) — so live scores work even on a fixtures file from before
+   this feature. If ESPN can't be reached the baked-in scores simply stand. */
+const FXPATH={epl:"soccer/eng.1",bund:"soccer/ger.1",ncaa:"football/college-football",nfl:"football/nfl",
+  ucl:"soccer/uefa.champions",nhl:"hockey/nhl",nba:"basketball/nba",mlb:"baseball/mlb"};
+let liveBusy=false,liveLast=0;
+async function refreshLive(force){
+  if(!F||!F.sports||liveBusy)return;
+  if(!force&&Date.now()-liveLast<45e3)return;       // at most one sweep per ~minute
+  const now=Date.now();
+  const need=Object.entries(F.sports).map(([k,s])=>[s,s.path||FXPATH[k]])
+    .filter(([s,path])=>path&&(s.games||[]).some(g=>{
+      if(g.st==="in")return true;                   // mid-game: always worth a look
+      if(g.st==="post")return false;
+      const t=new Date(g.d).getTime();              // starts within the hour, or should have
+      return t-now<36e5&&now-t<12*36e5;             // started less than 12h ago
+    }));
+  if(!need.length)return;
+  liveBusy=true;liveLast=now;
+  const f=t=>new Date(t).toISOString().slice(0,10).replace(/-/g,"");
+  let changed=false;
+  await Promise.all(need.map(async([s,path])=>{
+    try{
+      const r=await fetch(`https://site.web.api.espn.com/apis/site/v2/sports/${path}/scoreboard?dates=${f(now-864e5)}-${f(now+864e5)}`);
+      if(!r.ok)return;
+      for(const ev of ((await r.json()).events||[])){
+        const comp=(ev.competitions||[{}])[0],ty=((comp.status||ev.status||{}).type)||{};
+        if(ty.state!=="in"&&ty.state!=="post")continue;
+        let hs,as,hn,an;
+        for(const c of comp.competitors||[]){
+          const nm=(c.team||{}).displayName;
+          if(c.homeAway==="home"){hs=c.score;hn=nm} else if(c.homeAway==="away"){as=c.score;an=nm}
+        }
+        const g=s.games.find(x=>x.i&&x.i===ev.id)||s.games.find(x=>!x.i&&x.h===hn&&x.a===an&&
+          Math.abs(new Date(x.d)-new Date(ev.date))<36e5);   // kick-off match: safe for doubleheaders
+        if(!g)continue;
+        const t=ty.shortDetail||"";
+        if(g.st!==ty.state||g.hs!==hs||g.as!==as||g.t!==t){
+          g.st=ty.state;g.hs=hs;g.as=as;g.t=t;changed=true;
+        }
+      }
+    }catch(e){}
+  }));
+  liveBusy=false;
+  const base=(location.hash||"#ladder").slice(1).split("/")[0];
+  if(changed&&(base==="fix"||base==="d"))render();
 }
 
 /* ---------------- drafters ---------------- */
@@ -471,6 +538,7 @@ function renderDrafter(name){
     <div class="lbl" style="margin:-4px 0 10px">Across the ${p.picks.length} competition${p.picks.length===1?"":"s"} scoring so far.</div>
     ${h2h.map(x=>`<div class="row"><div class="grow nm">${esc(x.d)}</div>
       <div class="tot" style="font-size:15px;color:${x.w>x.l?"var(--green)":x.w<x.l?"var(--red)":"var(--mute)"}">${x.w}–${x.l}</div></div>`).join("")}</div>`:""}`;
+  refreshLive();
 }
 // next game for each of a drafter's picks, with who owns the opponent
 const pickOf=(key,drafter)=>{
@@ -485,11 +553,13 @@ function lookAhead(name){
     const fs=F.sports[k];
     if(!fs||!fs.games)continue;
     for(const g of fs.games){
+      if(g.st==="post")continue;   // results live in the fixtures file too — not "next"
       const home=g.hd===name,away=g.ad===name;
       if(!home&&!away)continue;
       const owner=home?g.ad:g.hd;
       // show drafted teams by their draft-board name, so it reads like the rest of the app
-      out.push({comp:shortName(s.name),key:k,when:g.d,home,owner,
+      out.push({comp:shortName(s.name),key:k,when:g.d,home,owner,live:g.st==="in",
+                ms:home?g.hs:g.as,os:home?g.as:g.hs,dt:g.t,
                 mine:pickOf(k,name)||(home?g.h:g.a),
                 opp:pickOf(k,owner)||(home?g.a:g.h)});
       break;                       // just the next one per competition
@@ -515,9 +585,11 @@ function lookAheadCard(name){
     <div class="lbl">No fixtures in the next three weeks — the competitions with feeds haven't started yet.</div></div>`;
   return `<div class="card"><div class="h">Next up</div>
     ${g.map(x=>`<div class="row tap" onclick="go('#comp/${x.key}')"><div class="grow">
-      <div class="nm">${esc(x.mine)} <span style="color:var(--mute);font-weight:400">${x.home?"vs":"at"}</span> ${esc(x.opp)}</div>
-      <div class="lbl">${esc(x.comp)} · ${whenLabel(x.when)} · ${x.owner?`${esc(x.owner)}'s team`:"undrafted"}</div></div>
-      ${x.owner?`<span class="chip" style="color:var(--amber);border-color:rgba(255,194,26,.35)">head to head</span>`:`<span class="chip">free hit</span>`}
+      <div class="nm">${x.live?`${esc(x.mine)} <b>${esc(x.ms??"–")}–${esc(x.os??"–")}</b> ${esc(x.opp)}`
+        :`${esc(x.mine)} <span style="color:var(--mute);font-weight:400">${x.home?"vs":"at"}</span> ${esc(x.opp)}`}</div>
+      <div class="lbl">${esc(x.comp)} · ${x.live?`live now${x.dt?` · ${esc(x.dt)}`:""}`:whenLabel(x.when)} · ${x.owner?`${esc(x.owner)}'s team`:"undrafted"}</div></div>
+      ${x.live?`<span class="chip live">live</span>`
+        :x.owner?`<span class="chip" style="color:var(--amber);border-color:rgba(255,194,26,.35)">head to head</span>`:`<span class="chip">free hit</span>`}
     </div>`).join("")}
     <div class="lbl" style="margin-top:8px">Your pick's next game in each competition. "Head to head" means another drafter owns the opponent.</div></div>`;
 }
@@ -713,6 +785,9 @@ $("share").onclick=async()=>{
        else { await navigator.clipboard.writeText(text+" "+url); toast("Link copied"); } }
   catch(e){}
 };
+// live scores: while fixtures or a drafter page is on screen, sweep ESPN every minute
+setInterval(()=>{ const base=(location.hash||"#ladder").slice(1).split("/")[0];
+  if(!document.hidden&&(base==="fix"||base==="d"))refreshLive(); },6e4);
 // refresh when the app comes back to the foreground, and every 10 minutes
 let last=Date.now();
 addEventListener("visibilitychange",async()=>{ if(!document.hidden&&Date.now()-last>6e4){await load();last=Date.now();render()} });

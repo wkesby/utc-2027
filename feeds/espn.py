@@ -109,12 +109,16 @@ def standings(path):
     return with_locations(out)
 
 
-def fixtures(path, days=10):
-    """Upcoming games for a competition: [{date, home, away}], soonest first.
+def fixtures(path, days=10, past=0):
+    """Games for a competition inside a window: [{date, home, away, ...}], soonest first.
+    With past > 0 the window reaches back that many days and finished games are kept, each
+    carrying its state ('in'/'post'), score and status line — that is the result history and
+    the score fallback the app shows when it can't reach ESPN itself. Every game also carries
+    ESPN's event id so a live page can overlay fresher scores onto the same game.
     Preseason events are dropped so the look-ahead matches what actually scores."""
     path, _, season = path.partition("@")
     today = datetime.date.today()
-    rng = f"{today:%Y%m%d}-{today + datetime.timedelta(days=days):%Y%m%d}"
+    rng = f"{today - datetime.timedelta(days=past):%Y%m%d}-{today + datetime.timedelta(days=days):%Y%m%d}"
     data = _get(f"https://site.web.api.espn.com/apis/site/v2/sports/{path}/scoreboard?dates={rng}")
     out = []
     for e in data.get("events", []):
@@ -124,18 +128,25 @@ def fixtures(path, days=10):
         if season and s.get("year") and str(s["year"]) != season:
             continue                                 # a different season to the one this comp scores
         comp = (e.get("competitions") or [{}])[0]
-        if comp.get("status", {}).get("type", {}).get("completed"):
+        stype = (comp.get("status") or e.get("status") or {}).get("type", {})
+        if stype.get("completed") and not past:      # results only wanted when a window asks for them
             continue
         home = away = None
         hloc = aloc = None
+        hs = aws = None
         for c in comp.get("competitors", []):
             team = c.get("team", {})
             nm, loc = team.get("displayName"), team.get("location")
-            if c.get("homeAway") == "home": home, hloc = nm, loc
-            elif c.get("homeAway") == "away": away, aloc = nm, loc
+            if c.get("homeAway") == "home": home, hloc, hs = nm, loc, c.get("score")
+            elif c.get("homeAway") == "away": away, aloc, aws = nm, loc, c.get("score")
         if home and away and e.get("date"):
-            out.append({"date": e["date"], "home": home, "away": away,
-                        "home_loc": hloc, "away_loc": aloc})
+            g = {"date": e["date"], "home": home, "away": away,
+                 "home_loc": hloc, "away_loc": aloc, "id": e.get("id"),
+                 "state": stype.get("state") or "pre"}
+            if g["state"] in ("in", "post"):
+                g["home_score"], g["away_score"] = hs, aws
+                g["detail"] = stype.get("shortDetail") or ""
+            out.append(g)
     return sorted(out, key=lambda g: g["date"])
 
 

@@ -8,10 +8,10 @@ Scores the Ultimate Tipping Comp automatically: feeds → competition order → 
 3. **Settings → Secrets and variables → Actions**:
    - Variables: `SITE_URL` = the link above.
    - Secrets (for the weekly email): `SMTP_USER` (a Gmail address), `SMTP_PASS` (a Gmail *app password*, not your login), `REPORT_TO` (where the update goes — you).
-4. **Actions → UTC standings → Run workflow** once to prove it. The first run creates `docs/standings.json`, a report and the ladder PNG.
+4. **Actions → UTC standings → Run workflow** once to prove it. The first run creates `docs/standings.json` and the fixtures. A plain manual run is always a quiet refresh — tick the *report* box to also build and send the weekly report (that's what emails and pings phones, so leave it unticked unless you mean it).
 
 ## How the week works
-- 04:00 AEST daily: standings refresh from live feeds.
+- Hourly: standings, fixtures and results refresh from the live feeds, so the ladder follows the games through the day. (The app also overlays live in-game scores itself while you watch the Fixtures tab.)
 - Every 5 minutes: new banter-wall posts go out as phone notifications (once the section below is set up) — GitHub's scheduler adds a little jitter, so a sledge typically lands within a few minutes, or in ~2 seconds with the instant upgrade below.
 - 14:00 Melbourne Tuesday: report built, ladder image rendered, **pushed as a notification to every phone that opted in**, and emailed to you with a **one-tap WhatsApp share link** for anyone still on the old channel — tap, choose the group, send. WhatsApp has no official way for software to post into a group, so that tap stays human; notifications from the app itself don't need it.
 

@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-28T01:48+00:00",
+ "generated": "2026-08-28T22:28+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -23,44 +23,44 @@
    "start": "2026-08",
    "rows": [
     {
-     "drafter": "Max",
-     "pick": "Brighton",
+     "drafter": "Ben Callow",
+     "pick": "Man City",
      "rank": 1,
      "points": 11,
+     "bonus": 0,
+     "drafted": 2
+    },
+    {
+     "drafter": "Max",
+     "pick": "Brighton",
+     "rank": 2,
+     "points": 10,
      "bonus": 0,
      "drafted": 8
     },
     {
      "drafter": "Mike",
      "pick": "Arsenal",
-     "rank": 2,
-     "points": 10,
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
      "drafted": 1
     },
     {
      "drafter": "Dan",
      "pick": "Brentford",
-     "rank": 3,
-     "points": 9,
+     "rank": 4,
+     "points": 8,
      "bonus": 0,
      "drafted": 10
     },
     {
      "drafter": "Yestin",
      "pick": "Chelsea",
-     "rank": 6,
-     "points": 8,
-     "bonus": 0,
-     "drafted": 3
-    },
-    {
-     "drafter": "Ben Callow",
-     "pick": "Man City",
-     "rank": 8,
+     "rank": 7,
      "points": 7,
      "bonus": 0,
-     "drafted": 2
+     "drafted": 3
     },
     {
      "drafter": "Wayne",
@@ -89,7 +89,7 @@
     {
      "drafter": "DT",
      "pick": "Man Utd",
-     "rank": 17,
+     "rank": 16,
      "points": 3,
      "bonus": 0,
      "drafted": 5
@@ -97,7 +97,7 @@
     {
      "drafter": "Sam",
      "pick": "Tottenham",
-     "rank": 19,
+     "rank": 18,
      "points": 2,
      "bonus": 0,
      "drafted": 6
@@ -105,7 +105,7 @@
     {
      "drafter": "Will",
      "pick": "Aston Villa",
-     "rank": 20,
+     "rank": 19,
      "points": 1,
      "bonus": 0,
      "drafted": 7
@@ -116,96 +116,96 @@
    "name": "Bundesliga",
    "window": "Aug 2026 \u2013 May 2027",
    "note": "final table",
-   "source": "awaiting feed",
+   "source": "feed:espn",
    "start": "2026-08",
    "rows": [
     {
-     "drafter": "Will",
-     "pick": "VfB Stuttgart",
-     "rank": null,
-     "points": null,
-     "bonus": 0,
-     "drafted": 4
-    },
-    {
      "drafter": "Ben Cav",
      "pick": "Bayern Munich",
-     "rank": null,
-     "points": null,
+     "rank": 1,
+     "points": 11,
      "bonus": 0,
      "drafted": 1
     },
     {
-     "drafter": "Dan",
-     "pick": "SC Freiburg",
-     "rank": null,
-     "points": null,
-     "bonus": 0,
-     "drafted": 8
-    },
-    {
-     "drafter": "Mike",
-     "pick": "Hoffenheim",
-     "rank": null,
-     "points": null,
-     "bonus": 0,
-     "drafted": 7
-    },
-    {
      "drafter": "Wayne",
      "pick": "Bayer Leverkusen",
-     "rank": null,
-     "points": null,
+     "rank": 3,
+     "points": 10,
      "bonus": 0,
      "drafted": 5
     },
     {
-     "drafter": "Paps",
-     "pick": "RB Leipzig",
-     "rank": null,
-     "points": null,
-     "bonus": 0,
-     "drafted": 3
-    },
-    {
      "drafter": "Yestin",
      "pick": "Borussia Dortmund",
-     "rank": null,
-     "points": null,
+     "rank": 4,
+     "points": 9,
      "bonus": 0,
      "drafted": 2
     },
     {
      "drafter": "DT",
      "pick": "Eintracht Frankfurt",
-     "rank": null,
-     "points": null,
+     "rank": 6,
+     "points": 8,
      "bonus": 0,
      "drafted": 6
     },
     {
      "drafter": "Max",
      "pick": "SV Elversberg",
-     "rank": null,
-     "points": null,
+     "rank": 7,
+     "points": 7,
      "bonus": 0,
      "drafted": 9
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "Werder Bremen",
-     "rank": null,
-     "points": null,
+     "drafter": "Dan",
+     "pick": "SC Freiburg",
+     "rank": 9,
+     "points": 6,
      "bonus": 0,
-     "drafted": 10
+     "drafted": 8
+    },
+    {
+     "drafter": "Mike",
+     "pick": "Hoffenheim",
+     "rank": 11,
+     "points": 5,
+     "bonus": 0,
+     "drafted": 7
+    },
+    {
+     "drafter": "Paps",
+     "pick": "RB Leipzig",
+     "rank": 14,
+     "points": 4,
+     "bonus": 0,
+     "drafted": 3
     },
     {
      "drafter": "Sam",
      "pick": "Schalke 04",
-     "rank": null,
-     "points": null,
+     "rank": 15,
+     "points": 3,
      "bonus": 0,
      "drafted": 11
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "Werder Bremen",
+     "rank": 17,
+     "points": 2,
+     "bonus": 0,
+     "drafted": 10
+    },
+    {
+     "drafter": "Will",
+     "pick": "VfB Stuttgart",
+     "rank": 18,
+     "points": 1,
+     "bonus": 0,
+     "drafted": 4
     }
    ]
   },
@@ -1960,101 +1960,101 @@
   {
    "pos": 1,
    "drafter": "Max",
-   "inplay": 11,
+   "inplay": 17,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 1,
-   "total": 11
+   "scored": 2,
+   "total": 17
   },
   {
    "pos": 2,
-   "drafter": "Mike",
-   "inplay": 10,
+   "drafter": "Wayne",
+   "inplay": 16,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 1,
-   "total": 10
+   "scored": 2,
+   "total": 16
   },
   {
    "pos": 3,
-   "drafter": "Dan",
-   "inplay": 9,
+   "drafter": "Yestin",
+   "inplay": 16,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 1,
-   "total": 9
+   "scored": 2,
+   "total": 16
   },
   {
    "pos": 4,
-   "drafter": "Yestin",
-   "inplay": 8,
+   "drafter": "Ben Cav",
+   "inplay": 15,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 1,
-   "total": 8
+   "scored": 2,
+   "total": 15
   },
   {
    "pos": 5,
-   "drafter": "Ben Callow",
-   "inplay": 7,
+   "drafter": "Dan",
+   "inplay": 14,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 1,
-   "total": 7
+   "scored": 2,
+   "total": 14
   },
   {
    "pos": 6,
-   "drafter": "Wayne",
-   "inplay": 6,
+   "drafter": "Mike",
+   "inplay": 14,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 1,
-   "total": 6
+   "scored": 2,
+   "total": 14
   },
   {
    "pos": 7,
-   "drafter": "Paps",
-   "inplay": 5,
+   "drafter": "Ben Callow",
+   "inplay": 13,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 1,
-   "total": 5
+   "scored": 2,
+   "total": 13
   },
   {
    "pos": 8,
-   "drafter": "Ben Cav",
-   "inplay": 4,
+   "drafter": "DT",
+   "inplay": 11,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 1,
-   "total": 4
+   "scored": 2,
+   "total": 11
   },
   {
    "pos": 9,
-   "drafter": "DT",
-   "inplay": 3,
+   "drafter": "Paps",
+   "inplay": 9,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 1,
-   "total": 3
+   "scored": 2,
+   "total": 9
   },
   {
    "pos": 10,
    "drafter": "Sam",
-   "inplay": 2,
+   "inplay": 5,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 1,
-   "total": 2
+   "scored": 2,
+   "total": 5
   },
   {
    "pos": 11,
    "drafter": "Will",
-   "inplay": 1,
+   "inplay": 2,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 1,
-   "total": 1
+   "scored": 2,
+   "total": 2
   }
  ]
 }
