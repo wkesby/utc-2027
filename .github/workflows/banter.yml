@@ -1,0 +1,23 @@
+name: UTC banter pings
+# Hourly: any new banter-wall messages go out as push notifications to the phones
+# that switched them on. Exits harmlessly (and fast) until docs/config.json and the
+# VAPID_PRIVATE_KEY secret are set up — see README.
+on:
+  schedule:
+    - cron: "25 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pywebpush
+      - name: Push new messages to phones
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+        run: python -m utc.notify banter

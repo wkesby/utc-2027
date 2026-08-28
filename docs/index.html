@@ -89,9 +89,16 @@ svg.chart{display:block;width:100%;max-width:440px;height:auto;margin:0 auto}
 .tap{cursor:pointer;transition:background .15s}
 .tap:active{background:var(--panel2)}
 .back{display:inline-flex;align-items:center;gap:6px;color:var(--mute);font-size:13px;margin-bottom:10px;cursor:pointer}
-input.search{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:12px;
+input.search,textarea.search{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:12px;
   color:var(--ink);font:inherit;padding:11px 13px;margin-bottom:10px}
-input.search::placeholder{color:var(--mute)}
+input.search::placeholder,textarea.search::placeholder{color:var(--mute)}
+textarea.search{resize:none;display:block;background:var(--panel2)}
+.btn{width:100%;background:var(--amber);color:#111;border:0;border-radius:12px;padding:11px 16px;
+  font:inherit;font-weight:700;cursor:pointer}
+.btn:disabled{opacity:.55}
+button.chip{cursor:pointer;font:inherit;font-size:11px}
+nav button{position:relative}
+.ndot{position:absolute;top:7px;left:calc(50% + 10px);width:7px;height:7px;border-radius:50%;background:var(--red)}
 .big{font-size:34px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
 .spark{width:100%;height:44px;display:block}
 .toast{position:fixed;left:50%;bottom:calc(var(--nav) + var(--sb) + 16px);transform:translateX(-50%);
@@ -119,6 +126,7 @@ input.search::placeholder{color:var(--mute)}
 
 <nav>
   <button data-go="ladder"><span class="ic">🏆</span>Ladder</button>
+  <button data-go="banter"><span class="ic">💬</span>Banter</button>
   <button data-go="stats"><span class="ic">📊</span>Stats</button>
   <button data-go="fix"><span class="ic">📅</span>Fixtures</button>
   <button data-go="comps"><span class="ic">🗂</span>Comps</button>
@@ -140,12 +148,14 @@ let S=null,H=null,F=null,offline=false;
 /* ---------------- data ---------------- */
 async function load(showToast){
   try{
-    const [s,h,f]=await Promise.all([
+    const [s,h,f,c]=await Promise.all([
       fetch("standings.json?"+Date.now()).then(r=>r.ok?r.json():Promise.reject(r.status)),
       fetch("history.json?"+Date.now()).then(r=>r.ok?r.json():{entries:[]}).catch(()=>({entries:[]})),
-      fetch("fixtures.json?"+Date.now()).then(r=>r.ok?r.json():{sports:{}}).catch(()=>({sports:{}}))
+      fetch("fixtures.json?"+Date.now()).then(r=>r.ok?r.json():{sports:{}}).catch(()=>({sports:{}})),
+      fetch("config.json?"+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
     ]);
-    S=s;H=h;F=f;offline=false;
+    S=s;H=h;F=f;if(c)CFG=c;offline=false;
+    checkBanter();
     if(showToast)toast("Updated");
   }catch(e){
     if(!S){V().innerHTML=`<div class="card"><b>Standings not published yet.</b><div class="lbl" style="margin-top:6px">The next scheduled run will create them.</div></div>`;return false}
@@ -205,7 +215,7 @@ function movement(){ // position change since the previous daily snapshot
 }
 
 /* ---------------- routing ---------------- */
-const routes={ladder:renderLadder,stats:renderStats,fix:renderFixtures,comps:renderComps,me:renderDrafters};
+const routes={ladder:renderLadder,banter:renderBanter,stats:renderStats,fix:renderFixtures,comps:renderComps,me:renderDrafters};
 function go(hash){ if(location.hash===hash)render(); else location.hash=hash; }
 function render(){
   if(!S)return;
@@ -432,7 +442,9 @@ function renderDrafter(name){
     <div><div class="nm" style="font-size:19px">${esc(name)}</div>
       <div class="lbl">Position ${lr.pos} of 11</div><div class="big">${lr.total}</div></div>
     <div class="grow lbl" style="text-align:right">${lr.confirmed} confirmed<br>${lr.inplay} in play${lr.bonus?`<br>${lr.bonus} bonus`:""}</div></div>
-    ${sparkline(name)}</div>
+    ${sparkline(name)}
+    ${fsReady()?`<button class="chip" style="margin-top:10px;color:var(--amber);border-color:rgba(255,194,26,.35)"
+      onclick="pendingRe='${name===myName()?"":esc(name)}';go('#banter')">💬 ${name===myName()?"Defend yourself on the wall":`Sledge ${esc(name)} on the wall`}</button>`:""}</div>
   ${lookAheadCard(name)}
   <div class="card"><div class="h">Form guide</div><div class="tiles">
     <div class="tile"><b>${p.wins}</b><span>comp wins</span></div>
@@ -515,6 +527,122 @@ function sparkline(name){
     <path d="${d}" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
     <circle cx="${x(n-1).toFixed(1)}" cy="${y(pts[n-1]).toFixed(1)}" r="3" fill="var(--amber)"/></svg>
     <div class="lbl">Ladder position over ${n} days (top = 1st).</div>`;
+}
+
+/* ---------------- banter ---------------- */
+// The wall lives in a free Firestore project, reached straight over REST — no SDK,
+// no login. Until the commissioner fills in config.json the tab explains itself.
+let CFG=null,pendingRe="",wallNewest="";
+const PLACEHOLDER="Sledge, gloat, dispute the feeds…";
+const myName=()=>localStorage.getItem("utcName")||"";
+const fsReady=()=>!!(CFG&&CFG.firebase&&CFG.firebase.projectId&&CFG.firebase.apiKey);
+const fsURL=p=>`https://firestore.googleapis.com/v1/${p.startsWith("projects/")?p
+  :`projects/${CFG.firebase.projectId}/databases/(default)/documents${p}`}?key=${CFG.firebase.apiKey}`;
+async function fetchMsgs(limit){
+  const r=await fetch(fsURL(":runQuery"),{method:"POST",headers:{"content-type":"application/json"},
+    body:JSON.stringify({structuredQuery:{from:[{collectionId:"messages"}],
+      orderBy:[{field:{fieldPath:"t"},direction:"DESCENDING"}],limit}})});
+  if(!r.ok)throw r.status;
+  return (await r.json()).filter(x=>x.document).map(x=>{
+    const f=x.document.fields||{},g=k=>(f[k]||{}).stringValue||(f[k]||{}).timestampValue||"";
+    return {n:g("n"),x:g("x"),re:g("re"),t:g("t")}});
+}
+function navDot(on){
+  const b=document.querySelector('nav button[data-go="banter"]');if(!b)return;
+  const d=b.querySelector(".ndot");
+  if(on&&!d)b.insertAdjacentHTML("beforeend",'<i class="ndot"></i>'); else if(!on&&d)d.remove();
+}
+async function checkBanter(){ // one-document peek so the nav can show an unread dot cheaply
+  if(!fsReady())return;
+  try{const m=await fetchMsgs(1);
+    if(m.length){wallNewest=m[0].t;navDot(wallNewest>(localStorage.getItem("utcSeen")||""))}}catch(e){}
+}
+function setRe(d,btn){
+  pendingRe=d;
+  document.querySelectorAll("#reRow button").forEach(b=>b.classList.toggle("on",b===btn));
+  $("msg").placeholder=d?`Give it to ${d}…`:PLACEHOLDER;$("msg").focus();
+}
+function renderBanter(){
+  if(!fsReady()){V().innerHTML=`<div class="card"><div class="h">Banter</div>
+    <b>Not switched on yet.</b>
+    <div class="lbl" style="margin-top:6px">One 10-minute job for the commissioner (README, “Switch on banter &amp; notifications”) and this tab becomes the group's wall — comment on anyone's performance, cop it back, and get new posts and the Tuesday wrap as phone notifications instead of waiting on WhatsApp.</div></div>`;return}
+  if(!myName()){
+    V().innerHTML=`<div class="card"><div class="h">Who are you?</div>
+      <div class="lbl" style="margin-bottom:10px">Once per phone — posts go up under your name. Honour system, like the rest of the comp.</div>
+      <div class="tiles">${S.drafters.map(d=>`<div class="tile tap" style="text-align:center" onclick="localStorage.setItem('utcName','${esc(d)}');render()">
+        ${avatar(d,"m")}<span style="display:block;margin-top:6px;font-size:13px">${esc(d)}</span></div>`).join("")}</div></div>`;return}
+  V().innerHTML=`${pushCard()}
+  <div class="card"><div class="h">Say it to the group</div>
+    <div class="lbl" style="margin-bottom:8px">Posting as <b style="color:var(--ink)">${esc(myName())}</b> · <span style="text-decoration:underline;cursor:pointer" onclick="localStorage.removeItem('utcName');render()">not you?</span></div>
+    <div class="seg" id="reRow" style="padding-bottom:8px">${["",...S.drafters.filter(d=>d!==myName())].map(d=>
+      `<button class="${pendingRe===d?"on":""}" onclick="setRe('${esc(d)}',this)">${d?esc(d):"General"}</button>`).join("")}</div>
+    <textarea class="search" id="msg" rows="2" maxlength="400" placeholder="${pendingRe?`Give it to ${esc(pendingRe)}…`:PLACEHOLDER}"></textarea>
+    <button class="btn" id="post">Post</button></div>
+  <div class="card"><div class="h">The wall</div><div id="wall">
+    <div class="skel" style="width:70%"></div><div class="skel" style="width:50%;margin-top:10px"></div></div></div>`;
+  $("post").onclick=postMsg;
+  drawWall();
+}
+async function drawWall(){
+  const w=()=>$("wall");
+  try{
+    const msgs=await fetchMsgs(60);
+    if(msgs.length){wallNewest=msgs[0].t;localStorage.setItem("utcSeen",wallNewest)}
+    navDot(false);
+    if(!w())return;
+    w().innerHTML=msgs.length?msgs.map(m=>`<div class="row" style="align-items:flex-start">${avatar(m.n,"s")}
+      <div class="grow"><div style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap"><span class="nm">${esc(m.n)}</span>
+        ${m.re?`<span class="chip" style="color:var(--amber);border-color:rgba(255,194,26,.35)">→ ${esc(m.re)}</span>`:""}
+        <span class="lbl">${ago(m.t)}</span></div>
+        <div style="margin-top:3px;white-space:pre-wrap;overflow-wrap:anywhere">${esc(m.x)}</div></div></div>`).join("")
+      :`<div class="lbl">Nothing yet. Someone's pick is going badly — say something about it.</div>`;
+  }catch(e){if(w())w().innerHTML=`<div class="lbl">Couldn't reach the wall${offline?" — offline":""}. Tap ⟳ to retry.</div>`}
+}
+async function postMsg(){
+  const x=$("msg").value.trim();
+  if(!x)return;
+  $("post").disabled=true;
+  try{
+    const fields={n:{stringValue:myName()},x:{stringValue:x},t:{timestampValue:new Date().toISOString()}};
+    if(pendingRe)fields.re={stringValue:pendingRe};
+    const r=await fetch(fsURL("/messages"),{method:"POST",headers:{"content-type":"application/json"},
+      body:JSON.stringify({fields})});
+    if(!r.ok)throw r.status;
+    pendingRe="";toast("On the wall");renderBanter();
+  }catch(e){toast("Didn't post — try again");$("post").disabled=false}
+}
+/* push notifications: plain web push, sent by the GitHub workflows */
+function pushCard(){
+  if(!CFG.vapidPublicKey)return "";
+  const ok="serviceWorker" in navigator&&"PushManager" in window&&"Notification" in window;
+  const on=ok&&Notification.permission==="granted"&&!!localStorage.getItem("utcSub");
+  const inner=on?`<div class="lbl">On — new banter and the Tuesday wrap land on this phone. No more waiting for the WhatsApp message.</div>
+      <button class="chip" style="margin-top:9px" onclick="pushOff()">Turn off</button>`
+    :ok?`<div class="lbl">Get new banter and the Tuesday wrap as notifications on this phone, instead of via WhatsApp.</div>
+      <button class="btn" style="margin-top:9px" onclick="pushOn()">Turn on notifications</button>`
+    :`<div class="lbl">This browser can't do app notifications. iPhone: open the site in Safari, Share → <b>Add to Home Screen</b>, then open the installed app and flick them on here (needs iOS 16.4+).</div>`;
+  return `<div class="card"><div class="h">Notifications</div>${inner}</div>`;
+}
+const b64u8=s=>{const b=atob((s+"=".repeat((4-s.length%4)%4)).replace(/-/g,"+").replace(/_/g,"/"));
+  return Uint8Array.from(b,c=>c.charCodeAt(0))};
+async function pushOn(){
+  try{
+    if(await Notification.requestPermission()!=="granted"){toast("Blocked — allow notifications in settings");return}
+    const reg=await navigator.serviceWorker.ready;
+    const sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64u8(CFG.vapidPublicKey)});
+    const r=await fetch(fsURL("/subs"),{method:"POST",headers:{"content-type":"application/json"},
+      body:JSON.stringify({fields:{sub:{stringValue:JSON.stringify(sub)},
+        n:{stringValue:myName()},t:{timestampValue:new Date().toISOString()}}})});
+    if(!r.ok)throw r.status;
+    localStorage.setItem("utcSub",(await r.json()).name);
+    toast("Notifications on");render();
+  }catch(e){toast("Couldn't switch them on — try again")}
+}
+async function pushOff(){
+  try{const s=await (await navigator.serviceWorker.ready).pushManager.getSubscription();if(s)await s.unsubscribe()}catch(e){}
+  const nm=localStorage.getItem("utcSub");
+  if(nm)fetch(fsURL(nm),{method:"DELETE"}).catch(()=>{});
+  localStorage.removeItem("utcSub");toast("Notifications off");render();
 }
 
 /* ---------------- app wiring ---------------- */
