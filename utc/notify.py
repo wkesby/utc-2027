@@ -1,7 +1,7 @@
 """Push notifications to the installed app, replacing the WhatsApp relay for anyone
 who flicks them on in the Banter tab. Two modes:
 
-    python -m utc.notify banter   hourly workflow: push banter-wall messages posted
+    python -m utc.notify banter   5-minute workflow: push banter-wall messages posted
                                   since the last run (marker kept in Firestore)
     python -m utc.notify report   Tuesday slot: push the weekly wrap headline
 

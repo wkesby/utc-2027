@@ -1,10 +1,11 @@
 name: UTC banter pings
-# Hourly: any new banter-wall messages go out as push notifications to the phones
+# Every 5 minutes (GitHub's floor — queue jitter means real delivery is usually a few
+# minutes): any new banter-wall messages go out as push notifications to the phones
 # that switched them on. Exits harmlessly (and fast) until docs/config.json and the
 # VAPID_PRIVATE_KEY secret are set up — see README.
 on:
   schedule:
-    - cron: "25 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 permissions:
   contents: read

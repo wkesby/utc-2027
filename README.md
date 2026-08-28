@@ -12,7 +12,7 @@ Scores the Ultimate Tipping Comp automatically: feeds → competition order → 
 
 ## How the week works
 - 04:00 AEST daily: standings refresh from live feeds.
-- 25 past each hour: new banter-wall posts go out as phone notifications (once the section below is set up).
+- Every 5 minutes: new banter-wall posts go out as phone notifications (once the section below is set up) — GitHub's scheduler adds a little jitter, so a sledge typically lands within a few minutes.
 - 14:00 Melbourne Tuesday: report built, ladder image rendered, **pushed as a notification to every phone that opted in**, and emailed to you with a **one-tap WhatsApp share link** for anyone still on the old channel — tap, choose the group, send. WhatsApp has no official way for software to post into a group, so that tap stays human; notifications from the app itself don't need it.
 
 ## Switch on banter & notifications (10 minutes, once, free, optional)
