@@ -437,36 +437,44 @@ function renderFixtures(){
   refreshLive();
 }
 /* live scores: while fixtures or a drafter page is open, overlay ESPN's own scoreboard
-   onto the games baked into fixtures.json (matched by event id), so scores move between
-   the daily rebuilds. If ESPN can't be reached the baked-in scores simply stand. */
+   onto the games in fixtures.json, so scores move between the daily rebuilds. Games are
+   matched by the event id the daily run bakes in; until a fixtures file has ids, the same
+   two teams at the same kick-off is the match, and the scoreboard paths below stand in
+   (they mirror utc/sports.py) — so live scores work even on a fixtures file from before
+   this feature. If ESPN can't be reached the baked-in scores simply stand. */
+const FXPATH={epl:"soccer/eng.1",bund:"soccer/ger.1",ncaa:"football/college-football",nfl:"football/nfl",
+  ucl:"soccer/uefa.champions",nhl:"hockey/nhl",nba:"basketball/nba",mlb:"baseball/mlb"};
 let liveBusy=false,liveLast=0;
 async function refreshLive(force){
   if(!F||!F.sports||liveBusy)return;
   if(!force&&Date.now()-liveLast<45e3)return;       // at most one sweep per ~minute
   const now=Date.now();
-  const need=Object.entries(F.sports).filter(([,s])=>s.path&&(s.games||[]).some(g=>{
-    if(g.st==="in")return true;                     // mid-game: always worth a look
-    if(g.st==="post"||!g.i)return false;
-    const t=new Date(g.d).getTime();                // starts within the hour, or should have
-    return t-now<36e5&&now-t<12*36e5;               // started less than 12h ago
-  }));
+  const need=Object.entries(F.sports).map(([k,s])=>[s,s.path||FXPATH[k]])
+    .filter(([s,path])=>path&&(s.games||[]).some(g=>{
+      if(g.st==="in")return true;                   // mid-game: always worth a look
+      if(g.st==="post")return false;
+      const t=new Date(g.d).getTime();              // starts within the hour, or should have
+      return t-now<36e5&&now-t<12*36e5;             // started less than 12h ago
+    }));
   if(!need.length)return;
   liveBusy=true;liveLast=now;
   const f=t=>new Date(t).toISOString().slice(0,10).replace(/-/g,"");
   let changed=false;
-  await Promise.all(need.map(async([k,s])=>{
+  await Promise.all(need.map(async([s,path])=>{
     try{
-      const r=await fetch(`https://site.web.api.espn.com/apis/site/v2/sports/${s.path}/scoreboard?dates=${f(now-864e5)}-${f(now+864e5)}`);
+      const r=await fetch(`https://site.web.api.espn.com/apis/site/v2/sports/${path}/scoreboard?dates=${f(now-864e5)}-${f(now+864e5)}`);
       if(!r.ok)return;
       for(const ev of ((await r.json()).events||[])){
-        const g=s.games.find(x=>x.i===ev.id);
-        if(!g)continue;
         const comp=(ev.competitions||[{}])[0],ty=((comp.status||ev.status||{}).type)||{};
         if(ty.state!=="in"&&ty.state!=="post")continue;
-        let hs,as;
+        let hs,as,hn,an;
         for(const c of comp.competitors||[]){
-          if(c.homeAway==="home")hs=c.score; else if(c.homeAway==="away")as=c.score;
+          const nm=(c.team||{}).displayName;
+          if(c.homeAway==="home"){hs=c.score;hn=nm} else if(c.homeAway==="away"){as=c.score;an=nm}
         }
+        const g=s.games.find(x=>x.i&&x.i===ev.id)||s.games.find(x=>!x.i&&x.h===hn&&x.a===an&&
+          Math.abs(new Date(x.d)-new Date(ev.date))<36e5);   // kick-off match: safe for doubleheaders
+        if(!g)continue;
         const t=ty.shortDetail||"";
         if(g.st!==ty.state||g.hs!==hs||g.as!==as||g.t!==t){
           g.st=ty.state;g.hs=hs;g.as=as;g.t=t;changed=true;
