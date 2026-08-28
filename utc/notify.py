@@ -144,13 +144,20 @@ def report(c):
                  "url": site_url() + "#ladder", "tag": "utc-report"})
 
 
+def test(c):
+    """From the 'UTC banter check' workflow: prove the whole push chain end to end."""
+    push_all(c, {"title": "✅ UTC 2027", "body": "Notifications are working. "
+                 "This is what a sledge will feel like.",
+                 "url": site_url() + "#banter", "tag": "utc-test"})
+
+
 def main():
     c = config()
     if not c:
         print("docs/config.json not filled in — notifications are off (see README)")
         return
     mode = sys.argv[1] if len(sys.argv) > 1 else "banter"
-    (report if mode == "report" else banter)(c)
+    {"report": report, "test": test}.get(mode, banter)(c)
 
 
 if __name__ == "__main__":
