@@ -2,8 +2,10 @@
 // v1 served index.html cache-first, which froze installed apps on whatever HTML they
 // cached first; the cache only ever refreshed if this file itself changed.
 // v3 adds web-push handlers for the banter wall and weekly wrap.
-const SHELL = "utc-shell-v3";
-const DATA = "utc-data-v3";
+// v4 stops caching error responses, and the rename drops the v3 caches that had a
+// 404 stored for photos/dt.jpg and photos/wayne.jpg from before those files existed.
+const SHELL = "utc-shell-v4";
+const DATA = "utc-data-v4";
 const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png"];
 
 self.addEventListener("install", e => {
@@ -44,8 +46,12 @@ self.addEventListener("notificationclick", e => {
 });
 
 const fresh = (req, cacheName, key) => fetch(req).then(r => {
-  const copy = r.clone();
-  caches.open(cacheName).then(c => c.put(key, copy));
+  // Only ever cache a good response. Caching a 404 permanently masks a file that is
+  // added later — that is what hid the drafter photos added after an install's first run.
+  if (r.ok) {
+    const copy = r.clone();
+    caches.open(cacheName).then(c => c.put(key, copy));
+  }
   return r;
 });
 
