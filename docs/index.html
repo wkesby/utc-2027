@@ -688,7 +688,7 @@ function renderBanter(){
   if(!myName()){
     V().innerHTML=`<div class="card"><div class="h">Who are you?</div>
       <div class="lbl" style="margin-bottom:10px">Once per phone — posts go up under your name. Honour system, like the rest of the comp.</div>
-      <div class="tiles">${S.drafters.map(d=>`<div class="tile tap" style="text-align:center" onclick="localStorage.setItem('utcName','${esc(d)}');render()">
+      <div class="tiles">${S.drafters.map(d=>`<div class="tile tap" style="text-align:center" onclick="localStorage.setItem('utcName','${esc(d)}');renameSub();render()">
         ${avatar(d,"m")}<span style="display:block;margin-top:6px;font-size:13px">${esc(d)}</span></div>`).join("")}</div></div>`;return}
   V().innerHTML=`${pushCard()}
   <div class="card"><div class="h">Say it to the group</div>
@@ -764,6 +764,24 @@ async function pushOn(){
     localStorage.setItem("utcSub",(await r.json()).name);
     toast("Notifications on");render();
   }catch(e){toast("Couldn't switch them on — try again")}
+}
+// The notifiers skip the phone that wrote a message by the name on its subscription,
+// and /subs docs can't be edited (rules) — so when this phone changes hands, re-register
+// the same push subscription under the new name: create first, then drop the old doc.
+async function renameSub(){
+  const old=localStorage.getItem("utcSub");
+  if(!old||!fsReady())return;
+  try{
+    const r=await fetch(fsURL(old));if(!r.ok)throw r.status;
+    const f=(await r.json()).fields||{};
+    if(!f.sub||((f.n||{}).stringValue||"")===myName())return;
+    const r2=await fetch(fsURL("/subs"),{method:"POST",headers:{"content-type":"application/json"},
+      body:JSON.stringify({fields:{sub:f.sub,n:{stringValue:myName()},
+        t:{timestampValue:new Date().toISOString()}}})});
+    if(!r2.ok)throw r2.status;
+    localStorage.setItem("utcSub",(await r2.json()).name);
+    fetch(fsURL(old),{method:"DELETE"}).catch(()=>{});
+  }catch(e){}
 }
 async function pushOff(){
   try{const s=await (await navigator.serviceWorker.ready).pushManager.getSubscription();if(s)await s.unsubscribe()}catch(e){}

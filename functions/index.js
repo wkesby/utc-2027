@@ -46,8 +46,9 @@ exports.pushOnMessage = onDocumentCreated({
   });
 
   const subs = await db.collection("subs").get();
-  let sent = 0, dead = 0;
+  let sent = 0, dead = 0, skipped = 0;
   await Promise.all(subs.docs.map(async (d) => {
+    if (m.n && d.get("n") === m.n) { skipped++; return; }  // your own sledge isn't news
     let sub;
     try { sub = JSON.parse(d.get("sub")); } catch (e) { return; }
     try {
@@ -73,5 +74,6 @@ exports.pushOnMessage = onDocumentCreated({
     }
   }).catch((e) => console.warn("marker update failed:", e.message));
 
-  console.log(`pushed "${title}" to ${sent} phone(s), ${dead} dead subscription(s) removed`);
+  console.log(`pushed "${title}" to ${sent} phone(s), ${dead} dead subscription(s) removed, ` +
+      `${skipped} skipped (sender's own)`);
 });
