@@ -629,7 +629,13 @@ async function pushOn(){
   try{
     if(await Notification.requestPermission()!=="granted"){toast("Blocked — allow notifications in settings");return}
     const reg=await navigator.serviceWorker.ready;
-    const sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64u8(CFG.vapidPublicKey)});
+    // A subscription left over from an older VAPID key makes subscribe() throw
+    // InvalidStateError, and retrying never clears it — drop it first if the key moved on.
+    const want=b64u8(CFG.vapidPublicKey);
+    const stale=await reg.pushManager.getSubscription();
+    if(stale){const had=new Uint8Array(stale.options.applicationServerKey||new ArrayBuffer(0));
+      if(had.length!==want.length||!had.every((b,i)=>b===want[i]))await stale.unsubscribe()}
+    const sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:want});
     const r=await fetch(fsURL("/subs"),{method:"POST",headers:{"content-type":"application/json"},
       body:JSON.stringify({fields:{sub:{stringValue:JSON.stringify(sub)},
         n:{stringValue:myName()},t:{timestampValue:new Date().toISOString()}}})});
