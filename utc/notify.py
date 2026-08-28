@@ -56,13 +56,17 @@ def subscriptions(c):
            {"structuredQuery": {"from": [{"collectionId": "subs"}], "limit": 300}})
     for d in rows(q):
         try:
-            out.append({"name": d["name"], "sub": json.loads(val(d["fields"], "sub"))})
+            out.append({"name": d["name"], "n": val(d["fields"], "n"),
+                        "sub": json.loads(val(d["fields"], "sub"))})
         except (ValueError, KeyError):
             pass
     return out
 
 
-def push_all(c, payload):
+def push_all(c, payload, per_drafter=None):
+    """Send payload to every subscription. per_drafter, given the drafter name a
+    subscription was made under, overrides it — returning that phone's payload, or
+    None to skip the phone (how a sender avoids being pinged by their own sledge)."""
     priv = os.environ.get("VAPID_PRIVATE_KEY", "").strip()
     if not priv:
         print("VAPID_PRIVATE_KEY secret not set — nothing pushed (see README)")
@@ -73,11 +77,14 @@ def push_all(c, payload):
         return
     from pywebpush import webpush, WebPushException
     claims_sub = os.environ.get("VAPID_SUB", "").strip() or "mailto:utc-bot@users.noreply.github.com"
-    data = json.dumps(payload)
-    sent = dead = failed = 0
+    sent = dead = failed = skipped = 0
     for t in targets:
+        data = per_drafter(t["n"]) if per_drafter else payload
+        if data is None:
+            skipped += 1
+            continue
         try:
-            webpush(t["sub"], data, vapid_private_key=priv, vapid_claims={"sub": claims_sub})
+            webpush(t["sub"], json.dumps(data), vapid_private_key=priv, vapid_claims={"sub": claims_sub})
             sent += 1
         except WebPushException as e:
             code = getattr(getattr(e, "response", None), "status_code", None)
@@ -90,7 +97,8 @@ def push_all(c, payload):
             else:
                 failed += 1
                 print("push failed:", code or e)
-    print(f"push: {sent} sent, {dead} dead subscriptions removed, {failed} failed")
+    print(f"push: {sent} sent, {dead} dead subscriptions removed, {failed} failed"
+          + (f", {skipped} skipped (own message)" if skipped else ""))
 
 
 def site_url():
@@ -120,15 +128,24 @@ def banter(c):
     if not msgs:
         print("no new banter")
         return
-    m = msgs[-1]
-    aimed = f" → {m['re']}" if m["re"] else ""
-    if len(msgs) == 1:
-        title, body = f"💬 {m['n']}{aimed}", m["x"]
-    else:
-        title = "💬 UTC banter"
-        body = f"{len(msgs)} new messages. Latest — {m['n']}{aimed}: {m['x']}"
-    push_all(c, {"title": title, "body": body[:180],
-                 "url": site_url() + "#banter", "tag": "utc-banter"})
+
+    def wording(ms):
+        m = ms[-1]
+        aimed = f" → {m['re']}" if m["re"] else ""
+        if len(ms) == 1:
+            return f"💬 {m['n']}{aimed}", m["x"]
+        return "💬 UTC banter", f"{len(ms)} new messages. Latest — {m['n']}{aimed}: {m['x']}"
+
+    def for_subscriber(drafter):
+        """Each phone only hears about messages its owner didn't write."""
+        news = [m for m in msgs if not drafter or m["n"] != drafter]
+        if not news:
+            return None
+        title, body = wording(news)
+        return {"title": title, "body": body[:180],
+                "url": site_url() + "#banter", "tag": "utc-banter"}
+
+    push_all(c, None, for_subscriber)
 
 
 def report(c):
