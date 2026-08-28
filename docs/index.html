@@ -60,6 +60,12 @@ nav button.on{color:var(--amber)}
 .chip{font-size:11px;padding:4px 9px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--mute)}
 .chip.live{color:var(--green);border-color:rgba(61,217,139,.35)}
 .chip.final{color:var(--amber);border-color:rgba(255,194,26,.35)}
+.reax{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
+.rx{font-size:12px;line-height:1;padding:4px 7px;border-radius:999px;background:var(--panel2);
+  border:1px solid var(--line);color:var(--mute);opacity:.4;display:inline-flex;gap:4px;align-items:center}
+.rx.has{opacity:1}
+.rx.on{opacity:1;color:var(--amber);border-color:rgba(255,194,26,.35)}
+.rx i{font-style:normal;font-size:11px;font-weight:700}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:8px}
 .tiles.four{grid-template-columns:repeat(2,1fr)}
 @media (min-width:520px){.tiles.four{grid-template-columns:repeat(4,1fr)}}
@@ -545,7 +551,48 @@ async function fetchMsgs(limit){
   if(!r.ok)throw r.status;
   return (await r.json()).filter(x=>x.document).map(x=>{
     const f=x.document.fields||{},g=k=>(f[k]||{}).stringValue||(f[k]||{}).timestampValue||"";
-    return {n:g("n"),x:g("x"),re:g("re"),t:g("t")}});
+    return {id:x.document.name.split("/").pop(),n:g("n"),x:g("x"),re:g("re"),t:g("t")}});
+}
+// Reactions get their own collection, one document per (message, person, emoji). The wall
+// stays append-only, and nothing here writes to /messages, so no reaction fires a push.
+const REAX=["👍","😂","🔥","💀","🤡"];
+let WALLRX={};
+async function fetchReax(){
+  const r=await fetch(fsURL(":runQuery"),{method:"POST",headers:{"content-type":"application/json"},
+    body:JSON.stringify({structuredQuery:{from:[{collectionId:"reax"}],limit:500}})});
+  if(!r.ok)throw r.status;
+  return (await r.json()).filter(x=>x.document).map(x=>{
+    const f=x.document.fields||{},g=k=>(f[k]||{}).stringValue||"";
+    return {path:x.document.name,m:g("m"),n:g("n"),e:g("e")}});
+}
+function reaxBar(mid,rx){
+  return `<div class="reax" data-m="${esc(mid)}">${REAX.map(e=>{
+    const hit=rx.filter(r=>r.e===e),on=hit.some(r=>r.n===myName());
+    return `<button class="rx${on?" on":hit.length?" has":""}" onclick="toggleReax('${esc(mid)}','${e}',this)"${
+      hit.length?` title="${esc(hit.map(r=>r.n).join(", "))}"`:""}>${e}${hit.length?`<i>${hit.length}</i>`:""}</button>`
+  }).join("")}</div>`;
+}
+function paintReax(mid){
+  const el=document.querySelector(`.reax[data-m="${CSS.escape(mid)}"]`);
+  if(el)el.outerHTML=reaxBar(mid,WALLRX[mid]||[]);
+}
+async function toggleReax(mid,e,btn){
+  if(!myName()){toast("Pick your name on the wall first");return}
+  const mine=(WALLRX[mid]||[]).find(r=>r.e===e&&r.n===myName());
+  btn.disabled=true;
+  try{
+    if(mine){
+      const r=await fetch(fsURL(mine.path),{method:"DELETE"});if(!r.ok)throw r.status;
+      WALLRX[mid]=WALLRX[mid].filter(x=>x!==mine);
+    }else{
+      const r=await fetch(fsURL("/reax"),{method:"POST",headers:{"content-type":"application/json"},
+        body:JSON.stringify({fields:{m:{stringValue:mid},n:{stringValue:myName()},e:{stringValue:e},
+          t:{timestampValue:new Date().toISOString()}}})});
+      if(!r.ok)throw r.status;
+      (WALLRX[mid]=WALLRX[mid]||[]).push({path:(await r.json()).name,m:mid,n:myName(),e});
+    }
+    paintReax(mid);            // the old button is replaced, so it needs no re-enabling
+  }catch(err){toast("Reaction didn't stick — try again");btn.disabled=false}
 }
 function navDot(on){
   const b=document.querySelector('nav button[data-go="banter"]');if(!b)return;
@@ -586,7 +633,8 @@ function renderBanter(){
 async function drawWall(){
   const w=()=>$("wall");
   try{
-    const msgs=await fetchMsgs(60);
+    const [msgs,rx]=await Promise.all([fetchMsgs(60),fetchReax().catch(()=>[])]);
+    WALLRX={};rx.forEach(r=>(WALLRX[r.m]=WALLRX[r.m]||[]).push(r));
     if(msgs.length){wallNewest=msgs[0].t;localStorage.setItem("utcSeen",wallNewest)}
     navDot(false);
     if(!w())return;
@@ -594,7 +642,8 @@ async function drawWall(){
       <div class="grow"><div style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap"><span class="nm">${esc(m.n)}</span>
         ${m.re?`<span class="chip" style="color:var(--amber);border-color:rgba(255,194,26,.35)">→ ${esc(m.re)}</span>`:""}
         <span class="lbl">${ago(m.t)}</span></div>
-        <div style="margin-top:3px;white-space:pre-wrap;overflow-wrap:anywhere">${esc(m.x)}</div></div></div>`).join("")
+        <div style="margin-top:3px;white-space:pre-wrap;overflow-wrap:anywhere">${esc(m.x)}</div>
+        ${reaxBar(m.id,WALLRX[m.id]||[])}</div></div>`).join("")
       :`<div class="lbl">Nothing yet. Someone's pick is going badly — say something about it.</div>`;
   }catch(e){if(w())w().innerHTML=`<div class="lbl">Couldn't reach the wall${offline?" — offline":""}. Tap ⟳ to retry.</div>`}
 }

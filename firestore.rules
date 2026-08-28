@@ -34,6 +34,21 @@ service cloud.firestore {
       allow update: if false;
     }
 
+    // Reactions to wall posts: one document per (message, person, emoji), so a post is
+    // never rewritten and the push trigger on /messages never fires for a reaction.
+    // Un-reacting deletes the document, so delete is open exactly like /subs.
+    match /reax/{id} {
+      allow read, delete: if true;
+      allow create: if request.resource.data.keys().hasOnly(['m', 'n', 'e', 't'])
+        && request.resource.data.m is string
+        && request.resource.data.m.size() > 0 && request.resource.data.m.size() <= 64
+        && request.resource.data.n is string
+        && request.resource.data.n.size() > 0 && request.resource.data.n.size() <= 40
+        && request.resource.data.e in ['👍', '😂', '🔥', '💀', '🤡']
+        && request.resource.data.t is timestamp;
+      allow update: if false;
+    }
+
     // One bookkeeping doc: the timestamp the hourly notifier last ran, so each
     // message is pushed exactly once.
     match /meta/{id} {
