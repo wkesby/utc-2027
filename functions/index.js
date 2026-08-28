@@ -16,7 +16,7 @@ const webpush = require("web-push");
 // Keep these in step with docs/config.json (vapidPublicKey) and the site URL.
 // If the VAPID pair is ever rotated: update here AND docs/config.json AND both
 // secrets (GitHub Actions + firebase functions:secrets:set), then redeploy.
-const VAPID_PUBLIC_KEY = "BOhcTGTUpJh1k5MtCxsd9KAJ1Wj1AokIj-K_L9EZfEjB8ssY1xc8C5eY-MS8QJq9CfpVQl-vEc8lD1XJP67tu9g";
+const VAPID_PUBLIC_KEY = "BAoJ_fc_noeOSlpQ0MJVKKBGWR2ls6dOaqLidUHx04nyfiMuzkL6lqhBzcQem3jd_zFCIcvrkRiGlU0cCBtM610";
 const SITE = "https://wkesby.github.io/utc-2027/";
 const VAPID_SUB = "mailto:utc-bot@users.noreply.github.com";
 
