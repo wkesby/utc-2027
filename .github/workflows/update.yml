@@ -10,6 +10,11 @@ on:
     - cron: "0 3 * * 2"      # = Tue 14:00 AEDT (Oct–Apr)
     - cron: "0 4 * * 2"      # = Tue 14:00 AEST (Apr–Oct)
   workflow_dispatch:
+    inputs:
+      report:
+        description: "Also build and send the weekly report (email + phone push)"
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -25,14 +30,16 @@ jobs:
       - run: pip install pillow pywebpush
       - name: Build standings
         run: python -m utc.engine
-      - name: Weekly report slot? (Tue 2pm Melbourne, or a manual run)
+      - name: Weekly report slot? (Tue 2pm Melbourne, or a manual run that asks for it)
         id: slot
         run: |
-          # Only the two dedicated report crons (or a manual run) can be the slot — the
-          # hourly cron also passes through Tue 2pm Melbourne and must not re-send the wrap.
+          # Only the two dedicated report crons — or a manual run with the report box
+          # ticked — can be the slot. The hourly cron also passes through Tue 2pm
+          # Melbourne, and a plain manual run is just a standings/fixtures refresh:
+          # neither may send the wrap, the email or the phone pushes.
           now=$(TZ=Australia/Melbourne date "+%u%H")   # day-of-week + hour, 214 = Tuesday 2pm
           sched="${{ github.event.schedule }}"
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || { [ "$now" = "214" ] && [ "$sched" != "17 * * * *" ]; }; then
+          if [ "${{ inputs.report }}" = "true" ] || { [ "$now" = "214" ] && [ "${{ github.event_name }}" = "schedule" ] && [ "$sched" != "17 * * * *" ]; }; then
             echo "go=true" >> "$GITHUB_OUTPUT"
           else
             echo "go=false" >> "$GITHUB_OUTPUT"
