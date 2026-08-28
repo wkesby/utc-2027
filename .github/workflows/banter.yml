@@ -3,6 +3,10 @@ name: UTC banter pings
 # minutes): any new banter-wall messages go out as push notifications to the phones
 # that switched them on. Exits harmlessly (and fast) until docs/config.json and the
 # VAPID_PRIVATE_KEY secret are set up — see README.
+# With the instant Cloud Function (functions/) deployed, this becomes a safety net:
+# the function advances the shared meta/notify marker, so runs here only send what it
+# missed and never duplicate it. Once instant delivery is confirmed, relax the cron
+# below to hourly ("0 * * * *").
 on:
   schedule:
     - cron: "*/5 * * * *"
