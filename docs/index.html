@@ -34,7 +34,9 @@ h1{margin:0;font-size:21px;font-weight:800;color:var(--amber);letter-spacing:.02
   color:var(--ink);display:grid;place-items:center;font-size:15px;flex:0 0 auto;cursor:pointer}
 .iconbtn:active{transform:scale(.92)}
 main{max-width:760px;margin:0 auto;padding:12px 12px 24px}
-nav{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;
+/* translateZ pins the bar to its own compositing layer — without it, iOS Safari lets a
+   fixed element with backdrop-filter drift off the bottom edge during scrolling */
+nav{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;transform:translateZ(0);
   padding-bottom:var(--sb);background:rgba(11,18,32,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
 nav button{flex:1;background:none;border:0;color:var(--mute);font:inherit;font-size:10.5px;font-weight:600;
   letter-spacing:.03em;text-transform:uppercase;padding:10px 2px 12px;display:grid;gap:3px;justify-items:center;cursor:pointer}
@@ -223,6 +225,7 @@ function movement(){ // position change since the previous daily snapshot
 /* ---------------- routing ---------------- */
 const routes={ladder:renderLadder,banter:renderBanter,stats:renderStats,fix:renderFixtures,comps:renderComps,me:renderDrafters};
 function go(hash){ if(location.hash===hash)render(); else location.hash=hash; }
+let lastView=null;
 function render(){
   if(!S)return;
   const live=Object.values(S.sports).filter(LIVE).length;
@@ -230,10 +233,14 @@ function render(){
   const h=(location.hash||"#ladder").slice(1),[base,arg]=h.split("/");
   document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",
     b.dataset.go===base||(base==="comp"&&b.dataset.go==="comps")||(base==="d"&&b.dataset.go==="me")));
-  window.scrollTo(0,0);
-  if(base==="comp")return renderComp(decodeURIComponent(arg||""));
-  if(base==="d")return renderDrafter(decodeURIComponent(arg||""));
-  (routes[base]||renderLadder)();
+  // a background re-render of the view already on screen (live scores, the 10-minute
+  // refresh) keeps its place — only actual navigation starts at the top
+  const y=h===lastView?window.scrollY:0;
+  lastView=h;
+  if(base==="comp")renderComp(decodeURIComponent(arg||""));
+  else if(base==="d")renderDrafter(decodeURIComponent(arg||""));
+  else (routes[base]||renderLadder)();
+  window.scrollTo(0,y);
 }
 
 /* ---------------- ladder ---------------- */
@@ -421,9 +428,9 @@ function renderFixtures(){
     :x.st==="post"?`<span class="chip final">${esc(x.dt||"final")}</span>`
     :x.h2h?`<span class="chip" style="color:var(--amber);border-color:rgba(255,194,26,.35)">H2H</span>`:"";
   V().innerHTML=`<div class="seg">
-      <button class="${fxFilter==="all"?"on":""}" onclick="fxFilter='all';render()">Upcoming (${upcoming.length})</button>
-      <button class="${fxFilter==="h2h"?"on":""}" onclick="fxFilter='h2h';render()">Head to head (${h2h})</button>
-      ${results.length?`<button class="${fxFilter==="res"?"on":""}" onclick="fxFilter='res';render()">Results (${results.length})</button>`:""}
+      <button class="${fxFilter==="all"?"on":""}" onclick="fxFilter='all';render();scrollTo(0,0)">Upcoming (${upcoming.length})</button>
+      <button class="${fxFilter==="h2h"?"on":""}" onclick="fxFilter='h2h';render();scrollTo(0,0)">Head to head (${h2h})</button>
+      ${results.length?`<button class="${fxFilter==="res"?"on":""}" onclick="fxFilter='res';render();scrollTo(0,0)">Results (${results.length})</button>`:""}
     </div>
     <div class="lbl" style="margin:-2px 0 10px">${fxFilter==="res"
       ?`Every result for a drafted team from the last ${F.past||7} days. Green owner won, red lost.`
