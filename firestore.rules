@@ -9,16 +9,19 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     // The banter wall. n = drafter name, x = the message, re = optional target
-    // drafter ("who this sledge is aimed at"), t = client timestamp.
+    // drafter ("who this sledge is aimed at"), p = optional id of the post being
+    // replied to, t = client timestamp.
     match /messages/{id} {
       allow read: if true;
-      allow create: if request.resource.data.keys().hasOnly(['n', 'x', 're', 't'])
+      allow create: if request.resource.data.keys().hasOnly(['n', 'x', 're', 't', 'p'])
         && request.resource.data.n is string
         && request.resource.data.n.size() > 0 && request.resource.data.n.size() <= 40
         && request.resource.data.x is string
         && request.resource.data.x.size() > 0 && request.resource.data.x.size() <= 400
         && (!('re' in request.resource.data)
             || (request.resource.data.re is string && request.resource.data.re.size() <= 40))
+        && (!('p' in request.resource.data)
+            || (request.resource.data.p is string && request.resource.data.p.size() <= 64))
         && request.resource.data.t is timestamp;
       allow update, delete: if false;
     }

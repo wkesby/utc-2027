@@ -64,6 +64,10 @@ nav button.on{color:var(--amber)}
 .chip.live{color:var(--green);border-color:rgba(61,217,139,.35)}
 .chip.final{color:var(--amber);border-color:rgba(255,194,26,.35)}
 .reax{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
+.quote{font-size:12px;color:var(--mute);border-left:2px solid var(--amber);padding:2px 8px;
+  margin:4px 0 2px;cursor:pointer;overflow-wrap:anywhere}
+.flash{animation:qflash 1.2s}
+@keyframes qflash{from{background:var(--panel2)}to{background:none}}
 .rx{font-size:12px;line-height:1;padding:4px 7px;border-radius:999px;background:var(--panel2);
   border:1px solid var(--line);color:var(--mute);opacity:.4;display:inline-flex;gap:4px;align-items:center}
 .rx.has{opacity:1}
@@ -658,7 +662,8 @@ function sparkline(name){
 /* ---------------- banter ---------------- */
 // The wall lives in a free Firestore project, reached straight over REST — no SDK,
 // no login. Until the commissioner fills in config.json the tab explains itself.
-let CFG=null,pendingRe="",wallNewest="";
+let CFG=null,pendingRe="",pendingP=null,wallNewest="",WALLMSGS={};
+const snip=s=>s.length>70?s.slice(0,70)+"…":s;
 const PLACEHOLDER="Sledge, gloat, dispute the feeds…";
 const myName=()=>localStorage.getItem("utcName")||"";
 const fsReady=()=>!!(CFG&&CFG.firebase&&CFG.firebase.projectId&&CFG.firebase.apiKey);
@@ -671,7 +676,7 @@ async function fetchMsgs(limit){
   if(!r.ok)throw r.status;
   return (await r.json()).filter(x=>x.document).map(x=>{
     const f=x.document.fields||{},g=k=>(f[k]||{}).stringValue||(f[k]||{}).timestampValue||"";
-    return {id:x.document.name.split("/").pop(),n:g("n"),x:g("x"),re:g("re"),t:g("t")}});
+    return {id:x.document.name.split("/").pop(),n:g("n"),x:g("x"),re:g("re"),p:g("p"),t:g("t")}});
 }
 // Reactions get their own collection, one document per (message, person, emoji). The wall
 // stays append-only, and nothing here writes to /messages, so no reaction fires a push.
@@ -733,6 +738,31 @@ function setRe(d,btn){
   document.querySelectorAll("#reRow button").forEach(b=>b.classList.toggle("on",b===btn));
   $("msg").placeholder=d?`Give it to ${d}…`:PLACEHOLDER;$("msg").focus();
 }
+/* replies: a post carries the id of the post it answers (p). The composer shows what
+   you're replying to; the wall shows the quoted line and taps jump to the original. */
+const replyBoxHTML=()=>pendingP?`<div class="quote" style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+    <span class="grow">↩ Replying to <b style="color:var(--ink)">${esc(pendingP.n)}</b>: ${esc(snip(pendingP.x))}</span>
+    <button class="chip" onclick="cancelReply()">✕</button></div>`:"";
+function replyTo(id){
+  const m=WALLMSGS[id];if(!m)return;
+  pendingP={id,n:m.n,x:m.x};
+  if(S.drafters.includes(m.n)&&m.n!==myName())pendingRe=m.n;   // aim it back at the author
+  document.querySelectorAll("#reRow button").forEach(b=>b.classList.toggle("on",b.textContent===(pendingRe||"General")));
+  const rb=$("replyBox");if(rb)rb.innerHTML=replyBoxHTML();
+  $("msg").placeholder=`Reply to ${m.n}…`;$("msg").focus();
+  scrollTo({top:0,behavior:"smooth"});
+}
+function cancelReply(){
+  pendingP=null;
+  const rb=$("replyBox");if(rb)rb.innerHTML="";
+  $("msg").placeholder=pendingRe?`Give it to ${pendingRe}…`:PLACEHOLDER;
+}
+function jumpTo(id){
+  const el=document.getElementById("msg-"+id);
+  if(!el){toast("That post is further up the wall");return}
+  el.scrollIntoView({behavior:"smooth",block:"center"});
+  el.classList.remove("flash");void el.offsetWidth;el.classList.add("flash");
+}
 function renderBanter(){
   if(!fsReady()){V().innerHTML=`<div class="card"><div class="h">Banter</div>
     <b>Not switched on yet.</b>
@@ -747,7 +777,8 @@ function renderBanter(){
     <div class="lbl" style="margin-bottom:8px">Posting as <b style="color:var(--ink)">${esc(myName())}</b> · <span style="text-decoration:underline;cursor:pointer" onclick="localStorage.removeItem('utcName');render()">not you?</span></div>
     <div class="seg" id="reRow" style="padding-bottom:8px">${["",...S.drafters.filter(d=>d!==myName())].map(d=>
       `<button class="${pendingRe===d?"on":""}" onclick="setRe('${esc(d)}',this)">${d?esc(d):"General"}</button>`).join("")}</div>
-    <textarea class="search" id="msg" rows="2" maxlength="400" placeholder="${pendingRe?`Give it to ${esc(pendingRe)}…`:PLACEHOLDER}"></textarea>
+    <div id="replyBox">${replyBoxHTML()}</div>
+    <textarea class="search" id="msg" rows="2" maxlength="400" placeholder="${pendingP?`Reply to ${esc(pendingP.n)}…`:pendingRe?`Give it to ${esc(pendingRe)}…`:PLACEHOLDER}"></textarea>
     <button class="btn" id="post">Post</button></div>
   <div class="card"><div class="h">The wall</div><div id="wall">
     <div class="skel" style="width:70%"></div><div class="skel" style="width:50%;margin-top:10px"></div></div></div>`;
@@ -759,13 +790,18 @@ async function drawWall(){
   try{
     const [msgs,rx]=await Promise.all([fetchMsgs(60),fetchReax().catch(()=>[])]);
     WALLRX={};rx.forEach(r=>(WALLRX[r.m]=WALLRX[r.m]||[]).push(r));
+    WALLMSGS={};msgs.forEach(m=>WALLMSGS[m.id]=m);
     if(msgs.length){wallNewest=msgs[0].t;localStorage.setItem("utcSeen",wallNewest)}
     navDot(false);
     if(!w())return;
-    w().innerHTML=msgs.length?msgs.map(m=>`<div class="row" style="align-items:flex-start">${avatar(m.n,"s")}
+    const quote=m=>{const par=WALLMSGS[m.p];
+      return `<div class="quote" onclick="jumpTo('${esc(m.p)}')">↩ ${par?`<b style="color:var(--ink)">${esc(par.n)}</b>: ${esc(snip(par.x))}`:"an earlier post"}</div>`};
+    w().innerHTML=msgs.length?msgs.map(m=>`<div class="row" id="msg-${esc(m.id)}" style="align-items:flex-start">${avatar(m.n,"s")}
       <div class="grow"><div style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap"><span class="nm">${esc(m.n)}</span>
         ${m.re?`<span class="chip" style="color:var(--amber);border-color:rgba(255,194,26,.35)">→ ${esc(m.re)}</span>`:""}
-        <span class="lbl">${ago(m.t)}</span></div>
+        <span class="lbl">${ago(m.t)}</span>
+        <button class="chip" onclick="replyTo('${esc(m.id)}')">↩ reply</button></div>
+        ${m.p?quote(m):""}
         <div style="margin-top:3px;white-space:pre-wrap;overflow-wrap:anywhere">${esc(m.x)}</div>
         ${reaxBar(m.id,WALLRX[m.id]||[])}</div></div>`).join("")
       :`<div class="lbl">Nothing yet. Someone's pick is going badly — say something about it.</div>`;
@@ -775,13 +811,20 @@ async function postMsg(){
   const x=$("msg").value.trim();
   if(!x)return;
   $("post").disabled=true;
+  const send=fields=>fetch(fsURL("/messages"),{method:"POST",headers:{"content-type":"application/json"},
+    body:JSON.stringify({fields})});
   try{
     const fields={n:{stringValue:myName()},x:{stringValue:x},t:{timestampValue:new Date().toISOString()}};
     if(pendingRe)fields.re={stringValue:pendingRe};
-    const r=await fetch(fsURL("/messages"),{method:"POST",headers:{"content-type":"application/json"},
-      body:JSON.stringify({fields})});
+    if(pendingP)fields.p={stringValue:pendingP.id};
+    let r=await send(fields),fellBack=false;
+    if(!r.ok&&pendingP){          // rules not updated yet: the sledge still lands, unthreaded
+      delete fields.p;r=await send(fields);fellBack=true;
+    }
     if(!r.ok)throw r.status;
-    pendingRe="";toast("On the wall");renderBanter();
+    pendingRe="";pendingP=null;
+    toast(fellBack?"On the wall — reply links need the updated Firestore rules":"On the wall");
+    renderBanter();
   }catch(e){toast("Didn't post — try again");$("post").disabled=false}
 }
 /* push notifications: plain web push, sent by the GitHub workflows */
