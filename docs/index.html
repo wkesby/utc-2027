@@ -42,6 +42,7 @@ nav button{flex:1;background:none;border:0;color:var(--mute);font:inherit;font-s
   letter-spacing:.03em;text-transform:uppercase;padding:10px 2px 12px;display:grid;gap:3px;justify-items:center;cursor:pointer}
 nav button .ic{font-size:19px;line-height:1}
 nav button.on{color:var(--amber)}
+@media (max-width:400px){nav button{font-size:9px;letter-spacing:.01em;padding-left:1px;padding-right:1px}}
 /* ---------- building blocks ---------- */
 .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px;
   animation:rise .32s cubic-bezier(.2,.8,.2,1) both}
@@ -135,6 +136,7 @@ nav button{position:relative}
 <nav>
   <button data-go="ladder"><span class="ic">🏆</span>Ladder</button>
   <button data-go="banter"><span class="ic">💬</span>Banter</button>
+  <button data-go="demerits"><span class="ic">🤡</span>Demerits</button>
   <button data-go="stats"><span class="ic">📊</span>Stats</button>
   <button data-go="fix"><span class="ic">📅</span>Fixtures</button>
   <button data-go="comps"><span class="ic">🗂</span>Comps</button>
@@ -233,8 +235,7 @@ function render(){
   $("sub").innerHTML=`<span class="dot ${offline?"off":""}"></span><span>${offline?"offline · ":""}updated ${ago(S.generated)}</span><span>·</span><span>${live}/20 scoring</span>`;
   const h=(location.hash||"#ladder").slice(1),[base,arg]=h.split("/");
   document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",
-    b.dataset.go===base||(base==="comp"&&b.dataset.go==="comps")||(base==="d"&&b.dataset.go==="me")
-    ||(base==="demerits"&&b.dataset.go==="banter")));
+    b.dataset.go===base||(base==="comp"&&b.dataset.go==="comps")||(base==="d"&&b.dataset.go==="me")));
   // a background re-render of the view already on screen (live scores, the 10-minute
   // refresh) keeps its place — only actual navigation starts at the top
   const y=h===lastView?window.scrollY:0;
@@ -508,8 +509,7 @@ function renderDemerits(){
   const board=Object.entries(counts).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
   const clean=S.drafters.filter(d=>!counts[d]);
   const max=board.length?board[0][1]:1;
-  let html=`<div class="back" onclick="go('#banter')">← Banter</div>
-  <div class="card"><div style="font-size:19px;font-weight:800">🤡 The demerit ledger</div>
+  let html=`<div class="card"><div style="font-size:19px;font-weight:800">🤡 The demerit ledger</div>
     <div class="lbl" style="margin-top:4px">One demerit every time your team loses to a team nobody bothered to draft. Nothing to do with the real ladder — this is the table you want to be bottom of.</div></div>`;
   if(!losses.length){
     html+=`<div class="card"><div class="h">Board of shame</div>
@@ -732,7 +732,7 @@ function setRe(d,btn){
 function renderBanter(){
   if(!fsReady()){V().innerHTML=`<div class="card"><div class="h">Banter</div>
     <b>Not switched on yet.</b>
-    <div class="lbl" style="margin-top:6px">One 10-minute job for the commissioner (README, “Switch on banter &amp; notifications”) and this tab becomes the group's wall — comment on anyone's performance, cop it back, and get new posts and the Tuesday wrap as phone notifications instead of waiting on WhatsApp.</div></div>${demeritLink()}`;return}
+    <div class="lbl" style="margin-top:6px">One 10-minute job for the commissioner (README, “Switch on banter &amp; notifications”) and this tab becomes the group's wall — comment on anyone's performance, cop it back, and get new posts and the Tuesday wrap as phone notifications instead of waiting on WhatsApp.</div></div>`;return}
   if(!myName()){
     V().innerHTML=`<div class="card"><div class="h">Who are you?</div>
       <div class="lbl" style="margin-bottom:10px">Once per phone — posts go up under your name. Honour system, like the rest of the comp.</div>
@@ -746,8 +746,7 @@ function renderBanter(){
     <textarea class="search" id="msg" rows="2" maxlength="400" placeholder="${pendingRe?`Give it to ${esc(pendingRe)}…`:PLACEHOLDER}"></textarea>
     <button class="btn" id="post">Post</button></div>
   <div class="card"><div class="h">The wall</div><div id="wall">
-    <div class="skel" style="width:70%"></div><div class="skel" style="width:50%;margin-top:10px"></div></div></div>
-  ${demeritLink()}`;
+    <div class="skel" style="width:70%"></div><div class="skel" style="width:50%;margin-top:10px"></div></div></div>`;
   $("post").onclick=postMsg;
   drawWall();
 }
