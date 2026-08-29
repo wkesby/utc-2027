@@ -686,14 +686,18 @@ async function fetchReax(){
     return {path:x.document.name,m:g("m"),n:g("n"),e:g("e")}});
 }
 function reaxBar(mid,rx){
-  return `<div class="reax" data-m="${esc(mid)}">${REAX.map(e=>{
+  // names under the buttons, not just counts — hover tooltips don't exist on a phone,
+  // and knowing exactly who dropped the clown on you is where the banter lives
+  const by={};
+  rx.forEach(r=>{(by[r.e]=by[r.e]||[]).push(r.n)});
+  const names=REAX.filter(e=>by[e]).map(e=>`${e} ${by[e].map(esc).join(", ")}`).join(" · ");
+  return `<div class="reaxwrap" data-m="${esc(mid)}"><div class="reax">${REAX.map(e=>{
     const hit=rx.filter(r=>r.e===e),on=hit.some(r=>r.n===myName());
-    return `<button class="rx${on?" on":hit.length?" has":""}" onclick="toggleReax('${esc(mid)}','${e}',this)"${
-      hit.length?` title="${esc(hit.map(r=>r.n).join(", "))}"`:""}>${e}${hit.length?`<i>${hit.length}</i>`:""}</button>`
-  }).join("")}</div>`;
+    return `<button class="rx${on?" on":hit.length?" has":""}" onclick="toggleReax('${esc(mid)}','${e}',this)">${e}${hit.length?`<i>${hit.length}</i>`:""}</button>`
+  }).join("")}</div>${names?`<div class="lbl" style="margin-top:4px;font-size:11px">${names}</div>`:""}</div>`;
 }
 function paintReax(mid){
-  const el=document.querySelector(`.reax[data-m="${CSS.escape(mid)}"]`);
+  const el=document.querySelector(`.reaxwrap[data-m="${CSS.escape(mid)}"]`);
   if(el)el.outerHTML=reaxBar(mid,WALLRX[mid]||[]);
 }
 async function toggleReax(mid,e,btn){
