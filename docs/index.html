@@ -151,18 +151,19 @@ const initials=n=>String(n).split(/\s+/).map(w=>w[0]).join("").slice(0,2).toUppe
 const avatar=(n,size)=>`<span class="av ${size}"><i style="font-style:normal">${esc(initials(n))}</i>`+
   `<img src="photos/${slug(n)}.jpg" alt="" loading="lazy" onerror="this.remove()"></span>`;
 const esc=t=>String(t==null?"":t).replace(/[<>&"']/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;","'":"&#39;"}[c]));
-let S=null,H=null,F=null,offline=false;
+let S=null,H=null,F=null,DM=null,offline=false;
 
 /* ---------------- data ---------------- */
 async function load(showToast){
   try{
-    const [s,h,f,c]=await Promise.all([
+    const [s,h,f,dm,c]=await Promise.all([
       fetch("standings.json?"+Date.now()).then(r=>r.ok?r.json():Promise.reject(r.status)),
       fetch("history.json?"+Date.now()).then(r=>r.ok?r.json():{entries:[]}).catch(()=>({entries:[]})),
       fetch("fixtures.json?"+Date.now()).then(r=>r.ok?r.json():{sports:{}}).catch(()=>({sports:{}})),
+      fetch("demerits.json?"+Date.now()).then(r=>r.ok?r.json():{losses:[]}).catch(()=>({losses:[]})),
       fetch("config.json?"+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
     ]);
-    S=s;H=h;F=f;if(c)CFG=c;offline=false;
+    S=s;H=h;F=f;DM=dm;if(c)CFG=c;offline=false;
     checkBanter();
     if(showToast)toast("Updated");
   }catch(e){
@@ -223,7 +224,7 @@ function movement(){ // position change since the previous daily snapshot
 }
 
 /* ---------------- routing ---------------- */
-const routes={ladder:renderLadder,banter:renderBanter,stats:renderStats,fix:renderFixtures,comps:renderComps,me:renderDrafters};
+const routes={ladder:renderLadder,banter:renderBanter,stats:renderStats,fix:renderFixtures,comps:renderComps,me:renderDrafters,demerits:renderDemerits};
 function go(hash){ if(location.hash===hash)render(); else location.hash=hash; }
 let lastView=null;
 function render(){
@@ -232,7 +233,8 @@ function render(){
   $("sub").innerHTML=`<span class="dot ${offline?"off":""}"></span><span>${offline?"offline · ":""}updated ${ago(S.generated)}</span><span>·</span><span>${live}/20 scoring</span>`;
   const h=(location.hash||"#ladder").slice(1),[base,arg]=h.split("/");
   document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",
-    b.dataset.go===base||(base==="comp"&&b.dataset.go==="comps")||(base==="d"&&b.dataset.go==="me")));
+    b.dataset.go===base||(base==="comp"&&b.dataset.go==="comps")||(base==="d"&&b.dataset.go==="me")
+    ||(base==="demerits"&&b.dataset.go==="banter")));
   // a background re-render of the view already on screen (live scores, the 10-minute
   // refresh) keeps its place — only actual navigation starts at the top
   const y=h===lastView?window.scrollY:0;
@@ -320,6 +322,7 @@ function renderStats(){
     ${nextUp.map(([k,s])=>`<div class="row tap" onclick="go('#comp/${k}')"><div class="grow">
       <div class="nm">${esc(shortName(s.name))}</div><div class="lbl">${esc(s.window)}</div></div>
       <span class="chip">soon</span></div>`).join("")}</div>`;
+  html+=demeritLink();
   V().innerHTML=html;
 }
 function scatterCard(rows){
@@ -493,6 +496,44 @@ async function refreshLive(force){
   const base=(location.hash||"#ladder").slice(1).split("/")[0];
   if(changed&&(base==="fix"||base==="d"))render();
 }
+
+/* ---------------- demerits ---------------- */
+// The shame page: one demerit per loss to an undrafted team, tallied by the hourly job
+// into demerits.json. Nothing to do with the real ladder — banter infrastructure only.
+const demeritCount=()=>((DM&&DM.losses)||[]).length;
+function renderDemerits(){
+  const losses=((DM&&DM.losses)||[]).slice().sort((a,b)=>b.d.localeCompare(a.d));
+  const counts={};
+  for(const l of losses)counts[l.dr]=(counts[l.dr]||0)+1;
+  const board=Object.entries(counts).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+  const clean=S.drafters.filter(d=>!counts[d]);
+  const max=board.length?board[0][1]:1;
+  let html=`<div class="back" onclick="go('#banter')">← Banter</div>
+  <div class="card"><div style="font-size:19px;font-weight:800">🤡 The demerit ledger</div>
+    <div class="lbl" style="margin-top:4px">One demerit every time your team loses to a team nobody bothered to draft. Nothing to do with the real ladder — this is the table you want to be bottom of.</div></div>`;
+  if(!losses.length){
+    html+=`<div class="card"><div class="h">Board of shame</div>
+      <div class="lbl">No offences on record yet. Someone's team will lose to the undrafted mob soon enough.</div></div>`;
+  }else{
+    html+=`<div class="card"><div class="h">Board of shame</div>
+      ${board.map(([d,n],i)=>`<div class="row tap" onclick="go('#d/${encodeURIComponent(d)}')">
+        <div class="pos" style="color:var(--red)">${i+1}</div>${avatar(d,"s")}
+        <div class="grow"><div class="nm">${esc(d)}${i===0?" 🤡":""}</div>
+          <div class="bar"><i style="width:${(n/max*100).toFixed(1)}%;background:var(--red)"></i></div></div>
+        <div class="tot" style="color:var(--red)">${n}</div></div>`).join("")}
+      <div class="lbl" style="margin-top:8px">Demerits never expire and cannot be appealed.</div></div>
+    <div class="card"><div class="h">Offence log</div>
+      ${losses.map(l=>`<div class="row"><div class="grow">
+        <div class="nm">${esc(l.team)} <b style="color:var(--red)">${esc(l.sf)}–${esc(l.sa)}</b> ${esc(l.by)}</div>
+        <div class="lbl">${esc(l.comp)} · ${new Date(l.d).toLocaleDateString(undefined,{day:"numeric",month:"short"})} · ${esc(l.by)} went undrafted</div></div>
+        <span class="chip" style="color:var(--red);border-color:rgba(255,90,78,.35)">${esc(l.dr)} +1</span></div>`).join("")}</div>`;
+  }
+  if(clean.length)html+=`<div class="card"><div class="h">Clean records</div>
+    <div class="lbl">${clean.map(esc).join(" · ")} — yet to lose to the undrafted. For now.</div></div>`;
+  V().innerHTML=html;
+}
+const demeritLink=()=>`<div class="card tap" onclick="go('#demerits')"><div class="h">🤡 The demerit ledger</div>
+  <div class="lbl">Who keeps losing to teams nobody drafted. ${demeritCount()?`<b style="color:var(--red)">${demeritCount()}</b> offence${demeritCount()===1?"":"s"} on the books`:"No offences on the books yet"} — tap for the board of shame.</div></div>`;
 
 /* ---------------- drafters ---------------- */
 function renderDrafters(){
@@ -691,7 +732,7 @@ function setRe(d,btn){
 function renderBanter(){
   if(!fsReady()){V().innerHTML=`<div class="card"><div class="h">Banter</div>
     <b>Not switched on yet.</b>
-    <div class="lbl" style="margin-top:6px">One 10-minute job for the commissioner (README, “Switch on banter &amp; notifications”) and this tab becomes the group's wall — comment on anyone's performance, cop it back, and get new posts and the Tuesday wrap as phone notifications instead of waiting on WhatsApp.</div></div>`;return}
+    <div class="lbl" style="margin-top:6px">One 10-minute job for the commissioner (README, “Switch on banter &amp; notifications”) and this tab becomes the group's wall — comment on anyone's performance, cop it back, and get new posts and the Tuesday wrap as phone notifications instead of waiting on WhatsApp.</div></div>${demeritLink()}`;return}
   if(!myName()){
     V().innerHTML=`<div class="card"><div class="h">Who are you?</div>
       <div class="lbl" style="margin-bottom:10px">Once per phone — posts go up under your name. Honour system, like the rest of the comp.</div>
@@ -705,7 +746,8 @@ function renderBanter(){
     <textarea class="search" id="msg" rows="2" maxlength="400" placeholder="${pendingRe?`Give it to ${esc(pendingRe)}…`:PLACEHOLDER}"></textarea>
     <button class="btn" id="post">Post</button></div>
   <div class="card"><div class="h">The wall</div><div id="wall">
-    <div class="skel" style="width:70%"></div><div class="skel" style="width:50%;margin-top:10px"></div></div></div>`;
+    <div class="skel" style="width:70%"></div><div class="skel" style="width:50%;margin-top:10px"></div></div></div>
+  ${demeritLink()}`;
   $("post").onclick=postMsg;
   drawWall();
 }

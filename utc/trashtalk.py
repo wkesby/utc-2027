@@ -11,6 +11,7 @@ import datetime, json, os, random, urllib.request
 from .notify import config, fs
 
 SEEN = "docs/trashtalk.json"
+LEDGER = "docs/demerits.json"   # the demerit ledger the app's shame page reads
 NAME = "The Commentator"     # posts under this name on the wall; no drafter subscribes as it,
                              # so every phone gets the push — the roasted drafter's included
 PER_RUN = 3                  # a big weekend drains over the following hourly runs
@@ -33,6 +34,7 @@ def beats(fx):
             if mine >= theirs:
                 continue
             out.append({"id": g.get("i") or f"{g['d']}|{g['h']}|{g['a']}",
+                        "date": g["d"],
                         "drafter": g["hd"] if home else g["ad"],
                         "their_team": g["h"] if home else g["a"],
                         "beaten_by": g["a"] if home else g["h"],
@@ -97,11 +99,28 @@ def post(c, b, text):
         "t": {"timestampValue": datetime.datetime.now(datetime.timezone.utc).isoformat()}}})
 
 
+def record(found, path=LEDGER):
+    """Every defeat by an undrafted team goes on the demerit ledger — one demerit each,
+    keyed by game id so re-running never double-books an offence. Separate from the sledge
+    seen-file: history counts against a drafter even when it was never sledged."""
+    try:
+        with open(path) as f:
+            led = json.load(f)
+    except (OSError, ValueError):
+        led = {"losses": []}
+    known = {l["i"] for l in led["losses"]}
+    new = [{"i": b["id"], "d": b["date"], "dr": b["drafter"], "team": b["their_team"],
+            "by": b["beaten_by"], "sf": b["score_for"], "sa": b["score_against"],
+            "comp": b["competition"]}
+           for b in found if b["id"] not in known]
+    if new:
+        led["losses"] = sorted(led["losses"] + new, key=lambda l: l["d"])
+        with open(path, "w") as f:
+            json.dump(led, f, separators=(",", ":"))
+    return len(new)
+
+
 def main():
-    c = config()
-    if not c:
-        print("docs/config.json not filled in — no wall to post to (see README)")
-        return
     try:
         with open("docs/fixtures.json") as f:
             fx = json.load(f)
@@ -109,6 +128,11 @@ def main():
         print("no fixtures.json — nothing to sledge")
         return
     found = beats(fx)
+    print(f"demerits: {record(found)} new offence(s) on the ledger")
+    c = config()
+    if not c:
+        print("docs/config.json not filled in — no wall to post to (see README)")
+        return
     try:
         with open(SEEN) as f:
             seen = json.load(f).get("done", [])
