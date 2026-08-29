@@ -30,6 +30,10 @@ jobs:
       - run: pip install pillow pywebpush
       - name: Build standings
         run: python -m utc.engine
+      - name: Trash talk (drafted team beaten by an undrafted one)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m utc.trashtalk || echo "trash talk skipped — the standings still ship"
       - name: Weekly report slot? (Tue 2pm Melbourne, or a manual run that asks for it)
         id: slot
         run: |
