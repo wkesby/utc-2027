@@ -1,8 +1,9 @@
 *UTC 2027 — app update*
 
 New in the app:
-- Banter tab: the wall. Comment on anyone's performance under your own name — aim it at a drafter ("→ Sam") or spray the group in general. Every profile now has a Sledge button that takes you straight there.
-- Notifications: flick them on in the Banter tab and new sledges plus the Tuesday wrap arrive as proper phone notifications — no more waiting for someone to forward the WhatsApp message. iPhone: the app has to be on your Home Screen first.
+- Fixtures tab, now with scores: live scores while games are on, and a Results view with every drafted team's scores from the last week — owner in green if their team won, red if it lost. The whole ladder refreshes hourly now instead of once a day.
+- The Commentator: any time a drafted team loses to a team nobody bothered to draft, a sledge lands on the wall aimed at the owner — and pushes to every phone. Ask DT about Hull City.
+- The demerit ledger: those defeats also earn demerits on a board of shame, on its own page linked from Banter and Stats. Nothing to do with the real ladder. Demerits never expire and cannot be appealed.
 
 If the app looks out of date:
 Close it completely — swipe it away from the app switcher — then open it again. You may need to do that twice. After that, updates arrive on their own.
