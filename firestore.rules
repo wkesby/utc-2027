@@ -52,6 +52,14 @@ service cloud.firestore {
       allow update: if false;
     }
 
+    // The demerit ledger's instant half, written only by the sledge-patrol Cloud
+    // Function (the admin SDK bypasses these rules). Read-only to everyone else, so
+    // nobody can forge a demerit — the workflow mirrors it onto the committed ledger.
+    match /demerits/{id} {
+      allow read: if true;
+      allow write: if false;
+    }
+
     // One bookkeeping doc: the timestamp the hourly notifier last ran, so each
     // message is pushed exactly once.
     match /meta/{id} {

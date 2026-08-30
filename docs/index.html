@@ -170,6 +170,7 @@ async function load(showToast){
       fetch("config.json?"+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
     ]);
     S=s;H=h;F=f;DM=dm;if(c)CFG=c;offline=false;
+    await mergePatrolDemerits();   // the instant half of the ledger, straight from Firestore
     checkBanter();
     if(showToast)toast("Updated");
   }catch(e){
@@ -503,8 +504,27 @@ async function refreshLive(force){
 }
 
 /* ---------------- demerits ---------------- */
-// The shame page: one demerit per loss to an undrafted team, tallied by the hourly job
-// into demerits.json. Nothing to do with the real ladder — banter infrastructure only.
+// The shame page: one demerit per loss to an undrafted team. The committed ledger
+// (demerits.json) is unioned with Firestore /demerits, where the sledge-patrol function
+// books offences within minutes of full time — so the board never waits on the hourly
+// job. Nothing to do with the real ladder — banter infrastructure only.
+async function mergePatrolDemerits(){
+  if(!fsReady()||!DM)return;
+  try{
+    const r=await fetch(fsURL(":runQuery"),{method:"POST",headers:{"content-type":"application/json"},
+      body:JSON.stringify({structuredQuery:{from:[{collectionId:"demerits"}],limit:400}})});
+    if(!r.ok)return;
+    const have=new Set((DM.losses=DM.losses||[]).map(l=>l.i));
+    for(const x of await r.json()){
+      if(!x.document)continue;
+      const f=x.document.fields||{},g=k=>(f[k]||{}).stringValue||"";
+      const i=g("i")||x.document.name.split("/").pop();
+      if(have.has(i))continue;
+      have.add(i);
+      DM.losses.push({i,d:g("d"),dr:g("dr"),team:g("team"),by:g("by"),sf:g("sf"),sa:g("sa"),comp:g("comp")});
+    }
+  }catch(e){}
+}
 const demeritCount=()=>((DM&&DM.losses)||[]).length;
 function renderDemerits(){
   const losses=((DM&&DM.losses)||[]).slice().sort((a,b)=>b.d.localeCompare(a.d));
