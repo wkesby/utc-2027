@@ -13,7 +13,7 @@ Scores the Ultimate Tipping Comp automatically: feeds → competition order → 
 ## How the week works
 - Hourly: standings, fixtures and results refresh from the live feeds, so the ladder follows the games through the day. (The app also overlays live in-game scores itself while you watch the Fixtures tab.)
 - Any time a drafted team loses to a team nobody drafted, "The Commentator" posts a sledge to the banter wall aimed at the owner — written by Claude when `ANTHROPIC_API_KEY` is set, canned otherwise — and it goes out as a push like any other wall post. One sledge per defeat, never repeated. Every such defeat also earns one **demerit** on the ledger (`docs/demerits.json`) — a shame table on its own page in the app, linked from Banter and Stats, entirely separate from the real scoring.
-- Reply to a Commentator post and it replies back within about 5 minutes, armed with your ladder position and demerit record — and each round of the same thread steps the sledging up a level, to a cap of five, after which The Commentator rests. Nobody has ever won an argument with a scoreboard; now the scoreboard confirms it in writing.
+- Reply to a Commentator post and it replies back — within seconds once the instant upgrade below carries the `ANTHROPIC_API_KEY` secret, otherwise whenever the banter workflow next runs — armed with your ladder position and demerit record. Each round of the same thread steps the sledging up a level, to a cap of five, after which The Commentator rests. Nobody has ever won an argument with a scoreboard; now the scoreboard confirms it in writing.
 - Every 5 minutes: new banter-wall posts go out as phone notifications (once the section below is set up) — GitHub's scheduler adds a little jitter, so a sledge typically lands within a few minutes, or in ~2 seconds with the instant upgrade below.
 - 14:00 Melbourne Tuesday: report built, ladder image rendered, **pushed as a notification to every phone that opted in**, and emailed to you with a **one-tap WhatsApp share link** for anyone still on the old channel — tap, choose the group, send. WhatsApp has no official way for software to post into a group, so that tap stays human; notifications from the app itself don't need it.
 
@@ -37,6 +37,7 @@ Out of the box a GitHub workflow pushes new banter every 5 minutes. For ~2-secon
    ```
    npx firebase-tools login
    npx firebase-tools functions:secrets:set VAPID_PRIVATE_KEY   # paste the same key as the GitHub secret
+   npx firebase-tools functions:secrets:set ANTHROPIC_API_KEY   # same key as the GitHub secret — powers instant comebacks
    npx firebase-tools deploy --only functions
    ```
    The first deploy switches on several Google Cloud APIs and can take a few minutes.
