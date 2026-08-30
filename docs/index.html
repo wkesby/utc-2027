@@ -680,7 +680,7 @@ async function fetchMsgs(limit){
 }
 // Reactions get their own collection, one document per (message, person, emoji). The wall
 // stays append-only, and nothing here writes to /messages, so no reaction fires a push.
-const REAX=["👍","😂","🔥","💀","🤡"];
+const REAX=["👍","❤️","😂","🔥","💀","🤡"];
 let WALLRX={};
 async function fetchReax(){
   const r=await fetch(fsURL(":runQuery"),{method:"POST",headers:{"content-type":"application/json"},
