@@ -9,10 +9,12 @@
 //   npx firebase-tools deploy --only functions
 "use strict";
 const {onDocumentCreated} = require("firebase-functions/v2/firestore");
+const {onSchedule} = require("firebase-functions/v2/scheduler");
 const {defineSecret} = require("firebase-functions/params");
 const admin = require("firebase-admin");
 const webpush = require("web-push");
 const cb = require("./comeback");
+const sledge = require("./sledge");
 
 // Keep these in step with docs/config.json (vapidPublicKey) and the site URL.
 // If the VAPID pair is ever rotated: update here AND docs/config.json AND both
@@ -141,3 +143,66 @@ async function dossierFor(name) {
   } catch (e) { /* sledge without it */ }
   return out;
 }
+
+// The sledge patrol: every 10 minutes, overlay ESPN's live scoreboards onto the
+// published fixtures and catch any drafted team freshly beaten by an undrafted one —
+// booking the demerit into /demerits (the app reads it instantly) and posting the
+// sledge to the wall (which the push function above delivers) within minutes of full
+// time, instead of waiting on GitHub's throttled cron. The workflow's trashtalk step
+// stays on as the mirror and safety net: it copies /demerits onto the committed
+// ledger and only sledges what this patrol somehow missed — each side checks the
+// other's ledger before acting, so nothing is ever booked or sledged twice.
+exports.sledgePatrol = onSchedule({
+  schedule: "every 10 minutes",
+  region: "australia-southeast1",
+  secrets: [ANTHROPIC_API_KEY],
+  timeoutSeconds: 120,
+  maxInstances: 1,
+}, async () => {
+  const db = admin.firestore();
+  const fx = await (await fetch(SITE + "fixtures.json")).json();
+  const need = sledge.candidates(fx, Date.now());
+  if (!need.length) {
+    console.log("no games near full time");
+    return;
+  }
+  const live = {};
+  const day = (t) => new Date(t).toISOString().slice(0, 10).replaceAll("-", "");
+  for (const {key, path} of need) {
+    try {
+      const sb = await (await fetch("https://site.web.api.espn.com/apis/site/v2/sports/" +
+          `${path}/scoreboard?dates=${day(Date.now() - 864e5)}-${day(Date.now() + 864e5)}`)).json();
+      live[key] = {};
+      for (const ev of sb.events || []) {
+        const comp = (ev.competitions || [{}])[0];
+        const ty = ((comp.status || ev.status || {}).type) || {};
+        let hs, as;
+        for (const c of comp.competitors || []) {
+          if (c.homeAway === "home") hs = c.score;
+          else if (c.homeAway === "away") as = c.score;
+        }
+        live[key][ev.id] = {state: ty.state, hs, as};
+      }
+    } catch (e) { /* that sport waits for the next pass */ }
+  }
+  const beats = sledge.beatsFrom(fx, live);
+  if (!beats.length) {
+    console.log("no defeats by undrafted teams on the boards");
+    return;
+  }
+  let published = [];
+  try {
+    published = ((await (await fetch(SITE + "demerits.json")).json()).losses || []).map((l) => l.i);
+  } catch (e) { /* ledger unreachable: /demerits dedup still holds */ }
+  for (const b of beats.slice(0, 3)) {
+    const ref = db.doc("demerits/" + b.id.replaceAll("/", "_"));
+    if (published.includes(b.id) || (await ref.get()).exists) continue;
+    await ref.set({i: b.id, d: b.date, dr: b.drafter, team: b.their_team, by: b.beaten_by,
+      sf: b.score_for, sa: b.score_against, comp: b.competition,
+      t: admin.firestore.Timestamp.now()});
+    const text = await sledge.generate({apiKey: ANTHROPIC_API_KEY.value(), beat: b});
+    await db.collection("messages").add({n: cb.NAME, x: text.slice(0, 400),
+      re: String(b.drafter).slice(0, 40), t: admin.firestore.Timestamp.now()});
+    console.log(`sledged ${b.drafter}: ${b.their_team} lost to undrafted ${b.beaten_by}`);
+  }
+});

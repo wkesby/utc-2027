@@ -120,6 +120,28 @@ def record(found, path=LEDGER):
     return len(new)
 
 
+def remote_losses(c):
+    """Offences the sledge-patrol Cloud Function already booked into /demerits — it
+    catches and sledges defeats within minutes of full time, so this run's job for them
+    is only to mirror the entries onto the committed ledger, never to sledge again."""
+    if not c:
+        return []
+    try:
+        q = fs(c, ":runQuery", "POST",
+               {"structuredQuery": {"from": [{"collectionId": "demerits"}], "limit": 400}})
+        out = []
+        for d in [x["document"] for x in q if "document" in x]:
+            f = d["fields"]
+            g = lambda k: (f.get(k) or {}).get("stringValue", "")
+            out.append({"id": g("i") or d["name"].split("/")[-1], "date": g("d"),
+                        "drafter": g("dr"), "their_team": g("team"), "beaten_by": g("by"),
+                        "score_for": g("sf"), "score_against": g("sa"),
+                        "competition": g("comp")})
+        return out
+    except Exception:
+        return []
+
+
 def main():
     try:
         with open("docs/fixtures.json") as f:
@@ -128,8 +150,12 @@ def main():
         print("no fixtures.json — nothing to sledge")
         return
     found = beats(fx)
-    print(f"demerits: {record(found)} new offence(s) on the ledger")
     c = config()
+    remote = remote_losses(c)
+    merged = {b["id"]: b for b in remote}
+    merged.update({b["id"]: b for b in found})
+    print(f"demerits: {record(list(merged.values()))} new offence(s) on the ledger"
+          + (f" ({len(remote)} from the patrol)" if remote else ""))
     if not c:
         print("docs/config.json not filled in — no wall to post to (see README)")
         return
@@ -142,7 +168,8 @@ def main():
         json.dump({"done": [b["id"] for b in found]}, open(SEEN, "w"))
         print(f"first run — {len(found)} past defeat(s) recorded, none sledged")
         return
-    fresh = [b for b in found if b["id"] not in seen]
+    patrolled = {b["id"] for b in remote}
+    fresh = [b for b in found if b["id"] not in seen and b["id"] not in patrolled]
     posted = 0
     for b in fresh[:PER_RUN]:
         text = sledge(b)
