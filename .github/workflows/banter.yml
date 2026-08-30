@@ -26,3 +26,7 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
         run: python -m utc.notify banter
+      - name: The Commentator talks back
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m utc.comeback || echo "comeback skipped — the pings still went out"
