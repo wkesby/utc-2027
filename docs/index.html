@@ -921,6 +921,21 @@ $("share").onclick=async()=>{
 // live scores: while fixtures or a drafter page is on screen, sweep ESPN every minute
 setInterval(()=>{ const base=(location.hash||"#ladder").slice(1).split("/")[0];
   if(!document.hidden&&(base==="fix"||base==="d"))refreshLive(); },6e4);
+// iOS keyboard: it shrinks only the visual viewport and shoves the page up, leaving a
+// position:fixed bar stranded mid-screen while you type on the wall. While the keyboard
+// is up, pin the nav to the visible bottom edge (riding above the keyboard); the moment
+// it closes, clear the override and normal fixed positioning takes back over.
+function pinNav(vv){
+  const nav=document.querySelector("nav");if(!nav||!vv)return;
+  const kb=innerHeight-vv.height>60;
+  nav.style.transform=kb?`translateY(${Math.round(vv.offsetTop+vv.height-innerHeight)}px)`:"";
+}
+if(window.visualViewport){
+  const p=()=>pinNav(visualViewport);
+  visualViewport.addEventListener("resize",p);
+  visualViewport.addEventListener("scroll",p);
+  addEventListener("focusout",()=>setTimeout(p,250));   // settle after the keyboard slides away
+}
 // refresh when the app comes back to the foreground, and every 10 minutes
 let last=Date.now();
 addEventListener("visibilitychange",async()=>{ if(!document.hidden&&Date.now()-last>6e4){await load();last=Date.now();render()} });
