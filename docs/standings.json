@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-31T20:01+00:00",
+ "generated": "2026-08-31T23:49+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -31,44 +31,44 @@
      "drafted": 2
     },
     {
+     "drafter": "Mike",
+     "pick": "Arsenal",
+     "rank": 2,
+     "points": 10,
+     "bonus": 0,
+     "drafted": 1
+    },
+    {
      "drafter": "Yestin",
      "pick": "Chelsea",
-     "rank": 3,
-     "points": 10,
+     "rank": 4,
+     "points": 9,
      "bonus": 0,
      "drafted": 3
     },
     {
      "drafter": "Dan",
      "pick": "Brentford",
-     "rank": 4,
-     "points": 9,
+     "rank": 5,
+     "points": 8,
      "bonus": 0,
      "drafted": 10
     },
     {
      "drafter": "Paps",
      "pick": "Newcastle Utd",
-     "rank": 5,
-     "points": 8,
+     "rank": 6,
+     "points": 7,
      "bonus": 0,
      "drafted": 9
     },
     {
      "drafter": "Max",
      "pick": "Brighton",
-     "rank": 8,
-     "points": 7,
-     "bonus": 0,
-     "drafted": 8
-    },
-    {
-     "drafter": "Mike",
-     "pick": "Arsenal",
      "rank": 9,
      "points": 6,
      "bonus": 0,
-     "drafted": 1
+     "drafted": 8
     },
     {
      "drafter": "DT",
@@ -97,7 +97,7 @@
     {
      "drafter": "Will",
      "pick": "Aston Villa",
-     "rank": 17,
+     "rank": 19,
      "points": 2,
      "bonus": 0,
      "drafted": 7
@@ -1960,15 +1960,6 @@
   {
    "pos": 1,
    "drafter": "Dan",
-   "inplay": 30,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 3,
-   "total": 30
-  },
-  {
-   "pos": 2,
-   "drafter": "Yestin",
    "inplay": 29,
    "confirmed": 0,
    "bonus": 0,
@@ -1976,13 +1967,22 @@
    "total": 29
   },
   {
-   "pos": 3,
-   "drafter": "Paps",
+   "pos": 2,
+   "drafter": "Yestin",
    "inplay": 28,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
    "total": 28
+  },
+  {
+   "pos": 3,
+   "drafter": "Paps",
+   "inplay": 27,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 3,
+   "total": 27
   },
   {
    "pos": 4,
@@ -1995,7 +1995,7 @@
   },
   {
    "pos": 5,
-   "drafter": "Max",
+   "drafter": "Mike",
    "inplay": 25,
    "confirmed": 0,
    "bonus": 0,
@@ -2013,21 +2013,21 @@
   },
   {
    "pos": 7,
+   "drafter": "Max",
+   "inplay": 24,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 3,
+   "total": 24
+  },
+  {
+   "pos": 8,
    "drafter": "DT",
    "inplay": 22,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
    "total": 22
-  },
-  {
-   "pos": 8,
-   "drafter": "Mike",
-   "inplay": 21,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 3,
-   "total": 21
   },
   {
    "pos": 9,
