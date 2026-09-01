@@ -1,0 +1,81 @@
+*UTC 2027 — Tuesday update, 01 Sep*
+
+1. Dan — 29 (+20)
+2. Yestin — 28 (+20)
+3. Paps — 27 (+22)
+4. Ben Cav — 25 (+21)
+5. Mike — 25 (+15)
+6. Ben Callow — 25 (+18)
+7. Max — 24 (+13)
+8. DT — 22 (+19)
+9. Wayne — 20 (+14)
+10. Will — 14 (+13)
+11. Sam — 14 (+12)
+
+Mover of the week: Paps (+22)
+
+*From the commentary box:*
+Dan's nosed in front on 29 with Yestin one back, while Paps has climbed four spots to third — Max went the other way, sliding six places and hoping nobody noticed.
+Wayne's last-gasp pick of Texas A&M has returned a full 11 points from slot 11, a +10 steal that makes the rest of the draft room look half asleep.
+Will's fourth-pick VfB Stuttgart has coughed up one point for a -7 bust, and with early picks otherwise paying off this year, he's got nowhere to hide down in tenth alongside Sam.
+
+*Next 7 days*
+
+Dan:
+EPL — Brentford vs Sunderland (undrafted) on Sun 6 Sep
+Bundesliga — SC Freiburg at SC Paderborn 07 (undrafted) on Sat 5 Sep
+NCAA Football — Texas vs Texas State Bobcats (undrafted) on Sun 6 Sep
+
+Yestin:
+EPL — Chelsea at Arsenal (Mike) on Mon 7 Sep
+Bundesliga — Borussia Dortmund at Hoffenheim (Mike) on Sat 5 Sep
+NCAA Football — Georgia vs Tennessee State Tigers (undrafted) on Sun 6 Sep
+
+Paps:
+EPL — Newcastle Utd vs Bournemouth (Ben Cav) on Sat 5 Sep
+Bundesliga — RB Leipzig at Werder Bremen (Ben Callow) on Sat 5 Sep
+NCAA Football — LSU vs Clemson Tigers (undrafted) on Sun 6 Sep
+
+Ben Cav:
+EPL — Bournemouth at Newcastle Utd (Paps) on Sat 5 Sep
+Bundesliga — Bayern Munich at Schalke 04 (Sam) on Sun 6 Sep
+NCAA Football — Indiana vs North Texas Mean Green (undrafted) on Sun 6 Sep
+
+Mike:
+EPL — Arsenal vs Chelsea (Yestin) on Mon 7 Sep
+Bundesliga — Hoffenheim vs Borussia Dortmund (Yestin) on Sat 5 Sep
+NCAA Football — Notre Dame vs Wisconsin Badgers (undrafted) on Mon 7 Sep
+
+Ben Callow:
+EPL — Man City vs Coventry City (undrafted) on Sun 6 Sep
+Bundesliga — Werder Bremen vs RB Leipzig (Paps) on Sat 5 Sep
+NCAA Football — Ohio State vs Ball State Cardinals (undrafted) on Sun 6 Sep
+
+Max:
+EPL — Brighton vs Leeds United (undrafted) on Sun 6 Sep
+Bundesliga — SV Elversberg at Borussia Mönchengladbach (undrafted) on Sat 5 Sep
+NCAA Football — Alabama vs East Carolina Pirates (undrafted) on Sun 6 Sep
+
+DT:
+EPL — Man Utd at Everton (undrafted) on Sun 6 Sep
+Bundesliga — Eintracht Frankfurt vs FC Augsburg (undrafted) on Mon 7 Sep
+NCAA Football — Oklahoma vs UTEP Miners (undrafted) on Sat 5 Sep
+
+Wayne:
+EPL — Liverpool at Ipswich Town (undrafted) on Sat 5 Sep
+Bundesliga — Bayer Leverkusen vs 1. FC Union Berlin (undrafted) on Sat 5 Sep
+NCAA Football — Texas A&M vs Missouri State Bears (undrafted) on Sun 6 Sep
+
+Will:
+EPL — Aston Villa at Hull City (undrafted) on Sun 6 Sep
+Bundesliga — VfB Stuttgart vs FC Cologne (undrafted) on Sat 5 Sep
+NCAA Football — Miami at Stanford Cardinal (undrafted) on Sat 5 Sep
+
+Sam:
+EPL — Tottenham at Nottingham Forest (undrafted) on Sun 6 Sep
+Bundesliga — Schalke 04 vs Bayern Munich (Ben Cav) on Sun 6 Sep
+NCAA Football — Oregon vs Boise State Broncos (undrafted) on Sun 6 Sep
+
+Scoring now: EPL, Bundesliga, NCAA Football
+Ladder: https://wkesby.github.io/utc-2027/reports/2026-09-01.html
+Full table: https://wkesby.github.io/utc-2027/
