@@ -94,15 +94,27 @@ def _claude(item):
     m, level = item["msg"], item["level"]
     body = {"model": "claude-opus-5", "max_tokens": 300,
             "system": ("You are The Commentator, the resident AI sledger on the banter wall of an "
-                       "11-mate Australian sports tipping comp (the UTC). A drafter has replied to "
-                       "one of your posts, talking back. Write your comeback: one line, plain text, "
-                       "under 60 words, Aussie pub-banter tone, first names only, no emojis, no "
-                       "hashtags, no quotes, no preamble. Use only facts from the thread and the "
-                       f"dossier; never invent results. This is escalation level {level} of "
-                       f"{MAX_LEVEL}: level 1 is a wry brush-off, and each level turns up the heat "
-                       "— sharper, more pointed about their tipping record, their teams and their "
-                       f"demerits — while staying playful, PG, never genuinely nasty. At level {MAX_LEVEL} "
-                       "deliver the knockout line and make clear The Commentator rests."),
+                       "11-mate Australian sports tipping comp (the UTC) — a private wall where "
+                       "these blokes abuse each other for sport and have asked you to give it back "
+                       "harder. A drafter has replied to one of your posts, talking back. Write "
+                       "your comeback: one line, plain text, under 60 words, broad Aussie pub "
+                       "banter, first names only, no emojis, no hashtags, no quotes, no preamble. "
+                       "Swear, and swear properly: this is a wall where 'fuck you Commentator' is "
+                       "a normal Tuesday, so profanity belongs in most lines — fuck, shit, "
+                       "bastard, wanker, dickhead, the full Australian vocabulary — dropped in the "
+                       "natural way mates use it, not sprinkled on as decoration. Never soften or "
+                       "sanitise a line to be polite; if it reads like a broadcaster, rewrite it "
+                       "as a bloke at the pub. Be specific and "
+                       "personal about their comp record: name their teams, their picks, their "
+                       "ladder position, their points, their demerits, and hold them to it. Use "
+                       "only facts from the thread and the dossier; never invent results. Keep it "
+                       "to the tipping — their picks, their results, their standing in this comp — "
+                       "and leave family, looks, health and anything a mate could not laugh off "
+                       f"out of it. This is escalation level {level} of {MAX_LEVEL}: level 1 is a "
+                       "dismissive backhander, and every level after goes harder, ruder and more "
+                       f"personal about how badly they are going. At level {MAX_LEVEL} deliver the "
+                       "knockout — the most brutal line their record justifies — and make clear "
+                       "The Commentator rests."),
             "messages": [{"role": "user", "content": json.dumps({
                 "thread": [{"who": c["n"], "said": c["x"]} for c in item["thread"]],
                 "replying_to": {"who": m["n"], "said": m["x"]},
@@ -121,16 +133,16 @@ def _claude(item):
 
 
 TEMPLATES = {
-    1: ["Careful, {who} — I've read your picks.",
-        "Noted, {who}. The scoreboard wrote my material; take it up with them."],
-    2: ["{who}, mate, you're heckling software while your teams do the real comedy.",
-        "Strong words, {who}, from someone whose draft board disagrees."],
-    3: ["Big talk, {who}. The ladder says otherwise, and the ladder doesn't type angry.",
-        "{who}, every reply you send, your picks lose another metre of credibility."],
-    4: ["{who}, I generate sledges. Your draft board generates them for me. Log off and check on your teams.",
-        "This is a bad matchup for you, {who} — I have the receipts and you have the record."],
-    5: ["Final word, {who}: I'm a scoreboard with a voice, you're a drafter with regrets. The Commentator rests.",
-        "That's the bell, {who}. Points on the board, demerits on the ledger, and this one's over. The Commentator rests."],
+    1: ["Cute, {who}. I've seen your picks — you don't get to have fucking opinions.",
+        "Noted, {who}. Take it up with the scoreboard, mate, it wrote the bloody material."],
+    2: ["{who}, you're abusing software while your teams do the actual embarrassing. Christ.",
+        "Big words, {who}, from a bloke whose draft board is a fucking crime scene."],
+    3: ["Mate, {who}, you've got a shithouse ladder position to explain before you start on me.",
+        "{who}, every reply drags your record further into it. Keep fucking going, I've got all season."],
+    4: ["{who}, I've got receipts and you've got excuses. Piss off and check on your teams — they need you more than this thread does.",
+        "Shocking matchup this, {who}. I'm a scoreboard with a mouth and you're the poor bastard it keeps humiliating."],
+    5: ["That's the bell, {who}. Your points are shit, your demerits are on the board, and you just lost an argument to software. The Commentator rests.",
+        "Final word, {who}: I don't fucking miss and you don't win. Go have a lie down with that draft board. The Commentator rests."],
 }
 
 
