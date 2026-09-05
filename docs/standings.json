@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-05T00:01+00:00",
+ "generated": "2026-09-05T04:21+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -217,90 +217,90 @@
    "start": "2026-08",
    "rows": [
     {
+     "drafter": "DT",
+     "pick": "Oklahoma",
+     "rank": 9,
+     "points": 11,
+     "bonus": 0,
+     "drafted": 7
+    },
+    {
      "drafter": "Will",
      "pick": "Miami",
-     "rank": 32,
-     "points": 11,
+     "rank": 40,
+     "points": 10,
      "bonus": 0,
      "drafted": 8
     },
     {
      "drafter": "Ben Cav",
      "pick": "Indiana",
-     "rank": 32,
-     "points": 11,
+     "rank": 40,
+     "points": 10,
      "bonus": 0,
      "drafted": 6
     },
     {
      "drafter": "Dan",
      "pick": "Texas",
-     "rank": 32,
-     "points": 11,
+     "rank": 40,
+     "points": 10,
      "bonus": 0,
      "drafted": 4
     },
     {
      "drafter": "Mike",
      "pick": "Notre Dame",
-     "rank": 32,
-     "points": 11,
+     "rank": 40,
+     "points": 10,
      "bonus": 0,
      "drafted": 2
     },
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 32,
-     "points": 11,
+     "rank": 40,
+     "points": 10,
      "bonus": 0,
      "drafted": 11
     },
     {
      "drafter": "Paps",
      "pick": "LSU",
-     "rank": 32,
-     "points": 11,
+     "rank": 40,
+     "points": 10,
      "bonus": 0,
      "drafted": 9
     },
     {
      "drafter": "Yestin",
      "pick": "Georgia",
-     "rank": 32,
-     "points": 11,
+     "rank": 40,
+     "points": 10,
      "bonus": 0,
      "drafted": 5
     },
     {
-     "drafter": "DT",
-     "pick": "Oklahoma",
-     "rank": 32,
-     "points": 11,
-     "bonus": 0,
-     "drafted": 7
-    },
-    {
      "drafter": "Max",
      "pick": "Alabama",
-     "rank": 32,
-     "points": 11,
+     "rank": 40,
+     "points": 10,
      "bonus": 0,
      "drafted": 10
     },
     {
      "drafter": "Ben Callow",
      "pick": "Ohio State",
-     "rank": 32,
-     "points": 11,
+     "rank": 40,
+     "points": 10,
      "bonus": 0,
      "drafted": 1
     },
     {
      "drafter": "Sam",
      "pick": "Oregon",
-     "rank": 32,
-     "points": 11,
+     "rank": 40,
+     "points": 10,
      "bonus": 0,
      "drafted": 3
     }
@@ -1960,33 +1960,24 @@
   {
    "pos": 1,
    "drafter": "Dan",
-   "inplay": 28,
+   "inplay": 27,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
-   "total": 28
+   "total": 27
   },
   {
    "pos": 2,
    "drafter": "Yestin",
-   "inplay": 28,
+   "inplay": 27,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
-   "total": 28
+   "total": 27
   },
   {
    "pos": 3,
    "drafter": "Paps",
-   "inplay": 26,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 3,
-   "total": 26
-  },
-  {
-   "pos": 4,
-   "drafter": "Ben Cav",
    "inplay": 25,
    "confirmed": 0,
    "bonus": 0,
@@ -1994,40 +1985,49 @@
    "total": 25
   },
   {
-   "pos": 5,
-   "drafter": "Mike",
+   "pos": 4,
+   "drafter": "Ben Cav",
    "inplay": 24,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
    "total": 24
+  },
+  {
+   "pos": 5,
+   "drafter": "Mike",
+   "inplay": 23,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 3,
+   "total": 23
   },
   {
    "pos": 6,
    "drafter": "Ben Callow",
-   "inplay": 24,
+   "inplay": 23,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
-   "total": 24
+   "total": 23
   },
   {
    "pos": 7,
    "drafter": "Wayne",
-   "inplay": 23,
+   "inplay": 22,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
-   "total": 23
+   "total": 22
   },
   {
    "pos": 8,
    "drafter": "Max",
-   "inplay": 23,
+   "inplay": 22,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
-   "total": 23
+   "total": 22
   },
   {
    "pos": 9,
@@ -2041,20 +2041,20 @@
   {
    "pos": 10,
    "drafter": "Will",
-   "inplay": 19,
+   "inplay": 18,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
-   "total": 19
+   "total": 18
   },
   {
    "pos": 11,
    "drafter": "Sam",
-   "inplay": 13,
+   "inplay": 12,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
-   "total": 13
+   "total": 12
   }
  ]
 }
