@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-06T14:08+00:00",
+ "generated": "2026-09-06T17:00+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -73,7 +73,7 @@
     {
      "drafter": "Max",
      "pick": "Brighton",
-     "rank": 9,
+     "rank": 10,
      "points": 5,
      "bonus": 0,
      "drafted": 8
@@ -81,7 +81,7 @@
     {
      "drafter": "DT",
      "pick": "Man Utd",
-     "rank": 12,
+     "rank": 11,
      "points": 4,
      "bonus": 0,
      "drafted": 5
@@ -146,7 +146,7 @@
     {
      "drafter": "Ben Cav",
      "pick": "Bayern Munich",
-     "rank": 4,
+     "rank": 5,
      "points": 8,
      "bonus": 0,
      "drafted": 1
@@ -154,7 +154,7 @@
     {
      "drafter": "Wayne",
      "pick": "Bayer Leverkusen",
-     "rank": 5,
+     "rank": 6,
      "points": 7,
      "bonus": 0,
      "drafted": 5
@@ -162,7 +162,7 @@
     {
      "drafter": "Paps",
      "pick": "RB Leipzig",
-     "rank": 7,
+     "rank": 8,
      "points": 6,
      "bonus": 0,
      "drafted": 3
@@ -170,7 +170,7 @@
     {
      "drafter": "Will",
      "pick": "VfB Stuttgart",
-     "rank": 8,
+     "rank": 9,
      "points": 5,
      "bonus": 0,
      "drafted": 4
@@ -178,7 +178,7 @@
     {
      "drafter": "Ben Callow",
      "pick": "Werder Bremen",
-     "rank": 9,
+     "rank": 10,
      "points": 4,
      "bonus": 0,
      "drafted": 10
@@ -186,7 +186,7 @@
     {
      "drafter": "DT",
      "pick": "Eintracht Frankfurt",
-     "rank": 11,
+     "rank": 12,
      "points": 3,
      "bonus": 0,
      "drafted": 6
