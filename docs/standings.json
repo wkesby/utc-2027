@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-06T00:54+00:00",
+ "generated": "2026-09-06T05:55+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -235,7 +235,7 @@
     {
      "drafter": "Ben Cav",
      "pick": "Indiana",
-     "rank": 19,
+     "rank": 20,
      "points": 9,
      "bonus": 0,
      "drafted": 6
@@ -243,66 +243,66 @@
     {
      "drafter": "Yestin",
      "pick": "Georgia",
-     "rank": 26,
+     "rank": 35,
      "points": 8,
      "bonus": 0,
      "drafted": 5
     },
     {
+     "drafter": "Paps",
+     "pick": "LSU",
+     "rank": 47,
+     "points": 7,
+     "bonus": 0,
+     "drafted": 9
+    },
+    {
      "drafter": "DT",
      "pick": "Oklahoma",
-     "rank": 42,
-     "points": 7,
+     "rank": 64,
+     "points": 6,
      "bonus": 0,
      "drafted": 7
     },
     {
      "drafter": "Ben Callow",
      "pick": "Ohio State",
-     "rank": 46,
-     "points": 6,
+     "rank": 68,
+     "points": 5,
      "bonus": 0,
      "drafted": 1
     },
     {
      "drafter": "Sam",
      "pick": "Oregon",
-     "rank": 50,
-     "points": 5,
+     "rank": 71,
+     "points": 4,
      "bonus": 0,
      "drafted": 3
     },
     {
      "drafter": "Dan",
      "pick": "Texas",
-     "rank": 52,
-     "points": 4,
+     "rank": 74,
+     "points": 3,
      "bonus": 0,
      "drafted": 4
     },
     {
-     "drafter": "Mike",
-     "pick": "Notre Dame",
-     "rank": 90,
-     "points": 3,
-     "bonus": 0,
-     "drafted": 2
-    },
-    {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 90,
-     "points": 3,
+     "rank": 77,
+     "points": 2,
      "bonus": 0,
      "drafted": 11
     },
     {
-     "drafter": "Paps",
-     "pick": "LSU",
-     "rank": 90,
-     "points": 3,
+     "drafter": "Mike",
+     "pick": "Notre Dame",
+     "rank": 127,
+     "points": 1,
      "bonus": 0,
-     "drafted": 9
+     "drafted": 2
     }
    ]
   },
@@ -1978,23 +1978,14 @@
   {
    "pos": 3,
    "drafter": "Dan",
-   "inplay": 23,
+   "inplay": 22,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
-   "total": 23
+   "total": 22
   },
   {
    "pos": 4,
-   "drafter": "Ben Callow",
-   "inplay": 21,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 3,
-   "total": 21
-  },
-  {
-   "pos": 5,
    "drafter": "Ben Cav",
    "inplay": 20,
    "confirmed": 0,
@@ -2003,7 +1994,25 @@
    "total": 20
   },
   {
+   "pos": 5,
+   "drafter": "Ben Callow",
+   "inplay": 20,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 3,
+   "total": 20
+  },
+  {
    "pos": 6,
+   "drafter": "Paps",
+   "inplay": 19,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 3,
+   "total": 19
+  },
+  {
+   "pos": 7,
    "drafter": "Will",
    "inplay": 18,
    "confirmed": 0,
@@ -2012,49 +2021,40 @@
    "total": 18
   },
   {
-   "pos": 7,
-   "drafter": "Wayne",
-   "inplay": 17,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 3,
-   "total": 17
-  },
-  {
    "pos": 8,
-   "drafter": "Paps",
-   "inplay": 15,
+   "drafter": "Wayne",
+   "inplay": 16,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
-   "total": 15
+   "total": 16
   },
   {
    "pos": 9,
-   "drafter": "Mike",
-   "inplay": 14,
+   "drafter": "DT",
+   "inplay": 13,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
-   "total": 14
+   "total": 13
   },
   {
    "pos": 10,
-   "drafter": "DT",
-   "inplay": 14,
+   "drafter": "Mike",
+   "inplay": 12,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
-   "total": 14
+   "total": 12
   },
   {
    "pos": 11,
    "drafter": "Sam",
-   "inplay": 8,
+   "inplay": 7,
    "confirmed": 0,
    "bonus": 0,
    "scored": 3,
-   "total": 8
+   "total": 7
   }
  ]
 }
