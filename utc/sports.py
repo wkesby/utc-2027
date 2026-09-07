@@ -5,7 +5,7 @@ SPORTS = {
  # --- spring/autumn 2026 starts ---
  "epl":     ("EPL",                           "espn:soccer/eng.1@2026",             "Aug 2026 – May 2027", "final table",                             "2026-08"),
  "bund":    ("Bundesliga",                    "espn:soccer/ger.1@2026",             "Aug 2026 – May 2027", "final table",                             "2026-08"),
- "ncaa":    ("NCAA Football",                 "espn:football/college-football@2026","Aug 2026 – Jan 2027", "playoff depth > seed > final AP poll",     "2026-08"),
+ "ncaa":    ("NCAA Football",                 "espn:football/college-football@2026","Aug 2026 – Jan 2027", "AP Top 25 in play; final: playoff depth > seed", "2026-08"),
  "nfl":     ("NFL",                           "espn:football/nfl@2026",             "Sep 2026 – Feb 2027", "playoff depth > seed > record",            "2026-09"),
  "ucl":     ("UEFA Champions League",         "espn:soccer/uefa.champions@2026",    "Sep 2026 – Jun 2027", "knockout depth > league-phase position",   "2026-09"),
  "nhl":     ("NHL",                           "espn:hockey/nhl@2027",               "Oct 2026 – Jun 2027", "playoff depth > seed > points",            "2026-10"),

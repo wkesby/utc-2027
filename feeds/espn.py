@@ -1,8 +1,11 @@
 """ESPN public standings (site.web.api.espn.com). Returns {team display name: rank}, 1 = best.
 site.api.espn.com refuses API traffic (403 from the CDN for any client) — site.web.api.espn.com
 serves the same JSON. Soccer and racing tables carry an explicit rank; US leagues are ordered
-by win% with playoff seed as the tie-break. College football has no winPercent stat, so win%
-falls back to the overall W-L record. MLB's 'points' stat is games-back, not table points —
+by win% with playoff seed as the tie-break. College football is the exception: ESPN only
+serves *conference* standings for it, so this module orders it on the AP Top 25 (the poll the
+comp follows in season, refreshed weekly on Sunday/Monday US time), with everyone outside the
+25 falling in behind on win-loss record and then strength of schedule. MLB's 'points' stat is
+games-back, not table points —
 championship points are only trusted for racing (championshipPts).
 """
 import json, datetime, urllib.request
@@ -44,6 +47,131 @@ def _record_winpct(entry):
             return (n[0] + 0.5 * (n[2] if len(n) > 2 else 0)) / games
     return None
 
+COLLEGE = "football/college-football"
+
+
+def _with_locations(table, locs):
+    """'Texas' -> Texas Longhorns, distinct from 'Texas A&M' and 'North Texas'.
+    Only unambiguous locations are added, so a shared one is never guessed at."""
+    for loc, names in locs.items():
+        if len(names) == 1 and loc not in table:
+            only = next(iter(names))
+            if only in table:
+                table[loc] = table[only]
+    return table
+
+
+def _record(entry):
+    """(wins, losses) from the overall record string, falling back to the W/L stats."""
+    for s in entry.get("stats", []):
+        if s.get("name") == "overall":
+            try:
+                n = [int(x) for x in (s.get("displayValue") or s.get("summary") or "").split("-")]
+            except ValueError:
+                break
+            if len(n) >= 2:
+                return n[0], n[1]
+    w, l = _stat(entry, "wins"), _stat(entry, "losses")
+    return int(w or 0), int(l or 0)
+
+
+def ap_ranks(path, season=""):
+    """{team id and name: AP rank} for the current AP Top 25 — the poll this comp follows
+    in season. AP refreshes weekly (Sunday/Monday US time), so the table only moves once a
+    week, which is the point: it is a merit order, not a win-percentage scramble. Keyed by
+    ESPN team id first (exact) with the display name as a fallback key. Returns {} before
+    the season's first poll or if the poll can't be read, so the caller can fall back."""
+    url = f"https://site.web.api.espn.com/apis/site/v2/sports/{path}/rankings"
+    if season:
+        url += f"?season={season}"
+    try:
+        data = _get(url)
+    except Exception:
+        return {}
+    for poll in data.get("rankings") or []:
+        blob = f" {poll.get('type', '')} {poll.get('shortName', '')} {poll.get('name', '')} ".lower()
+        if not (" ap " in blob or "associated press" in blob):
+            continue          # skip the coaches' and playoff-committee polls
+        out = {}
+        for r in poll.get("ranks") or []:
+            t = r.get("team") or {}
+            name = t.get("displayName") or " ".join(
+                x for x in (t.get("location"), t.get("name")) if x).strip()
+            cur = r.get("current")
+            if not cur:
+                continue
+            if t.get("id"):
+                out[str(t["id"])] = int(cur)
+            if name:
+                out.setdefault(name, int(cur))
+        if out:
+            return out
+    return {}
+
+
+def sos(path, season=""):
+    """{team id and name: strength-of-schedule rating}, higher = tougher, from ESPN's FPI.
+    Only ever a tie-break behind the record, so any failure just returns {} and equally
+    matched teams share a rank instead."""
+    url = f"https://site.web.api.espn.com/apis/fitt/v3/sports/{path}/powerindex?limit=300"
+    if season:
+        url += f"&season={season}"
+    try:
+        data = _get(url)
+    except Exception:
+        return {}
+    out = {}
+    for t in data.get("teams") or []:
+        team = t.get("team") or {}
+        name = team.get("displayName") or " ".join(
+            x for x in (team.get("location"), team.get("name")) if x).strip()
+        for cat in t.get("categories") or []:
+            names = [str(n).lower() for n in (cat.get("names") or [])]
+            values = cat.get("values") or []
+            for i, n in enumerate(names):
+                if n in ("sos", "strengthofschedule") and i < len(values):
+                    try:
+                        v = float(values[i])
+                    except (TypeError, ValueError):
+                        continue
+                    if team.get("id"):
+                        out[str(team["id"])] = v
+                    if name:
+                        out.setdefault(name, v)
+    return out
+
+
+def _college_table(path, season, rows, locs):
+    """College football, ordered the way the comp actually judges it: the AP Top 25 take
+    their poll position, and everyone else falls in behind on win-loss record, then
+    strength of schedule. ESPN's standings endpoint can't do this — it serves *conference*
+    standings, so every 1-0 team ties on win percentage and the tie-break was the team's
+    seed within its own conference, which means nothing across the FBS (it had Texas A&M
+    79th in a week they won by 50). Returns {} if the poll can't be read, so the caller
+    falls back to the generic ordering."""
+    ranked = ap_ranks(path, season)
+    if not ranked:
+        return {}
+    tough = sos(path, season)
+    top, rest = {}, []
+    for name, _rank, winpct, _seed, _pts, wins, losses, tid in rows:
+        ap = ranked.get(tid) or ranked.get(name)
+        if ap:
+            top[name] = int(ap)
+            continue
+        rest.append((name, -(winpct or 0.0), -(wins or 0),
+                     -(tough.get(tid) or tough.get(name) or 0.0)))
+    floor = max(top.values()) if top else 0
+    rest.sort(key=lambda r: (r[1], r[2], r[3], r[0]))
+    out, last, rank = dict(top), None, floor
+    for i, r in enumerate(rest):
+        key = r[1:]                       # record first, then strength of schedule
+        if key != last:
+            rank, last = floor + i + 1, key
+        out[r[0]] = rank
+    return _with_locations(out, locs)
+
+
 def standings(path):
     """path like 'soccer/eng.1' or 'football/nfl@2026' — @year pins the comp's season.
     Without the pin ESPN serves whatever it calls current, which off-season means last
@@ -80,18 +208,16 @@ def standings(path):
         pts = _stat(e, "championshipPts")
         played = _stat(e, "gamesPlayed") or (_stat(e, "wins") or 0) + (_stat(e, "losses") or 0)
         started = started or bool(played) or bool(pts)
-        rows.append((name, rank, winpct, seed, pts))
+        wins, losses = _record(e)
+        rows.append((name, rank, winpct, seed, pts, wins, losses, str(team.get("id") or "")))
     if not started:
         return {}
-    def with_locations(table):
-        """'Texas' -> Texas Longhorns, distinct from 'Texas A&M' and 'North Texas'.
-        Only unambiguous locations are added, so a shared one is never guessed at."""
-        for loc, names in locs.items():
-            if len(names) == 1 and loc not in table:
-                only = next(iter(names))
-                if only in table:
-                    table[loc] = table[only]
-        return table
+    with_locations = lambda table: _with_locations(table, locs)
+
+    if path == COLLEGE:                 # the AP poll, not ESPN's conference standings
+        table = _college_table(path, season, rows, locs)
+        if table:
+            return table
 
     if rows and all(r[1] is not None for r in rows):
         return with_locations({n: int(r) for n, r, *_ in rows})
