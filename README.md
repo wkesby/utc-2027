@@ -43,6 +43,18 @@ Out of the box a GitHub workflow pushes new banter every 5 minutes. For ~2-secon
    The first deploy switches on several Google Cloud APIs and can take a few minutes.
 3. Post on the wall from one phone with another phone opted in — the buzz should arrive within a couple of seconds.
 
+If the deploy stops at `User code failed to load. Cannot determine backend specification. Timeout after 10000`, that message names a symptom, not a cause. `firebase-tools` loads `functions/` on your own machine to work out what to deploy: it starts the code as a small local server and gives it 10 seconds to answer. You get the same timeout whether the code crashed on load or was merely slow to load, and the real error is swallowed either way. Two environment variables open it up, in this order:
+
+```
+# same discovery, no local server, and it prints the actual error if the code is at fault
+FIREBASE_FUNCTIONS_DISCOVERY_OUTPUT_PATH=true npx firebase-tools deploy --only functions
+
+# the code is fine, the machine is just slow to load it (seconds, not milliseconds)
+FUNCTIONS_DISCOVERY_TIMEOUT=120 npx firebase-tools deploy --only functions
+```
+
+Check too that `functions/node_modules` exists — `firebase.json`'s predeploy hook installs it, or run `npm --prefix functions install` — and that `node -v` is 18 or newer. `npx firebase-tools` takes the newest CLI every time, so if it worked last month and nothing here changed, pin the CLI back a major (`npx firebase-tools@14 deploy --only functions`) to rule out a CLI regression. The `outdated version of firebase-functions` warning is cosmetic: the CLI's hard minimum is 3.20.0 and this repo is on 6.x. Upgrading to 7.x is a breaking change — don't do it to chase this error.
+
 If the deploy complains about the trigger location, the database isn't in `australia-southeast1`: change `region` in `functions/index.js` to the location shown at the top of the Firestore Data page and deploy again. Once instant delivery is confirmed, relax the schedule in `.github/workflows/banter.yml` from every 5 minutes to hourly — that's its safety-net cadence.
 
 ## Feeds

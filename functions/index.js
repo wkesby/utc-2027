@@ -7,6 +7,12 @@
 //   npx firebase-tools login
 //   npx firebase-tools functions:secrets:set VAPID_PRIVATE_KEY
 //   npx firebase-tools deploy --only functions
+// firebase-tools loads this file on the deploying machine to work out what to deploy,
+// giving it 10 seconds. Any failure of that step — a crash on load, a slow load, missing
+// node_modules — surfaces as the same "User code failed to load. Cannot determine backend
+// specification" timeout, which names none of them; see the README for the two env vars
+// that prise it open. This file must stay cheap to require: no network calls, no heavy
+// work outside the handlers.
 "use strict";
 const {onDocumentCreated} = require("firebase-functions/v2/firestore");
 const {onSchedule} = require("firebase-functions/v2/scheduler");
