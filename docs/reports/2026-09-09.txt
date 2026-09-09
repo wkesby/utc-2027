@@ -1,0 +1,100 @@
+*UTC 2027 — Tuesday update, 09 Sep*
+
+1. Dan — 34 (+5)
+2. Yestin — 34 (+6)
+3. Ben Callow — 29 (+4)
+4. Wayne — 28 (+8)
+5. Mike — 26 (+1)
+6. Will — 20 (+6)
+7. Paps — 20 (-7)
+8. Ben Cav — 19 (-6)
+9. DT — 19 (-3)
+10. Sam — 18 (+4)
+11. Max — 17 (-7)
+
+Mover of the week: Wayne (+8)
+Slider of the week: Max (-7)
+
+*From the commentary box:*
+Dan and Yestin are locked together on 34, so somebody's going to have to blink first — Wayne's charging up five spots on the back of an eight-point week and won't wait around.
+DT nicked Aston Villa with the very last pick of the Champions League and has turned it into ten points, which is nine above par and about eight more than Max got from PSG at pick one.
+Board's mostly run to form this year, so Max can't even blame bad luck — meanwhile Paps and Max both went backwards seven, and Sam's Tottenham are propping up the EPL for good measure.
+
+*Next 7 days*
+
+Dan:
+EPL — Brentford at Bournemouth (Ben Cav) on Sun 13 Sep
+Bundesliga — SC Freiburg vs Borussia Mönchengladbach (undrafted) on Sat 12 Sep
+NCAA Football — Texas vs Ohio State (Ben Callow) on Sun 13 Sep
+NFL — Buffalo Bills at Houston Texans (undrafted) on Mon 14 Sep
+UEFA Champions League — Atletico Madrid at Liverpool (Paps) on Thu 10 Sep
+
+Yestin:
+EPL — Chelsea vs Hull City (undrafted) on Sun 13 Sep
+Bundesliga — Borussia Dortmund vs SC Paderborn 07 (undrafted) on Sat 12 Sep
+NCAA Football — Georgia vs Western Kentucky Hilltoppers (undrafted) on Sun 13 Sep
+NFL — Baltimore Ravens at Indianapolis Colts (undrafted) on Mon 14 Sep
+UEFA Champions League — Bayern Munich vs Bodo/Glimt (undrafted) on Fri 11 Sep
+
+Ben Callow:
+EPL — Man City at Man Utd (DT) on Mon 14 Sep
+Bundesliga — Werder Bremen at FC Cologne (undrafted) on Sun 13 Sep
+NCAA Football — Ohio State at Texas (Dan) on Sun 13 Sep
+NFL — LA Rams vs San Francisco 49ers (Wayne) on Fri 11 Sep
+UEFA Champions League — Man Utd vs Sabah FK (undrafted) on Fri 11 Sep
+
+Wayne:
+EPL — Liverpool vs Fulham (undrafted) on Sun 13 Sep
+Bundesliga — Bayer Leverkusen at FC Augsburg (undrafted) on Sat 12 Sep
+NCAA Football — Texas A&M vs Arizona State Sun Devils (undrafted) on Sun 13 Sep
+NFL — San Francisco 49ers at LA Rams (Ben Callow) on Fri 11 Sep
+
+Mike:
+EPL — Arsenal at Sunderland (undrafted) on Sun 13 Sep
+Bundesliga — Hoffenheim vs VfB Stuttgart (Will) on Sat 12 Sep
+NCAA Football — Notre Dame vs Rice Owls (undrafted) on Sun 13 Sep
+NFL — New England Patriots at Seattle Seahawks (Will) on Thu 10 Sep
+UEFA Champions League — Barcelona vs Feyenoord Rotterdam (undrafted) on Thu 10 Sep
+
+Will:
+EPL — Aston Villa vs Nottingham Forest (undrafted) on Sun 13 Sep
+Bundesliga — VfB Stuttgart at Hoffenheim (Mike) on Sat 12 Sep
+NCAA Football — Miami vs Florida A&M Rattlers (undrafted) on Fri 11 Sep
+NFL — Seattle Seahawks vs New England Patriots (Mike) on Thu 10 Sep
+UEFA Champions League — Arsenal at Napoli (undrafted) on Thu 10 Sep
+
+Paps:
+EPL — Newcastle Utd at Leeds United (undrafted) on Tue 15 Sep
+Bundesliga — RB Leipzig vs Hamburg SV (undrafted) on Sun 13 Sep
+NCAA Football — LSU vs Louisiana Tech Bulldogs (undrafted) on Sun 13 Sep
+NFL — LA Chargers vs Arizona Cardinals (undrafted) on Mon 14 Sep
+UEFA Champions League — Liverpool vs Atletico Madrid (Dan) on Thu 10 Sep
+
+Ben Cav:
+EPL — Bournemouth vs Brentford (Dan) on Sun 13 Sep
+Bundesliga — Bayern Munich at SV Elversberg (Max) on Mon 14 Sep
+NCAA Football — Indiana vs Howard Bison (undrafted) on Sun 13 Sep
+NFL — Kansas City Chiefs vs Denver Broncos (DT) on Tue 15 Sep
+
+DT:
+EPL — Man Utd vs Man City (Ben Callow) on Mon 14 Sep
+Bundesliga — Eintracht Frankfurt at Mainz (undrafted) on Sat 12 Sep
+NCAA Football — Oklahoma at Michigan Wolverines (undrafted) on Sun 13 Sep
+NFL — Denver Broncos at Kansas City Chiefs (Ben Cav) on Tue 15 Sep
+
+Sam:
+EPL — Tottenham vs Everton (undrafted) on Sun 13 Sep
+Bundesliga — Schalke 04 at 1. FC Union Berlin (undrafted) on Sat 12 Sep
+NCAA Football — Oregon at Oklahoma State Cowboys (undrafted) on Sun 13 Sep
+NFL — Philadelphia Eagles vs Washington Commanders (undrafted) on Mon 14 Sep
+
+Max:
+EPL — Brighton at Coventry City (undrafted) on Sun 13 Sep
+Bundesliga — SV Elversberg vs Bayern Munich (Ben Cav) on Mon 14 Sep
+NCAA Football — Alabama at Kentucky Wildcats (undrafted) on Sun 13 Sep
+NFL — Detroit Lions vs New Orleans Saints (undrafted) on Mon 14 Sep
+UEFA Champions League — PSG vs Slovan Bratislava (undrafted) on Thu 10 Sep
+
+Scoring now: EPL, Bundesliga, NCAA Football, UEFA Champions League
+Ladder: https://wkesby.github.io/utc-2027/reports/2026-09-09.html
+Full table: https://wkesby.github.io/utc-2027/
