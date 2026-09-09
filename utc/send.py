@@ -1,5 +1,5 @@
 """Email the Tuesday update (text + PNG) with a one-tap WhatsApp share link. Needs SMTP secrets in the workflow."""
-import os, re, html, smtplib, ssl, datetime, urllib.parse
+import os, re, html, json, smtplib, ssl, datetime, urllib.parse
 from email.message import EmailMessage
 
 def env(name, default=None):
@@ -52,8 +52,16 @@ def share_text(text, budget=WA_BUDGET):
         out = "\n".join(lines).strip()
     return out
 
+def newest_stamp():
+    """The wrap utc.report wrote last — today's in the Tuesday run, and still this week's
+    when the email is resent on another day."""
+    try:
+        return json.load(open("docs/reports/latest.json"))["stamp"]
+    except (OSError, ValueError, KeyError):
+        return datetime.date.today().isoformat()
+
 def main():
-    stamp = datetime.date.today().isoformat()
+    stamp = newest_stamp()
     text = open(f"docs/reports/{stamp}.txt").read()
     site = os.environ.get("SITE_URL", "").strip()
     user, password = env("SMTP_USER"), env("SMTP_PASS")
