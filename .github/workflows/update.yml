@@ -6,7 +6,9 @@ on:
     # coincides with the report crons below.
     - cron: "17 * * * *"
     # Weekly report: Tuesday 14:00 Melbourne. Cron is UTC-only and Melbourne moves with
-    # daylight saving, so both candidate hours run and the step below keeps the right one.
+    # daylight saving, so both candidate hours are the on-time attempts — but GitHub runs
+    # schedules hours late or skips them, so the slot step below lets any later scheduled
+    # run (the hourly one included) send the wrap until it has gone out for the week.
     - cron: "0 3 * * 2"      # = Tue 14:00 AEDT (Oct–Apr)
     - cron: "0 4 * * 2"      # = Tue 14:00 AEST (Apr–Oct)
   workflow_dispatch:
@@ -34,19 +36,30 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python -m utc.trashtalk || echo "trash talk skipped — the standings still ship"
-      - name: Weekly report slot? (Tue 2pm Melbourne, or a manual run that asks for it)
+      - name: Weekly report slot? (first scheduled run after Tue 2pm Melbourne, or a manual run that asks)
         id: slot
         run: |
-          # Only the two dedicated report crons — or a manual run with the report box
-          # ticked — can be the slot. The hourly cron also passes through Tue 2pm
-          # Melbourne, and a plain manual run is just a standings/fixtures refresh:
-          # neither may send the wrap, the email or the phone pushes.
-          now=$(TZ=Australia/Melbourne date "+%u%H")   # day-of-week + hour, 214 = Tuesday 2pm
-          sched="${{ github.event.schedule }}"
-          if [ "${{ inputs.report }}" = "true" ] || { [ "$now" = "214" ] && [ "${{ github.event_name }}" = "schedule" ] && [ "$sched" != "17 * * * *" ]; }; then
-            echo "go=true" >> "$GITHUB_OUTPUT"
+          # The wrap can't wait for one exact cron: GitHub delivered the Tue 2pm run at
+          # 3:55pm once and skipped it another week. So any scheduled run — the hourly
+          # one included — sends it once it is Tuesday 2pm Melbourne or later and this
+          # week's report isn't on disk yet. utc.report stamps its files with the UTC
+          # date, and Tuesday afternoon Melbourne through to Wednesday morning is all
+          # Tuesday in UTC, so "today's report exists" is exactly "already sent this
+          # week" — one wrap a week, never two. A plain manual run stays a quiet
+          # standings/fixtures refresh: only the ticked report box sends.
+          stamp=$(date -u +%F)
+          mel=$(TZ=Australia/Melbourne date "+%u%H")    # day-of-week + hour, 214 = Tue 2pm
+          go=false
+          if [ "${{ inputs.report }}" = "true" ]; then
+            go=true
+          elif [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%u)" = "2" ] \
+               && [ "$mel" -ge 214 ] && [ ! -e "docs/reports/$stamp.txt" ]; then
+            go=true
+          fi
+          echo "go=$go" >> "$GITHUB_OUTPUT"
+          if [ "$go" = "true" ]; then
+            echo "Melbourne $(TZ=Australia/Melbourne date '+%a %H:%M') — sending this week's wrap."
           else
-            echo "go=false" >> "$GITHUB_OUTPUT"
             echo "Melbourne $(TZ=Australia/Melbourne date '+%a %H:%M') — not the report slot, standings only."
           fi
       - name: Weekly report
