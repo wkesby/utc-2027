@@ -157,19 +157,20 @@ const initials=n=>String(n).split(/\s+/).map(w=>w[0]).join("").slice(0,2).toUppe
 const avatar=(n,size)=>`<span class="av ${size}"><i style="font-style:normal">${esc(initials(n))}</i>`+
   `<img src="photos/${slug(n)}.jpg" alt="" loading="lazy" onerror="this.remove()"></span>`;
 const esc=t=>String(t==null?"":t).replace(/[<>&"']/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;","'":"&#39;"}[c]));
-let S=null,H=null,F=null,DM=null,offline=false;
+let S=null,H=null,F=null,DM=null,LATEST=null,offline=false;
 
 /* ---------------- data ---------------- */
 async function load(showToast){
   try{
-    const [s,h,f,dm,c]=await Promise.all([
+    const [s,h,f,dm,c,l]=await Promise.all([
       fetch("standings.json?"+Date.now()).then(r=>r.ok?r.json():Promise.reject(r.status)),
       fetch("history.json?"+Date.now()).then(r=>r.ok?r.json():{entries:[]}).catch(()=>({entries:[]})),
       fetch("fixtures.json?"+Date.now()).then(r=>r.ok?r.json():{sports:{}}).catch(()=>({sports:{}})),
       fetch("demerits.json?"+Date.now()).then(r=>r.ok?r.json():{losses:[]}).catch(()=>({losses:[]})),
-      fetch("config.json?"+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
+      fetch("config.json?"+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch("reports/latest.json?"+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
     ]);
-    S=s;H=h;F=f;DM=dm;if(c)CFG=c;offline=false;
+    S=s;H=h;F=f;DM=dm;if(c)CFG=c;if(l&&l.stamp)LATEST=l;offline=false;
     await mergePatrolDemerits();   // the instant half of the ledger, straight from Firestore
     checkBanter();
     if(showToast)toast("Updated");
@@ -240,13 +241,14 @@ function render(){
   $("sub").innerHTML=`<span class="dot ${offline?"off":""}"></span><span>${offline?"offline · ":""}updated ${ago(S.generated)}</span><span>·</span><span>${live}/20 scoring</span>`;
   const h=(location.hash||"#ladder").slice(1),[base,arg]=h.split("/");
   document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",
-    b.dataset.go===base||(base==="comp"&&b.dataset.go==="comps")||(base==="d"&&b.dataset.go==="me")));
+    b.dataset.go===base||(base==="comp"&&b.dataset.go==="comps")||(base==="d"&&b.dataset.go==="me")||(base==="report"&&b.dataset.go==="ladder")));
   // a background re-render of the view already on screen (live scores, the 10-minute
   // refresh) keeps its place — only actual navigation starts at the top
   const y=h===lastView?window.scrollY:0;
   lastView=h;
   if(base==="comp")renderComp(decodeURIComponent(arg||""));
   else if(base==="d")renderDrafter(decodeURIComponent(arg||""));
+  else if(base==="report")renderReport(decodeURIComponent(arg||""));
   else (routes[base]||renderLadder)();
   window.scrollTo(0,y);
 }
@@ -256,6 +258,9 @@ function renderLadder(){
   const mv=movement(),lead=S.ladder[0].total||1,P=profiles();
   const top=S.ladder.slice(0,3),medal=["🥇","🥈","🥉"];
   V().innerHTML=`
+  ${LATEST?`<div class="card tap" onclick="go('#report/${esc(LATEST.stamp)}')">
+    <div class="row" style="border:0;padding:0"><div class="grow"><div class="nm">📰 ${esc(LATEST.title)}</div>
+      <div class="lbl">This week's wrap — the ladder, the movers and the commentary box</div></div><div class="tot" style="color:var(--mute)">›</div></div></div>`:""}
   <div class="card"><div class="h">The podium</div>
     <div class="tiles">${top.map((r,i)=>`<div class="tile tap" style="text-align:center" onclick="go('#d/${encodeURIComponent(r.drafter)}')">
       ${avatar(r.drafter,"m")}<b style="margin-top:6px">${medal[i]} ${r.total}</b><span>${esc(r.drafter)}</span></div>`).join("")}</div>
@@ -273,6 +278,47 @@ function renderLadder(){
   </div>
   <div class="card"><div class="h">Scoring rules</div>
     <div class="lbl">11 points for first in a competition down to 1 for last, +2 for winning it. Confirmed points are locked; in-play points move every day.</div></div>`;
+}
+
+/* ---------------- weekly wrap ---------------- */
+// The Tuesday report, in the app: the ladder image plus the text the email carries,
+// straight from docs/reports/<stamp>.txt. The wrap's push notification lands here
+// (#report/<stamp>), and the card at the top of the ladder opens the newest one.
+async function renderReport(stamp){
+  stamp=stamp||(LATEST&&LATEST.stamp);
+  if(!stamp){V().innerHTML=`<div class="card"><b>No wrap yet.</b><div class="lbl" style="margin-top:6px">The first Tuesday update will appear here.</div></div>`;return}
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(stamp)){go("#ladder");return}
+  V().innerHTML=`<div class="card"><div class="h">Weekly wrap</div><div class="lbl">Loading ${esc(stamp)}…</div></div>`;
+  let text="";
+  try{const r=await fetch(`reports/${stamp}.txt`);if(!r.ok)throw r.status;text=await r.text()}
+  catch(e){V().innerHTML=`<div class="card"><b>Couldn't load that wrap.</b><div class="lbl" style="margin-top:6px">${esc(stamp)} — check the connection and try again.</div>
+    <button class="btn" style="margin-top:10px" onclick="go('#ladder')">Live ladder</button></div>`;return}
+  if(location.hash!==`#report/${stamp}`)return;      // navigated on while it loaded
+  // *Bold* lines open a section, "Name:" lines are sub-heads inside the look-ahead, and
+  // the URL lines at the foot are this app, so they go. The numbered ladder is the image.
+  const cards=[];let title="",lines=[];
+  const push=()=>{if(lines.some(Boolean))cards.push({title,lines});};
+  for(const raw of text.split("\n")){
+    const l=raw.trim();
+    if(/^(Ladder|Full table): /.test(l))continue;
+    const m=l.match(/^\*(.+)\*$/);
+    if(m){push();title=m[1].replace(/:$/,"");lines=[];continue}
+    if(!cards.length&&/^\d+\. /.test(l))continue;
+    lines.push(l);
+  }
+  push();
+  const block=ls=>{const out=[];let para=[];
+    const flush=()=>{if(para.length)out.push(`<div style="margin:6px 0">${para.join("<br>")}</div>`);para=[]};
+    for(const l of ls){
+      if(!l){flush();continue}
+      if(/^[^—:]{1,30}:$/.test(l)){flush();out.push(`<div class="nm" style="margin-top:12px">${esc(l.slice(0,-1))}</div>`);continue}
+      para.push(esc(l));
+    }
+    flush();return out.join("")};
+  V().innerHTML=`<div class="card" style="padding:0;overflow:hidden"><img src="reports/${esc(stamp)}.png" alt="${esc(title)}" style="display:block;width:100%" onerror="this.parentNode.remove()"></div>`
+    +cards.map(c=>`<div class="card">${c.title?`<div class="h">${esc(c.title)}</div>`:""}<div style="font-size:14px;line-height:1.45;overflow-wrap:anywhere">${block(c.lines)}</div></div>`).join("")
+    +`<div class="card tap" onclick="go('#ladder')"><div class="row" style="border:0;padding:0"><div class="grow"><div class="nm">🏆 Live ladder</div>
+      <div class="lbl">The table as it stands right now</div></div><div class="tot" style="color:var(--mute)">›</div></div></div>`;
 }
 
 /* ---------------- stats ---------------- */

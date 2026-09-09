@@ -53,7 +53,7 @@ def share_page(S, site, stamp, path):
 <meta name="twitter:card" content="summary_large_image">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 </head><body style="margin:0;background:#0B1220;text-align:center">
-<a href="{base}/"><img src="{stamp}.png" alt="{title}" style="max-width:100%"></a>
+<a href="{base}/#report/{stamp}"><img src="{stamp}.png" alt="{title}" style="max-width:100%"></a>
 </body></html>""")
 
 def look_ahead(S, days=7, path="docs/fixtures.json"):
@@ -144,4 +144,7 @@ if __name__ == "__main__":
     text = summary(S, prev)
     open(f"docs/reports/{stamp}.txt", "w").write(text)
     json.dump(S, open("docs/last_week.json", "w"))
+    # the app's pointer to the newest wrap — the notification tap and the ladder card both read it
+    json.dump({"stamp": stamp, "title": f"Tuesday update, {datetime.date.today():%d %b}"},
+              open("docs/reports/latest.json", "w"))
     print(text)
