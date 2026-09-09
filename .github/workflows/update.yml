@@ -17,6 +17,10 @@ on:
         description: "Also build and send the weekly report (email + phone push)"
         type: boolean
         default: false
+      resend:
+        description: "Email the newest wrap again as it stands (no rebuild, no phone push)"
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -82,6 +86,14 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
         run: python -m utc.notify report || echo "push not configured yet — see README"
+      - name: Resend the newest wrap by email (manual run with the resend box ticked)
+        if: inputs.resend == true
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          REPORT_TO: ${{ secrets.REPORT_TO }}
+        run: python -m utc.send
       - name: Commit results
         run: |
           git config user.name "utc-bot" && git config user.email "utc-bot@users.noreply.github.com"
