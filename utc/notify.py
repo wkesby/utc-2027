@@ -157,8 +157,12 @@ def report(c):
     if len(lad) > 1:
         body += f", {top['total'] - lad[1]['total']} clear of {lad[1]['drafter']}"
     body += ". Tap for the ladder, the movers and this week's sledging."
+    try:                                  # written by utc.report moments earlier in the same run
+        stamp = json.load(open("docs/reports/latest.json"))["stamp"]
+    except (OSError, ValueError, KeyError):
+        stamp = datetime.date.today().isoformat()
     push_all(c, {"title": "🏆 UTC 2027 — weekly wrap", "body": body,
-                 "url": site_url() + "#ladder", "tag": "utc-report"})
+                 "url": site_url() + "#report/" + stamp, "tag": "utc-report"})
 
 
 def test(c):
