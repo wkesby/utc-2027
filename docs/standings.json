@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-10T18:24+00:00",
+ "generated": "2026-09-10T21:36+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -419,73 +419,73 @@
      "drafted": 1
     },
     {
-     "drafter": "Mike",
-     "pick": "Barcelona",
+     "drafter": "Yestin",
+     "pick": "Bayern Munich",
      "rank": 2,
      "points": 10,
+     "bonus": 0,
+     "drafted": 4
+    },
+    {
+     "drafter": "Mike",
+     "pick": "Barcelona",
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
      "drafted": 5
     },
     {
+     "drafter": "Ben Callow",
+     "pick": "Man Utd",
+     "rank": 4,
+     "points": 8,
+     "bonus": 0,
+     "drafted": 8
+    },
+    {
      "drafter": "Wayne",
      "pick": "Man City",
-     "rank": 5,
-     "points": 9,
+     "rank": 8,
+     "points": 7,
      "bonus": 0,
      "drafted": 6
     },
     {
      "drafter": "DT",
      "pick": "Aston Villa",
-     "rank": 6,
-     "points": 8,
+     "rank": 9,
+     "points": 6,
      "bonus": 0,
      "drafted": 11
     },
     {
      "drafter": "Paps",
      "pick": "Liverpool",
-     "rank": 9,
-     "points": 7,
+     "rank": 13,
+     "points": 5,
      "bonus": 0,
      "drafted": 7
     },
     {
      "drafter": "Sam",
      "pick": "Real Madrid",
-     "rank": 10,
-     "points": 6,
+     "rank": 14,
+     "points": 4,
      "bonus": 0,
      "drafted": 3
     },
     {
      "drafter": "Will",
      "pick": "Arsenal",
-     "rank": 11,
-     "points": 5,
+     "rank": 15,
+     "points": 3,
      "bonus": 0,
      "drafted": 2
     },
     {
-     "drafter": "Yestin",
-     "pick": "Bayern Munich",
-     "rank": 13,
-     "points": 4,
-     "bonus": 0,
-     "drafted": 4
-    },
-    {
-     "drafter": "Ben Callow",
-     "pick": "Man Utd",
-     "rank": 18,
-     "points": 3,
-     "bonus": 0,
-     "drafted": 8
-    },
-    {
      "drafter": "Dan",
      "pick": "Atletico Madrid",
-     "rank": 28,
+     "rank": 25,
      "points": 2,
      "bonus": 0,
      "drafted": 9
@@ -493,7 +493,7 @@
     {
      "drafter": "Ben Cav",
      "pick": "Inter Milan",
-     "rank": 29,
+     "rank": 26,
      "points": 1,
      "bonus": 0,
      "drafted": 10
@@ -1960,23 +1960,32 @@
   {
    "pos": 1,
    "drafter": "Yestin",
-   "inplay": 42,
+   "inplay": 48,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 42
+   "total": 48
   },
   {
    "pos": 2,
-   "drafter": "Mike",
-   "inplay": 40,
+   "drafter": "Ben Callow",
+   "inplay": 43,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 40
+   "total": 43
   },
   {
    "pos": 3,
+   "drafter": "Mike",
+   "inplay": 39,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 5,
+   "total": 39
+  },
+  {
+   "pos": 4,
    "drafter": "Dan",
    "inplay": 38,
    "confirmed": 0,
@@ -1985,25 +1994,7 @@
    "total": 38
   },
   {
-   "pos": 4,
-   "drafter": "Ben Callow",
-   "inplay": 38,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 5,
-   "total": 38
-  },
-  {
    "pos": 5,
-   "drafter": "Wayne",
-   "inplay": 35,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 5,
-   "total": 35
-  },
-  {
-   "pos": 6,
    "drafter": "Max",
    "inplay": 35,
    "confirmed": 0,
@@ -2012,25 +2003,25 @@
    "total": 35
   },
   {
-   "pos": 7,
-   "drafter": "Paps",
-   "inplay": 32,
+   "pos": 6,
+   "drafter": "Wayne",
+   "inplay": 33,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 32
+   "total": 33
+  },
+  {
+   "pos": 7,
+   "drafter": "Paps",
+   "inplay": 30,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 5,
+   "total": 30
   },
   {
    "pos": 8,
-   "drafter": "Will",
-   "inplay": 28,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 5,
-   "total": 28
-  },
-  {
-   "pos": 9,
    "drafter": "Ben Cav",
    "inplay": 28,
    "confirmed": 0,
@@ -2039,8 +2030,8 @@
    "total": 28
   },
   {
-   "pos": 10,
-   "drafter": "DT",
+   "pos": 9,
+   "drafter": "Will",
    "inplay": 26,
    "confirmed": 0,
    "bonus": 0,
@@ -2048,13 +2039,22 @@
    "total": 26
   },
   {
-   "pos": 11,
-   "drafter": "Sam",
+   "pos": 10,
+   "drafter": "DT",
    "inplay": 24,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
    "total": 24
+  },
+  {
+   "pos": 11,
+   "drafter": "Sam",
+   "inplay": 22,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 5,
+   "total": 22
   }
  ]
 }
