@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-10T00:12+00:00",
+ "generated": "2026-09-10T04:37+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -310,94 +310,94 @@
    "name": "NFL",
    "window": "Sep 2026 \u2013 Feb 2027",
    "note": "playoff depth > seed > record",
-   "source": "awaiting feed",
+   "source": "feed:espn",
    "start": "2026-09",
    "rows": [
     {
      "drafter": "Will",
      "pick": "Seattle Seahawks",
-     "rank": null,
-     "points": null,
+     "rank": 1,
+     "points": 11,
      "bonus": 0,
      "drafted": 2
     },
     {
+     "drafter": "Mike",
+     "pick": "New England Patriots",
+     "rank": 2,
+     "points": 10,
+     "bonus": 0,
+     "drafted": 11
+    },
+    {
      "drafter": "Ben Cav",
      "pick": "Kansas City Chiefs",
-     "rank": null,
-     "points": null,
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
      "drafted": 7
     },
     {
      "drafter": "Dan",
      "pick": "Buffalo Bills",
-     "rank": null,
-     "points": null,
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
      "drafted": 3
     },
     {
-     "drafter": "Mike",
-     "pick": "New England Patriots",
-     "rank": null,
-     "points": null,
-     "bonus": 0,
-     "drafted": 11
-    },
-    {
      "drafter": "Wayne",
      "pick": "San Francisco 49ers",
-     "rank": null,
-     "points": null,
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
      "drafted": 10
     },
     {
      "drafter": "Paps",
      "pick": "LA Chargers",
-     "rank": null,
-     "points": null,
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
      "drafted": 8
     },
     {
      "drafter": "Yestin",
      "pick": "Baltimore Ravens",
-     "rank": null,
-     "points": null,
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
      "drafted": 5
     },
     {
      "drafter": "DT",
      "pick": "Denver Broncos",
-     "rank": null,
-     "points": null,
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
      "drafted": 4
     },
     {
      "drafter": "Max",
      "pick": "Detroit Lions",
-     "rank": null,
-     "points": null,
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
      "drafted": 6
     },
     {
      "drafter": "Ben Callow",
      "pick": "LA Rams",
-     "rank": null,
-     "points": null,
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
      "drafted": 1
     },
     {
      "drafter": "Sam",
      "pick": "Philadelphia Eagles",
-     "rank": null,
-     "points": null,
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
      "drafted": 9
     }
@@ -1960,101 +1960,101 @@
   {
    "pos": 1,
    "drafter": "Yestin",
-   "inplay": 33,
+   "inplay": 42,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 4,
-   "total": 33
+   "scored": 5,
+   "total": 42
   },
   {
    "pos": 2,
    "drafter": "Mike",
-   "inplay": 30,
+   "inplay": 40,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 4,
-   "total": 30
+   "scored": 5,
+   "total": 40
   },
   {
    "pos": 3,
    "drafter": "Dan",
-   "inplay": 29,
+   "inplay": 38,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 4,
-   "total": 29
+   "scored": 5,
+   "total": 38
   },
   {
    "pos": 4,
    "drafter": "Ben Callow",
-   "inplay": 29,
+   "inplay": 38,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 4,
-   "total": 29
+   "scored": 5,
+   "total": 38
   },
   {
    "pos": 5,
    "drafter": "Wayne",
-   "inplay": 26,
+   "inplay": 35,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 4,
-   "total": 26
+   "scored": 5,
+   "total": 35
   },
   {
    "pos": 6,
    "drafter": "Max",
-   "inplay": 26,
+   "inplay": 35,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 4,
-   "total": 26
+   "scored": 5,
+   "total": 35
   },
   {
    "pos": 7,
    "drafter": "Paps",
-   "inplay": 23,
+   "inplay": 32,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 4,
-   "total": 23
+   "scored": 5,
+   "total": 32
   },
   {
    "pos": 8,
-   "drafter": "Ben Cav",
-   "inplay": 19,
+   "drafter": "Will",
+   "inplay": 28,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 4,
-   "total": 19
+   "scored": 5,
+   "total": 28
   },
   {
    "pos": 9,
-   "drafter": "Will",
-   "inplay": 17,
+   "drafter": "Ben Cav",
+   "inplay": 28,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 4,
-   "total": 17
+   "scored": 5,
+   "total": 28
   },
   {
    "pos": 10,
    "drafter": "DT",
-   "inplay": 17,
+   "inplay": 26,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 4,
-   "total": 17
+   "scored": 5,
+   "total": 26
   },
   {
    "pos": 11,
    "drafter": "Sam",
-   "inplay": 15,
+   "inplay": 24,
    "confirmed": 0,
    "bonus": 0,
-   "scored": 4,
-   "total": 15
+   "scored": 5,
+   "total": 24
   }
  ]
 }
