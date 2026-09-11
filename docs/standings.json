@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-11T18:29+00:00",
+ "generated": "2026-09-11T21:41+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -152,52 +152,52 @@
      "drafted": 1
     },
     {
-     "drafter": "Wayne",
-     "pick": "Bayer Leverkusen",
+     "drafter": "Sam",
+     "pick": "Schalke 04",
      "rank": 7,
      "points": 7,
+     "bonus": 0,
+     "drafted": 11
+    },
+    {
+     "drafter": "Wayne",
+     "pick": "Bayer Leverkusen",
+     "rank": 8,
+     "points": 6,
      "bonus": 0,
      "drafted": 5
     },
     {
      "drafter": "Paps",
      "pick": "RB Leipzig",
-     "rank": 8,
-     "points": 6,
+     "rank": 9,
+     "points": 5,
      "bonus": 0,
      "drafted": 3
     },
     {
      "drafter": "Will",
      "pick": "VfB Stuttgart",
-     "rank": 9,
-     "points": 5,
+     "rank": 10,
+     "points": 4,
      "bonus": 0,
      "drafted": 4
     },
     {
      "drafter": "Ben Callow",
      "pick": "Werder Bremen",
-     "rank": 10,
-     "points": 4,
+     "rank": 11,
+     "points": 3,
      "bonus": 0,
      "drafted": 10
     },
     {
      "drafter": "DT",
      "pick": "Eintracht Frankfurt",
-     "rank": 13,
-     "points": 3,
-     "bonus": 0,
-     "drafted": 6
-    },
-    {
-     "drafter": "Sam",
-     "pick": "Schalke 04",
      "rank": 14,
      "points": 2,
      "bonus": 0,
-     "drafted": 11
+     "drafted": 6
     },
     {
      "drafter": "Mike",
@@ -1969,11 +1969,11 @@
   {
    "pos": 2,
    "drafter": "Ben Callow",
-   "inplay": 42,
+   "inplay": 41,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 42
+   "total": 41
   },
   {
    "pos": 3,
@@ -1996,11 +1996,11 @@
   {
    "pos": 5,
    "drafter": "Wayne",
-   "inplay": 35,
+   "inplay": 34,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 35
+   "total": 34
   },
   {
    "pos": 6,
@@ -2014,11 +2014,11 @@
   {
    "pos": 7,
    "drafter": "Paps",
-   "inplay": 28,
+   "inplay": 27,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 28
+   "total": 27
   },
   {
    "pos": 8,
@@ -2031,7 +2031,7 @@
   },
   {
    "pos": 9,
-   "drafter": "Will",
+   "drafter": "Sam",
    "inplay": 25,
    "confirmed": 0,
    "bonus": 0,
@@ -2040,21 +2040,21 @@
   },
   {
    "pos": 10,
-   "drafter": "DT",
-   "inplay": 22,
+   "drafter": "Will",
+   "inplay": 24,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 22
+   "total": 24
   },
   {
    "pos": 11,
-   "drafter": "Sam",
-   "inplay": 20,
+   "drafter": "DT",
+   "inplay": 21,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 20
+   "total": 21
   }
  ]
 }
