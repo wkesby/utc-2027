@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-12T19:18+00:00",
+ "generated": "2026-09-12T22:14+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -23,20 +23,20 @@
    "start": "2026-08",
    "rows": [
     {
-     "drafter": "Ben Callow",
-     "pick": "Man City",
+     "drafter": "Mike",
+     "pick": "Arsenal",
      "rank": 1,
      "points": 11,
      "bonus": 0,
-     "drafted": 2
+     "drafted": 1
     },
     {
-     "drafter": "Mike",
-     "pick": "Arsenal",
+     "drafter": "Ben Callow",
+     "pick": "Man City",
      "rank": 2,
      "points": 10,
      "bonus": 0,
-     "drafted": 1
+     "drafted": 2
     },
     {
      "drafter": "Yestin",
@@ -1969,20 +1969,20 @@
   {
    "pos": 2,
    "drafter": "Ben Callow",
-   "inplay": 43,
+   "inplay": 42,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 43
+   "total": 42
   },
   {
    "pos": 3,
    "drafter": "Mike",
-   "inplay": 39,
+   "inplay": 40,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 39
+   "total": 40
   },
   {
    "pos": 4,
