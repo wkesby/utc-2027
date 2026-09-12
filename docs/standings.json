@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-12T16:17+00:00",
+ "generated": "2026-09-12T19:18+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -65,7 +65,7 @@
     {
      "drafter": "Paps",
      "pick": "Newcastle Utd",
-     "rank": 8,
+     "rank": 9,
      "points": 6,
      "bonus": 0,
      "drafted": 9
@@ -97,7 +97,7 @@
     {
      "drafter": "Sam",
      "pick": "Tottenham",
-     "rank": 18,
+     "rank": 17,
      "points": 2,
      "bonus": 0,
      "drafted": 6
@@ -168,41 +168,41 @@
      "drafted": 6
     },
     {
-     "drafter": "Sam",
-     "pick": "Schalke 04",
+     "drafter": "Ben Callow",
+     "pick": "Werder Bremen",
      "rank": 9,
      "points": 5,
+     "bonus": 0,
+     "drafted": 10
+    },
+    {
+     "drafter": "Sam",
+     "pick": "Schalke 04",
+     "rank": 10,
+     "points": 4,
      "bonus": 0,
      "drafted": 11
     },
     {
      "drafter": "Paps",
      "pick": "RB Leipzig",
-     "rank": 10,
-     "points": 4,
+     "rank": 12,
+     "points": 3,
      "bonus": 0,
      "drafted": 3
     },
     {
      "drafter": "Mike",
      "pick": "Hoffenheim",
-     "rank": 11,
-     "points": 3,
+     "rank": 13,
+     "points": 2,
      "bonus": 0,
      "drafted": 7
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "Werder Bremen",
-     "rank": 12,
-     "points": 2,
-     "bonus": 0,
-     "drafted": 10
-    },
-    {
      "drafter": "Will",
      "pick": "VfB Stuttgart",
-     "rank": 13,
+     "rank": 14,
      "points": 1,
      "bonus": 0,
      "drafted": 4
@@ -1968,21 +1968,21 @@
   },
   {
    "pos": 2,
-   "drafter": "Mike",
-   "inplay": 40,
+   "drafter": "Ben Callow",
+   "inplay": 43,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 40
+   "total": 43
   },
   {
    "pos": 3,
-   "drafter": "Ben Callow",
-   "inplay": 40,
+   "drafter": "Mike",
+   "inplay": 39,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 40
+   "total": 39
   },
   {
    "pos": 4,
@@ -2023,11 +2023,11 @@
   {
    "pos": 8,
    "drafter": "Paps",
-   "inplay": 26,
+   "inplay": 25,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 26
+   "total": 25
   },
   {
    "pos": 9,
@@ -2041,11 +2041,11 @@
   {
    "pos": 10,
    "drafter": "Sam",
-   "inplay": 24,
+   "inplay": 23,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 24
+   "total": 23
   },
   {
    "pos": 11,
