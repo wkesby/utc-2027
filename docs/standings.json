@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-14T18:35+00:00",
+ "generated": "2026-09-14T22:28+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -41,7 +41,7 @@
     {
      "drafter": "Max",
      "pick": "Brighton",
-     "rank": 4,
+     "rank": 5,
      "points": 9,
      "bonus": 0,
      "drafted": 8
@@ -49,7 +49,7 @@
     {
      "drafter": "Yestin",
      "pick": "Chelsea",
-     "rank": 5,
+     "rank": 6,
      "points": 8,
      "bonus": 0,
      "drafted": 3
@@ -57,7 +57,7 @@
     {
      "drafter": "Dan",
      "pick": "Brentford",
-     "rank": 6,
+     "rank": 7,
      "points": 7,
      "bonus": 0,
      "drafted": 10
@@ -65,7 +65,7 @@
     {
      "drafter": "Wayne",
      "pick": "Liverpool",
-     "rank": 7,
+     "rank": 8,
      "points": 6,
      "bonus": 0,
      "drafted": 4
@@ -73,7 +73,7 @@
     {
      "drafter": "Paps",
      "pick": "Newcastle Utd",
-     "rank": 10,
+     "rank": 12,
      "points": 5,
      "bonus": 0,
      "drafted": 9
