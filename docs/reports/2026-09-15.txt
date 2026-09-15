@@ -1,0 +1,93 @@
+*UTC 2027 — Tuesday update, 15 Sep*
+
+1. Yestin — 49 (+15)
+2. Dan — 41 (+7)
+3. Max — 37 (+20)
+4. Mike — 32 (+6)
+5. Wayne — 32 (+4)
+6. Ben Callow — 31 (+2)
+7. Ben Cav — 29 (+10)
+8. Paps — 25 (+5)
+9. DT — 20 (+1)
+10. Will — 17 (-3)
+11. Sam — 17 (-1)
+
+Mover of the week: Max (+20)
+Slider of the week: Will (-3)
+
+*From the commentary box:*
+Yestin's Ravens hauled in 15 this week and he's off the front at 49, with Max rocketing eight spots on a 20-point week to crash the podium.
+Dan's SC Freiburg is the steal of the draft, top of the Bundesliga off pick eight for seven points above par, which is more than can be said for Ben Callow's LA Rams — the very first name off the board, three points, eight below par and sliding.
+Spare a thought for Will, whose Aston Villa and VfB Stuttgart are both propping up their comps, and with early picks otherwise paying off he's got nowhere to hide.
+
+*Next 7 days*
+
+Yestin:
+EPL — Chelsea at Brentford (Dan) on Sat 19 Sep
+Bundesliga — Borussia Dortmund at VfB Stuttgart (Will) on Sun 20 Sep
+NCAA Football — Georgia at Arkansas Razorbacks (undrafted) on Sun 20 Sep
+NFL — Baltimore Ravens vs New Orleans Saints (undrafted) on Mon 21 Sep
+
+Dan:
+EPL — Brentford vs Chelsea (Yestin) on Sat 19 Sep
+Bundesliga — SC Freiburg at Eintracht Frankfurt (DT) on Sat 19 Sep
+NCAA Football — Texas vs UTSA Roadrunners (undrafted) on Sun 20 Sep
+NFL — Buffalo Bills vs Detroit Lions (Max) on Fri 18 Sep
+
+Max:
+EPL — Brighton vs Arsenal (Mike) on Sun 20 Sep
+Bundesliga — SV Elversberg at Schalke 04 (Sam) on Mon 21 Sep
+NCAA Football — Alabama vs Florida State Seminoles (undrafted) on Sun 20 Sep
+NFL — Detroit Lions at Buffalo Bills (Dan) on Fri 18 Sep
+
+Mike:
+EPL — Arsenal at Brighton (Max) on Sun 20 Sep
+Bundesliga — Hoffenheim at SC Paderborn 07 (undrafted) on Mon 21 Sep
+NCAA Football — Notre Dame vs Michigan State Spartans (undrafted) on Sun 20 Sep
+NFL — New England Patriots vs Pittsburgh Steelers (undrafted) on Mon 21 Sep
+
+Wayne:
+EPL — Liverpool at Bournemouth (Ben Cav) on Sun 20 Sep
+Bundesliga — Bayer Leverkusen vs RB Leipzig (Paps) on Sun 20 Sep
+NCAA Football — Texas A&M vs Kentucky Wildcats (undrafted) on Sun 20 Sep
+NFL — San Francisco 49ers vs Miami Dolphins (undrafted) on Mon 21 Sep
+
+Ben Callow:
+EPL — Man City vs Sunderland (undrafted) on Sun 20 Sep
+Bundesliga — Werder Bremen vs FC Augsburg (undrafted) on Sat 19 Sep
+NCAA Football — Ohio State vs Kent State Golden Flashes (undrafted) on Sun 20 Sep
+NFL — LA Rams vs New York Giants (undrafted) on Tue 22 Sep
+
+Ben Cav:
+EPL — Bournemouth vs Liverpool (Wayne) on Sun 20 Sep
+Bundesliga — Bayern Munich vs 1. FC Union Berlin (undrafted) on Sat 19 Sep
+NCAA Football — Indiana vs Western Kentucky Hilltoppers (undrafted) on Sun 20 Sep
+NFL — Kansas City Chiefs vs Indianapolis Colts (undrafted) on Mon 21 Sep
+
+Paps:
+EPL — Newcastle Utd vs Hull City (undrafted) on Sun 20 Sep
+Bundesliga — RB Leipzig at Bayer Leverkusen (Wayne) on Sun 20 Sep
+NCAA Football — LSU at Ole Miss Rebels (undrafted) on Sun 20 Sep
+NFL — LA Chargers vs Las Vegas Raiders (undrafted) on Mon 21 Sep
+
+DT:
+EPL — Man Utd at Fulham (undrafted) on Mon 21 Sep
+Bundesliga — Eintracht Frankfurt vs SC Freiburg (Dan) on Sat 19 Sep
+NCAA Football — Oklahoma vs New Mexico Lobos (undrafted) on Sun 20 Sep
+NFL — Denver Broncos vs Jacksonville Jaguars (undrafted) on Mon 21 Sep
+
+Will:
+EPL — Aston Villa at Tottenham (Sam) on Sat 19 Sep
+Bundesliga — VfB Stuttgart vs Borussia Dortmund (Yestin) on Sun 20 Sep
+NCAA Football — Miami at Wake Forest Demon Deacons (undrafted) on Sat 19 Sep
+NFL — Seattle Seahawks at Arizona Cardinals (undrafted) on Mon 21 Sep
+
+Sam:
+EPL — Tottenham vs Aston Villa (Will) on Sat 19 Sep
+Bundesliga — Schalke 04 vs SV Elversberg (Max) on Mon 21 Sep
+NCAA Football — Oregon vs Portland State Vikings (undrafted) on Sat 19 Sep
+NFL — Philadelphia Eagles at Tennessee Titans (undrafted) on Mon 21 Sep
+
+Scoring now: EPL, Bundesliga, NCAA Football, NFL, UEFA Champions League
+Ladder: https://wkesby.github.io/utc-2027/reports/2026-09-15.html
+Full table: https://wkesby.github.io/utc-2027/
