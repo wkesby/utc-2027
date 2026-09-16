@@ -57,6 +57,29 @@ function beatsFrom(fx, live) {
   return out;
 }
 
+// Live state for one sport, keyed by ESPN event id. ESPN's scoreboard takes a single
+// YYYYMMDD — a YYYYMMDD-YYYYMMDD range has come back 400 Bad Request since
+// mid-September 2026 — so yesterday, today and tomorrow are three calls, merged, with a
+// game on a midnight (present on both days) counted once.
+async function liveScores(path, now, fetchImpl = fetch) {
+  const day = (t) => new Date(t).toISOString().slice(0, 10).replaceAll("-", "");
+  const pages = await Promise.all([now - 864e5, now, now + 864e5].map((t) =>
+    fetchImpl(`https://site.web.api.espn.com/apis/site/v2/sports/${path}/scoreboard?dates=${day(t)}`)
+        .then((r) => (r.ok ? r.json() : {})).catch(() => ({}))));
+  const out = {};
+  for (const ev of pages.flatMap((p) => p.events || [])) {
+    const comp = (ev.competitions || [{}])[0];
+    const ty = ((comp.status || ev.status || {}).type) || {};
+    let hs, as;
+    for (const c of comp.competitors || []) {
+      if (c.homeAway === "home") hs = c.score;
+      else if (c.homeAway === "away") as = c.score;
+    }
+    out[ev.id] = {state: ty.state, hs, as};
+  }
+  return out;
+}
+
 function templateLine(seed, b) {
   let h = 0;
   for (const ch of String(seed)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
@@ -98,4 +121,4 @@ async function generate({apiKey, beat, fetchImpl = fetch}) {
   return (text || templateLine(beat.id, beat)).slice(0, 400);
 }
 
-module.exports = {candidates, beatsFrom, templateLine, requestBody, generate};
+module.exports = {candidates, beatsFrom, liveScores, templateLine, requestBody, generate};
