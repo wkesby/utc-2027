@@ -524,9 +524,14 @@ async function refreshLive(force){
   let changed=false;
   await Promise.all(need.map(async([s,path])=>{
     try{
-      const r=await fetch(`https://site.web.api.espn.com/apis/site/v2/sports/${path}/scoreboard?dates=${f(now-864e5)}-${f(now+864e5)}`);
-      if(!r.ok)return;
-      for(const ev of ((await r.json()).events||[])){
+      // ESPN's scoreboard takes one day at a time — a YYYYMMDD-YYYYMMDD range has come
+      // back 400 since mid-September 2026 — so yesterday, today and tomorrow are three calls
+      const pages=await Promise.all([now-864e5,now,now+864e5].map(t=>
+        fetch(`https://site.web.api.espn.com/apis/site/v2/sports/${path}/scoreboard?dates=${f(t)}`)
+          .then(r=>r.ok?r.json():{}).catch(()=>({}))));
+      const seen=new Set();
+      for(const ev of pages.flatMap(p=>p.events||[])){
+        if(seen.has(ev.id))continue;seen.add(ev.id);   // a game on a midnight shows on both days
         const comp=(ev.competitions||[{}])[0],ty=((comp.status||ev.status||{}).type)||{};
         if(ty.state!=="in"&&ty.state!=="post")continue;
         let hs,as,hn,an;

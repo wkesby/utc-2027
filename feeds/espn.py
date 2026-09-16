@@ -8,12 +8,22 @@ comp follows in season, refreshed weekly on Sunday/Monday US time), with everyon
 games-back, not table points —
 championship points are only trusted for racing (championshipPts).
 """
-import json, datetime, urllib.request
+import json, datetime, urllib.error, urllib.request
+from concurrent.futures import ThreadPoolExecutor
 
 def _get(url):
     req = urllib.request.Request(url, headers={"User-Agent": "utc-scoreboard/1.0"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return json.load(r)
+    except urllib.error.HTTPError as e:
+        # ESPN says why in the body; without it a 400 in the log is just a 400
+        try:
+            body = " ".join(e.read(300).decode("utf-8", "replace").split())
+        except Exception:
+            body = ""
+        raise urllib.error.HTTPError(url, e.code, e.reason + (f" — {body}" if body else ""),
+                                     e.headers, None) from None
 
 def _entries(node, out):
     """Walk ESPN's nested 'children' groups and collect every standings entry."""
@@ -235,19 +245,57 @@ def standings(path):
     return with_locations(out)
 
 
+SCOREBOARD_WORKERS = 6   # a month of days per sport, a few at a time
+
+
+def scoreboard(path, day):
+    """One day's scoreboard events. ESPN's scoreboard takes a single YYYYMMDD. It used to
+    accept a YYYYMMDD-YYYYMMDD range as well, until mid-September 2026 when every range
+    started coming back 400 Bad Request (college football first, then the lot at the UTC
+    date roll) — so a window is one call per day, never a range."""
+    url = f"https://site.web.api.espn.com/apis/site/v2/sports/{path}/scoreboard?dates={day:%Y%m%d}"
+    return _get(url).get("events", [])
+
+
 def fixtures(path, days=10, past=0):
     """Games for a competition inside a window: [{date, home, away, ...}], soonest first.
     With past > 0 the window reaches back that many days and finished games are kept, each
     carrying its state ('in'/'post'), score and status line — that is the result history and
     the score fallback the app shows when it can't reach ESPN itself. Every game also carries
     ESPN's event id so a live page can overlay fresher scores onto the same game.
-    Preseason events are dropped so the look-ahead matches what actually scores."""
+    Preseason events are dropped so the look-ahead matches what actually scores.
+    The window is fetched a day at a time (see scoreboard); a game sitting on a midnight
+    can show up on both of its days, so events are deduplicated by id. A day that fails
+    is skipped and noted; only a window with nothing back at all raises, so the caller
+    records the feed as down rather than publishing an empty fixture list as if true."""
     path, _, season = path.partition("@")
     today = datetime.date.today()
-    rng = f"{today - datetime.timedelta(days=past):%Y%m%d}-{today + datetime.timedelta(days=days):%Y%m%d}"
-    data = _get(f"https://site.web.api.espn.com/apis/site/v2/sports/{path}/scoreboard?dates={rng}")
+    window = [today + datetime.timedelta(days=n) for n in range(-past, days + 1)]
+
+    def one(day):
+        try:
+            return day, scoreboard(path, day), None
+        except Exception as e:
+            return day, [], e
+
+    with ThreadPoolExecutor(max_workers=SCOREBOARD_WORKERS) as pool:
+        fetched = list(pool.map(one, window))
+    errors = [(day, err) for day, _, err in fetched if err]
+    if errors and len(errors) == len(window):
+        raise errors[0][1]
+    if errors:
+        print(f"espn {path}: {len(errors)} of {len(window)} days failed, "
+              f"e.g. {errors[0][0]:%Y%m%d}: {errors[0][1]}")
+    events, seen = [], set()
+    for _, evs, _ in fetched:
+        for e in evs:
+            key = e.get("id") or (e.get("date"), e.get("name"))
+            if key in seen:
+                continue
+            seen.add(key)
+            events.append(e)
     out = []
-    for e in data.get("events", []):
+    for e in events:
         s = e.get("season") or {}
         if s.get("type") == 1:                       # preseason never scores
             continue

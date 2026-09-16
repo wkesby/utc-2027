@@ -173,23 +173,8 @@ exports.sledgePatrol = onSchedule({
     return;
   }
   const live = {};
-  const day = (t) => new Date(t).toISOString().slice(0, 10).replaceAll("-", "");
   for (const {key, path} of need) {
-    try {
-      const sb = await (await fetch("https://site.web.api.espn.com/apis/site/v2/sports/" +
-          `${path}/scoreboard?dates=${day(Date.now() - 864e5)}-${day(Date.now() + 864e5)}`)).json();
-      live[key] = {};
-      for (const ev of sb.events || []) {
-        const comp = (ev.competitions || [{}])[0];
-        const ty = ((comp.status || ev.status || {}).type) || {};
-        let hs, as;
-        for (const c of comp.competitors || []) {
-          if (c.homeAway === "home") hs = c.score;
-          else if (c.homeAway === "away") as = c.score;
-        }
-        live[key][ev.id] = {state: ty.state, hs, as};
-      }
-    } catch (e) { /* that sport waits for the next pass */ }
+    live[key] = await sledge.liveScores(path, Date.now());   // a sport that fails just waits for the next pass
   }
   const beats = sledge.beatsFrom(fx, live);
   if (!beats.length) {
