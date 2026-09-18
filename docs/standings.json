@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-18T18:25+00:00",
+ "generated": "2026-09-18T21:39+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -39,28 +39,28 @@
      "drafted": 2
     },
     {
+     "drafter": "Dan",
+     "pick": "Brentford",
+     "rank": 3,
+     "points": 9,
+     "bonus": 0,
+     "drafted": 10
+    },
+    {
      "drafter": "Max",
      "pick": "Brighton",
-     "rank": 5,
-     "points": 9,
+     "rank": 6,
+     "points": 8,
      "bonus": 0,
      "drafted": 8
     },
     {
      "drafter": "Yestin",
      "pick": "Chelsea",
-     "rank": 6,
-     "points": 8,
-     "bonus": 0,
-     "drafted": 3
-    },
-    {
-     "drafter": "Dan",
-     "pick": "Brentford",
      "rank": 7,
      "points": 7,
      "bonus": 0,
-     "drafted": 10
+     "drafted": 3
     },
     {
      "drafter": "Wayne",
@@ -120,28 +120,28 @@
    "start": "2026-08",
    "rows": [
     {
-     "drafter": "Dan",
-     "pick": "SC Freiburg",
+     "drafter": "Ben Cav",
+     "pick": "Bayern Munich",
      "rank": 1,
      "points": 11,
+     "bonus": 0,
+     "drafted": 1
+    },
+    {
+     "drafter": "Dan",
+     "pick": "SC Freiburg",
+     "rank": 2,
+     "points": 10,
      "bonus": 0,
      "drafted": 8
     },
     {
      "drafter": "Yestin",
      "pick": "Borussia Dortmund",
-     "rank": 2,
-     "points": 10,
-     "bonus": 0,
-     "drafted": 2
-    },
-    {
-     "drafter": "Ben Cav",
-     "pick": "Bayern Munich",
-     "rank": 4,
+     "rank": 3,
      "points": 9,
      "bonus": 0,
-     "drafted": 1
+     "drafted": 2
     },
     {
      "drafter": "Paps",
@@ -1960,29 +1960,29 @@
   {
    "pos": 1,
    "drafter": "Yestin",
-   "inplay": 48,
+   "inplay": 46,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 48
+   "total": 46
   },
   {
    "pos": 2,
    "drafter": "Dan",
-   "inplay": 42,
+   "inplay": 43,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 42
+   "total": 43
   },
   {
    "pos": 3,
    "drafter": "Max",
-   "inplay": 35,
+   "inplay": 34,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 35
+   "total": 34
   },
   {
    "pos": 4,
@@ -2014,11 +2014,11 @@
   {
    "pos": 7,
    "drafter": "Ben Cav",
-   "inplay": 29,
+   "inplay": 31,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 29
+   "total": 31
   },
   {
    "pos": 8,
