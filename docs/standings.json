@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-19T17:59+00:00",
+ "generated": "2026-09-19T20:35+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -105,7 +105,7 @@
     {
      "drafter": "Sam",
      "pick": "Tottenham",
-     "rank": 18,
+     "rank": 19,
      "points": 1,
      "bonus": 0,
      "drafted": 6
@@ -120,28 +120,28 @@
    "start": "2026-08",
    "rows": [
     {
-     "drafter": "Ben Cav",
-     "pick": "Bayern Munich",
+     "drafter": "Yestin",
+     "pick": "Borussia Dortmund",
      "rank": 1,
      "points": 11,
+     "bonus": 0,
+     "drafted": 2
+    },
+    {
+     "drafter": "Ben Cav",
+     "pick": "Bayern Munich",
+     "rank": 2,
+     "points": 10,
      "bonus": 0,
      "drafted": 1
     },
     {
      "drafter": "Dan",
      "pick": "SC Freiburg",
-     "rank": 2,
-     "points": 10,
-     "bonus": 0,
-     "drafted": 8
-    },
-    {
-     "drafter": "Yestin",
-     "pick": "Borussia Dortmund",
      "rank": 3,
      "points": 9,
      "bonus": 0,
-     "drafted": 2
+     "drafted": 8
     },
     {
      "drafter": "Ben Callow",
@@ -1960,20 +1960,20 @@
   {
    "pos": 1,
    "drafter": "Yestin",
-   "inplay": 45,
+   "inplay": 47,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 45
+   "total": 47
   },
   {
    "pos": 2,
    "drafter": "Dan",
-   "inplay": 42,
+   "inplay": 41,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 42
+   "total": 41
   },
   {
    "pos": 3,
@@ -2005,11 +2005,11 @@
   {
    "pos": 6,
    "drafter": "Ben Cav",
-   "inplay": 30,
+   "inplay": 29,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 30
+   "total": 29
   },
   {
    "pos": 7,
