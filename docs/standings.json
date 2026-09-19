@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-19T10:53+00:00",
+ "generated": "2026-09-19T14:22+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -87,28 +87,28 @@
      "drafted": 5
     },
     {
-     "drafter": "Ben Cav",
-     "pick": "Bournemouth",
+     "drafter": "Will",
+     "pick": "Aston Villa",
      "rank": 15,
      "points": 3,
+     "bonus": 0,
+     "drafted": 7
+    },
+    {
+     "drafter": "Ben Cav",
+     "pick": "Bournemouth",
+     "rank": 16,
+     "points": 2,
      "bonus": 0,
      "drafted": 11
     },
     {
      "drafter": "Sam",
      "pick": "Tottenham",
-     "rank": 17,
-     "points": 2,
-     "bonus": 0,
-     "drafted": 6
-    },
-    {
-     "drafter": "Will",
-     "pick": "Aston Villa",
-     "rank": 19,
+     "rank": 18,
      "points": 1,
      "bonus": 0,
-     "drafted": 7
+     "drafted": 6
     }
    ]
   },
@@ -2014,11 +2014,11 @@
   {
    "pos": 7,
    "drafter": "Ben Cav",
-   "inplay": 31,
+   "inplay": 30,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 31
+   "total": 30
   },
   {
    "pos": 8,
@@ -2031,7 +2031,7 @@
   },
   {
    "pos": 9,
-   "drafter": "DT",
+   "drafter": "Will",
    "inplay": 20,
    "confirmed": 0,
    "bonus": 0,
@@ -2040,21 +2040,21 @@
   },
   {
    "pos": 10,
-   "drafter": "Will",
-   "inplay": 18,
+   "drafter": "DT",
+   "inplay": 20,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 18
+   "total": 20
   },
   {
    "pos": 11,
    "drafter": "Sam",
-   "inplay": 18,
+   "inplay": 17,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 18
+   "total": 17
   }
  ]
 }
