@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-20T11:17+00:00",
+ "generated": "2026-09-20T16:01+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -55,28 +55,28 @@
      "drafted": 10
     },
     {
+     "drafter": "Wayne",
+     "pick": "Liverpool",
+     "rank": 6,
+     "points": 7,
+     "bonus": 0,
+     "drafted": 4
+    },
+    {
      "drafter": "Paps",
      "pick": "Newcastle Utd",
-     "rank": 8,
-     "points": 7,
+     "rank": 9,
+     "points": 6,
      "bonus": 0,
      "drafted": 9
     },
     {
      "drafter": "Yestin",
      "pick": "Chelsea",
-     "rank": 9,
-     "points": 6,
-     "bonus": 0,
-     "drafted": 3
-    },
-    {
-     "drafter": "Wayne",
-     "pick": "Liverpool",
      "rank": 10,
      "points": 5,
      "bonus": 0,
-     "drafted": 4
+     "drafted": 3
     },
     {
      "drafter": "DT",
@@ -89,7 +89,7 @@
     {
      "drafter": "Will",
      "pick": "Aston Villa",
-     "rank": 15,
+     "rank": 16,
      "points": 3,
      "bonus": 0,
      "drafted": 7
@@ -97,7 +97,7 @@
     {
      "drafter": "Ben Cav",
      "pick": "Bournemouth",
-     "rank": 16,
+     "rank": 17,
      "points": 2,
      "bonus": 0,
      "drafted": 11
@@ -144,44 +144,44 @@
      "drafted": 8
     },
     {
+     "drafter": "Wayne",
+     "pick": "Bayer Leverkusen",
+     "rank": 5,
+     "points": 8,
+     "bonus": 0,
+     "drafted": 5
+    },
+    {
      "drafter": "Ben Callow",
      "pick": "Werder Bremen",
-     "rank": 6,
-     "points": 8,
+     "rank": 7,
+     "points": 7,
      "bonus": 0,
      "drafted": 10
     },
     {
      "drafter": "Paps",
      "pick": "RB Leipzig",
-     "rank": 7,
-     "points": 7,
+     "rank": 8,
+     "points": 6,
      "bonus": 0,
      "drafted": 3
     },
     {
      "drafter": "Max",
      "pick": "SV Elversberg",
-     "rank": 8,
-     "points": 6,
+     "rank": 9,
+     "points": 5,
      "bonus": 0,
      "drafted": 9
     },
     {
      "drafter": "DT",
      "pick": "Eintracht Frankfurt",
-     "rank": 9,
-     "points": 5,
-     "bonus": 0,
-     "drafted": 6
-    },
-    {
-     "drafter": "Wayne",
-     "pick": "Bayer Leverkusen",
      "rank": 10,
      "points": 4,
      "bonus": 0,
-     "drafted": 5
+     "drafted": 6
     },
     {
      "drafter": "Sam",
@@ -1960,11 +1960,11 @@
   {
    "pos": 1,
    "drafter": "Yestin",
-   "inplay": 47,
+   "inplay": 46,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 47
+   "total": 46
   },
   {
    "pos": 2,
@@ -1978,23 +1978,32 @@
   {
    "pos": 3,
    "drafter": "Ben Callow",
-   "inplay": 37,
+   "inplay": 36,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 37
+   "total": 36
   },
   {
    "pos": 4,
-   "drafter": "Max",
-   "inplay": 34,
+   "drafter": "Wayne",
+   "inplay": 35,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 34
+   "total": 35
   },
   {
    "pos": 5,
+   "drafter": "Max",
+   "inplay": 33,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 5,
+   "total": 33
+  },
+  {
+   "pos": 6,
    "drafter": "Mike",
    "inplay": 31,
    "confirmed": 0,
@@ -2003,17 +2012,8 @@
    "total": 31
   },
   {
-   "pos": 6,
-   "drafter": "Ben Cav",
-   "inplay": 29,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 5,
-   "total": 29
-  },
-  {
    "pos": 7,
-   "drafter": "Wayne",
+   "drafter": "Ben Cav",
    "inplay": 29,
    "confirmed": 0,
    "bonus": 0,
@@ -2023,11 +2023,11 @@
   {
    "pos": 8,
    "drafter": "Paps",
-   "inplay": 26,
+   "inplay": 24,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 26
+   "total": 24
   },
   {
    "pos": 9,
@@ -2041,11 +2041,11 @@
   {
    "pos": 10,
    "drafter": "DT",
-   "inplay": 20,
+   "inplay": 19,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 20
+   "total": 19
   },
   {
    "pos": 11,
