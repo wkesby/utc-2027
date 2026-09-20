@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-20T16:01+00:00",
+ "generated": "2026-09-20T18:45+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -81,7 +81,7 @@
     {
      "drafter": "DT",
      "pick": "Man Utd",
-     "rank": 13,
+     "rank": 12,
      "points": 4,
      "bonus": 0,
      "drafted": 5
@@ -105,7 +105,7 @@
     {
      "drafter": "Sam",
      "pick": "Tottenham",
-     "rank": 19,
+     "rank": 20,
      "points": 1,
      "bonus": 0,
      "drafted": 6
@@ -152,28 +152,28 @@
      "drafted": 5
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "Werder Bremen",
+     "drafter": "Max",
+     "pick": "SV Elversberg",
      "rank": 7,
      "points": 7,
+     "bonus": 0,
+     "drafted": 9
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "Werder Bremen",
+     "rank": 8,
+     "points": 6,
      "bonus": 0,
      "drafted": 10
     },
     {
      "drafter": "Paps",
      "pick": "RB Leipzig",
-     "rank": 8,
-     "points": 6,
-     "bonus": 0,
-     "drafted": 3
-    },
-    {
-     "drafter": "Max",
-     "pick": "SV Elversberg",
      "rank": 9,
      "points": 5,
      "bonus": 0,
-     "drafted": 9
+     "drafted": 3
     },
     {
      "drafter": "DT",
@@ -217,92 +217,92 @@
    "start": "2026-08",
    "rows": [
     {
-     "drafter": "Dan",
-     "pick": "Texas",
+     "drafter": "Will",
+     "pick": "Miami",
      "rank": 1,
      "points": 11,
      "bonus": 0,
-     "drafted": 4
-    },
-    {
-     "drafter": "Yestin",
-     "pick": "Georgia",
-     "rank": 2,
-     "points": 10,
-     "bonus": 0,
-     "drafted": 5
+     "drafted": 8
     },
     {
      "drafter": "Mike",
      "pick": "Notre Dame",
-     "rank": 3,
-     "points": 9,
+     "rank": 1,
+     "points": 11,
      "bonus": 0,
      "drafted": 2
     },
     {
+     "drafter": "Max",
+     "pick": "Alabama",
+     "rank": 1,
+     "points": 11,
+     "bonus": 0,
+     "drafted": 10
+    },
+    {
      "drafter": "Ben Cav",
      "pick": "Indiana",
-     "rank": 4,
+     "rank": 15,
      "points": 8,
      "bonus": 0,
      "drafted": 6
     },
     {
-     "drafter": "Will",
-     "pick": "Miami",
-     "rank": 5,
-     "points": 7,
+     "drafter": "Yestin",
+     "pick": "Georgia",
+     "rank": 15,
+     "points": 8,
      "bonus": 0,
-     "drafted": 8
+     "drafted": 5
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "Ohio State",
-     "rank": 6,
+     "drafter": "Dan",
+     "pick": "Texas",
+     "rank": 32,
      "points": 6,
      "bonus": 0,
-     "drafted": 1
-    },
-    {
-     "drafter": "Paps",
-     "pick": "LSU",
-     "rank": 7,
-     "points": 5,
-     "bonus": 0,
-     "drafted": 9
-    },
-    {
-     "drafter": "Wayne",
-     "pick": "Texas A&M",
-     "rank": 9,
-     "points": 4,
-     "bonus": 0,
-     "drafted": 11
-    },
-    {
-     "drafter": "Max",
-     "pick": "Alabama",
-     "rank": 10,
-     "points": 3,
-     "bonus": 0,
-     "drafted": 10
-    },
-    {
-     "drafter": "Sam",
-     "pick": "Oregon",
-     "rank": 21,
-     "points": 2,
-     "bonus": 0,
-     "drafted": 3
+     "drafted": 4
     },
     {
      "drafter": "DT",
      "pick": "Oklahoma",
-     "rank": 24,
-     "points": 1,
+     "rank": 67,
+     "points": 5,
      "bonus": 0,
      "drafted": 7
+    },
+    {
+     "drafter": "Paps",
+     "pick": "LSU",
+     "rank": 74,
+     "points": 4,
+     "bonus": 0,
+     "drafted": 9
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "Ohio State",
+     "rank": 78,
+     "points": 3,
+     "bonus": 0,
+     "drafted": 1
+    },
+    {
+     "drafter": "Wayne",
+     "pick": "Texas A&M",
+     "rank": 81,
+     "points": 2,
+     "bonus": 0,
+     "drafted": 11
+    },
+    {
+     "drafter": "Sam",
+     "pick": "Oregon",
+     "rank": 81,
+     "points": 2,
+     "bonus": 0,
+     "drafted": 3
     }
    ]
   },
@@ -1960,24 +1960,24 @@
   {
    "pos": 1,
    "drafter": "Yestin",
-   "inplay": 46,
+   "inplay": 44,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 46
+   "total": 44
   },
   {
    "pos": 2,
-   "drafter": "Dan",
-   "inplay": 41,
+   "drafter": "Max",
+   "inplay": 43,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 41
+   "total": 43
   },
   {
    "pos": 3,
-   "drafter": "Ben Callow",
+   "drafter": "Dan",
    "inplay": 36,
    "confirmed": 0,
    "bonus": 0,
@@ -1986,16 +1986,16 @@
   },
   {
    "pos": 4,
-   "drafter": "Wayne",
-   "inplay": 35,
+   "drafter": "Mike",
+   "inplay": 33,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 35
+   "total": 33
   },
   {
    "pos": 5,
-   "drafter": "Max",
+   "drafter": "Wayne",
    "inplay": 33,
    "confirmed": 0,
    "bonus": 0,
@@ -2004,12 +2004,12 @@
   },
   {
    "pos": 6,
-   "drafter": "Mike",
-   "inplay": 31,
+   "drafter": "Ben Callow",
+   "inplay": 32,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 31
+   "total": 32
   },
   {
    "pos": 7,
@@ -2022,7 +2022,7 @@
   },
   {
    "pos": 8,
-   "drafter": "Paps",
+   "drafter": "Will",
    "inplay": 24,
    "confirmed": 0,
    "bonus": 0,
@@ -2031,21 +2031,21 @@
   },
   {
    "pos": 9,
-   "drafter": "Will",
-   "inplay": 20,
+   "drafter": "DT",
+   "inplay": 23,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 20
+   "total": 23
   },
   {
    "pos": 10,
-   "drafter": "DT",
-   "inplay": 19,
+   "drafter": "Paps",
+   "inplay": 22,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 19
+   "total": 22
   },
   {
    "pos": 11,
