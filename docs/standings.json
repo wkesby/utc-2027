@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-20T21:30+00:00",
+ "generated": "2026-09-21T00:13+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -322,20 +322,20 @@
      "drafted": 3
     },
     {
-     "drafter": "Sam",
-     "pick": "Philadelphia Eagles",
+     "drafter": "Will",
+     "pick": "Seattle Seahawks",
      "rank": 3,
      "points": 10,
      "bonus": 0,
-     "drafted": 9
+     "drafted": 2
     },
     {
-     "drafter": "Wayne",
-     "pick": "San Francisco 49ers",
+     "drafter": "Sam",
+     "pick": "Philadelphia Eagles",
      "rank": 5,
      "points": 9,
      "bonus": 0,
-     "drafted": 10
+     "drafted": 9
     },
     {
      "drafter": "Ben Cav",
@@ -346,17 +346,17 @@
      "drafted": 7
     },
     {
-     "drafter": "Will",
-     "pick": "Seattle Seahawks",
-     "rank": 10,
-     "points": 7,
+     "drafter": "Wayne",
+     "pick": "San Francisco 49ers",
+     "rank": 7,
+     "points": 8,
      "bonus": 0,
-     "drafted": 2
+     "drafted": 10
     },
     {
      "drafter": "Mike",
      "pick": "New England Patriots",
-     "rank": 13,
+     "rank": 12,
      "points": 6,
      "bonus": 0,
      "drafted": 11
@@ -364,7 +364,7 @@
     {
      "drafter": "Yestin",
      "pick": "Baltimore Ravens",
-     "rank": 14,
+     "rank": 13,
      "points": 5,
      "bonus": 0,
      "drafted": 5
@@ -372,34 +372,34 @@
     {
      "drafter": "Max",
      "pick": "Detroit Lions",
-     "rank": 15,
-     "points": 4,
+     "rank": 13,
+     "points": 5,
      "bonus": 0,
      "drafted": 6
     },
     {
      "drafter": "DT",
      "pick": "Denver Broncos",
-     "rank": 22,
+     "rank": 17,
      "points": 3,
      "bonus": 0,
      "drafted": 4
     },
     {
-     "drafter": "Paps",
-     "pick": "LA Chargers",
+     "drafter": "Ben Callow",
+     "pick": "LA Rams",
      "rank": 25,
      "points": 2,
      "bonus": 0,
-     "drafted": 8
+     "drafted": 1
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "LA Rams",
-     "rank": 27,
+     "drafter": "Paps",
+     "pick": "LA Chargers",
+     "rank": 29,
      "points": 1,
      "bonus": 0,
-     "drafted": 1
+     "drafted": 8
     }
    ]
   },
@@ -1977,6 +1977,15 @@
   },
   {
    "pos": 3,
+   "drafter": "Max",
+   "inplay": 37,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 5,
+   "total": 37
+  },
+  {
+   "pos": 4,
    "drafter": "Mike",
    "inplay": 36,
    "confirmed": 0,
@@ -1985,17 +1994,8 @@
    "total": 36
   },
   {
-   "pos": 4,
-   "drafter": "Max",
-   "inplay": 36,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 5,
-   "total": 36
-  },
-  {
    "pos": 5,
-   "drafter": "Wayne",
+   "drafter": "Ben Callow",
    "inplay": 33,
    "confirmed": 0,
    "bonus": 0,
@@ -2004,7 +2004,7 @@
   },
   {
    "pos": 6,
-   "drafter": "Ben Callow",
+   "drafter": "Wayne",
    "inplay": 32,
    "confirmed": 0,
    "bonus": 0,
@@ -2022,16 +2022,16 @@
   },
   {
    "pos": 8,
-   "drafter": "Paps",
-   "inplay": 22,
+   "drafter": "Will",
+   "inplay": 24,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 22
+   "total": 24
   },
   {
    "pos": 9,
-   "drafter": "Will",
+   "drafter": "Paps",
    "inplay": 21,
    "confirmed": 0,
    "bonus": 0,
@@ -2041,11 +2041,11 @@
   {
    "pos": 10,
    "drafter": "Sam",
-   "inplay": 21,
+   "inplay": 20,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 21
+   "total": 20
   },
   {
    "pos": 11,
