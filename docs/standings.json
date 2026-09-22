@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-22T00:04+00:00",
+ "generated": "2026-09-22T04:49+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -356,42 +356,42 @@
     {
      "drafter": "Mike",
      "pick": "New England Patriots",
-     "rank": 12,
+     "rank": 11,
      "points": 6,
      "bonus": 0,
      "drafted": 11
     },
     {
+     "drafter": "Max",
+     "pick": "Detroit Lions",
+     "rank": 11,
+     "points": 6,
+     "bonus": 0,
+     "drafted": 6
+    },
+    {
      "drafter": "Yestin",
      "pick": "Baltimore Ravens",
      "rank": 13,
-     "points": 5,
+     "points": 4,
      "bonus": 0,
      "drafted": 5
     },
     {
-     "drafter": "Max",
-     "pick": "Detroit Lions",
-     "rank": 13,
-     "points": 5,
+     "drafter": "Ben Callow",
+     "pick": "LA Rams",
+     "rank": 15,
+     "points": 3,
      "bonus": 0,
-     "drafted": 6
+     "drafted": 1
     },
     {
      "drafter": "DT",
      "pick": "Denver Broncos",
      "rank": 17,
-     "points": 3,
-     "bonus": 0,
-     "drafted": 4
-    },
-    {
-     "drafter": "Ben Callow",
-     "pick": "LA Rams",
-     "rank": 25,
      "points": 2,
      "bonus": 0,
-     "drafted": 1
+     "drafted": 4
     },
     {
      "drafter": "Paps",
@@ -1959,16 +1959,16 @@
  "ladder": [
   {
    "pos": 1,
-   "drafter": "Yestin",
-   "inplay": 41,
+   "drafter": "Dan",
+   "inplay": 40,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 41
+   "total": 40
   },
   {
    "pos": 2,
-   "drafter": "Dan",
+   "drafter": "Yestin",
    "inplay": 40,
    "confirmed": 0,
    "bonus": 0,
@@ -1978,11 +1978,11 @@
   {
    "pos": 3,
    "drafter": "Max",
-   "inplay": 37,
+   "inplay": 38,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 37
+   "total": 38
   },
   {
    "pos": 4,
@@ -1996,11 +1996,11 @@
   {
    "pos": 5,
    "drafter": "Ben Callow",
-   "inplay": 33,
+   "inplay": 34,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 33
+   "total": 34
   },
   {
    "pos": 6,
@@ -2050,11 +2050,11 @@
   {
    "pos": 11,
    "drafter": "DT",
-   "inplay": 18,
+   "inplay": 17,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 18
+   "total": 17
   }
  ]
 }

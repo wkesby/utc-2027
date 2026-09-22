@@ -1,0 +1,71 @@
+*UTC 2027 — Tuesday update, 22 Sep*
+
+1. Dan — 40 (-1)
+2. Yestin — 40 (-9)
+3. Max — 38 (+1)
+4. Mike — 36 (+4)
+5. Ben Callow — 34 (+3)
+6. Ben Cav — 32 (+3)
+7. Wayne — 31 (-1)
+8. Will — 24 (+7)
+9. Paps — 21 (-4)
+10. Sam — 19 (+2)
+11. DT — 17 (-3)
+
+Mover of the week: Will (+7)
+Slider of the week: Yestin (-9)
+
+*From the commentary box:*
+Dan's grabbed top spot on 40, and his pick-10 Brentford is a +6 steal in the EPL — Yestin dropping nine points to hand it over will sting all week.
+Ben Callow took the LA Rams with the very first pick of the draft and has three points to show for it, which is minus eight on par and roughly the worst return going despite Man City carrying him in the EPL.
+Will's plus seven was the week's best climb, while DT props up the ladder with Oklahoma dead last in the NCAA — the board's largely run to form, so there's no draft luck to blame down there.
+
+*Next 7 days*
+
+Dan:
+NCAA Football — Texas at Tennessee Volunteers (undrafted) on Sun 27 Sep
+NFL — Buffalo Bills vs LA Chargers (Paps) on Mon 28 Sep
+
+Yestin:
+NCAA Football — Georgia vs Oklahoma (DT) on Sun 27 Sep
+NFL — Baltimore Ravens at Dallas Cowboys (undrafted) on Mon 28 Sep
+
+Max:
+NCAA Football — Alabama vs South Carolina Gamecocks (undrafted) on Sun 27 Sep
+NFL — Detroit Lions vs New York Jets (undrafted) on Mon 28 Sep
+
+Mike:
+NCAA Football — Notre Dame at Purdue Boilermakers (undrafted) on Sun 27 Sep
+NFL — New England Patriots at Jacksonville Jaguars (undrafted) on Mon 28 Sep
+
+Ben Callow:
+NCAA Football — Ohio State vs Illinois Fighting Illini (undrafted) on Sun 27 Sep
+NFL — LA Rams at Denver Broncos (DT) on Mon 28 Sep
+
+Ben Cav:
+NCAA Football — Indiana vs Northwestern Wildcats (undrafted) on Sat 26 Sep
+NFL — Kansas City Chiefs at Miami Dolphins (undrafted) on Mon 28 Sep
+
+Wayne:
+NCAA Football — Texas A&M at LSU (Paps) on Sun 27 Sep
+NFL — San Francisco 49ers vs Arizona Cardinals (undrafted) on Mon 28 Sep
+
+Will:
+NCAA Football — Miami vs Central Michigan Chippewas (undrafted) on Sun 27 Sep
+NFL — Seattle Seahawks at Washington Commanders (undrafted) on Mon 28 Sep
+
+Paps:
+NCAA Football — LSU vs Texas A&M (Wayne) on Sun 27 Sep
+NFL — LA Chargers at Buffalo Bills (Dan) on Mon 28 Sep
+
+Sam:
+NCAA Football — Oregon at USC Trojans (undrafted) on Sun 27 Sep
+NFL — Philadelphia Eagles at Chicago Bears (undrafted) on Tue 29 Sep
+
+DT:
+NCAA Football — Oklahoma at Georgia (Yestin) on Sun 27 Sep
+NFL — Denver Broncos vs LA Rams (Ben Callow) on Mon 28 Sep
+
+Scoring now: EPL, Bundesliga, NCAA Football, NFL, UEFA Champions League
+Ladder: https://wkesby.github.io/utc-2027/reports/2026-09-22.html
+Full table: https://wkesby.github.io/utc-2027/
