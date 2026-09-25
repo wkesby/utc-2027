@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-25T01:27+00:00",
+ "generated": "2026-09-25T07:43+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -299,7 +299,7 @@
     {
      "drafter": "DT",
      "pick": "Oklahoma",
-     "rank": 44,
+     "rank": 45,
      "points": 1,
      "bonus": 0,
      "drafted": 7
@@ -314,6 +314,14 @@
    "start": "2026-09",
    "rows": [
     {
+     "drafter": "Will",
+     "pick": "Seattle Seahawks",
+     "rank": 1,
+     "points": 11,
+     "bonus": 0,
+     "drafted": 2
+    },
+    {
      "drafter": "Ben Cav",
      "pick": "Kansas City Chiefs",
      "rank": 1,
@@ -322,18 +330,10 @@
      "drafted": 7
     },
     {
-     "drafter": "Will",
-     "pick": "Seattle Seahawks",
-     "rank": 3,
-     "points": 10,
-     "bonus": 0,
-     "drafted": 2
-    },
-    {
      "drafter": "Dan",
      "pick": "Buffalo Bills",
      "rank": 3,
-     "points": 10,
+     "points": 9,
      "bonus": 0,
      "drafted": 3
     },
@@ -1959,7 +1959,7 @@
  "ladder": [
   {
    "pos": 1,
-   "drafter": "Dan",
+   "drafter": "Yestin",
    "inplay": 40,
    "confirmed": 0,
    "bonus": 0,
@@ -1968,12 +1968,12 @@
   },
   {
    "pos": 2,
-   "drafter": "Yestin",
-   "inplay": 40,
+   "drafter": "Dan",
+   "inplay": 39,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 40
+   "total": 39
   },
   {
    "pos": 3,
@@ -2023,11 +2023,11 @@
   {
    "pos": 8,
    "drafter": "Will",
-   "inplay": 24,
+   "inplay": 25,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 24
+   "total": 25
   },
   {
    "pos": 9,
