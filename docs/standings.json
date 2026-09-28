@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-28T00:42+00:00",
+ "generated": "2026-09-28T06:49+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -370,20 +370,20 @@
      "drafted": 5
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "LA Rams",
-     "rank": 15,
-     "points": 4,
-     "bonus": 0,
-     "drafted": 1
-    },
-    {
      "drafter": "DT",
      "pick": "Denver Broncos",
-     "rank": 16,
-     "points": 3,
+     "rank": 12,
+     "points": 4,
      "bonus": 0,
      "drafted": 4
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "LA Rams",
+     "rank": 18,
+     "points": 3,
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Mike",
@@ -1987,11 +1987,11 @@
   {
    "pos": 4,
    "drafter": "Ben Callow",
-   "inplay": 36,
+   "inplay": 35,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 36
+   "total": 35
   },
   {
    "pos": 5,
@@ -2041,11 +2041,11 @@
   {
    "pos": 10,
    "drafter": "DT",
-   "inplay": 19,
+   "inplay": 20,
    "confirmed": 0,
    "bonus": 0,
    "scored": 5,
-   "total": 19
+   "total": 20
   },
   {
    "pos": 11,
