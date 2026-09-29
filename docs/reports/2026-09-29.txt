@@ -1,0 +1,79 @@
+*UTC 2027 — Tuesday update, 29 Sep*
+
+1. Yestin — 42 (+2)
+2. Dan — 40 (+0)
+3. Max — 39 (+1)
+4. Ben Callow — 35 (+1)
+5. Wayne — 34 (+3)
+6. Mike — 32 (-4)
+7. Ben Cav — 30 (-2)
+8. Paps — 21 (+0)
+9. DT — 21 (+4)
+10. Will — 20 (-4)
+11. Sam — 19 (+0)
+
+Mover of the week: DT (+4)
+Slider of the week: Mike (-4)
+
+*From the commentary box:*
+Yestin's nicked top spot on 42 with Dortmund leading the Bundesliga, so the rest of you have a week to work out a plan.
+Wayne grabbed the San Francisco 49ers with pick 10 and they've returned 10 points — eight above par — while Ben Callow's LA Rams went first overall and have mustered three, which is the sort of maths that keeps a bloke up at night.
+Spare a thought for Mike and Will, both down four and two spots each, and for Sam propping up the ladder on 19 with Tottenham stone motherless last in the EPL.
+
+*Next 7 days*
+
+Yestin:
+NCAA Football — Georgia vs Vanderbilt Commodores (undrafted) on Sun 4 Oct
+NFL — Baltimore Ravens vs Tennessee Titans (undrafted) on Mon 5 Oct
+NHL — Tampa Bay Lightning at New York Rangers (undrafted) on Fri 2 Oct
+
+Dan:
+NFL — Buffalo Bills vs New England Patriots (Mike) on Mon 5 Oct
+NHL — Florida Panthers at Carolina Hurricanes (Ben Cav) on Wed 30 Sep
+
+Max:
+NCAA Football — Alabama at Mississippi State Bulldogs (undrafted) on Sun 4 Oct
+NFL — Detroit Lions at Carolina Panthers (undrafted) on Mon 5 Oct
+NHL — Vegas Golden Knights vs Chicago Blackhawks (undrafted) on Wed 30 Sep
+
+Ben Callow:
+NCAA Football — Ohio State at Iowa Hawkeyes (undrafted) on Sun 4 Oct
+NFL — LA Rams at Philadelphia Eagles (Sam) on Mon 5 Oct
+NHL — Washington Capitals at Carolina Hurricanes (Ben Cav) on Sat 3 Oct
+
+Wayne:
+NCAA Football — Texas A&M vs Arkansas Razorbacks (undrafted) on Sun 4 Oct
+NFL — San Francisco 49ers vs Denver Broncos (DT) on Mon 5 Oct
+NHL — Minnesota Wild at Nashville Predators (undrafted) on Fri 2 Oct
+
+Mike:
+NCAA Football — Notre Dame at North Carolina Tar Heels (undrafted) on Sun 4 Oct
+NFL — New England Patriots at Buffalo Bills (Dan) on Mon 5 Oct
+NHL — Edmonton Oilers vs Vancouver Canucks (undrafted) on Wed 30 Sep
+
+Ben Cav:
+NCAA Football — Indiana at Rutgers Scarlet Knights (undrafted) on Sun 4 Oct
+NFL — Kansas City Chiefs at Las Vegas Raiders (undrafted) on Mon 5 Oct
+NHL — Carolina Hurricanes vs Florida Panthers (Dan) on Wed 30 Sep
+
+Paps:
+NCAA Football — LSU vs McNeese Cowboys (undrafted) on Sun 4 Oct
+NFL — LA Chargers at Seattle Seahawks (Will) on Mon 5 Oct
+NHL — Ottawa Senators at Toronto Maple Leafs (undrafted) on Sun 4 Oct
+
+DT:
+NFL — Denver Broncos at San Francisco 49ers (Wayne) on Mon 5 Oct
+NHL — Dallas Stars vs St. Louis Blues (undrafted) on Sat 3 Oct
+
+Will:
+NCAA Football — Miami at Clemson Tigers (undrafted) on Sun 4 Oct
+NFL — Seattle Seahawks vs LA Chargers (Paps) on Mon 5 Oct
+NHL — Buffalo Sabres at Columbus Blue Jackets (undrafted) on Fri 2 Oct
+
+Sam:
+NFL — Philadelphia Eagles vs LA Rams (Ben Callow) on Mon 5 Oct
+NHL — Colorado Avalanche vs Los Angeles Kings (undrafted) on Thu 1 Oct
+
+Scoring now: EPL, Bundesliga, NCAA Football, NFL, UEFA Champions League
+Ladder: https://wkesby.github.io/utc-2027/reports/2026-09-29.html
+Full table: https://wkesby.github.io/utc-2027/
