@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T01:39+00:00",
+ "generated": "2026-10-02T08:27+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -291,7 +291,7 @@
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 68,
+     "rank": 69,
      "points": 2,
      "bonus": 0,
      "drafted": 11
@@ -299,7 +299,7 @@
     {
      "drafter": "DT",
      "pick": "Oklahoma",
-     "rank": 68,
+     "rank": 69,
      "points": 2,
      "bonus": 0,
      "drafted": 7
@@ -340,7 +340,7 @@
     {
      "drafter": "Sam",
      "pick": "Philadelphia Eagles",
-     "rank": 6,
+     "rank": 7,
      "points": 8,
      "bonus": 0,
      "drafted": 9
