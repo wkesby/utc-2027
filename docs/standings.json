@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-03T22:59+00:00",
+ "generated": "2026-10-04T02:34+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -291,7 +291,7 @@
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 76,
+     "rank": 58,
      "points": 2,
      "bonus": 0,
      "drafted": 11
@@ -299,8 +299,8 @@
     {
      "drafter": "DT",
      "pick": "Oklahoma",
-     "rank": 76,
-     "points": 2,
+     "rank": 81,
+     "points": 1,
      "bonus": 0,
      "drafted": 7
     }
@@ -2031,16 +2031,16 @@
   },
   {
    "pos": 9,
-   "drafter": "DT",
-   "inplay": 32,
+   "drafter": "Will",
+   "inplay": 31,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 32
+   "total": 31
   },
   {
    "pos": 10,
-   "drafter": "Will",
+   "drafter": "DT",
    "inplay": 31,
    "confirmed": 0,
    "bonus": 0,
