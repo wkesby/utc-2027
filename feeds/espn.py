@@ -43,19 +43,28 @@ def _stat(entry, *names):
             return s.get("value")
     return None
 
-def _record_winpct(entry):
-    """Win% from the overall 'W-L' or 'W-L-T' record string; 0.0 before any games."""
+def _overall(entry):
+    """The W-L[-T] numbers from the 'overall' record stat. NHL's reads '4-1-0, 8 PTS', so
+    only what's before the comma is the record."""
     for s in entry.get("stats", []):
         if s.get("name") == "overall":
+            raw = (s.get("displayValue") or s.get("summary") or "").split(",")[0].strip()
             try:
-                n = [int(x) for x in (s.get("displayValue") or s.get("summary") or "").split("-")]
+                return [int(x) for x in raw.split("-")]
             except ValueError:
                 return None
-            games = sum(n)
-            if len(n) < 2 or games == 0:
-                return 0.0
-            return (n[0] + 0.5 * (n[2] if len(n) > 2 else 0)) / games
     return None
+
+
+def _record_winpct(entry):
+    """Win% from the overall 'W-L' or 'W-L-T' record string; 0.0 before any games."""
+    n = _overall(entry)
+    if n is None:
+        return None
+    games = sum(n)
+    if len(n) < 2 or games == 0:
+        return 0.0
+    return (n[0] + 0.5 * (n[2] if len(n) > 2 else 0)) / games
 
 COLLEGE = "football/college-football"
 
@@ -73,14 +82,9 @@ def _with_locations(table, locs):
 
 def _record(entry):
     """(wins, losses) from the overall record string, falling back to the W/L stats."""
-    for s in entry.get("stats", []):
-        if s.get("name") == "overall":
-            try:
-                n = [int(x) for x in (s.get("displayValue") or s.get("summary") or "").split("-")]
-            except ValueError:
-                break
-            if len(n) >= 2:
-                return n[0], n[1]
+    n = _overall(entry)
+    if n and len(n) >= 2:
+        return n[0], n[1]
     w, l = _stat(entry, "wins"), _stat(entry, "losses")
     return int(w or 0), int(l or 0)
 
@@ -151,6 +155,15 @@ def sos(path, season=""):
     return out
 
 
+def _hockey_key(hk):
+    """NHL tables run on points — two a win, one an overtime or shootout loss — not win
+    percentage, and ESPN doesn't publish a winPercent for hockey at all. Ties split the
+    way the league splits them: fewer games played, then regulation wins, then
+    regulation-plus-overtime wins, then goal difference."""
+    return (-(hk.get("points") or 0), hk.get("gp") or 0, -(hk.get("regWins") or 0),
+            -(hk.get("rotWins") or 0), -(hk.get("diff") or 0))
+
+
 def _college_table(path, season, rows, locs):
     """College football, ordered the way the comp actually judges it: the AP Top 25 take
     their poll position, and everyone else falls in behind on win-loss record, then
@@ -164,7 +177,7 @@ def _college_table(path, season, rows, locs):
         return {}
     tough = sos(path, season)
     top, rest = {}, []
-    for name, _rank, winpct, _seed, _pts, wins, losses, tid in rows:
+    for name, _rank, winpct, _seed, _pts, wins, losses, tid, _hk in rows:
         ap = ranked.get(tid) or ranked.get(name)
         if ap:
             top[name] = int(ap)
@@ -219,7 +232,12 @@ def standings(path):
         played = _stat(e, "gamesPlayed") or (_stat(e, "wins") or 0) + (_stat(e, "losses") or 0)
         started = started or bool(played) or bool(pts)
         wins, losses = _record(e)
-        rows.append((name, rank, winpct, seed, pts, wins, losses, str(team.get("id") or "")))
+        hk = None
+        if path.startswith("hockey/") and _stat(e, "points") is not None:
+            hk = {"points": _stat(e, "points"), "gp": _stat(e, "gamesPlayed"),
+                  "regWins": _stat(e, "regWins"), "rotWins": _stat(e, "rotWins"),
+                  "diff": _stat(e, "pointDifferential", "differential")}
+        rows.append((name, rank, winpct, seed, pts, wins, losses, str(team.get("id") or ""), hk))
     if not started:
         return {}
     with_locations = lambda table: _with_locations(table, locs)
@@ -231,7 +249,9 @@ def standings(path):
 
     if rows and all(r[1] is not None for r in rows):
         return with_locations({n: int(r) for n, r, *_ in rows})
-    if any(r[2] is not None for r in rows):
+    if any(r[8] for r in rows):             # hockey: league points, see _hockey_key
+        key = lambda r: _hockey_key(r[8] or {})
+    elif any(r[2] is not None for r in rows):
         key = lambda r: (-(r[2] or 0), r[3] if (r[3] or 0) > 0 else 999)
     else:
         key = lambda r: (-(r[4] or 0),)
