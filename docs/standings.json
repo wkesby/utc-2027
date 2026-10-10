@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-09T20:06+00:00",
+ "generated": "2026-10-10T00:00+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -144,28 +144,28 @@
      "drafted": 8
     },
     {
+     "drafter": "Ben Callow",
+     "pick": "Werder Bremen",
+     "rank": 4,
+     "points": 8,
+     "bonus": 0,
+     "drafted": 10
+    },
+    {
      "drafter": "Wayne",
      "pick": "Bayer Leverkusen",
-     "rank": 5,
-     "points": 8,
+     "rank": 6,
+     "points": 7,
      "bonus": 0,
      "drafted": 5
     },
     {
      "drafter": "Max",
      "pick": "SV Elversberg",
-     "rank": 7,
-     "points": 7,
-     "bonus": 0,
-     "drafted": 9
-    },
-    {
-     "drafter": "Ben Callow",
-     "pick": "Werder Bremen",
      "rank": 8,
      "points": 6,
      "bonus": 0,
-     "drafted": 10
+     "drafted": 9
     },
     {
      "drafter": "Paps",
@@ -1968,16 +1968,16 @@
   },
   {
    "pos": 2,
-   "drafter": "Max",
-   "inplay": 47,
+   "drafter": "Mike",
+   "inplay": 46,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 47
+   "total": 46
   },
   {
    "pos": 3,
-   "drafter": "Mike",
+   "drafter": "Max",
    "inplay": 46,
    "confirmed": 0,
    "bonus": 0,
@@ -1996,11 +1996,11 @@
   {
    "pos": 5,
    "drafter": "Ben Callow",
-   "inplay": 41,
+   "inplay": 43,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 41
+   "total": 43
   },
   {
    "pos": 6,
@@ -2014,11 +2014,11 @@
   {
    "pos": 7,
    "drafter": "Wayne",
-   "inplay": 38,
+   "inplay": 37,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 38
+   "total": 37
   },
   {
    "pos": 8,
