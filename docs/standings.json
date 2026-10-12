@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-12T10:41+00:00",
+ "generated": "2026-10-12T20:15+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -572,28 +572,28 @@
      "drafted": 9
     },
     {
+     "drafter": "Will",
+     "pick": "Buffalo Sabres",
+     "rank": 19,
+     "points": 3,
+     "bonus": 0,
+     "drafted": 10
+    },
+    {
      "drafter": "Dan",
      "pick": "Florida Panthers",
-     "rank": 18,
-     "points": 3,
+     "rank": 20,
+     "points": 2,
      "bonus": 0,
      "drafted": 1
     },
     {
      "drafter": "DT",
      "pick": "Dallas Stars",
-     "rank": 20,
-     "points": 2,
-     "bonus": 0,
-     "drafted": 4
-    },
-    {
-     "drafter": "Will",
-     "pick": "Buffalo Sabres",
-     "rank": 26,
+     "rank": 21,
      "points": 1,
      "bonus": 0,
-     "drafted": 10
+     "drafted": 4
     }
    ]
   },
@@ -2014,11 +2014,11 @@
   {
    "pos": 7,
    "drafter": "Dan",
-   "inplay": 37,
+   "inplay": 36,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 37
+   "total": 36
   },
   {
    "pos": 8,
@@ -2032,20 +2032,20 @@
   {
    "pos": 9,
    "drafter": "Will",
-   "inplay": 24,
+   "inplay": 26,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 24
+   "total": 26
   },
   {
    "pos": 10,
    "drafter": "DT",
-   "inplay": 23,
+   "inplay": 22,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 23
+   "total": 22
   },
   {
    "pos": 11,
