@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-12T20:15+00:00",
+ "generated": "2026-10-13T02:01+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -89,7 +89,7 @@
     {
      "drafter": "Will",
      "pick": "Aston Villa",
-     "rank": 15,
+     "rank": 16,
      "points": 3,
      "bonus": 0,
      "drafted": 7
@@ -97,7 +97,7 @@
     {
      "drafter": "Ben Cav",
      "pick": "Bournemouth",
-     "rank": 17,
+     "rank": 18,
      "points": 2,
      "bonus": 0,
      "drafted": 11
@@ -105,7 +105,7 @@
     {
      "drafter": "Sam",
      "pick": "Tottenham",
-     "rank": 18,
+     "rank": 19,
      "points": 1,
      "bonus": 0,
      "drafted": 6
@@ -516,36 +516,36 @@
      "drafted": 2
     },
     {
-     "drafter": "Max",
-     "pick": "Vegas Golden Knights",
+     "drafter": "Paps",
+     "pick": "Ottawa Senators",
      "rank": 2,
      "points": 10,
+     "bonus": 0,
+     "drafted": 11
+    },
+    {
+     "drafter": "Max",
+     "pick": "Vegas Golden Knights",
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
      "drafted": 6
     },
     {
      "drafter": "Mike",
      "pick": "Edmonton Oilers",
-     "rank": 4,
-     "points": 9,
+     "rank": 5,
+     "points": 8,
      "bonus": 0,
      "drafted": 5
     },
     {
      "drafter": "Yestin",
      "pick": "Tampa Bay Lightning",
-     "rank": 5,
-     "points": 8,
-     "bonus": 0,
-     "drafted": 7
-    },
-    {
-     "drafter": "Paps",
-     "pick": "Ottawa Senators",
-     "rank": 7,
+     "rank": 6,
      "points": 7,
      "bonus": 0,
-     "drafted": 11
+     "drafted": 7
     },
     {
      "drafter": "Wayne",
@@ -1960,29 +1960,29 @@
   {
    "pos": 1,
    "drafter": "Yestin",
-   "inplay": 55,
+   "inplay": 54,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 55
+   "total": 54
   },
   {
    "pos": 2,
    "drafter": "Mike",
-   "inplay": 46,
+   "inplay": 45,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 46
+   "total": 45
   },
   {
    "pos": 3,
    "drafter": "Max",
-   "inplay": 46,
+   "inplay": 45,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 46
+   "total": 45
   },
   {
    "pos": 4,
@@ -2023,11 +2023,11 @@
   {
    "pos": 8,
    "drafter": "Paps",
-   "inplay": 29,
+   "inplay": 32,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 29
+   "total": 32
   },
   {
    "pos": 9,
