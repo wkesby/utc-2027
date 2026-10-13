@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-13T02:01+00:00",
+ "generated": "2026-10-13T09:21+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -364,8 +364,8 @@
     {
      "drafter": "Max",
      "pick": "Detroit Lions",
-     "rank": 12,
-     "points": 5,
+     "rank": 10,
+     "points": 6,
      "bonus": 0,
      "drafted": 6
     },
@@ -526,7 +526,7 @@
     {
      "drafter": "Max",
      "pick": "Vegas Golden Knights",
-     "rank": 3,
+     "rank": 4,
      "points": 9,
      "bonus": 0,
      "drafted": 6
@@ -540,20 +540,20 @@
      "drafted": 5
     },
     {
-     "drafter": "Yestin",
-     "pick": "Tampa Bay Lightning",
+     "drafter": "Wayne",
+     "pick": "Minnesota Wild",
      "rank": 6,
      "points": 7,
      "bonus": 0,
-     "drafted": 7
+     "drafted": 8
     },
     {
-     "drafter": "Wayne",
-     "pick": "Minnesota Wild",
-     "rank": 11,
+     "drafter": "Yestin",
+     "pick": "Tampa Bay Lightning",
+     "rank": 7,
      "points": 6,
      "bonus": 0,
-     "drafted": 8
+     "drafted": 7
     },
     {
      "drafter": "Sam",
@@ -1960,24 +1960,24 @@
   {
    "pos": 1,
    "drafter": "Yestin",
-   "inplay": 54,
+   "inplay": 53,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 54
+   "total": 53
   },
   {
    "pos": 2,
-   "drafter": "Mike",
-   "inplay": 45,
+   "drafter": "Max",
+   "inplay": 46,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 45
+   "total": 46
   },
   {
    "pos": 3,
-   "drafter": "Max",
+   "drafter": "Mike",
    "inplay": 45,
    "confirmed": 0,
    "bonus": 0,
@@ -1995,7 +1995,7 @@
   },
   {
    "pos": 5,
-   "drafter": "Ben Callow",
+   "drafter": "Wayne",
    "inplay": 40,
    "confirmed": 0,
    "bonus": 0,
@@ -2004,12 +2004,12 @@
   },
   {
    "pos": 6,
-   "drafter": "Wayne",
-   "inplay": 39,
+   "drafter": "Ben Callow",
+   "inplay": 40,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 39
+   "total": 40
   },
   {
    "pos": 7,

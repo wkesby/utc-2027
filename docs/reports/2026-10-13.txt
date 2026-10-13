@@ -1,0 +1,114 @@
+*UTC 2027 — Tuesday update, 13 Oct*
+
+1. Yestin — 53 (-2)
+2. Max — 46 (-1)
+3. Mike — 45 (-2)
+4. Ben Cav — 41 (+1)
+5. Wayne — 40 (-5)
+6. Ben Callow — 40 (-9)
+7. Dan — 36 (-14)
+8. Paps — 32 (+0)
+9. Will — 26 (-7)
+10. DT — 22 (-8)
+11. Sam — 18 (-6)
+
+Mover of the week: Ben Cav (+1)
+Slider of the week: Dan (-14)
+
+*From the commentary box:*
+Yestin's still parked on top with 53 and Georgia leading the NCAA charge, so the rest of you are tipping for second.
+Wayne nicked the San Francisco 49ers with pick 10 and they've returned a full 11 points, nine above par, which nearly makes up for Texas A&M propping up the college comp.
+Dan's dropped 14 points and five spots, mostly because the Florida Panthers were his very first pick and have handed back two points, though the verdict says early picks are generally paying off this year, just not in his lounge room.
+
+*Next 7 days*
+
+Yestin:
+EPL — Chelsea at Everton (undrafted) on Sat 17 Oct
+Bundesliga — Borussia Dortmund at 1. FC Union Berlin (undrafted) on Sun 18 Oct
+NCAA Football — Georgia vs Auburn Tigers (undrafted) on Sun 18 Oct
+NFL — Baltimore Ravens at Cleveland Browns (undrafted) on Mon 19 Oct
+UEFA Champions League — Bayern Munich at Viking FK (undrafted) on Wed 14 Oct
+NHL — Tampa Bay Lightning at New York Rangers (undrafted) on Wed 14 Oct
+
+Max:
+EPL — Brighton vs Crystal Palace (undrafted) on Mon 19 Oct
+Bundesliga — SV Elversberg vs FC Augsburg (undrafted) on Sun 18 Oct
+NCAA Football — Alabama at Tennessee Volunteers (undrafted) on Sun 18 Oct
+UEFA Champions League — PSG at Man City (Wayne) on Thu 15 Oct
+NHL — Vegas Golden Knights at Nashville Predators (undrafted) on Wed 14 Oct
+
+Mike:
+EPL — Arsenal at Nottingham Forest (undrafted) on Mon 19 Oct
+Bundesliga — Hoffenheim at Borussia Mönchengladbach (undrafted) on Mon 19 Oct
+NCAA Football — Notre Dame at BYU Cougars (undrafted) on Sun 18 Oct
+NFL — New England Patriots vs New York Jets (undrafted) on Mon 19 Oct
+UEFA Champions League — Barcelona at Galatasaray (undrafted) on Wed 14 Oct
+NHL — Edmonton Oilers at Los Angeles Kings (undrafted) on Wed 14 Oct
+
+Ben Cav:
+EPL — Bournemouth vs Sunderland (undrafted) on Mon 19 Oct
+Bundesliga — Bayern Munich vs RB Leipzig (Paps) on Sun 18 Oct
+NCAA Football — Indiana vs Ohio State (Ben Callow) on Sun 18 Oct
+NFL — Kansas City Chiefs vs LA Chargers (Paps) on Mon 19 Oct
+UEFA Champions League — Inter Milan vs Club Brugge (undrafted) on Wed 14 Oct
+NHL — Carolina Hurricanes vs Washington Capitals (Ben Callow) on Wed 14 Oct
+
+Wayne:
+EPL — Liverpool at Brentford (Dan) on Sun 18 Oct
+Bundesliga — Bayer Leverkusen vs SC Freiburg (Dan) on Mon 19 Oct
+NCAA Football — Texas A&M vs The Citadel Bulldogs (undrafted) on Sun 18 Oct
+NFL — San Francisco 49ers vs Washington Commanders (undrafted) on Tue 20 Oct
+UEFA Champions League — Man City vs PSG (Max) on Thu 15 Oct
+NHL — Minnesota Wild at Winnipeg Jets (undrafted) on Wed 14 Oct
+
+Ben Callow:
+EPL — Man City vs Ipswich Town (undrafted) on Sun 18 Oct
+Bundesliga — Werder Bremen vs SC Paderborn 07 (undrafted) on Sun 18 Oct
+NCAA Football — Ohio State at Indiana (Ben Cav) on Sun 18 Oct
+NFL — LA Rams vs Arizona Cardinals (undrafted) on Mon 19 Oct
+UEFA Champions League — Man Utd at Atletico Madrid (Dan) on Wed 14 Oct
+NHL — Washington Capitals at Carolina Hurricanes (Ben Cav) on Wed 14 Oct
+
+Dan:
+EPL — Brentford vs Liverpool (Wayne) on Sun 18 Oct
+Bundesliga — SC Freiburg at Bayer Leverkusen (Wayne) on Mon 19 Oct
+NCAA Football — Texas vs Florida Gators (undrafted) on Sun 18 Oct
+NFL — Buffalo Bills at Las Vegas Raiders (undrafted) on Mon 19 Oct
+UEFA Champions League — Atletico Madrid vs Man Utd (Ben Callow) on Wed 14 Oct
+NHL — Florida Panthers at Columbus Blue Jackets (undrafted) on Wed 14 Oct
+
+Paps:
+EPL — Newcastle Utd vs Aston Villa (Will) on Sun 18 Oct
+Bundesliga — RB Leipzig at Bayern Munich (Ben Cav) on Sun 18 Oct
+NCAA Football — LSU vs Mississippi State Bulldogs (undrafted) on Sun 18 Oct
+NFL — LA Chargers at Kansas City Chiefs (Ben Cav) on Mon 19 Oct
+UEFA Champions League — Liverpool at LASK Linz (undrafted) on Thu 15 Oct
+NHL — Ottawa Senators vs St. Louis Blues (undrafted) on Wed 14 Oct
+
+Will:
+EPL — Aston Villa at Newcastle Utd (Paps) on Sun 18 Oct
+Bundesliga — VfB Stuttgart at Hamburg SV (undrafted) on Sun 18 Oct
+NCAA Football — Miami vs Florida State Seminoles (undrafted) on Sun 18 Oct
+NFL — Seattle Seahawks at Denver Broncos (DT) on Fri 16 Oct
+UEFA Champions League — Arsenal vs Lille (undrafted) on Wed 14 Oct
+NHL — Buffalo Sabres at Montreal Canadiens (undrafted) on Wed 14 Oct
+
+DT:
+EPL — Man Utd at Leeds United (undrafted) on Mon 19 Oct
+Bundesliga — Eintracht Frankfurt vs FC Cologne (undrafted) on Sat 17 Oct
+NCAA Football — Oklahoma vs Kentucky Wildcats (undrafted) on Sun 18 Oct
+NFL — Denver Broncos vs Seattle Seahawks (Will) on Fri 16 Oct
+UEFA Champions League — Aston Villa vs Fenerbahce (undrafted) on Thu 15 Oct
+NHL — Dallas Stars vs Colorado Avalanche (Sam) on Wed 14 Oct
+
+Sam:
+EPL — Tottenham vs Coventry City (undrafted) on Tue 20 Oct
+Bundesliga — Schalke 04 vs Mainz (undrafted) on Sun 18 Oct
+NCAA Football — Oregon vs Nebraska Cornhuskers (undrafted) on Sun 18 Oct
+NFL — Philadelphia Eagles vs Carolina Panthers (undrafted) on Mon 19 Oct
+UEFA Champions League — Real Madrid at AS Roma (undrafted) on Thu 15 Oct
+NHL — Colorado Avalanche at Dallas Stars (DT) on Wed 14 Oct
+
+Scoring now: EPL, Bundesliga, NCAA Football, NFL, UEFA Champions League, NHL
+Ladder: https://wkesby.github.io/utc-2027/reports/2026-10-13.html
+Full table: https://wkesby.github.io/utc-2027/
