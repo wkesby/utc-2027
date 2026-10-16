@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-16T18:47+00:00",
+ "generated": "2026-10-16T22:03+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -168,36 +168,36 @@
      "drafted": 10
     },
     {
+     "drafter": "DT",
+     "pick": "Eintracht Frankfurt",
+     "rank": 8,
+     "points": 5,
+     "bonus": 0,
+     "drafted": 6
+    },
+    {
      "drafter": "Max",
      "pick": "SV Elversberg",
-     "rank": 9,
-     "points": 5,
+     "rank": 10,
+     "points": 4,
      "bonus": 0,
      "drafted": 9
     },
     {
      "drafter": "Will",
      "pick": "VfB Stuttgart",
-     "rank": 11,
-     "points": 4,
+     "rank": 12,
+     "points": 3,
      "bonus": 0,
      "drafted": 4
     },
     {
      "drafter": "Sam",
      "pick": "Schalke 04",
-     "rank": 13,
-     "points": 3,
-     "bonus": 0,
-     "drafted": 11
-    },
-    {
-     "drafter": "DT",
-     "pick": "Eintracht Frankfurt",
      "rank": 14,
      "points": 2,
      "bonus": 0,
-     "drafted": 6
+     "drafted": 11
     },
     {
      "drafter": "Mike",
@@ -1969,11 +1969,11 @@
   {
    "pos": 2,
    "drafter": "Max",
-   "inplay": 47,
+   "inplay": 46,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 47
+   "total": 46
   },
   {
    "pos": 3,
@@ -2032,29 +2032,29 @@
   {
    "pos": 9,
    "drafter": "Will",
-   "inplay": 30,
+   "inplay": 29,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 30
+   "total": 29
   },
   {
    "pos": 10,
    "drafter": "DT",
-   "inplay": 26,
+   "inplay": 29,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 26
+   "total": 29
   },
   {
    "pos": 11,
    "drafter": "Sam",
-   "inplay": 19,
+   "inplay": 18,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 19
+   "total": 18
   }
  ]
 }
