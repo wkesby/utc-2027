@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-17T17:07+00:00",
+ "generated": "2026-10-17T19:21+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -79,20 +79,20 @@
      "drafted": 9
     },
     {
-     "drafter": "DT",
-     "pick": "Man Utd",
-     "rank": 13,
-     "points": 4,
-     "bonus": 0,
-     "drafted": 5
-    },
-    {
      "drafter": "Will",
      "pick": "Aston Villa",
-     "rank": 17,
-     "points": 3,
+     "rank": 12,
+     "points": 4,
      "bonus": 0,
      "drafted": 7
+    },
+    {
+     "drafter": "DT",
+     "pick": "Man Utd",
+     "rank": 14,
+     "points": 3,
+     "bonus": 0,
+     "drafted": 5
     },
     {
      "drafter": "Ben Cav",
@@ -120,28 +120,28 @@
    "start": "2026-08",
    "rows": [
     {
-     "drafter": "Yestin",
-     "pick": "Borussia Dortmund",
+     "drafter": "Ben Cav",
+     "pick": "Bayern Munich",
      "rank": 1,
      "points": 11,
+     "bonus": 0,
+     "drafted": 1
+    },
+    {
+     "drafter": "Yestin",
+     "pick": "Borussia Dortmund",
+     "rank": 2,
+     "points": 10,
      "bonus": 0,
      "drafted": 2
     },
     {
      "drafter": "Dan",
      "pick": "SC Freiburg",
-     "rank": 2,
-     "points": 10,
-     "bonus": 0,
-     "drafted": 8
-    },
-    {
-     "drafter": "Ben Cav",
-     "pick": "Bayern Munich",
      "rank": 3,
      "points": 9,
      "bonus": 0,
-     "drafted": 1
+     "drafted": 8
     },
     {
      "drafter": "Wayne",
@@ -1959,7 +1959,7 @@
  "ladder": [
   {
    "pos": 1,
-   "drafter": "Yestin",
+   "drafter": "Max",
    "inplay": 49,
    "confirmed": 0,
    "bonus": 0,
@@ -1968,12 +1968,12 @@
   },
   {
    "pos": 2,
-   "drafter": "Max",
-   "inplay": 49,
+   "drafter": "Yestin",
+   "inplay": 48,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 49
+   "total": 48
   },
   {
    "pos": 3,
@@ -1987,20 +1987,20 @@
   {
    "pos": 4,
    "drafter": "Ben Cav",
-   "inplay": 40,
+   "inplay": 42,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 40
+   "total": 42
   },
   {
    "pos": 5,
    "drafter": "Dan",
-   "inplay": 36,
+   "inplay": 35,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 36
+   "total": 35
   },
   {
    "pos": 6,
@@ -2032,20 +2032,20 @@
   {
    "pos": 9,
    "drafter": "Will",
-   "inplay": 29,
+   "inplay": 30,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 29
+   "total": 30
   },
   {
    "pos": 10,
    "drafter": "DT",
-   "inplay": 28,
+   "inplay": 27,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 28
+   "total": 27
   },
   {
    "pos": 11,
