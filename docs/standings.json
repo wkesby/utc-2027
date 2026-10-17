@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-17T10:37+00:00",
+ "generated": "2026-10-17T14:10+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -47,20 +47,20 @@
      "drafted": 8
     },
     {
-     "drafter": "Dan",
-     "pick": "Brentford",
+     "drafter": "Yestin",
+     "pick": "Chelsea",
      "rank": 4,
      "points": 8,
      "bonus": 0,
-     "drafted": 10
+     "drafted": 3
     },
     {
-     "drafter": "Yestin",
-     "pick": "Chelsea",
-     "rank": 6,
+     "drafter": "Dan",
+     "pick": "Brentford",
+     "rank": 5,
      "points": 7,
      "bonus": 0,
-     "drafted": 3
+     "drafted": 10
     },
     {
      "drafter": "Wayne",
@@ -1960,11 +1960,11 @@
   {
    "pos": 1,
    "drafter": "Yestin",
-   "inplay": 47,
+   "inplay": 48,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 47
+   "total": 48
   },
   {
    "pos": 2,
@@ -1996,11 +1996,11 @@
   {
    "pos": 5,
    "drafter": "Dan",
-   "inplay": 39,
+   "inplay": 38,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 39
+   "total": 38
   },
   {
    "pos": 6,
