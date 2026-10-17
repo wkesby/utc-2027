@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-17T19:21+00:00",
+ "generated": "2026-10-17T22:15+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -283,7 +283,7 @@
     {
      "drafter": "DT",
      "pick": "Oklahoma",
-     "rank": 59,
+     "rank": 60,
      "points": 3,
      "bonus": 0,
      "drafted": 7
@@ -291,7 +291,7 @@
     {
      "drafter": "Sam",
      "pick": "Oregon",
-     "rank": 59,
+     "rank": 60,
      "points": 3,
      "bonus": 0,
      "drafted": 3
@@ -299,7 +299,7 @@
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 73,
+     "rank": 68,
      "points": 1,
      "bonus": 0,
      "drafted": 11
@@ -564,28 +564,28 @@
      "drafted": 7
     },
     {
-     "drafter": "Dan",
-     "pick": "Florida Panthers",
+     "drafter": "Ben Callow",
+     "pick": "Washington Capitals",
      "rank": 13,
      "points": 4,
+     "bonus": 0,
+     "drafted": 9
+    },
+    {
+     "drafter": "Dan",
+     "pick": "Florida Panthers",
+     "rank": 14,
+     "points": 3,
      "bonus": 0,
      "drafted": 1
     },
     {
      "drafter": "Will",
      "pick": "Buffalo Sabres",
-     "rank": 14,
-     "points": 3,
-     "bonus": 0,
-     "drafted": 10
-    },
-    {
-     "drafter": "Ben Callow",
-     "pick": "Washington Capitals",
      "rank": 15,
      "points": 2,
      "bonus": 0,
-     "drafted": 9
+     "drafted": 10
     },
     {
      "drafter": "DT",
@@ -1995,15 +1995,6 @@
   },
   {
    "pos": 5,
-   "drafter": "Dan",
-   "inplay": 35,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 6,
-   "total": 35
-  },
-  {
-   "pos": 6,
    "drafter": "Wayne",
    "inplay": 35,
    "confirmed": 0,
@@ -2012,17 +2003,26 @@
    "total": 35
   },
   {
-   "pos": 7,
-   "drafter": "Paps",
-   "inplay": 33,
+   "pos": 6,
+   "drafter": "Ben Callow",
+   "inplay": 35,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 33
+   "total": 35
+  },
+  {
+   "pos": 7,
+   "drafter": "Dan",
+   "inplay": 34,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 6,
+   "total": 34
   },
   {
    "pos": 8,
-   "drafter": "Ben Callow",
+   "drafter": "Paps",
    "inplay": 33,
    "confirmed": 0,
    "bonus": 0,
@@ -2032,11 +2032,11 @@
   {
    "pos": 9,
    "drafter": "Will",
-   "inplay": 30,
+   "inplay": 29,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 30
+   "total": 29
   },
   {
    "pos": 10,
