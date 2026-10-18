@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-18T04:25+00:00",
+ "generated": "2026-10-18T09:32+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -283,7 +283,7 @@
     {
      "drafter": "Sam",
      "pick": "Oregon",
-     "rank": 63,
+     "rank": 45,
      "points": 3,
      "bonus": 0,
      "drafted": 3
@@ -291,7 +291,7 @@
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 64,
+     "rank": 63,
      "points": 2,
      "bonus": 0,
      "drafted": 11
@@ -508,52 +508,52 @@
    "start": "2026-10",
    "rows": [
     {
-     "drafter": "Ben Cav",
-     "pick": "Carolina Hurricanes",
+     "drafter": "Max",
+     "pick": "Vegas Golden Knights",
      "rank": 1,
      "points": 11,
+     "bonus": 0,
+     "drafted": 6
+    },
+    {
+     "drafter": "Ben Cav",
+     "pick": "Carolina Hurricanes",
+     "rank": 2,
+     "points": 10,
      "bonus": 0,
      "drafted": 2
     },
     {
-     "drafter": "Max",
-     "pick": "Vegas Golden Knights",
-     "rank": 3,
-     "points": 10,
+     "drafter": "Mike",
+     "pick": "Edmonton Oilers",
+     "rank": 4,
+     "points": 9,
      "bonus": 0,
-     "drafted": 6
+     "drafted": 5
     },
     {
      "drafter": "Yestin",
      "pick": "Tampa Bay Lightning",
      "rank": 6,
-     "points": 9,
+     "points": 8,
      "bonus": 0,
      "drafted": 7
     },
     {
      "drafter": "Paps",
      "pick": "Ottawa Senators",
-     "rank": 7,
-     "points": 8,
+     "rank": 8,
+     "points": 7,
      "bonus": 0,
      "drafted": 11
     },
     {
      "drafter": "Dan",
      "pick": "Florida Panthers",
-     "rank": 8,
-     "points": 7,
-     "bonus": 0,
-     "drafted": 1
-    },
-    {
-     "drafter": "Mike",
-     "pick": "Edmonton Oilers",
      "rank": 9,
      "points": 6,
      "bonus": 0,
-     "drafted": 5
+     "drafted": 1
     },
     {
      "drafter": "Sam",
@@ -1960,47 +1960,47 @@
   {
    "pos": 1,
    "drafter": "Yestin",
-   "inplay": 52,
+   "inplay": 51,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 52
+   "total": 51
   },
   {
    "pos": 2,
    "drafter": "Max",
-   "inplay": 48,
+   "inplay": 49,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 48
+   "total": 49
   },
   {
    "pos": 3,
-   "drafter": "Ben Cav",
-   "inplay": 43,
+   "drafter": "Mike",
+   "inplay": 46,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 43
+   "total": 46
   },
   {
    "pos": 4,
-   "drafter": "Mike",
-   "inplay": 43,
+   "drafter": "Ben Cav",
+   "inplay": 42,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 43
+   "total": 42
   },
   {
    "pos": 5,
    "drafter": "Dan",
-   "inplay": 38,
+   "inplay": 37,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 38
+   "total": 37
   },
   {
    "pos": 6,
@@ -2023,11 +2023,11 @@
   {
    "pos": 8,
    "drafter": "Paps",
-   "inplay": 32,
+   "inplay": 31,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 32
+   "total": 31
   },
   {
    "pos": 9,
