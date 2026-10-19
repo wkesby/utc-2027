@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-19T01:12+00:00",
+ "generated": "2026-10-19T06:10+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -356,7 +356,7 @@
     {
      "drafter": "Yestin",
      "pick": "Baltimore Ravens",
-     "rank": 11,
+     "rank": 12,
      "points": 6,
      "bonus": 0,
      "drafted": 5
@@ -380,7 +380,7 @@
     {
      "drafter": "Sam",
      "pick": "Philadelphia Eagles",
-     "rank": 23,
+     "rank": 21,
      "points": 3,
      "bonus": 0,
      "drafted": 9
