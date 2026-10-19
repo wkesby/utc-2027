@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-19T13:04+00:00",
+ "generated": "2026-10-19T19:18+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -324,8 +324,8 @@
     {
      "drafter": "Wayne",
      "pick": "San Francisco 49ers",
-     "rank": 1,
-     "points": 11,
+     "rank": 3,
+     "points": 10,
      "bonus": 0,
      "drafted": 10
     },
@@ -1996,11 +1996,11 @@
   {
    "pos": 5,
    "drafter": "Wayne",
-   "inplay": 38,
+   "inplay": 37,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 38
+   "total": 37
   },
   {
    "pos": 6,
