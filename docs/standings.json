@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-19T23:36+00:00",
+ "generated": "2026-10-20T04:43+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -324,8 +324,8 @@
     {
      "drafter": "Wayne",
      "pick": "San Francisco 49ers",
-     "rank": 3,
-     "points": 10,
+     "rank": 1,
+     "points": 11,
      "bonus": 0,
      "drafted": 10
     },
@@ -526,7 +526,7 @@
     {
      "drafter": "Mike",
      "pick": "Edmonton Oilers",
-     "rank": 4,
+     "rank": 6,
      "points": 9,
      "bonus": 0,
      "drafted": 5
@@ -534,7 +534,7 @@
     {
      "drafter": "Wayne",
      "pick": "Minnesota Wild",
-     "rank": 5,
+     "rank": 7,
      "points": 8,
      "bonus": 0,
      "drafted": 8
@@ -542,7 +542,7 @@
     {
      "drafter": "Yestin",
      "pick": "Tampa Bay Lightning",
-     "rank": 7,
+     "rank": 8,
      "points": 7,
      "bonus": 0,
      "drafted": 7
@@ -590,7 +590,7 @@
     {
      "drafter": "DT",
      "pick": "Dallas Stars",
-     "rank": 17,
+     "rank": 18,
      "points": 1,
      "bonus": 0,
      "drafted": 4
@@ -1996,11 +1996,11 @@
   {
    "pos": 5,
    "drafter": "Wayne",
-   "inplay": 37,
+   "inplay": 38,
    "confirmed": 0,
    "bonus": 0,
    "scored": 6,
-   "total": 37
+   "total": 38
   },
   {
    "pos": 6,
