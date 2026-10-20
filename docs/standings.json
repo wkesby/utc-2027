@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20T15:01+00:00",
+ "generated": "2026-10-20T19:12+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -461,7 +461,7 @@
     {
      "drafter": "Yestin",
      "pick": "Bayern Munich",
-     "rank": 10,
+     "rank": 11,
      "points": 5,
      "bonus": 0,
      "drafted": 4
@@ -469,7 +469,7 @@
     {
      "drafter": "Ben Callow",
      "pick": "Man Utd",
-     "rank": 13,
+     "rank": 14,
      "points": 4,
      "bonus": 0,
      "drafted": 8
@@ -477,7 +477,7 @@
     {
      "drafter": "Dan",
      "pick": "Atletico Madrid",
-     "rank": 15,
+     "rank": 16,
      "points": 3,
      "bonus": 0,
      "drafted": 9
@@ -485,7 +485,7 @@
     {
      "drafter": "Wayne",
      "pick": "Man City",
-     "rank": 17,
+     "rank": 18,
      "points": 2,
      "bonus": 0,
      "drafted": 6
@@ -493,7 +493,7 @@
     {
      "drafter": "Ben Cav",
      "pick": "Inter Milan",
-     "rank": 29,
+     "rank": 30,
      "points": 1,
      "bonus": 0,
      "drafted": 10
