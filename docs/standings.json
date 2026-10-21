@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-21T20:36+00:00",
+ "generated": "2026-10-21T23:59+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -419,57 +419,57 @@
      "drafted": 1
     },
     {
-     "drafter": "Paps",
-     "pick": "Liverpool",
-     "rank": 2,
-     "points": 10,
-     "bonus": 0,
-     "drafted": 7
-    },
-    {
      "drafter": "DT",
      "pick": "Aston Villa",
-     "rank": 4,
-     "points": 9,
+     "rank": 2,
+     "points": 10,
      "bonus": 0,
      "drafted": 11
     },
     {
+     "drafter": "Paps",
+     "pick": "Liverpool",
+     "rank": 3,
+     "points": 9,
+     "bonus": 0,
+     "drafted": 7
+    },
+    {
+     "drafter": "Sam",
+     "pick": "Real Madrid",
+     "rank": 4,
+     "points": 8,
+     "bonus": 0,
+     "drafted": 3
+    },
+    {
+     "drafter": "Will",
+     "pick": "Arsenal",
+     "rank": 7,
+     "points": 7,
+     "bonus": 0,
+     "drafted": 2
+    },
+    {
      "drafter": "Mike",
      "pick": "Barcelona",
-     "rank": 5,
-     "points": 8,
+     "rank": 8,
+     "points": 6,
      "bonus": 0,
      "drafted": 5
     },
     {
      "drafter": "Wayne",
      "pick": "Man City",
-     "rank": 7,
-     "points": 7,
+     "rank": 10,
+     "points": 5,
      "bonus": 0,
      "drafted": 6
     },
     {
-     "drafter": "Will",
-     "pick": "Arsenal",
-     "rank": 9,
-     "points": 6,
-     "bonus": 0,
-     "drafted": 2
-    },
-    {
-     "drafter": "Sam",
-     "pick": "Real Madrid",
-     "rank": 10,
-     "points": 5,
-     "bonus": 0,
-     "drafted": 3
-    },
-    {
      "drafter": "Yestin",
      "pick": "Bayern Munich",
-     "rank": 13,
+     "rank": 14,
      "points": 4,
      "bonus": 0,
      "drafted": 4
@@ -483,20 +483,20 @@
      "drafted": 9
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "Man Utd",
+     "drafter": "Ben Cav",
+     "pick": "Inter Milan",
      "rank": 20,
      "points": 2,
      "bonus": 0,
-     "drafted": 8
+     "drafted": 10
     },
     {
-     "drafter": "Ben Cav",
-     "pick": "Inter Milan",
-     "rank": 32,
+     "drafter": "Ben Callow",
+     "pick": "Man Utd",
+     "rank": 21,
      "points": 1,
      "bonus": 0,
-     "drafted": 10
+     "drafted": 8
     }
    ]
   },
@@ -1977,16 +1977,16 @@
   },
   {
    "pos": 3,
-   "drafter": "Wayne",
-   "inplay": 50,
+   "drafter": "Ben Cav",
+   "inplay": 49,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 50
+   "total": 49
   },
   {
    "pos": 4,
-   "drafter": "Ben Cav",
+   "drafter": "Wayne",
    "inplay": 48,
    "confirmed": 0,
    "bonus": 0,
@@ -1995,15 +1995,6 @@
   },
   {
    "pos": 5,
-   "drafter": "Mike",
-   "inplay": 48,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 7,
-   "total": 48
-  },
-  {
-   "pos": 6,
    "drafter": "Dan",
    "inplay": 47,
    "confirmed": 0,
@@ -2012,49 +2003,58 @@
    "total": 47
   },
   {
-   "pos": 7,
-   "drafter": "Will",
-   "inplay": 40,
+   "pos": 6,
+   "drafter": "Mike",
+   "inplay": 46,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 40
+   "total": 46
+  },
+  {
+   "pos": 7,
+   "drafter": "Will",
+   "inplay": 41,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 7,
+   "total": 41
   },
   {
    "pos": 8,
    "drafter": "Ben Callow",
-   "inplay": 40,
+   "inplay": 39,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 40
+   "total": 39
   },
   {
    "pos": 9,
    "drafter": "Paps",
-   "inplay": 38,
+   "inplay": 37,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 38
+   "total": 37
   },
   {
    "pos": 10,
    "drafter": "DT",
-   "inplay": 30,
+   "inplay": 31,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 30
+   "total": 31
   },
   {
    "pos": 11,
    "drafter": "Sam",
-   "inplay": 24,
+   "inplay": 27,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 24
+   "total": 27
   }
  ]
 }
