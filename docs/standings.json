@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-22T04:37+00:00",
+ "generated": "2026-10-22T10:07+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -631,15 +631,15 @@
     {
      "drafter": "Sam",
      "pick": "Houston Rockets",
-     "rank": 7,
-     "points": 9,
+     "rank": 11,
+     "points": 8,
      "bonus": 0,
      "drafted": 10
     },
     {
      "drafter": "Dan",
      "pick": "Oklahoma City Thunder",
-     "rank": 9,
+     "rank": 13,
      "points": 7,
      "bonus": 0,
      "drafted": 1
@@ -647,15 +647,23 @@
     {
      "drafter": "Yestin",
      "pick": "Philadelphia 76ers",
-     "rank": 12,
-     "points": 6,
+     "rank": 13,
+     "points": 7,
      "bonus": 0,
      "drafted": 5
     },
     {
+     "drafter": "Wayne",
+     "pick": "Denver Nuggets",
+     "rank": 15,
+     "points": 5,
+     "bonus": 0,
+     "drafted": 8
+    },
+    {
      "drafter": "Paps",
      "pick": "Cleveland Cavaliers",
-     "rank": 17,
+     "rank": 15,
      "points": 5,
      "bonus": 0,
      "drafted": 6
@@ -663,23 +671,15 @@
     {
      "drafter": "Max",
      "pick": "New York Knicks",
-     "rank": 18,
-     "points": 4,
+     "rank": 17,
+     "points": 3,
      "bonus": 0,
      "drafted": 4
     },
     {
-     "drafter": "Wayne",
-     "pick": "Denver Nuggets",
-     "rank": 21,
-     "points": 3,
-     "bonus": 0,
-     "drafted": 8
-    },
-    {
      "drafter": "Mike",
      "pick": "San Antonio Spurs",
-     "rank": 23,
+     "rank": 21,
      "points": 2,
      "bonus": 0,
      "drafted": 2
@@ -688,7 +688,7 @@
      "drafter": "DT",
      "pick": "Boston Celtics",
      "rank": 23,
-     "points": 2,
+     "points": 1,
      "bonus": 0,
      "drafted": 3
     }
@@ -1968,21 +1968,21 @@
   },
   {
    "pos": 2,
-   "drafter": "Max",
-   "inplay": 52,
+   "drafter": "Yestin",
+   "inplay": 51,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 52
+   "total": 51
   },
   {
    "pos": 3,
-   "drafter": "Yestin",
-   "inplay": 50,
+   "drafter": "Max",
+   "inplay": 51,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 50
+   "total": 51
   },
   {
    "pos": 4,
@@ -1995,16 +1995,16 @@
   },
   {
    "pos": 5,
-   "drafter": "Dan",
-   "inplay": 43,
+   "drafter": "Wayne",
+   "inplay": 45,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 43
+   "total": 45
   },
   {
    "pos": 6,
-   "drafter": "Wayne",
+   "drafter": "Dan",
    "inplay": 43,
    "confirmed": 0,
    "bonus": 0,
@@ -2041,20 +2041,20 @@
   {
    "pos": 10,
    "drafter": "DT",
-   "inplay": 31,
+   "inplay": 30,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 31
+   "total": 30
   },
   {
    "pos": 11,
    "drafter": "Sam",
-   "inplay": 28,
+   "inplay": 27,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 28
+   "total": 27
   }
  ]
 }
