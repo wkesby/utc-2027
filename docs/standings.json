@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-23T18:17+00:00",
+ "generated": "2026-10-23T21:26+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -105,7 +105,7 @@
     {
      "drafter": "Sam",
      "pick": "Tottenham",
-     "rank": 16,
+     "rank": 17,
      "points": 1,
      "bonus": 0,
      "drafted": 6
@@ -184,20 +184,20 @@
      "drafted": 6
     },
     {
-     "drafter": "Will",
-     "pick": "VfB Stuttgart",
+     "drafter": "Mike",
+     "pick": "Hoffenheim",
      "rank": 13,
      "points": 3,
      "bonus": 0,
-     "drafted": 4
+     "drafted": 7
     },
     {
-     "drafter": "Mike",
-     "pick": "Hoffenheim",
+     "drafter": "Will",
+     "pick": "VfB Stuttgart",
      "rank": 14,
      "points": 2,
      "bonus": 0,
-     "drafted": 7
+     "drafted": 4
     },
     {
      "drafter": "Sam",
@@ -1987,11 +1987,11 @@
   {
    "pos": 4,
    "drafter": "Mike",
-   "inplay": 47,
+   "inplay": 48,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 47
+   "total": 48
   },
   {
    "pos": 5,
@@ -2022,7 +2022,7 @@
   },
   {
    "pos": 8,
-   "drafter": "Will",
+   "drafter": "Paps",
    "inplay": 37,
    "confirmed": 0,
    "bonus": 0,
@@ -2031,12 +2031,12 @@
   },
   {
    "pos": 9,
-   "drafter": "Paps",
-   "inplay": 37,
+   "drafter": "Will",
+   "inplay": 36,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 37
+   "total": 36
   },
   {
    "pos": 10,
