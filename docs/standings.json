@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-24T14:28+00:00",
+ "generated": "2026-10-24T18:05+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -81,7 +81,7 @@
     {
      "drafter": "Paps",
      "pick": "Newcastle Utd",
-     "rank": 12,
+     "rank": 13,
      "points": 4,
      "bonus": 0,
      "drafted": 9
@@ -89,7 +89,7 @@
     {
      "drafter": "DT",
      "pick": "Man Utd",
-     "rank": 13,
+     "rank": 14,
      "points": 3,
      "bonus": 0,
      "drafted": 5
@@ -97,7 +97,7 @@
     {
      "drafter": "Ben Cav",
      "pick": "Bournemouth",
-     "rank": 15,
+     "rank": 16,
      "points": 2,
      "bonus": 0,
      "drafted": 11
@@ -105,7 +105,7 @@
     {
      "drafter": "Sam",
      "pick": "Tottenham",
-     "rank": 17,
+     "rank": 18,
      "points": 1,
      "bonus": 0,
      "drafted": 6
@@ -152,33 +152,33 @@
      "drafted": 5
     },
     {
-     "drafter": "Max",
-     "pick": "SV Elversberg",
-     "rank": 6,
-     "points": 7,
-     "bonus": 0,
-     "drafted": 9
-    },
-    {
      "drafter": "Paps",
      "pick": "RB Leipzig",
-     "rank": 7,
-     "points": 6,
+     "rank": 5,
+     "points": 7,
      "bonus": 0,
      "drafted": 3
     },
     {
      "drafter": "Ben Callow",
      "pick": "Werder Bremen",
-     "rank": 8,
-     "points": 5,
+     "rank": 6,
+     "points": 6,
      "bonus": 0,
      "drafted": 10
     },
     {
+     "drafter": "Max",
+     "pick": "SV Elversberg",
+     "rank": 8,
+     "points": 5,
+     "bonus": 0,
+     "drafted": 9
+    },
+    {
      "drafter": "DT",
      "pick": "Eintracht Frankfurt",
-     "rank": 11,
+     "rank": 13,
      "points": 4,
      "bonus": 0,
      "drafted": 6
@@ -186,7 +186,7 @@
     {
      "drafter": "Mike",
      "pick": "Hoffenheim",
-     "rank": 13,
+     "rank": 14,
      "points": 3,
      "bonus": 0,
      "drafted": 7
@@ -194,7 +194,7 @@
     {
      "drafter": "Will",
      "pick": "VfB Stuttgart",
-     "rank": 14,
+     "rank": 15,
      "points": 2,
      "bonus": 0,
      "drafted": 4
@@ -202,7 +202,7 @@
     {
      "drafter": "Sam",
      "pick": "Schalke 04",
-     "rank": 15,
+     "rank": 16,
      "points": 1,
      "bonus": 0,
      "drafted": 11
@@ -1978,11 +1978,11 @@
   {
    "pos": 3,
    "drafter": "Max",
-   "inplay": 50,
+   "inplay": 48,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 50
+   "total": 48
   },
   {
    "pos": 4,
@@ -2005,11 +2005,11 @@
   {
    "pos": 6,
    "drafter": "Ben Callow",
-   "inplay": 42,
+   "inplay": 43,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 42
+   "total": 43
   },
   {
    "pos": 7,
@@ -2041,11 +2041,11 @@
   {
    "pos": 10,
    "drafter": "Paps",
-   "inplay": 34,
+   "inplay": 35,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 34
+   "total": 35
   },
   {
    "pos": 11,
