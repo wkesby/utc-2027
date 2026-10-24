@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-24T10:52+00:00",
+ "generated": "2026-10-24T14:28+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -63,28 +63,28 @@
      "drafted": 4
     },
     {
-     "drafter": "Dan",
-     "pick": "Brentford",
+     "drafter": "Will",
+     "pick": "Aston Villa",
      "rank": 6,
      "points": 6,
+     "bonus": 0,
+     "drafted": 7
+    },
+    {
+     "drafter": "Dan",
+     "pick": "Brentford",
+     "rank": 7,
+     "points": 5,
      "bonus": 0,
      "drafted": 10
     },
     {
      "drafter": "Paps",
      "pick": "Newcastle Utd",
-     "rank": 11,
-     "points": 5,
-     "bonus": 0,
-     "drafted": 9
-    },
-    {
-     "drafter": "Will",
-     "pick": "Aston Villa",
      "rank": 12,
      "points": 4,
      "bonus": 0,
-     "drafted": 7
+     "drafted": 9
     },
     {
      "drafter": "DT",
@@ -2004,15 +2004,6 @@
   },
   {
    "pos": 6,
-   "drafter": "Dan",
-   "inplay": 42,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 7,
-   "total": 42
-  },
-  {
-   "pos": 7,
    "drafter": "Ben Callow",
    "inplay": 42,
    "confirmed": 0,
@@ -2021,13 +2012,22 @@
    "total": 42
   },
   {
-   "pos": 8,
+   "pos": 7,
    "drafter": "Will",
-   "inplay": 39,
+   "inplay": 41,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 39
+   "total": 41
+  },
+  {
+   "pos": 8,
+   "drafter": "Dan",
+   "inplay": 41,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 7,
+   "total": 41
   },
   {
    "pos": 9,
@@ -2041,11 +2041,11 @@
   {
    "pos": 10,
    "drafter": "Paps",
-   "inplay": 35,
+   "inplay": 34,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 35
+   "total": 34
   },
   {
    "pos": 11,
