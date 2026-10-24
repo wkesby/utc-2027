@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-24T20:43+00:00",
+ "generated": "2026-10-24T23:09+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -281,9 +281,17 @@
      "drafted": 4
     },
     {
+     "drafter": "DT",
+     "pick": "Oklahoma",
+     "rank": 61,
+     "points": 3,
+     "bonus": 0,
+     "drafted": 7
+    },
+    {
      "drafter": "Sam",
      "pick": "Oregon",
-     "rank": 46,
+     "rank": 61,
      "points": 3,
      "bonus": 0,
      "drafted": 3
@@ -291,18 +299,10 @@
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 62,
-     "points": 2,
-     "bonus": 0,
-     "drafted": 11
-    },
-    {
-     "drafter": "DT",
-     "pick": "Oklahoma",
-     "rank": 82,
+     "rank": 79,
      "points": 1,
      "bonus": 0,
-     "drafted": 7
+     "drafted": 11
     }
    ]
   },
@@ -550,7 +550,7 @@
     {
      "drafter": "Paps",
      "pick": "Ottawa Senators",
-     "rank": 10,
+     "rank": 11,
      "points": 6,
      "bonus": 0,
      "drafted": 11
@@ -558,7 +558,7 @@
     {
      "drafter": "DT",
      "pick": "Dallas Stars",
-     "rank": 12,
+     "rank": 13,
      "points": 5,
      "bonus": 0,
      "drafted": 4
@@ -566,7 +566,7 @@
     {
      "drafter": "Sam",
      "pick": "Colorado Avalanche",
-     "rank": 13,
+     "rank": 14,
      "points": 4,
      "bonus": 0,
      "drafted": 3
@@ -1996,11 +1996,11 @@
   {
    "pos": 5,
    "drafter": "Wayne",
-   "inplay": 44,
+   "inplay": 43,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 44
+   "total": 43
   },
   {
    "pos": 6,
@@ -2032,11 +2032,11 @@
   {
    "pos": 9,
    "drafter": "DT",
-   "inplay": 35,
+   "inplay": 37,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 35
+   "total": 37
   },
   {
    "pos": 10,
