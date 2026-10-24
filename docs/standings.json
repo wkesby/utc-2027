@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-23T21:26+00:00",
+ "generated": "2026-10-24T00:37+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -655,7 +655,7 @@
     {
      "drafter": "Mike",
      "pick": "San Antonio Spurs",
-     "rank": 15,
+     "rank": 16,
      "points": 5,
      "bonus": 0,
      "drafted": 2
@@ -663,7 +663,7 @@
     {
      "drafter": "Wayne",
      "pick": "Denver Nuggets",
-     "rank": 15,
+     "rank": 16,
      "points": 5,
      "bonus": 0,
      "drafted": 8
@@ -671,24 +671,24 @@
     {
      "drafter": "Paps",
      "pick": "Cleveland Cavaliers",
-     "rank": 15,
-     "points": 5,
+     "rank": 19,
+     "points": 3,
      "bonus": 0,
      "drafted": 6
     },
     {
      "drafter": "DT",
      "pick": "Boston Celtics",
-     "rank": 15,
-     "points": 5,
+     "rank": 19,
+     "points": 3,
      "bonus": 0,
      "drafted": 3
     },
     {
      "drafter": "Max",
      "pick": "New York Knicks",
-     "rank": 15,
-     "points": 5,
+     "rank": 19,
+     "points": 3,
      "bonus": 0,
      "drafted": 4
     }
@@ -1968,21 +1968,21 @@
   },
   {
    "pos": 2,
-   "drafter": "Max",
-   "inplay": 53,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 7,
-   "total": 53
-  },
-  {
-   "pos": 3,
    "drafter": "Ben Cav",
    "inplay": 52,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
    "total": 52
+  },
+  {
+   "pos": 3,
+   "drafter": "Max",
+   "inplay": 51,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 7,
+   "total": 51
   },
   {
    "pos": 4,
@@ -2022,15 +2022,6 @@
   },
   {
    "pos": 8,
-   "drafter": "Paps",
-   "inplay": 37,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 7,
-   "total": 37
-  },
-  {
-   "pos": 9,
    "drafter": "Will",
    "inplay": 36,
    "confirmed": 0,
@@ -2039,13 +2030,22 @@
    "total": 36
   },
   {
-   "pos": 10,
-   "drafter": "DT",
-   "inplay": 36,
+   "pos": 9,
+   "drafter": "Paps",
+   "inplay": 35,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 36
+   "total": 35
+  },
+  {
+   "pos": 10,
+   "drafter": "DT",
+   "inplay": 34,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 7,
+   "total": 34
   },
   {
    "pos": 11,
