@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25T11:19+00:00",
+ "generated": "2026-10-25T16:09+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -47,68 +47,68 @@
      "drafted": 8
     },
     {
-     "drafter": "Yestin",
-     "pick": "Chelsea",
-     "rank": 4,
-     "points": 8,
-     "bonus": 0,
-     "drafted": 3
-    },
-    {
      "drafter": "Wayne",
      "pick": "Liverpool",
-     "rank": 5,
-     "points": 7,
+     "rank": 4,
+     "points": 8,
      "bonus": 0,
      "drafted": 4
     },
     {
-     "drafter": "Will",
-     "pick": "Aston Villa",
-     "rank": 6,
-     "points": 6,
+     "drafter": "Yestin",
+     "pick": "Chelsea",
+     "rank": 5,
+     "points": 7,
      "bonus": 0,
-     "drafted": 7
+     "drafted": 3
     },
     {
      "drafter": "Dan",
      "pick": "Brentford",
-     "rank": 7,
-     "points": 5,
+     "rank": 6,
+     "points": 6,
      "bonus": 0,
      "drafted": 10
     },
     {
-     "drafter": "Sam",
-     "pick": "Tottenham",
-     "rank": 12,
-     "points": 4,
-     "bonus": 0,
-     "drafted": 6
-    },
-    {
      "drafter": "Paps",
      "pick": "Newcastle Utd",
-     "rank": 14,
-     "points": 3,
+     "rank": 7,
+     "points": 5,
      "bonus": 0,
      "drafted": 9
     },
     {
-     "drafter": "DT",
-     "pick": "Man Utd",
-     "rank": 15,
-     "points": 2,
+     "drafter": "Will",
+     "pick": "Aston Villa",
+     "rank": 8,
+     "points": 4,
      "bonus": 0,
-     "drafted": 5
+     "drafted": 7
     },
     {
      "drafter": "Ben Cav",
      "pick": "Bournemouth",
-     "rank": 17,
-     "points": 1,
+     "rank": 13,
+     "points": 3,
      "bonus": 0,
      "drafted": 11
+    },
+    {
+     "drafter": "Sam",
+     "pick": "Tottenham",
+     "rank": 14,
+     "points": 2,
+     "bonus": 0,
+     "drafted": 6
+    },
+    {
+     "drafter": "DT",
+     "pick": "Man Utd",
+     "rank": 16,
+     "points": 1,
+     "bonus": 0,
+     "drafted": 5
     }
    ]
   },
@@ -1960,20 +1960,20 @@
   {
    "pos": 1,
    "drafter": "Yestin",
-   "inplay": 55,
+   "inplay": 54,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 55
+   "total": 54
   },
   {
    "pos": 2,
    "drafter": "Ben Cav",
-   "inplay": 49,
+   "inplay": 51,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 49
+   "total": 51
   },
   {
    "pos": 3,
@@ -1996,11 +1996,11 @@
   {
    "pos": 5,
    "drafter": "Wayne",
-   "inplay": 44,
+   "inplay": 45,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 44
+   "total": 45
   },
   {
    "pos": 6,
@@ -2013,16 +2013,16 @@
   },
   {
    "pos": 7,
-   "drafter": "Will",
-   "inplay": 40,
+   "drafter": "Dan",
+   "inplay": 39,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 40
+   "total": 39
   },
   {
    "pos": 8,
-   "drafter": "Dan",
+   "drafter": "Will",
    "inplay": 38,
    "confirmed": 0,
    "bonus": 0,
@@ -2031,7 +2031,7 @@
   },
   {
    "pos": 9,
-   "drafter": "DT",
+   "drafter": "Paps",
    "inplay": 37,
    "confirmed": 0,
    "bonus": 0,
@@ -2040,21 +2040,21 @@
   },
   {
    "pos": 10,
-   "drafter": "Paps",
-   "inplay": 35,
+   "drafter": "DT",
+   "inplay": 36,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 35
+   "total": 36
   },
   {
    "pos": 11,
    "drafter": "Sam",
-   "inplay": 34,
+   "inplay": 32,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 34
+   "total": 32
   }
  ]
 }
