@@ -1,0 +1,111 @@
+*UTC 2027 — Tuesday update, 27 Oct*
+
+1. Ben Cav — 51 (+9)
+2. Yestin — 48 (+4)
+3. Max — 47 (-2)
+4. Mike — 46 (-2)
+5. Dan — 45 (+9)
+6. Wayne — 44 (+6)
+7. Will — 42 (+11)
+8. Ben Callow — 40 (+5)
+9. Paps — 37 (+6)
+10. DT — 35 (+10)
+11. Sam — 30 (+12)
+
+Mover of the week: Sam (+12)
+Slider of the week: Max (-2)
+
+*From the commentary box:*
+Ben Cav's banked nine to jump three into top spot, with Bayern and the Hurricanes both leading their comps — nothing to sledge there yet, sadly.
+Wayne pinched the San Francisco 49ers with pick 10 and they're topping the NFL for nine points of value, while Ben Callow took the LA Rams at number one and got three points for his trouble — eight under par and the worst bust on the board.
+Will's eleven-point week has Detroit flying in the NBA, though the Buffalo Sabres sitting stone motherless last in the NHL keeps him honest; Sam's comp-best twelve still leaves him propping up the ladder, and the early picks are paying off overall, so there's no hiding behind bad luck.
+
+*Next 7 days*
+
+Ben Cav:
+EPL — Bournemouth vs Leeds United (undrafted) on Sun 1 Nov
+Bundesliga — Bayern Munich vs Borussia Dortmund (Yestin) on Sun 1 Nov
+NCAA Football — Indiana vs Minnesota Golden Gophers (undrafted) on Sun 1 Nov
+NFL — Kansas City Chiefs at Denver Broncos (DT) on Mon 2 Nov
+NHL — Carolina Hurricanes vs Boston Bruins (undrafted) on Wed 28 Oct
+NBA — Toronto Raptors vs Orlando Magic (undrafted) on Thu 29 Oct
+
+Yestin:
+EPL — Chelsea vs Man Utd (DT) on Sat 31 Oct
+Bundesliga — Borussia Dortmund at Bayern Munich (Ben Cav) on Sun 1 Nov
+NCAA Football — Georgia vs Florida Gators (undrafted) on Sun 1 Nov
+NFL — Baltimore Ravens at Buffalo Bills (Dan) on Mon 2 Nov
+NHL — Tampa Bay Lightning vs Winnipeg Jets (undrafted) on Fri 30 Oct
+NBA — Philadelphia 76ers at Indiana Pacers (undrafted) on Thu 29 Oct
+
+Max:
+EPL — Brighton at Man City (Ben Callow) on Sun 1 Nov
+Bundesliga — SV Elversberg vs Mainz (undrafted) on Sat 31 Oct
+NFL — Detroit Lions vs Minnesota Vikings (undrafted) on Mon 2 Nov
+NHL — Vegas Golden Knights vs Ottawa Senators (Paps) on Wed 28 Oct
+NBA — New York Knicks vs Detroit Pistons (Will) on Wed 28 Oct
+
+Mike:
+EPL — Arsenal at Liverpool (Wayne) on Mon 2 Nov
+Bundesliga — Hoffenheim at Werder Bremen (Ben Callow) on Sun 1 Nov
+NCAA Football — Notre Dame at Navy Midshipmen (undrafted) on Sun 1 Nov
+NFL — New England Patriots at Miami Dolphins (undrafted) on Mon 2 Nov
+NHL — Edmonton Oilers vs Calgary Flames (undrafted) on Thu 29 Oct
+NBA — San Antonio Spurs vs Sacramento Kings (undrafted) on Wed 28 Oct
+
+Dan:
+EPL — Brentford vs Nottingham Forest (undrafted) on Sun 1 Nov
+Bundesliga — SC Freiburg at FC Augsburg (undrafted) on Sun 1 Nov
+NCAA Football — Texas vs Mississippi State Bulldogs (undrafted) on Sun 1 Nov
+NFL — Buffalo Bills vs Baltimore Ravens (Yestin) on Mon 2 Nov
+NHL — Florida Panthers at Winnipeg Jets (undrafted) on Wed 28 Oct
+NBA — Oklahoma City Thunder at Dallas Mavericks (undrafted) on Thu 29 Oct
+
+Wayne:
+EPL — Liverpool vs Arsenal (Mike) on Mon 2 Nov
+Bundesliga — Bayer Leverkusen vs VfB Stuttgart (Will) on Sun 1 Nov
+NHL — Minnesota Wild at Utah Mammoth (undrafted) on Wed 28 Oct
+NBA — Denver Nuggets at New Orleans Pelicans (undrafted) on Thu 29 Oct
+
+Will:
+EPL — Aston Villa vs Fulham (undrafted) on Sun 1 Nov
+Bundesliga — VfB Stuttgart at Bayer Leverkusen (Wayne) on Sun 1 Nov
+NCAA Football — Miami at North Carolina Tar Heels (undrafted) on Sun 1 Nov
+NFL — Seattle Seahawks vs Chicago Bears (undrafted) on Tue 3 Nov
+NHL — Buffalo Sabres at San Jose Sharks (undrafted) on Wed 28 Oct
+NBA — Detroit Pistons at New York Knicks (Max) on Wed 28 Oct
+
+Ben Callow:
+EPL — Man City vs Brighton (Max) on Sun 1 Nov
+Bundesliga — Werder Bremen vs Hoffenheim (Mike) on Sun 1 Nov
+NCAA Football — Ohio State at USC Trojans (undrafted) on Sun 1 Nov
+NFL — LA Rams vs LA Chargers (Paps) on Mon 2 Nov
+NHL — Washington Capitals vs Philadelphia Flyers (undrafted) on Thu 29 Oct
+NBA — Minnesota Timberwolves vs Golden State Warriors (undrafted) on Thu 29 Oct
+
+Paps:
+EPL — Newcastle Utd vs Everton (undrafted) on Tue 3 Nov
+Bundesliga — RB Leipzig at Schalke 04 (Sam) on Sun 1 Nov
+NFL — LA Chargers at LA Rams (Ben Callow) on Mon 2 Nov
+NHL — Ottawa Senators at Vegas Golden Knights (Max) on Wed 28 Oct
+NBA — Cleveland Cavaliers vs Washington Wizards (undrafted) on Thu 29 Oct
+
+DT:
+EPL — Man Utd at Chelsea (Yestin) on Sat 31 Oct
+Bundesliga — Eintracht Frankfurt vs Hamburg SV (undrafted) on Mon 2 Nov
+NCAA Football — Oklahoma vs South Carolina Gamecocks (undrafted) on Sun 1 Nov
+NFL — Denver Broncos vs Kansas City Chiefs (Ben Cav) on Mon 2 Nov
+NHL — Dallas Stars vs New Jersey Devils (undrafted) on Wed 28 Oct
+NBA — Boston Celtics vs Brooklyn Nets (undrafted) on Wed 28 Oct
+
+Sam:
+EPL — Tottenham vs Crystal Palace (undrafted) on Sun 1 Nov
+Bundesliga — Schalke 04 vs RB Leipzig (Paps) on Sun 1 Nov
+NCAA Football — Oregon vs Northwestern Wildcats (undrafted) on Sun 1 Nov
+NFL — Philadelphia Eagles at Washington Commanders (undrafted) on Mon 2 Nov
+NHL — Colorado Avalanche vs New Jersey Devils (undrafted) on Thu 29 Oct
+NBA — Houston Rockets at Milwaukee Bucks (undrafted) on Thu 29 Oct
+
+Scoring now: EPL, Bundesliga, NCAA Football, NFL, UEFA Champions League, NHL, NBA
+Ladder: https://wkesby.github.io/utc-2027/reports/2026-10-27.html
+Full table: https://wkesby.github.io/utc-2027/
