@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-28T05:33+00:00",
+ "generated": "2026-10-28T12:45+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -623,7 +623,7 @@
     {
      "drafter": "Will",
      "pick": "Detroit Pistons",
-     "rank": 6,
+     "rank": 5,
      "points": 9,
      "bonus": 0,
      "drafted": 7
@@ -631,7 +631,7 @@
     {
      "drafter": "Yestin",
      "pick": "Philadelphia 76ers",
-     "rank": 7,
+     "rank": 6,
      "points": 8,
      "bonus": 0,
      "drafted": 5
@@ -639,7 +639,7 @@
     {
      "drafter": "DT",
      "pick": "Boston Celtics",
-     "rank": 9,
+     "rank": 8,
      "points": 7,
      "bonus": 0,
      "drafted": 3
