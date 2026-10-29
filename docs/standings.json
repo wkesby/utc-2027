@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-28T23:10+00:00",
+ "generated": "2026-10-29T02:23+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -572,28 +572,28 @@
      "drafted": 4
     },
     {
+     "drafter": "Ben Callow",
+     "pick": "Washington Capitals",
+     "rank": 16,
+     "points": 3,
+     "bonus": 0,
+     "drafted": 9
+    },
+    {
      "drafter": "Sam",
      "pick": "Colorado Avalanche",
-     "rank": 17,
-     "points": 3,
+     "rank": 18,
+     "points": 2,
      "bonus": 0,
      "drafted": 3
     },
     {
      "drafter": "Will",
      "pick": "Buffalo Sabres",
-     "rank": 19,
-     "points": 2,
-     "bonus": 0,
-     "drafted": 10
-    },
-    {
-     "drafter": "Ben Callow",
-     "pick": "Washington Capitals",
-     "rank": 22,
+     "rank": 20,
      "points": 1,
      "bonus": 0,
-     "drafted": 9
+     "drafted": 10
     }
    ]
   },
@@ -637,36 +637,36 @@
      "drafted": 5
     },
     {
-     "drafter": "DT",
-     "pick": "Boston Celtics",
-     "rank": 8,
-     "points": 7,
-     "bonus": 0,
-     "drafted": 3
-    },
-    {
-     "drafter": "Ben Callow",
-     "pick": "Minnesota Timberwolves",
-     "rank": 10,
-     "points": 6,
-     "bonus": 0,
-     "drafted": 11
-    },
-    {
      "drafter": "Ben Cav",
      "pick": "Toronto Raptors",
-     "rank": 11,
-     "points": 5,
+     "rank": 7,
+     "points": 7,
      "bonus": 0,
      "drafted": 9
     },
     {
+     "drafter": "DT",
+     "pick": "Boston Celtics",
+     "rank": 8,
+     "points": 6,
+     "bonus": 0,
+     "drafted": 3
+    },
+    {
      "drafter": "Paps",
      "pick": "Cleveland Cavaliers",
-     "rank": 12,
-     "points": 4,
+     "rank": 9,
+     "points": 5,
      "bonus": 0,
      "drafted": 6
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "Minnesota Timberwolves",
+     "rank": 11,
+     "points": 4,
+     "bonus": 0,
+     "drafted": 11
     },
     {
      "drafter": "Mike",
@@ -679,7 +679,7 @@
     {
      "drafter": "Wayne",
      "pick": "Denver Nuggets",
-     "rank": 19,
+     "rank": 14,
      "points": 2,
      "bonus": 0,
      "drafted": 8
@@ -687,7 +687,7 @@
     {
      "drafter": "Max",
      "pick": "New York Knicks",
-     "rank": 25,
+     "rank": 22,
      "points": 1,
      "bonus": 0,
      "drafted": 4
@@ -1960,11 +1960,11 @@
   {
    "pos": 1,
    "drafter": "Ben Cav",
-   "inplay": 50,
+   "inplay": 52,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 50
+   "total": 52
   },
   {
    "pos": 2,
@@ -2014,15 +2014,15 @@
   {
    "pos": 7,
    "drafter": "Will",
-   "inplay": 41,
+   "inplay": 40,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 41
+   "total": 40
   },
   {
    "pos": 8,
-   "drafter": "Ben Callow",
+   "drafter": "Paps",
    "inplay": 38,
    "confirmed": 0,
    "bonus": 0,
@@ -2031,30 +2031,30 @@
   },
   {
    "pos": 9,
-   "drafter": "Paps",
-   "inplay": 37,
+   "drafter": "Ben Callow",
+   "inplay": 38,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 37
+   "total": 38
   },
   {
    "pos": 10,
    "drafter": "DT",
-   "inplay": 36,
+   "inplay": 35,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 36
+   "total": 35
   },
   {
    "pos": 11,
    "drafter": "Sam",
-   "inplay": 30,
+   "inplay": 29,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 30
+   "total": 29
   }
  ]
 }
