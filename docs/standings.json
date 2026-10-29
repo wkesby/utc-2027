@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-29T02:23+00:00",
+ "generated": "2026-10-29T09:51+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -299,7 +299,7 @@
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 82,
+     "rank": 81,
      "points": 1,
      "bonus": 0,
      "drafted": 11
@@ -516,33 +516,33 @@
      "drafted": 2
     },
     {
-     "drafter": "Wayne",
-     "pick": "Minnesota Wild",
+     "drafter": "Mike",
+     "pick": "Edmonton Oilers",
      "rank": 2,
      "points": 10,
+     "bonus": 0,
+     "drafted": 5
+    },
+    {
+     "drafter": "Wayne",
+     "pick": "Minnesota Wild",
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
      "drafted": 8
     },
     {
      "drafter": "Max",
      "pick": "Vegas Golden Knights",
-     "rank": 4,
-     "points": 9,
+     "rank": 5,
+     "points": 8,
      "bonus": 0,
      "drafted": 6
     },
     {
-     "drafter": "Mike",
-     "pick": "Edmonton Oilers",
-     "rank": 5,
-     "points": 8,
-     "bonus": 0,
-     "drafted": 5
-    },
-    {
      "drafter": "Paps",
      "pick": "Ottawa Senators",
-     "rank": 9,
+     "rank": 10,
      "points": 7,
      "bonus": 0,
      "drafted": 11
@@ -550,7 +550,7 @@
     {
      "drafter": "Dan",
      "pick": "Florida Panthers",
-     "rank": 10,
+     "rank": 11,
      "points": 6,
      "bonus": 0,
      "drafted": 1
@@ -558,7 +558,7 @@
     {
      "drafter": "Yestin",
      "pick": "Tampa Bay Lightning",
-     "rank": 12,
+     "rank": 13,
      "points": 5,
      "bonus": 0,
      "drafted": 7
@@ -572,20 +572,20 @@
      "drafted": 4
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "Washington Capitals",
-     "rank": 16,
-     "points": 3,
-     "bonus": 0,
-     "drafted": 9
-    },
-    {
      "drafter": "Sam",
      "pick": "Colorado Avalanche",
-     "rank": 18,
-     "points": 2,
+     "rank": 15,
+     "points": 3,
      "bonus": 0,
      "drafted": 3
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "Washington Capitals",
+     "rank": 17,
+     "points": 2,
+     "bonus": 0,
+     "drafted": 9
     },
     {
      "drafter": "Will",
@@ -613,33 +613,33 @@
      "drafted": 10
     },
     {
-     "drafter": "Dan",
-     "pick": "Oklahoma City Thunder",
-     "rank": 2,
-     "points": 10,
-     "bonus": 0,
-     "drafted": 1
-    },
-    {
      "drafter": "Will",
      "pick": "Detroit Pistons",
-     "rank": 5,
-     "points": 9,
+     "rank": 4,
+     "points": 10,
      "bonus": 0,
      "drafted": 7
     },
     {
      "drafter": "Yestin",
      "pick": "Philadelphia 76ers",
-     "rank": 6,
-     "points": 8,
+     "rank": 5,
+     "points": 9,
      "bonus": 0,
      "drafted": 5
     },
     {
+     "drafter": "Dan",
+     "pick": "Oklahoma City Thunder",
+     "rank": 7,
+     "points": 8,
+     "bonus": 0,
+     "drafted": 1
+    },
+    {
      "drafter": "Ben Cav",
      "pick": "Toronto Raptors",
-     "rank": 7,
+     "rank": 8,
      "points": 7,
      "bonus": 0,
      "drafted": 9
@@ -647,7 +647,7 @@
     {
      "drafter": "DT",
      "pick": "Boston Celtics",
-     "rank": 8,
+     "rank": 9,
      "points": 6,
      "bonus": 0,
      "drafted": 3
@@ -655,31 +655,31 @@
     {
      "drafter": "Paps",
      "pick": "Cleveland Cavaliers",
-     "rank": 9,
+     "rank": 10,
      "points": 5,
      "bonus": 0,
      "drafted": 6
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "Minnesota Timberwolves",
-     "rank": 11,
-     "points": 4,
-     "bonus": 0,
-     "drafted": 11
-    },
-    {
      "drafter": "Mike",
      "pick": "San Antonio Spurs",
-     "rank": 13,
-     "points": 3,
+     "rank": 11,
+     "points": 4,
      "bonus": 0,
      "drafted": 2
     },
     {
+     "drafter": "Ben Callow",
+     "pick": "Minnesota Timberwolves",
+     "rank": 14,
+     "points": 3,
+     "bonus": 0,
+     "drafted": 11
+    },
+    {
      "drafter": "Wayne",
      "pick": "Denver Nuggets",
-     "rank": 14,
+     "rank": 15,
      "points": 2,
      "bonus": 0,
      "drafted": 8
@@ -687,7 +687,7 @@
     {
      "drafter": "Max",
      "pick": "New York Knicks",
-     "rank": 22,
+     "rank": 17,
      "points": 1,
      "bonus": 0,
      "drafted": 4
@@ -1968,7 +1968,7 @@
   },
   {
    "pos": 2,
-   "drafter": "Dan",
+   "drafter": "Yestin",
    "inplay": 48,
    "confirmed": 0,
    "bonus": 0,
@@ -1977,16 +1977,16 @@
   },
   {
    "pos": 3,
-   "drafter": "Max",
-   "inplay": 48,
+   "drafter": "Mike",
+   "inplay": 47,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 48
+   "total": 47
   },
   {
    "pos": 4,
-   "drafter": "Yestin",
+   "drafter": "Max",
    "inplay": 47,
    "confirmed": 0,
    "bonus": 0,
@@ -1995,16 +1995,16 @@
   },
   {
    "pos": 5,
-   "drafter": "Wayne",
-   "inplay": 45,
+   "drafter": "Dan",
+   "inplay": 46,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 45
+   "total": 46
   },
   {
    "pos": 6,
-   "drafter": "Mike",
+   "drafter": "Wayne",
    "inplay": 44,
    "confirmed": 0,
    "bonus": 0,
@@ -2014,11 +2014,11 @@
   {
    "pos": 7,
    "drafter": "Will",
-   "inplay": 40,
+   "inplay": 41,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 40
+   "total": 41
   },
   {
    "pos": 8,
@@ -2032,11 +2032,11 @@
   {
    "pos": 9,
    "drafter": "Ben Callow",
-   "inplay": 38,
+   "inplay": 36,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 38
+   "total": 36
   },
   {
    "pos": 10,
@@ -2050,11 +2050,11 @@
   {
    "pos": 11,
    "drafter": "Sam",
-   "inplay": 29,
+   "inplay": 30,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 29
+   "total": 30
   }
  ]
 }
