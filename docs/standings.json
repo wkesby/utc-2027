@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-31T18:30+00:00",
+ "generated": "2026-10-31T22:26+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -79,28 +79,28 @@
      "drafted": 11
     },
     {
-     "drafter": "Paps",
-     "pick": "Newcastle Utd",
-     "rank": 10,
+     "drafter": "Sam",
+     "pick": "Tottenham",
+     "rank": 8,
      "points": 4,
      "bonus": 0,
-     "drafted": 9
+     "drafted": 6
     },
     {
      "drafter": "Will",
      "pick": "Aston Villa",
-     "rank": 11,
+     "rank": 9,
      "points": 3,
      "bonus": 0,
      "drafted": 7
     },
     {
-     "drafter": "Sam",
-     "pick": "Tottenham",
-     "rank": 14,
+     "drafter": "Paps",
+     "pick": "Newcastle Utd",
+     "rank": 12,
      "points": 2,
      "bonus": 0,
-     "drafted": 6
+     "drafted": 9
     },
     {
      "drafter": "DT",
@@ -283,7 +283,7 @@
     {
      "drafter": "DT",
      "pick": "Oklahoma",
-     "rank": 58,
+     "rank": 61,
      "points": 3,
      "bonus": 0,
      "drafted": 7
@@ -291,7 +291,7 @@
     {
      "drafter": "Sam",
      "pick": "Oregon",
-     "rank": 58,
+     "rank": 61,
      "points": 3,
      "bonus": 0,
      "drafted": 3
@@ -299,7 +299,7 @@
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 80,
+     "rank": 73,
      "points": 1,
      "bonus": 0,
      "drafted": 11
@@ -516,20 +516,20 @@
      "drafted": 2
     },
     {
-     "drafter": "Wayne",
-     "pick": "Minnesota Wild",
+     "drafter": "Mike",
+     "pick": "Edmonton Oilers",
      "rank": 2,
      "points": 10,
      "bonus": 0,
-     "drafted": 8
+     "drafted": 5
     },
     {
-     "drafter": "Mike",
-     "pick": "Edmonton Oilers",
+     "drafter": "Wayne",
+     "pick": "Minnesota Wild",
      "rank": 3,
      "points": 9,
      "bonus": 0,
-     "drafted": 5
+     "drafted": 8
     },
     {
      "drafter": "Max",
@@ -540,20 +540,20 @@
      "drafted": 6
     },
     {
-     "drafter": "Dan",
-     "pick": "Florida Panthers",
-     "rank": 9,
-     "points": 7,
-     "bonus": 0,
-     "drafted": 1
-    },
-    {
      "drafter": "Yestin",
      "pick": "Tampa Bay Lightning",
+     "rank": 6,
+     "points": 7,
+     "bonus": 0,
+     "drafted": 7
+    },
+    {
+     "drafter": "Dan",
+     "pick": "Florida Panthers",
      "rank": 10,
      "points": 6,
      "bonus": 0,
-     "drafted": 7
+     "drafted": 1
     },
     {
      "drafter": "Paps",
@@ -1969,23 +1969,14 @@
   {
    "pos": 2,
    "drafter": "Yestin",
-   "inplay": 51,
+   "inplay": 52,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 51
+   "total": 52
   },
   {
    "pos": 3,
-   "drafter": "Dan",
-   "inplay": 47,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 7,
-   "total": 47
-  },
-  {
-   "pos": 4,
    "drafter": "Max",
    "inplay": 47,
    "confirmed": 0,
@@ -1994,13 +1985,22 @@
    "total": 47
   },
   {
-   "pos": 5,
-   "drafter": "Mike",
-   "inplay": 44,
+   "pos": 4,
+   "drafter": "Dan",
+   "inplay": 46,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 44
+   "total": 46
+  },
+  {
+   "pos": 5,
+   "drafter": "Mike",
+   "inplay": 45,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 7,
+   "total": 45
   },
   {
    "pos": 6,
@@ -2013,15 +2013,6 @@
   },
   {
    "pos": 7,
-   "drafter": "Wayne",
-   "inplay": 42,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 7,
-   "total": 42
-  },
-  {
-   "pos": 8,
    "drafter": "Ben Callow",
    "inplay": 42,
    "confirmed": 0,
@@ -2030,16 +2021,16 @@
    "total": 42
   },
   {
-   "pos": 9,
-   "drafter": "Paps",
-   "inplay": 35,
+   "pos": 8,
+   "drafter": "Wayne",
+   "inplay": 41,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 35
+   "total": 41
   },
   {
-   "pos": 10,
+   "pos": 9,
    "drafter": "DT",
    "inplay": 34,
    "confirmed": 0,
@@ -2048,13 +2039,22 @@
    "total": 34
   },
   {
-   "pos": 11,
-   "drafter": "Sam",
-   "inplay": 29,
+   "pos": 10,
+   "drafter": "Paps",
+   "inplay": 33,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 29
+   "total": 33
+  },
+  {
+   "pos": 11,
+   "drafter": "Sam",
+   "inplay": 31,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 7,
+   "total": 31
   }
  ]
 }
