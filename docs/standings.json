@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T20:28+00:00",
+ "generated": "2026-11-02T00:38+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -314,9 +314,17 @@
    "start": "2026-09",
    "rows": [
     {
+     "drafter": "Dan",
+     "pick": "Buffalo Bills",
+     "rank": 1,
+     "points": 11,
+     "bonus": 0,
+     "drafted": 3
+    },
+    {
      "drafter": "Wayne",
      "pick": "San Francisco 49ers",
-     "rank": 2,
+     "rank": 1,
      "points": 11,
      "bonus": 0,
      "drafted": 10
@@ -324,23 +332,15 @@
     {
      "drafter": "Ben Cav",
      "pick": "Kansas City Chiefs",
-     "rank": 3,
-     "points": 10,
+     "rank": 4,
+     "points": 9,
      "bonus": 0,
      "drafted": 7
     },
     {
-     "drafter": "Dan",
-     "pick": "Buffalo Bills",
-     "rank": 4,
-     "points": 9,
-     "bonus": 0,
-     "drafted": 3
-    },
-    {
      "drafter": "DT",
      "pick": "Denver Broncos",
-     "rank": 6,
+     "rank": 7,
      "points": 8,
      "bonus": 0,
      "drafted": 4
@@ -348,47 +348,47 @@
     {
      "drafter": "Max",
      "pick": "Detroit Lions",
-     "rank": 10,
-     "points": 7,
+     "rank": 7,
+     "points": 8,
      "bonus": 0,
      "drafted": 6
     },
     {
-     "drafter": "Will",
-     "pick": "Seattle Seahawks",
-     "rank": 14,
-     "points": 6,
-     "bonus": 0,
-     "drafted": 2
-    },
-    {
      "drafter": "Mike",
      "pick": "New England Patriots",
-     "rank": 14,
+     "rank": 12,
      "points": 6,
      "bonus": 0,
      "drafted": 11
     },
     {
-     "drafter": "Yestin",
-     "pick": "Baltimore Ravens",
-     "rank": 16,
-     "points": 4,
+     "drafter": "Will",
+     "pick": "Seattle Seahawks",
+     "rank": 15,
+     "points": 5,
      "bonus": 0,
-     "drafted": 5
+     "drafted": 2
     },
     {
      "drafter": "Ben Callow",
      "pick": "LA Rams",
-     "rank": 19,
-     "points": 3,
+     "rank": 16,
+     "points": 4,
      "bonus": 0,
      "drafted": 1
     },
     {
+     "drafter": "Yestin",
+     "pick": "Baltimore Ravens",
+     "rank": 18,
+     "points": 3,
+     "bonus": 0,
+     "drafted": 5
+    },
+    {
      "drafter": "Sam",
      "pick": "Philadelphia Eagles",
-     "rank": 28,
+     "rank": 26,
      "points": 2,
      "bonus": 0,
      "drafted": 9
@@ -516,20 +516,20 @@
      "drafted": 2
     },
     {
-     "drafter": "Mike",
-     "pick": "Edmonton Oilers",
+     "drafter": "Wayne",
+     "pick": "Minnesota Wild",
      "rank": 2,
      "points": 10,
      "bonus": 0,
-     "drafted": 5
+     "drafted": 8
     },
     {
-     "drafter": "Wayne",
-     "pick": "Minnesota Wild",
+     "drafter": "Mike",
+     "pick": "Edmonton Oilers",
      "rank": 3,
      "points": 9,
      "bonus": 0,
-     "drafted": 8
+     "drafted": 5
     },
     {
      "drafter": "Max",
@@ -558,7 +558,7 @@
     {
      "drafter": "Dan",
      "pick": "Florida Panthers",
-     "rank": 11,
+     "rank": 10,
      "points": 5,
      "bonus": 0,
      "drafted": 1
@@ -1960,24 +1960,24 @@
   {
    "pos": 1,
    "drafter": "Yestin",
-   "inplay": 53,
+   "inplay": 52,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 53
+   "total": 52
   },
   {
    "pos": 2,
    "drafter": "Ben Cav",
-   "inplay": 51,
+   "inplay": 50,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 51
+   "total": 50
   },
   {
    "pos": 3,
-   "drafter": "Mike",
+   "drafter": "Max",
    "inplay": 49,
    "confirmed": 0,
    "bonus": 0,
@@ -1986,7 +1986,7 @@
   },
   {
    "pos": 4,
-   "drafter": "Max",
+   "drafter": "Mike",
    "inplay": 48,
    "confirmed": 0,
    "bonus": 0,
@@ -1996,6 +1996,15 @@
   {
    "pos": 5,
    "drafter": "Dan",
+   "inplay": 46,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 7,
+   "total": 46
+  },
+  {
+   "pos": 6,
+   "drafter": "Wayne",
    "inplay": 44,
    "confirmed": 0,
    "bonus": 0,
@@ -2003,22 +2012,13 @@
    "total": 44
   },
   {
-   "pos": 6,
-   "drafter": "Wayne",
-   "inplay": 43,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 7,
-   "total": 43
-  },
-  {
    "pos": 7,
    "drafter": "Will",
-   "inplay": 41,
+   "inplay": 40,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 41
+   "total": 40
   },
   {
    "pos": 8,
@@ -2050,11 +2050,11 @@
   {
    "pos": 11,
    "drafter": "Ben Callow",
-   "inplay": 29,
+   "inplay": 30,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 29
+   "total": 30
   }
  ]
 }
