@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-05T03:28+00:00",
+ "generated": "2026-11-05T12:15+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -291,7 +291,7 @@
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 68,
+     "rank": 69,
      "points": 2,
      "bonus": 0,
      "drafted": 11
@@ -299,7 +299,7 @@
     {
      "drafter": "DT",
      "pick": "Oklahoma",
-     "rank": 68,
+     "rank": 69,
      "points": 2,
      "bonus": 0,
      "drafted": 7
@@ -574,7 +574,7 @@
     {
      "drafter": "Sam",
      "pick": "Colorado Avalanche",
-     "rank": 13,
+     "rank": 14,
      "points": 3,
      "bonus": 0,
      "drafted": 3
@@ -615,7 +615,7 @@
     {
      "drafter": "Sam",
      "pick": "Houston Rockets",
-     "rank": 2,
+     "rank": 4,
      "points": 10,
      "bonus": 0,
      "drafted": 10
@@ -623,7 +623,7 @@
     {
      "drafter": "Will",
      "pick": "Detroit Pistons",
-     "rank": 4,
+     "rank": 5,
      "points": 9,
      "bonus": 0,
      "drafted": 7
@@ -631,7 +631,7 @@
     {
      "drafter": "DT",
      "pick": "Boston Celtics",
-     "rank": 5,
+     "rank": 6,
      "points": 8,
      "bonus": 0,
      "drafted": 3
@@ -639,7 +639,7 @@
     {
      "drafter": "Dan",
      "pick": "Oklahoma City Thunder",
-     "rank": 8,
+     "rank": 7,
      "points": 7,
      "bonus": 0,
      "drafted": 1
@@ -647,7 +647,7 @@
     {
      "drafter": "Mike",
      "pick": "San Antonio Spurs",
-     "rank": 9,
+     "rank": 8,
      "points": 6,
      "bonus": 0,
      "drafted": 2
@@ -655,24 +655,32 @@
     {
      "drafter": "Ben Callow",
      "pick": "Minnesota Timberwolves",
-     "rank": 11,
+     "rank": 10,
      "points": 5,
      "bonus": 0,
      "drafted": 11
     },
     {
-     "drafter": "Ben Cav",
-     "pick": "Toronto Raptors",
+     "drafter": "Wayne",
+     "pick": "Denver Nuggets",
      "rank": 12,
      "points": 4,
+     "bonus": 0,
+     "drafted": 8
+    },
+    {
+     "drafter": "Ben Cav",
+     "pick": "Toronto Raptors",
+     "rank": 14,
+     "points": 3,
      "bonus": 0,
      "drafted": 9
     },
     {
      "drafter": "Paps",
      "pick": "Cleveland Cavaliers",
-     "rank": 13,
-     "points": 3,
+     "rank": 15,
+     "points": 2,
      "bonus": 0,
      "drafted": 6
     },
@@ -680,17 +688,9 @@
      "drafter": "Max",
      "pick": "New York Knicks",
      "rank": 16,
-     "points": 2,
-     "bonus": 0,
-     "drafted": 4
-    },
-    {
-     "drafter": "Wayne",
-     "pick": "Denver Nuggets",
-     "rank": 18,
      "points": 1,
      "bonus": 0,
-     "drafted": 8
+     "drafted": 4
     }
    ]
   },
@@ -1571,7 +1571,7 @@
    "name": "AFL",
    "window": "Mar \u2013 Sep 2027",
    "note": "finals depth > ladder",
-   "source": "awaiting feed",
+   "source": "feed error: HTTPError: HTTP Error 403: Forbidden",
    "start": "2027-03",
    "rows": [
     {
@@ -1978,20 +1978,20 @@
   {
    "pos": 3,
    "drafter": "Ben Cav",
-   "inplay": 50,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 7,
-   "total": 50
-  },
-  {
-   "pos": 4,
-   "drafter": "Max",
    "inplay": 49,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
    "total": 49
+  },
+  {
+   "pos": 4,
+   "drafter": "Max",
+   "inplay": 48,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 7,
+   "total": 48
   },
   {
    "pos": 5,
@@ -2004,16 +2004,16 @@
   },
   {
    "pos": 6,
-   "drafter": "Will",
-   "inplay": 42,
+   "drafter": "Wayne",
+   "inplay": 45,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 42
+   "total": 45
   },
   {
    "pos": 7,
-   "drafter": "Wayne",
+   "drafter": "Will",
    "inplay": 42,
    "confirmed": 0,
    "bonus": 0,
@@ -2050,11 +2050,11 @@
   {
    "pos": 11,
    "drafter": "Paps",
-   "inplay": 30,
+   "inplay": 29,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 30
+   "total": 29
   }
  ]
 }
