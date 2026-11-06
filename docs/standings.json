@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-06T15:53+00:00",
+ "generated": "2026-11-06T21:28+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -178,7 +178,7 @@
     {
      "drafter": "DT",
      "pick": "Eintracht Frankfurt",
-     "rank": 8,
+     "rank": 9,
      "points": 4,
      "bonus": 0,
      "drafted": 6
@@ -186,7 +186,7 @@
     {
      "drafter": "Will",
      "pick": "VfB Stuttgart",
-     "rank": 11,
+     "rank": 12,
      "points": 3,
      "bonus": 0,
      "drafted": 4
@@ -194,7 +194,7 @@
     {
      "drafter": "Mike",
      "pick": "Hoffenheim",
-     "rank": 12,
+     "rank": 13,
      "points": 2,
      "bonus": 0,
      "drafted": 7
