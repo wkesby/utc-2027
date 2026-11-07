@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-06T21:28+00:00",
+ "generated": "2026-11-07T01:53+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -57,7 +57,7 @@
     {
      "drafter": "Wayne",
      "pick": "Liverpool",
-     "rank": 5,
+     "rank": 6,
      "points": 7,
      "bonus": 0,
      "drafted": 4
@@ -65,7 +65,7 @@
     {
      "drafter": "Dan",
      "pick": "Brentford",
-     "rank": 6,
+     "rank": 7,
      "points": 6,
      "bonus": 0,
      "drafted": 10
