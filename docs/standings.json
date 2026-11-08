@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-08T13:16+00:00",
+ "generated": "2026-11-08T18:22+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -31,52 +31,52 @@
      "drafted": 1
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "Man City",
-     "rank": 2,
-     "points": 10,
-     "bonus": 0,
-     "drafted": 2
-    },
-    {
      "drafter": "Max",
      "pick": "Brighton",
-     "rank": 3,
-     "points": 9,
+     "rank": 2,
+     "points": 10,
      "bonus": 0,
      "drafted": 8
     },
     {
-     "drafter": "Yestin",
-     "pick": "Chelsea",
-     "rank": 4,
-     "points": 8,
+     "drafter": "Ben Callow",
+     "pick": "Man City",
+     "rank": 3,
+     "points": 9,
      "bonus": 0,
-     "drafted": 3
+     "drafted": 2
     },
     {
      "drafter": "Wayne",
      "pick": "Liverpool",
-     "rank": 6,
-     "points": 7,
+     "rank": 4,
+     "points": 8,
      "bonus": 0,
      "drafted": 4
     },
     {
-     "drafter": "Dan",
-     "pick": "Brentford",
-     "rank": 7,
-     "points": 6,
+     "drafter": "Yestin",
+     "pick": "Chelsea",
+     "rank": 5,
+     "points": 7,
      "bonus": 0,
-     "drafted": 10
+     "drafted": 3
     },
     {
      "drafter": "Ben Cav",
      "pick": "Bournemouth",
-     "rank": 9,
-     "points": 5,
+     "rank": 7,
+     "points": 6,
      "bonus": 0,
      "drafted": 11
+    },
+    {
+     "drafter": "Dan",
+     "pick": "Brentford",
+     "rank": 8,
+     "points": 5,
+     "bonus": 0,
+     "drafted": 10
     },
     {
      "drafter": "Sam",
@@ -105,7 +105,7 @@
     {
      "drafter": "DT",
      "pick": "Man Utd",
-     "rank": 18,
+     "rank": 19,
      "points": 1,
      "bonus": 0,
      "drafted": 5
@@ -152,20 +152,20 @@
      "drafted": 8
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "Werder Bremen",
+     "drafter": "Wayne",
+     "pick": "Bayer Leverkusen",
      "rank": 5,
      "points": 7,
      "bonus": 0,
-     "drafted": 10
+     "drafted": 5
     },
     {
-     "drafter": "Wayne",
-     "pick": "Bayer Leverkusen",
+     "drafter": "Ben Callow",
+     "pick": "Werder Bremen",
      "rank": 6,
      "points": 6,
      "bonus": 0,
-     "drafted": 5
+     "drafted": 10
     },
     {
      "drafter": "Max",
@@ -219,31 +219,31 @@
     {
      "drafter": "Will",
      "pick": "Miami",
-     "rank": 1,
+     "rank": 3,
      "points": 11,
      "bonus": 0,
      "drafted": 8
     },
     {
-     "drafter": "Yestin",
-     "pick": "Georgia",
-     "rank": 2,
-     "points": 10,
-     "bonus": 0,
-     "drafted": 5
-    },
-    {
      "drafter": "Mike",
      "pick": "Notre Dame",
-     "rank": 4,
-     "points": 9,
+     "rank": 3,
+     "points": 11,
      "bonus": 0,
      "drafted": 2
     },
     {
+     "drafter": "Yestin",
+     "pick": "Georgia",
+     "rank": 3,
+     "points": 11,
+     "bonus": 0,
+     "drafted": 5
+    },
+    {
      "drafter": "Ben Cav",
      "pick": "Indiana",
-     "rank": 6,
+     "rank": 9,
      "points": 8,
      "bonus": 0,
      "drafted": 6
@@ -251,7 +251,7 @@
     {
      "drafter": "Max",
      "pick": "Alabama",
-     "rank": 9,
+     "rank": 16,
      "points": 7,
      "bonus": 0,
      "drafted": 10
@@ -259,39 +259,39 @@
     {
      "drafter": "Dan",
      "pick": "Texas",
-     "rank": 10,
+     "rank": 24,
      "points": 6,
      "bonus": 0,
      "drafted": 4
     },
     {
+     "drafter": "Sam",
+     "pick": "Oregon",
+     "rank": 34,
+     "points": 5,
+     "bonus": 0,
+     "drafted": 3
+    },
+    {
      "drafter": "Ben Callow",
      "pick": "Ohio State",
-     "rank": 11,
-     "points": 5,
+     "rank": 37,
+     "points": 4,
      "bonus": 0,
      "drafted": 1
     },
     {
      "drafter": "Paps",
      "pick": "LSU",
-     "rank": 15,
-     "points": 4,
+     "rank": 48,
+     "points": 3,
      "bonus": 0,
      "drafted": 9
     },
     {
-     "drafter": "Sam",
-     "pick": "Oregon",
-     "rank": 39,
-     "points": 3,
-     "bonus": 0,
-     "drafted": 3
-    },
-    {
      "drafter": "DT",
      "pick": "Oklahoma",
-     "rank": 55,
+     "rank": 70,
      "points": 2,
      "bonus": 0,
      "drafted": 7
@@ -299,7 +299,7 @@
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 83,
+     "rank": 100,
      "points": 1,
      "bonus": 0,
      "drafted": 11
@@ -340,7 +340,7 @@
     {
      "drafter": "Ben Cav",
      "pick": "Kansas City Chiefs",
-     "rank": 8,
+     "rank": 9,
      "points": 8,
      "bonus": 0,
      "drafted": 7
@@ -349,7 +349,7 @@
      "drafter": "Max",
      "pick": "Detroit Lions",
      "rank": 9,
-     "points": 7,
+     "points": 8,
      "bonus": 0,
      "drafted": 6
     },
@@ -1960,11 +1960,11 @@
   {
    "pos": 1,
    "drafter": "Mike",
-   "inplay": 54,
+   "inplay": 56,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 54
+   "total": 56
   },
   {
    "pos": 2,
@@ -1978,6 +1978,15 @@
   {
    "pos": 3,
    "drafter": "Max",
+   "inplay": 51,
+   "confirmed": 0,
+   "bonus": 0,
+   "scored": 7,
+   "total": 51
+  },
+  {
+   "pos": 4,
+   "drafter": "Ben Cav",
    "inplay": 49,
    "confirmed": 0,
    "bonus": 0,
@@ -1985,26 +1994,17 @@
    "total": 49
   },
   {
-   "pos": 4,
-   "drafter": "Ben Cav",
-   "inplay": 48,
-   "confirmed": 0,
-   "bonus": 0,
-   "scored": 7,
-   "total": 48
-  },
-  {
    "pos": 5,
-   "drafter": "Dan",
-   "inplay": 46,
+   "drafter": "Wayne",
+   "inplay": 47,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 46
+   "total": 47
   },
   {
    "pos": 6,
-   "drafter": "Wayne",
+   "drafter": "Dan",
    "inplay": 45,
    "confirmed": 0,
    "bonus": 0,
@@ -2032,29 +2032,29 @@
   {
    "pos": 9,
    "drafter": "Ben Callow",
-   "inplay": 35,
+   "inplay": 32,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 35
+   "total": 32
   },
   {
    "pos": 10,
-   "drafter": "Paps",
-   "inplay": 29,
+   "drafter": "Sam",
+   "inplay": 31,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 29
+   "total": 31
   },
   {
    "pos": 11,
-   "drafter": "Sam",
-   "inplay": 29,
+   "drafter": "Paps",
+   "inplay": 28,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 29
+   "total": 28
   }
  ]
 }
