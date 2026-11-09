@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-09T02:38+00:00",
+ "generated": "2026-11-09T11:23+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -340,7 +340,7 @@
     {
      "drafter": "Ben Cav",
      "pick": "Kansas City Chiefs",
-     "rank": 7,
+     "rank": 8,
      "points": 8,
      "bonus": 0,
      "drafted": 7
@@ -348,8 +348,8 @@
     {
      "drafter": "Max",
      "pick": "Detroit Lions",
-     "rank": 7,
-     "points": 8,
+     "rank": 9,
+     "points": 7,
      "bonus": 0,
      "drafted": 6
     },
@@ -534,7 +534,7 @@
     {
      "drafter": "Max",
      "pick": "Vegas Golden Knights",
-     "rank": 5,
+     "rank": 6,
      "points": 8,
      "bonus": 0,
      "drafted": 6
@@ -542,7 +542,7 @@
     {
      "drafter": "Yestin",
      "pick": "Tampa Bay Lightning",
-     "rank": 7,
+     "rank": 8,
      "points": 7,
      "bonus": 0,
      "drafted": 7
@@ -574,7 +574,7 @@
     {
      "drafter": "Dan",
      "pick": "Florida Panthers",
-     "rank": 15,
+     "rank": 16,
      "points": 3,
      "bonus": 0,
      "drafted": 1
@@ -621,20 +621,20 @@
      "drafted": 1
     },
     {
-     "drafter": "Mike",
-     "pick": "San Antonio Spurs",
-     "rank": 4,
-     "points": 9,
-     "bonus": 0,
-     "drafted": 2
-    },
-    {
      "drafter": "DT",
      "pick": "Boston Celtics",
+     "rank": 3,
+     "points": 10,
+     "bonus": 0,
+     "drafted": 3
+    },
+    {
+     "drafter": "Mike",
+     "pick": "San Antonio Spurs",
      "rank": 5,
      "points": 8,
      "bonus": 0,
-     "drafted": 3
+     "drafted": 2
     },
     {
      "drafter": "Ben Callow",
@@ -671,7 +671,7 @@
     {
      "drafter": "Max",
      "pick": "New York Knicks",
-     "rank": 14,
+     "rank": 15,
      "points": 3,
      "bonus": 0,
      "drafted": 4
@@ -679,7 +679,7 @@
     {
      "drafter": "Ben Cav",
      "pick": "Toronto Raptors",
-     "rank": 15,
+     "rank": 16,
      "points": 2,
      "bonus": 0,
      "drafted": 9
@@ -1960,11 +1960,11 @@
   {
    "pos": 1,
    "drafter": "Mike",
-   "inplay": 56,
+   "inplay": 55,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 56
+   "total": 55
   },
   {
    "pos": 2,
@@ -1978,11 +1978,11 @@
   {
    "pos": 3,
    "drafter": "Max",
-   "inplay": 52,
+   "inplay": 51,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 52
+   "total": 51
   },
   {
    "pos": 4,
@@ -2023,11 +2023,11 @@
   {
    "pos": 8,
    "drafter": "DT",
-   "inplay": 34,
+   "inplay": 36,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 34
+   "total": 36
   },
   {
    "pos": 9,
