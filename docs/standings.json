@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-11T22:40+00:00",
+ "generated": "2026-11-12T03:47+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -299,7 +299,7 @@
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 83,
+     "rank": 84,
      "points": 1,
      "bonus": 0,
      "drafted": 11
@@ -532,20 +532,20 @@
      "drafted": 5
     },
     {
-     "drafter": "Max",
-     "pick": "Vegas Golden Knights",
-     "rank": 6,
-     "points": 8,
-     "bonus": 0,
-     "drafted": 6
-    },
-    {
      "drafter": "Yestin",
      "pick": "Tampa Bay Lightning",
-     "rank": 8,
-     "points": 7,
+     "rank": 5,
+     "points": 8,
      "bonus": 0,
      "drafted": 7
+    },
+    {
+     "drafter": "Max",
+     "pick": "Vegas Golden Knights",
+     "rank": 7,
+     "points": 7,
+     "bonus": 0,
+     "drafted": 6
     },
     {
      "drafter": "Sam",
@@ -566,7 +566,7 @@
     {
      "drafter": "DT",
      "pick": "Dallas Stars",
-     "rank": 12,
+     "rank": 13,
      "points": 4,
      "bonus": 0,
      "drafted": 4
@@ -574,7 +574,7 @@
     {
      "drafter": "Dan",
      "pick": "Florida Panthers",
-     "rank": 13,
+     "rank": 14,
      "points": 3,
      "bonus": 0,
      "drafted": 1
@@ -661,36 +661,36 @@
      "drafted": 7
     },
     {
-     "drafter": "Max",
-     "pick": "New York Knicks",
-     "rank": 13,
-     "points": 4,
-     "bonus": 0,
-     "drafted": 4
-    },
-    {
      "drafter": "Wayne",
      "pick": "Denver Nuggets",
-     "rank": 15,
-     "points": 3,
+     "rank": 13,
+     "points": 4,
      "bonus": 0,
      "drafted": 8
     },
     {
-     "drafter": "Ben Cav",
-     "pick": "Toronto Raptors",
-     "rank": 16,
-     "points": 2,
+     "drafter": "Max",
+     "pick": "New York Knicks",
+     "rank": 15,
+     "points": 3,
      "bonus": 0,
-     "drafted": 9
+     "drafted": 4
     },
     {
      "drafter": "Paps",
      "pick": "Cleveland Cavaliers",
-     "rank": 18,
-     "points": 1,
+     "rank": 16,
+     "points": 2,
      "bonus": 0,
      "drafted": 6
+    },
+    {
+     "drafter": "Ben Cav",
+     "pick": "Toronto Raptors",
+     "rank": 17,
+     "points": 1,
+     "bonus": 0,
+     "drafted": 9
     }
    ]
   },
@@ -1968,16 +1968,16 @@
   },
   {
    "pos": 2,
-   "drafter": "Max",
-   "inplay": 53,
+   "drafter": "Yestin",
+   "inplay": 52,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 53
+   "total": 52
   },
   {
    "pos": 3,
-   "drafter": "Yestin",
+   "drafter": "Max",
    "inplay": 51,
    "confirmed": 0,
    "bonus": 0,
@@ -1987,20 +1987,20 @@
   {
    "pos": 4,
    "drafter": "Ben Cav",
-   "inplay": 49,
+   "inplay": 48,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 49
+   "total": 48
   },
   {
    "pos": 5,
    "drafter": "Wayne",
-   "inplay": 46,
+   "inplay": 47,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 46
+   "total": 47
   },
   {
    "pos": 6,
@@ -2050,11 +2050,11 @@
   {
    "pos": 11,
    "drafter": "Paps",
-   "inplay": 25,
+   "inplay": 26,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 25
+   "total": 26
   }
  ]
 }
