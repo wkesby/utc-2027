@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-14T22:57+00:00",
+ "generated": "2026-11-15T02:37+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -291,7 +291,7 @@
     {
      "drafter": "DT",
      "pick": "Oklahoma",
-     "rank": 58,
+     "rank": 64,
      "points": 2,
      "bonus": 0,
      "drafted": 7
@@ -299,7 +299,7 @@
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 89,
+     "rank": 97,
      "points": 1,
      "bonus": 0,
      "drafted": 11
@@ -542,7 +542,7 @@
     {
      "drafter": "Yestin",
      "pick": "Tampa Bay Lightning",
-     "rank": 5,
+     "rank": 6,
      "points": 7,
      "bonus": 0,
      "drafted": 7
@@ -574,7 +574,7 @@
     {
      "drafter": "DT",
      "pick": "Dallas Stars",
-     "rank": 14,
+     "rank": 15,
      "points": 3,
      "bonus": 0,
      "drafted": 4
