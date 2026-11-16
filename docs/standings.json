@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-15T22:46+00:00",
+ "generated": "2026-11-16T02:42+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -324,8 +324,8 @@
     {
      "drafter": "Wayne",
      "pick": "San Francisco 49ers",
-     "rank": 2,
-     "points": 10,
+     "rank": 1,
+     "points": 11,
      "bonus": 0,
      "drafted": 10
     },
@@ -380,7 +380,7 @@
     {
      "drafter": "Yestin",
      "pick": "Baltimore Ravens",
-     "rank": 19,
+     "rank": 18,
      "points": 3,
      "bonus": 0,
      "drafted": 5
@@ -669,25 +669,25 @@
      "drafted": 1
     },
     {
-     "drafter": "Paps",
-     "pick": "Cleveland Cavaliers",
-     "rank": 16,
-     "points": 3,
-     "bonus": 0,
-     "drafted": 6
-    },
-    {
      "drafter": "Max",
      "pick": "New York Knicks",
-     "rank": 17,
-     "points": 2,
+     "rank": 15,
+     "points": 3,
      "bonus": 0,
      "drafted": 4
     },
     {
+     "drafter": "Paps",
+     "pick": "Cleveland Cavaliers",
+     "rank": 16,
+     "points": 2,
+     "bonus": 0,
+     "drafted": 6
+    },
+    {
      "drafter": "Ben Cav",
      "pick": "Toronto Raptors",
-     "rank": 19,
+     "rank": 20,
      "points": 1,
      "bonus": 0,
      "drafted": 9
@@ -1969,11 +1969,11 @@
   {
    "pos": 2,
    "drafter": "Max",
-   "inplay": 52,
+   "inplay": 53,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 52
+   "total": 53
   },
   {
    "pos": 3,
@@ -1996,11 +1996,11 @@
   {
    "pos": 5,
    "drafter": "Wayne",
-   "inplay": 47,
+   "inplay": 48,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 47
+   "total": 48
   },
   {
    "pos": 6,
@@ -2050,11 +2050,11 @@
   {
    "pos": 11,
    "drafter": "Paps",
-   "inplay": 27,
+   "inplay": 26,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 27
+   "total": 26
   }
  ]
 }
