@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T13:16+00:00",
+ "generated": "2026-11-17T21:46+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -1571,7 +1571,7 @@
    "name": "AFL",
    "window": "Mar \u2013 Sep 2027",
    "note": "finals depth > ladder",
-   "source": "awaiting feed",
+   "source": "feed error: HTTPError: HTTP Error 403: Forbidden",
    "start": "2027-03",
    "rows": [
     {
