@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T21:23+00:00",
+ "generated": "2026-11-19T03:20+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -542,7 +542,7 @@
     {
      "drafter": "Paps",
      "pick": "Ottawa Senators",
-     "rank": 6,
+     "rank": 5,
      "points": 7,
      "bonus": 0,
      "drafted": 11
@@ -550,7 +550,7 @@
     {
      "drafter": "Max",
      "pick": "Vegas Golden Knights",
-     "rank": 7,
+     "rank": 8,
      "points": 6,
      "bonus": 0,
      "drafted": 6
@@ -558,7 +558,7 @@
     {
      "drafter": "DT",
      "pick": "Dallas Stars",
-     "rank": 8,
+     "rank": 10,
      "points": 5,
      "bonus": 0,
      "drafted": 4
@@ -566,7 +566,7 @@
     {
      "drafter": "Sam",
      "pick": "Colorado Avalanche",
-     "rank": 10,
+     "rank": 11,
      "points": 4,
      "bonus": 0,
      "drafted": 3
@@ -629,20 +629,20 @@
      "drafted": 3
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "Minnesota Timberwolves",
+     "drafter": "Sam",
+     "pick": "Houston Rockets",
      "rank": 5,
      "points": 8,
      "bonus": 0,
-     "drafted": 11
+     "drafted": 10
     },
     {
-     "drafter": "Sam",
-     "pick": "Houston Rockets",
+     "drafter": "Ben Callow",
+     "pick": "Minnesota Timberwolves",
      "rank": 6,
      "points": 7,
      "bonus": 0,
-     "drafted": 10
+     "drafted": 11
     },
     {
      "drafter": "Will",
@@ -655,7 +655,7 @@
     {
      "drafter": "Dan",
      "pick": "Oklahoma City Thunder",
-     "rank": 10,
+     "rank": 12,
      "points": 5,
      "bonus": 0,
      "drafted": 1
@@ -663,7 +663,7 @@
     {
      "drafter": "Wayne",
      "pick": "Denver Nuggets",
-     "rank": 11,
+     "rank": 13,
      "points": 4,
      "bonus": 0,
      "drafted": 8
@@ -2023,11 +2023,11 @@
   {
    "pos": 8,
    "drafter": "Ben Callow",
-   "inplay": 36,
+   "inplay": 35,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 36
+   "total": 35
   },
   {
    "pos": 9,
@@ -2041,11 +2041,11 @@
   {
    "pos": 10,
    "drafter": "Sam",
-   "inplay": 32,
+   "inplay": 33,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 32
+   "total": 33
   },
   {
    "pos": 11,
