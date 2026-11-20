@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-19T21:27+00:00",
+ "generated": "2026-11-20T03:07+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -542,7 +542,7 @@
     {
      "drafter": "Paps",
      "pick": "Ottawa Senators",
-     "rank": 5,
+     "rank": 6,
      "points": 7,
      "bonus": 0,
      "drafted": 11
@@ -580,20 +580,20 @@
      "drafted": 1
     },
     {
-     "drafter": "Ben Callow",
-     "pick": "Washington Capitals",
-     "rank": 22,
-     "points": 2,
-     "bonus": 0,
-     "drafted": 9
-    },
-    {
      "drafter": "Will",
      "pick": "Buffalo Sabres",
-     "rank": 23,
-     "points": 1,
+     "rank": 20,
+     "points": 2,
      "bonus": 0,
      "drafted": 10
+    },
+    {
+     "drafter": "Ben Callow",
+     "pick": "Washington Capitals",
+     "rank": 24,
+     "points": 1,
+     "bonus": 0,
+     "drafted": 9
     }
    ]
   },
@@ -1571,7 +1571,7 @@
    "name": "AFL",
    "window": "Mar \u2013 Sep 2027",
    "note": "finals depth > ladder",
-   "source": "awaiting feed",
+   "source": "feed error: HTTPError: HTTP Error 403: Forbidden",
    "start": "2027-03",
    "rows": [
     {
@@ -2005,11 +2005,11 @@
   {
    "pos": 6,
    "drafter": "Will",
-   "inplay": 39,
+   "inplay": 40,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 39
+   "total": 40
   },
   {
    "pos": 7,
@@ -2023,11 +2023,11 @@
   {
    "pos": 8,
    "drafter": "Ben Callow",
-   "inplay": 35,
+   "inplay": 34,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 35
+   "total": 34
   },
   {
    "pos": 9,
