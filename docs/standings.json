@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21T17:26+00:00",
+ "generated": "2026-11-21T23:09+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -176,20 +176,20 @@
      "drafted": 6
     },
     {
-     "drafter": "Max",
-     "pick": "SV Elversberg",
+     "drafter": "Will",
+     "pick": "VfB Stuttgart",
      "rank": 8,
      "points": 4,
      "bonus": 0,
-     "drafted": 9
+     "drafted": 4
     },
     {
-     "drafter": "Will",
-     "pick": "VfB Stuttgart",
+     "drafter": "Max",
+     "pick": "SV Elversberg",
      "rank": 9,
      "points": 3,
      "bonus": 0,
-     "drafted": 4
+     "drafted": 9
     },
     {
      "drafter": "Mike",
@@ -202,7 +202,7 @@
     {
      "drafter": "Sam",
      "pick": "Schalke 04",
-     "rank": 17,
+     "rank": 16,
      "points": 1,
      "bonus": 0,
      "drafted": 11
@@ -283,7 +283,7 @@
     {
      "drafter": "Paps",
      "pick": "LSU",
-     "rank": 44,
+     "rank": 49,
      "points": 3,
      "bonus": 0,
      "drafted": 9
@@ -291,7 +291,7 @@
     {
      "drafter": "DT",
      "pick": "Oklahoma",
-     "rank": 44,
+     "rank": 49,
      "points": 3,
      "bonus": 0,
      "drafted": 7
@@ -299,7 +299,7 @@
     {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 95,
+     "rank": 97,
      "points": 1,
      "bonus": 0,
      "drafted": 11
@@ -516,20 +516,20 @@
      "drafted": 8
     },
     {
-     "drafter": "Mike",
-     "pick": "Edmonton Oilers",
+     "drafter": "Ben Cav",
+     "pick": "Carolina Hurricanes",
      "rank": 2,
      "points": 10,
      "bonus": 0,
-     "drafted": 5
+     "drafted": 2
     },
     {
-     "drafter": "Ben Cav",
-     "pick": "Carolina Hurricanes",
+     "drafter": "Mike",
+     "pick": "Edmonton Oilers",
      "rank": 3,
      "points": 9,
      "bonus": 0,
-     "drafted": 2
+     "drafted": 5
     },
     {
      "drafter": "Yestin",
@@ -607,7 +607,7 @@
     {
      "drafter": "Yestin",
      "pick": "Philadelphia 76ers",
-     "rank": 2,
+     "rank": 1,
      "points": 11,
      "bonus": 0,
      "drafted": 5
@@ -1960,11 +1960,11 @@
   {
    "pos": 1,
    "drafter": "Mike",
-   "inplay": 55,
+   "inplay": 54,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 55
+   "total": 54
   },
   {
    "pos": 2,
@@ -1977,21 +1977,21 @@
   },
   {
    "pos": 3,
-   "drafter": "Max",
-   "inplay": 50,
+   "drafter": "Ben Cav",
+   "inplay": 49,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 50
+   "total": 49
   },
   {
    "pos": 4,
-   "drafter": "Ben Cav",
-   "inplay": 48,
+   "drafter": "Max",
+   "inplay": 49,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 48
+   "total": 49
   },
   {
    "pos": 5,
@@ -2005,11 +2005,11 @@
   {
    "pos": 6,
    "drafter": "Will",
-   "inplay": 38,
+   "inplay": 39,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 38
+   "total": 39
   },
   {
    "pos": 7,
