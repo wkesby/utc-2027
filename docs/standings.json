@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21T23:09+00:00",
+ "generated": "2026-11-22T03:05+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -281,25 +281,25 @@
      "drafted": 1
     },
     {
-     "drafter": "Paps",
-     "pick": "LSU",
-     "rank": 49,
-     "points": 3,
-     "bonus": 0,
-     "drafted": 9
-    },
-    {
      "drafter": "DT",
      "pick": "Oklahoma",
-     "rank": 49,
+     "rank": 39,
      "points": 3,
      "bonus": 0,
      "drafted": 7
     },
     {
+     "drafter": "Paps",
+     "pick": "LSU",
+     "rank": 63,
+     "points": 2,
+     "bonus": 0,
+     "drafted": 9
+    },
+    {
      "drafter": "Wayne",
      "pick": "Texas A&M",
-     "rank": 97,
+     "rank": 103,
      "points": 1,
      "bonus": 0,
      "drafted": 11
@@ -532,25 +532,25 @@
      "drafted": 5
     },
     {
-     "drafter": "Yestin",
-     "pick": "Tampa Bay Lightning",
-     "rank": 4,
-     "points": 8,
-     "bonus": 0,
-     "drafted": 7
-    },
-    {
      "drafter": "Paps",
      "pick": "Ottawa Senators",
-     "rank": 6,
-     "points": 7,
+     "rank": 4,
+     "points": 8,
      "bonus": 0,
      "drafted": 11
     },
     {
+     "drafter": "Yestin",
+     "pick": "Tampa Bay Lightning",
+     "rank": 5,
+     "points": 7,
+     "bonus": 0,
+     "drafted": 7
+    },
+    {
      "drafter": "Max",
      "pick": "Vegas Golden Knights",
-     "rank": 7,
+     "rank": 8,
      "points": 6,
      "bonus": 0,
      "drafted": 6
@@ -574,7 +574,7 @@
     {
      "drafter": "Dan",
      "pick": "Florida Panthers",
-     "rank": 14,
+     "rank": 13,
      "points": 3,
      "bonus": 0,
      "drafted": 1
@@ -582,7 +582,7 @@
     {
      "drafter": "Will",
      "pick": "Buffalo Sabres",
-     "rank": 20,
+     "rank": 21,
      "points": 2,
      "bonus": 0,
      "drafted": 10
@@ -655,26 +655,26 @@
     {
      "drafter": "Wayne",
      "pick": "Denver Nuggets",
-     "rank": 10,
+     "rank": 9,
      "points": 5,
      "bonus": 0,
      "drafted": 8
     },
     {
-     "drafter": "Dan",
-     "pick": "Oklahoma City Thunder",
-     "rank": 12,
-     "points": 4,
-     "bonus": 0,
-     "drafted": 1
-    },
-    {
      "drafter": "Max",
      "pick": "New York Knicks",
-     "rank": 14,
-     "points": 3,
+     "rank": 11,
+     "points": 4,
      "bonus": 0,
      "drafted": 4
+    },
+    {
+     "drafter": "Dan",
+     "pick": "Oklahoma City Thunder",
+     "rank": 13,
+     "points": 3,
+     "bonus": 0,
+     "drafted": 1
     },
     {
      "drafter": "Paps",
@@ -1969,24 +1969,24 @@
   {
    "pos": 2,
    "drafter": "Yestin",
-   "inplay": 54,
+   "inplay": 53,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 54
+   "total": 53
   },
   {
    "pos": 3,
-   "drafter": "Ben Cav",
-   "inplay": 49,
+   "drafter": "Max",
+   "inplay": 50,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 49
+   "total": 50
   },
   {
    "pos": 4,
-   "drafter": "Max",
+   "drafter": "Ben Cav",
    "inplay": 49,
    "confirmed": 0,
    "bonus": 0,
@@ -2014,11 +2014,11 @@
   {
    "pos": 7,
    "drafter": "Dan",
-   "inplay": 38,
+   "inplay": 37,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 38
+   "total": 37
   },
   {
    "pos": 8,
