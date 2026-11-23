@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-23T00:15+00:00",
+ "generated": "2026-11-23T07:37+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -324,18 +324,18 @@
     {
      "drafter": "Wayne",
      "pick": "San Francisco 49ers",
-     "rank": 2,
-     "points": 10,
+     "rank": 1,
+     "points": 11,
      "bonus": 0,
      "drafted": 10
     },
     {
-     "drafter": "Ben Cav",
-     "pick": "Kansas City Chiefs",
+     "drafter": "DT",
+     "pick": "Denver Broncos",
      "rank": 3,
      "points": 9,
      "bonus": 0,
-     "drafted": 7
+     "drafted": 4
     },
     {
      "drafter": "Max",
@@ -346,12 +346,12 @@
      "drafted": 6
     },
     {
-     "drafter": "DT",
-     "pick": "Denver Broncos",
-     "rank": 8,
+     "drafter": "Ben Cav",
+     "pick": "Kansas City Chiefs",
+     "rank": 5,
      "points": 7,
      "bonus": 0,
-     "drafted": 4
+     "drafted": 7
     },
     {
      "drafter": "Will",
@@ -558,7 +558,7 @@
     {
      "drafter": "DT",
      "pick": "Dallas Stars",
-     "rank": 9,
+     "rank": 7,
      "points": 5,
      "bonus": 0,
      "drafted": 4
@@ -582,7 +582,7 @@
     {
      "drafter": "Will",
      "pick": "Buffalo Sabres",
-     "rank": 22,
+     "rank": 19,
      "points": 2,
      "bonus": 0,
      "drafted": 10
@@ -637,20 +637,20 @@
      "drafted": 10
     },
     {
-     "drafter": "DT",
-     "pick": "Boston Celtics",
+     "drafter": "Wayne",
+     "pick": "Denver Nuggets",
      "rank": 7,
      "points": 7,
      "bonus": 0,
-     "drafted": 3
+     "drafted": 8
     },
     {
-     "drafter": "Wayne",
-     "pick": "Denver Nuggets",
+     "drafter": "DT",
+     "pick": "Boston Celtics",
      "rank": 9,
      "points": 6,
      "bonus": 0,
-     "drafted": 8
+     "drafted": 3
     },
     {
      "drafter": "Max",
@@ -671,7 +671,7 @@
     {
      "drafter": "Dan",
      "pick": "Oklahoma City Thunder",
-     "rank": 13,
+     "rank": 15,
      "points": 3,
      "bonus": 0,
      "drafted": 1
@@ -687,7 +687,7 @@
     {
      "drafter": "Ben Cav",
      "pick": "Toronto Raptors",
-     "rank": 20,
+     "rank": 21,
      "points": 1,
      "bonus": 0,
      "drafted": 9
@@ -1987,20 +1987,20 @@
   {
    "pos": 4,
    "drafter": "Wayne",
-   "inplay": 48,
+   "inplay": 50,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 48
+   "total": 50
   },
   {
    "pos": 5,
    "drafter": "Ben Cav",
-   "inplay": 47,
+   "inplay": 45,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 47
+   "total": 45
   },
   {
    "pos": 6,
@@ -2023,11 +2023,11 @@
   {
    "pos": 8,
    "drafter": "DT",
-   "inplay": 36,
+   "inplay": 37,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 36
+   "total": 37
   },
   {
    "pos": 9,
