@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24T04:44+00:00",
+ "generated": "2026-11-24T12:58+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -508,20 +508,20 @@
    "start": "2026-10",
    "rows": [
     {
-     "drafter": "Ben Cav",
-     "pick": "Carolina Hurricanes",
+     "drafter": "Wayne",
+     "pick": "Minnesota Wild",
      "rank": 1,
      "points": 11,
      "bonus": 0,
-     "drafted": 2
+     "drafted": 8
     },
     {
-     "drafter": "Wayne",
-     "pick": "Minnesota Wild",
+     "drafter": "Ben Cav",
+     "pick": "Carolina Hurricanes",
      "rank": 2,
      "points": 10,
      "bonus": 0,
-     "drafted": 8
+     "drafted": 2
     },
     {
      "drafter": "Mike",
@@ -1571,7 +1571,7 @@
    "name": "AFL",
    "window": "Mar \u2013 Sep 2027",
    "note": "finals depth > ladder",
-   "source": "feed error: HTTPError: HTTP Error 403: Forbidden",
+   "source": "awaiting feed",
    "start": "2027-03",
    "rows": [
     {
@@ -1978,11 +1978,11 @@
   {
    "pos": 3,
    "drafter": "Wayne",
-   "inplay": 50,
+   "inplay": 51,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 50
+   "total": 51
   },
   {
    "pos": 4,
@@ -1996,11 +1996,11 @@
   {
    "pos": 5,
    "drafter": "Ben Cav",
-   "inplay": 45,
+   "inplay": 44,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 45
+   "total": 44
   },
   {
    "pos": 6,
