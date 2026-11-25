@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25T09:47+00:00",
+ "generated": "2026-11-25T19:54+00:00",
  "season": "2027",
  "drafters": [
   "Will",
@@ -427,28 +427,28 @@
      "drafted": 1
     },
     {
+     "drafter": "Mike",
+     "pick": "Barcelona",
+     "rank": 4,
+     "points": 9,
+     "bonus": 0,
+     "drafted": 5
+    },
+    {
      "drafter": "Will",
      "pick": "Arsenal",
-     "rank": 5,
-     "points": 9,
+     "rank": 6,
+     "points": 8,
      "bonus": 0,
      "drafted": 2
     },
     {
      "drafter": "Wayne",
      "pick": "Man City",
-     "rank": 6,
-     "points": 8,
-     "bonus": 0,
-     "drafted": 6
-    },
-    {
-     "drafter": "Mike",
-     "pick": "Barcelona",
-     "rank": 8,
+     "rank": 7,
      "points": 7,
      "bonus": 0,
-     "drafted": 5
+     "drafted": 6
     },
     {
      "drafter": "DT",
@@ -493,7 +493,7 @@
     {
      "drafter": "Dan",
      "pick": "Atletico Madrid",
-     "rank": 26,
+     "rank": 27,
      "points": 1,
      "bonus": 0,
      "drafted": 9
@@ -1960,11 +1960,11 @@
   {
    "pos": 1,
    "drafter": "Mike",
-   "inplay": 54,
+   "inplay": 56,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 54
+   "total": 56
   },
   {
    "pos": 2,
@@ -1977,7 +1977,7 @@
   },
   {
    "pos": 3,
-   "drafter": "Wayne",
+   "drafter": "Yestin",
    "inplay": 50,
    "confirmed": 0,
    "bonus": 0,
@@ -1986,12 +1986,12 @@
   },
   {
    "pos": 4,
-   "drafter": "Yestin",
-   "inplay": 50,
+   "drafter": "Wayne",
+   "inplay": 49,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 50
+   "total": 49
   },
   {
    "pos": 5,
@@ -2014,11 +2014,11 @@
   {
    "pos": 7,
    "drafter": "Will",
-   "inplay": 39,
+   "inplay": 38,
    "confirmed": 0,
    "bonus": 0,
    "scored": 7,
-   "total": 39
+   "total": 38
   },
   {
    "pos": 8,
